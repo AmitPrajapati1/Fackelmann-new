@@ -45,7 +45,7 @@
 <?php include('includes/nav.php'); ?>
 
 
-<div class="container-fluid px-2 px-md-5 py-5 position-relative style="background-color: #f5f5f5;">
+<!-- <div class="container-fluid px-2 px-md-5 py-5 position-relative style="background-color: #f5f5f5;">
   <div class="text-center mb-4 fw-medium text-uppercase" style="letter-spacing: 1px;">
     Cleverly Combined - Save in the Set
   </div>
@@ -108,6 +108,6 @@
     </div>
 
   </div>
-</div>
+</div> -->
 
 <?php include('includes/footer.php'); ?>

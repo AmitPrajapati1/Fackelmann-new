@@ -36,17 +36,21 @@
 
     .nav {
         display: flex;
-        gap: 20px;
-        margin-left: 30px;
     }
 
     .nav a {
-        color: var(--white);
-        text-decoration: none;
-        font-weight: bold;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
         font-size: 14px;
-        letter-spacing: 1px;
-        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 500;
+        color: #fff;
+        margin: 0;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        padding: 10px 12px 10px 12px;
+        outline: none;
+        text-decoration: none;
     }
 
     .header-right {
@@ -108,7 +112,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 310px;
+        width: 360px;
         height: 100%;
         background-color: #fff;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -134,17 +138,30 @@
     }
 
     .sidenav-search {
-        padding: 12px 16px;
+        padding: 0px 1px 12px;
         border-bottom: 1px solid #ddd;
     }
 
-    .sidenav-search input {
-        width: 100%;
-        padding: 8px 1px;
-        border-radius: 6px;
-        border: none;
+    .search-box {
+        display: flex;
+        align-items: center;
         background: #f3f3f3;
+        padding: 12px 10px;
+        gap: 10px;
+    }
+
+    .search-box i {
+        font-size: 18px;
+        color: #555;
+        flex-shrink: 0;
+    }
+
+    .search-box input {
+        border: none;
+        background: transparent;
         font-size: 14px;
+        width: 100%;
+        outline: none;
     }
 
     .panel-wrapper {
@@ -182,12 +199,14 @@
 
     .sidenav-section-title {
         background: #bf0019;
+        display: block;
         color: white;
         padding: 10px 16px;
         font-size: 13px;
         font-weight: 700;
         text-transform: uppercase;
         border-bottom: 1px solid white;
+        text-decoration: none;
     }
 
     .sidenav-links {
@@ -221,9 +240,13 @@
     }
 
     .sidenav-footer {
+        display: block;
+        color: #333;
+        text-decoration: none;
         padding: 12px 16px;
-        border-top: 1px solid #eee;
         font-size: 14px;
+        border-top: 1px solid #eee;
+
     }
 
     .sidenav-footer i {
@@ -311,67 +334,299 @@
         position: relative;
     }
 
-    .products-wrapper:hover .mega-menu {
-        display: block;
-    }
-
-    .products-wrapper {
-        position: relative;
-    }
-
-    .products-submenu {
+    .sub-cat {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 20px 0 10px 0;
+        position: absolute;
+        top: 97px;
+        left: 0;
+        width: 100%;
         display: none;
-        position: absolute;
-        top: 44px;
-        background-color: #f8f8f8;
-        padding: 20px 40px 10px 40px;
-        z-index: 900;
+        z-index: 999;
     }
 
-    .products-wrapper:hover .products-submenu,
-    .products-submenu:hover {
+    .sub-categories-option {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .sub-categories-option img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    .dropdown-icon {
+        margin-left: 5px;
+        font-size: 12px;
+    }
+
+    .close-btn {
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    .dropdown-icon-sub-categories {
+        font-size: 20px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+
+    .sub-category-icon {
+        margin-right: 8px;
+        vertical-align: middle;
+        font-size: 18px;
+    }
+
+
+    .sub-cat-brands {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 2px 0 10px 0;
+        position: absolute;
+        top: 97px;
+        left: 0;
+        width: 100%;
+        display: none;
+        z-index: 999;
+    }
+
+    .brands-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .brand-item {
+        align-items: flex-start;
+        cursor: pointer;
+        transition: transform 0.3s;
+        max-width: 200px;
+        width: 100%;
+        position: relative;
+        padding: 10px;
+        box-sizing: border-box;
+
+    }
+
+    .brand-item::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 10px;
+        width: 40px;
+        height: 2px;
+        background-color: #bf0019;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .brand-item:hover::before {
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+
+    .brand-item img {
+        max-width: 150px;
+        height: auto;
+        object-fit: contain;
         display: block;
     }
 
-    .subcategory {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 40px;
-        position: relative;
-    }
-
-    .sub-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .brand-item p {
+        margin: 5px 0 0;
         font-size: 13px;
-        color: #555;
-        cursor: pointer;
-        min-width: 80px;
-        transition: color 0.3s;
-    }
-
-    .sub-item i {
-        font-size: 24px;
-        margin-bottom: 6px;
-        color: #666;
-    }
-
-    .sub-item:hover {
-        color: var(--primary-color);
-    }
-
-    .close-submenu {
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        cursor: pointer;
-    }
-
-    .close-submenu i {
-        font-size: 22px;
         color: #333;
+    }
+
+    .show-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: #1da1f2;
+        cursor: pointer;
+        min-height: 100px;
+        text-align: center;
+    }
+
+    .show-more p {
+        margin: 0;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .show-more:hover {
+        text-decoration: underline;
+    }
+
+    .close-btn-brands {
+        position: absolute;
+        top: 5px;
+        right: 30px;
+        cursor: pointer;
+        font-weight: 300;
+        font-size: 30px;
+    }
+
+    .logo-container {
+        margin-right: 30px;
+    }
+
+    .logo-img {
+        height: 45px;
+        object-fit: contain;
+    }
+
+    @media (min-width: 768px) {
+        .logo-container {
+            margin-top: 0;
+            overflow: visible;
+            position: relative;
+            line-height: 1;
+        }
+
+        .logo-img {
+            position: relative;
+            height: 60px;
+            display: block;
+            top: 0;
+            margin-bottom: -19px;
+
+        }
+    }
+
+    @media (max-width: 991px) {
+        .nav {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .header {
+            flex-direction: row;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .header-left {
+            flex: 1;
+            justify-content: space-between;
+        }
+
+
+        .header-right {
+            gap: 10px;
+        }
+
+        .nav {
+            display: none !important;
+        }
+
+        .sub-cat,
+        .sub-cat-brands {
+            position: fixed;
+            top: 60px;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: calc(100vh - 60px);
+            background-color: #f5f5f5;
+        }
+
+        .sub-categories-option {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .brands-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand-item {
+            width: 100%;
+            max-width: none;
+            text-align: center;
+        }
+
+        .close-btn,
+        .close-btn-brands {
+            top: 10px;
+            right: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .sidenav {
+            width: 100%;
+        }
+
+        .panel-wrapper {
+            height: calc(100% - 130px);
+
+            overflow-y: auto;
+        }
+
+        .sidenav-links li {
+            font-size: 16px;
+        }
+
+        .submenu-items li {
+            font-size: 15px;
+        }
+
+        .sidenav-links li,
+        .submenu-items li {
+            padding: 16px;
+        }
+
+        .sidenav-footer {
+            padding: 16px;
+        }
+
+    }
+
+    .mobile-search-icon {
+        display: none;
+        color: var(--white);
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+
+    @media (max-width: 767px) {
+        .custom-search-wrapper {
+            display: none;
+
+        }
+
+        .mobile-search-icon {
+            display: inline-block;
+        }
+    }
+
+
+    @media (min-width: 768px) {
+        .custom-search-wrapper {
+            display: block;
+
+        }
+
+        .mobile-search-icon {
+            display: none;
+        }
     }
 </style>
 
@@ -379,40 +634,16 @@
 
 <header class="header">
     <div class="header-left">
-        <div class="logo"><img src="fackelmann_main_logo.png" alt="Fackelmann Logo" /></div>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="assets/images/logo/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
+            </a>
+        </div>
         <nav class="nav">
             <a href="#">HOME</a>
-
-            <div class="products-wrapper">
-                <a href="#" class="products-link">PRODUCTS</a>
-                <div class="products-submenu">
-                    <div class="subcategory">
-                        <div class="sub-item">
-                            <i class="material-icons">restaurant_menu</i>
-                            <span>Cookware</span>
-                        </div>
-                        <div class="sub-item">
-                            <i class="material-icons">cake</i>
-                            <span>Bakeware</span>
-                        </div>
-                        <div class="sub-item">
-                            <i class="material-icons">kitchen</i>
-                            <span>Kitchenware</span>
-                        </div>
-                        <div class="sub-item">
-                            <i class="material-icons">home</i>
-                            <span>At Home</span>
-                        </div>
-                    </div>
-                    <div class="close-submenu">
-                        <i class="material-icons">close</i>
-                    </div>
-                </div>
-            </div>
-
-
+            <a href="#" data-submenu="productsSubmenu" onclick="toggleSubmenu(event)">PRODUCTS</a>
             <a href="#">SUSTAINABILITY</a>
-            <a href="#">GLOBAL BRANDS</a>
+            <a href="#" data-submenu="brandsSubmenu" onclick="toggleSubmenu(event)">GLOBAL BRANDS</a>
         </nav>
 
 
@@ -442,9 +673,75 @@
         <div class="custom-search-wrapper">
             <button class="custom-search-button" type="button"><span class="custom-search-text">Search</span></button>
         </div>
+        <i class="mobile-search-icon material-icons">search</i>
         <span class="material-icons icon">call</span>
         <span class="material-icons icon" onclick="toggleNav(true)">menu</span>
     </div>
+    <div class="sub-cat" id="productsSubmenu" style="display: none;">
+        <div class="sub-categories-option">
+            <i class='bx bx-bowl-hot sub-category-icon'></i> COOKWARE
+            <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+        </div>
+        <div class="sub-categories-option">
+            <i class='bx bx-cake sub-category-icon'></i> BAKEWARE
+            <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+        </div>
+        <div class="sub-categories-option">
+            <i class='bx bx-restaurant sub-category-icon'></i> KITCHENWARE
+            <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+        </div>
+        <div class="sub-categories-option">
+            <i class='bx bx-home sub-category-icon'></i> AT HOME
+            <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+        </div>
+        <div class="close-btn" onclick="hideSubmenu()">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+
+    <div class="sub-cat-brands" id="brandsSubmenu" style="display: none;">
+        <div class="brands-container">
+            <div class="brand-item">
+                <a href="#"><img src="assets/images/brands/cktfm_200x125.jpg" alt="Fackelmann"></a>
+                <div class="brand-desc">
+                    <p>Popular kitchen helpers & diverse household items</p>
+                </div>
+            </div>
+            <div class="brand-item">
+                <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Paris Hilton"></a>
+                <div class="brand-desc">
+                    <p>Glamour for the kitchen with Paris Hilton Cookware.</p>
+                </div>
+            </div>
+            <div class="brand-item">
+                <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Stanley Rogers"></a>
+                <div class="brand-desc">
+                    <p>Cookware, kitchen gadgets & cutlery of the highest quality</p>
+                </div>
+            </div>
+            <div class="brand-item">
+                <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Tasty"></a>
+                <div class="brand-desc">
+                    <p>Creative & versatile – colorful kitchen tools from Tasty.</p>
+                </div>
+            </div>
+            <div class="brand-item">
+                <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Chefkoch Fackelmann"></a>
+                <div class="brand-desc">
+                    <p>Chef meets Fackelmann – You can cook anything with this.</p>
+                </div>
+            </div>
+            <div class="brand-item show-more">
+                <div class="brand-desc">
+                    <p>Show More</p>
+                </div>
+            </div>
+        </div>
+        <div class="close-btn-brands" onclick="hideSubmenu()">
+            <i class='bx bx-x'></i>
+        </div>
+    </div>
+
 </header>
 
 <div class="sidenav-overlay" onclick="toggleNav(false)"></div>
@@ -456,8 +753,12 @@
     </div>
 
     <div class="sidenav-search">
-        <input type="text" placeholder="🔍 Search Term ..." />
+        <div class="search-box">
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search term..." />
+        </div>
     </div>
+
 
     <div class="panel-wrapper">
         <div class="panel" id="mainMenu">
@@ -473,11 +774,14 @@
                 <li><span><i class="material-icons" style="margin-right:10px;">home</i>At Home</span><i
                         class="material-icons">chevron_right</i></li>
             </ul>
-            <div class="sidenav-section-title">Home</div>
-            <div class="sidenav-section-title">About Us</div>
-            <div class="sidenav-section-title">Global Brands</div>
-            <div class="sidenav-section-title">Sustainability</div>
-            <div class="sidenav-footer"><i class="material-icons">mail_outline</i> Contact form</div>
+            <a href="index.html" class="sidenav-section-title">Home</a>
+            <a href="about-us.html" class="sidenav-section-title">About Us</a>
+            <a href="global-brands.html" class="sidenav-section-title">Global Brands</a>
+            <a href="sustainability.html" class="sidenav-section-title">Sustainability</a>
+            <a href="contact.html" class="sidenav-footer">
+                <i class="material-icons">mail_outline</i> Contact form
+            </a>
+
         </div>
 
 
@@ -551,15 +855,15 @@
         const allItems = document.querySelectorAll('.sidenav-links li');
         const submenu = item.nextElementSibling;
 
-        // Collapse all other submenus
+
         document.querySelectorAll('.submenu-items').forEach(el => {
             if (el !== submenu) el.style.display = 'none';
         });
 
-        // Remove active from all li
+
         allItems.forEach(li => li.classList.remove('active'));
 
-        // Toggle current
+
         if (submenu && submenu.classList.contains('submenu-items')) {
             if (submenu.style.display === 'block') {
                 submenu.style.display = 'none';
@@ -571,8 +875,62 @@
         }
     }
 
-    document.querySelector(".close-submenu i").addEventListener("click", function () {
-        document.querySelector(".products-submenu").style.display = "none";
+    function toggleSubmenu(event) {
+        event.preventDefault();
+        const submenu = document.getElementById("brandsSubmenu");
+        if (submenu.style.display === "none" || submenu.style.display === "") {
+            submenu.style.display = "flex";
+        } else {
+            submenu.style.display = "none";
+        }
+    }
+
+
+    document.addEventListener("click", function (event) {
+        const submenu = document.getElementById("brandsSubmenu");
+        const nav = document.querySelector(".nav");
+        if (!nav.contains(event.target)) {
+            submenu.style.display = "none";
+        }
     });
 
 </script>
+
+<!-- <script>
+    const navLinks = document.querySelectorAll('.nav a[data-submenu]');
+
+    navLinks.forEach(link => {
+        const submenuId = link.getAttribute('data-submenu');
+        const submenu = document.getElementById(submenuId);
+
+        if (!submenu) return;
+
+        let hideTimeout;
+
+        function showSubmenu() {
+            clearTimeout(hideTimeout);
+            submenu.style.display = 'flex';
+        }
+
+        function hideSubmenu() {
+            hideTimeout = setTimeout(() => {
+                submenu.style.display = 'none';
+            }, 200);
+        }
+
+        link.addEventListener('mouseenter', showSubmenu);
+        link.addEventListener('mouseleave', hideSubmenu);
+        submenu.addEventListener('mouseenter', showSubmenu);
+        submenu.addEventListener('mouseleave', hideSubmenu);
+    });
+
+    function toggleNav(show) {
+        const submenu = document.getElementById('brandsSubmenu');
+        submenu.style.display = show ? 'block' : 'none';
+    }
+
+    function hideSubmenu() {
+        document.getElementById('brandsSubmenu').style.display = 'none';
+        document.getElementById('productsSubmenu').style.display = 'none';
+    }
+</script> -->
