@@ -1,1 +1,578 @@
-<p>Nav</p>
+<style>
+    :root {
+        --primary-color: #7a001c;
+        --white: #ffffff;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .topbar {
+        background-color: var(--primary-color);
+        color: var(--white);
+        text-align: center;
+        padding: 6px 0;
+        font-size: 14px;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: repeating-linear-gradient(45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px);
+        padding: 10px 40px;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .nav {
+        display: flex;
+        gap: 20px;
+        margin-left: 30px;
+    }
+
+    .nav a {
+        color: var(--white);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .custom-search-wrapper .custom-search-button {
+        background: var(--primary-color);
+        color: #bc9ca3;
+        padding: 5px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+        height: 39px;
+        min-width: 150px;
+        font-family: "Roboto Condensed", sans-serif;
+        letter-spacing: 2px;
+        border: none;
+        cursor: pointer;
+        gap: 10px;
+    }
+
+    .custom-search-wrapper .custom-search-button:after {
+        font-family: "Material Icons";
+        content: "\e8b6";
+        font-size: 22px;
+        margin-left: 8px;
+    }
+
+    .custom-search-wrapper .custom-search-button:hover {
+        background: #80001d;
+        color: var(--white);
+    }
+
+    .icon {
+        color: var(--white);
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .sidenav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        z-index: 999;
+    }
+
+    .sidenav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 310px;
+        height: 100%;
+        background-color: #fff;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+        overflow: hidden;
+    }
+
+    .sidenav.active {
+        transform: translateX(0);
+    }
+
+    .sidenav-header {
+        background-color: #bf0019;
+        color: var(--white);
+        padding: 16px;
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sidenav-search {
+        padding: 12px 16px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .sidenav-search input {
+        width: 100%;
+        padding: 8px 1px;
+        border-radius: 6px;
+        border: none;
+        background: #f3f3f3;
+        font-size: 14px;
+    }
+
+    .panel-wrapper {
+        position: relative;
+        width: 100%;
+        height: calc(100% - 100px);
+    }
+
+    .panel {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: transform 0.5s ease;
+    }
+
+    #mainMenu {
+        transform: translateX(0%);
+        z-index: 1;
+    }
+
+    #submenuPanel {
+        transform: translateX(100%);
+        z-index: 2;
+    }
+
+    #submenuPanel.active {
+        transform: translateX(0%);
+    }
+
+    #mainMenu.slide-out {
+        transform: translateX(-100%);
+    }
+
+    .sidenav-section-title {
+        background: #bf0019;
+        color: white;
+        padding: 10px 16px;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-bottom: 1px solid white;
+    }
+
+    .sidenav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidenav-links li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .sidenav-links li:hover {
+        background-color: #f8f8f8;
+    }
+
+    .sidenav-links li i {
+        font-size: 18px;
+        color: #888;
+    }
+
+    .sidenav-links li span {
+        display: flex;
+        align-items: center;
+    }
+
+    .sidenav-footer {
+        padding: 12px 16px;
+        border-top: 1px solid #eee;
+        font-size: 14px;
+    }
+
+    .sidenav-footer i {
+        font-size: 18px;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+
+    .submenu-back {
+        background: #e2e2e2;
+        color: #333;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 13px;
+        padding: 12px 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .close-btn-sidenav {
+        cursor: pointer;
+    }
+
+    .submenu-items {
+        display: none;
+        padding-left: 40px;
+        background: #fafafa;
+        border-left: 2px solid #ddd;
+    }
+
+    .submenu-items li {
+        padding: 8px 0;
+        border-bottom: none;
+        font-size: 13px;
+        color: #333;
+    }
+
+    .sidenav-links li.active .material-icons.expand-icon {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
+
+    .mega-menu {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 40px;
+        display: none;
+        z-index: 998;
+    }
+
+    .mega-menu-inner {
+        display: flex;
+        justify-content: flex-start;
+        gap: 40px;
+    }
+
+    .mega-menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 13px;
+        color: #555;
+        cursor: pointer;
+        min-width: 80px;
+        transition: color 0.3s;
+    }
+
+    .mega-menu-item i {
+        font-size: 26px;
+        margin-bottom: 6px;
+        color: #888;
+    }
+
+    .mega-menu-item:hover {
+        color: var(--primary-color);
+    }
+
+    .header-left {
+        position: relative;
+    }
+
+    .products-wrapper:hover .mega-menu {
+        display: block;
+    }
+
+    .products-wrapper {
+        position: relative;
+    }
+
+    .products-submenu {
+        display: none;
+        position: absolute;
+        top: 44px;
+        background-color: #f8f8f8;
+        padding: 20px 40px 10px 40px;
+        z-index: 900;
+    }
+
+    .products-wrapper:hover .products-submenu,
+    .products-submenu:hover {
+        display: block;
+    }
+
+    .subcategory {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 40px;
+        position: relative;
+    }
+
+    .sub-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 13px;
+        color: #555;
+        cursor: pointer;
+        min-width: 80px;
+        transition: color 0.3s;
+    }
+
+    .sub-item i {
+        font-size: 24px;
+        margin-bottom: 6px;
+        color: #666;
+    }
+
+    .sub-item:hover {
+        color: var(--primary-color);
+    }
+
+    .close-submenu {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .close-submenu i {
+        font-size: 22px;
+        color: #333;
+    }
+</style>
+
+<div class="topbar">Life Made Easier, Since 1919!</div>
+
+<header class="header">
+    <div class="header-left">
+        <div class="logo"><img src="fackelmann_main_logo.png" alt="Fackelmann Logo" /></div>
+        <nav class="nav">
+            <a href="#">HOME</a>
+
+            <div class="products-wrapper">
+                <a href="#" class="products-link">PRODUCTS</a>
+                <div class="products-submenu">
+                    <div class="subcategory">
+                        <div class="sub-item">
+                            <i class="material-icons">restaurant_menu</i>
+                            <span>Cookware</span>
+                        </div>
+                        <div class="sub-item">
+                            <i class="material-icons">cake</i>
+                            <span>Bakeware</span>
+                        </div>
+                        <div class="sub-item">
+                            <i class="material-icons">kitchen</i>
+                            <span>Kitchenware</span>
+                        </div>
+                        <div class="sub-item">
+                            <i class="material-icons">home</i>
+                            <span>At Home</span>
+                        </div>
+                    </div>
+                    <div class="close-submenu">
+                        <i class="material-icons">close</i>
+                    </div>
+                </div>
+            </div>
+
+
+            <a href="#">SUSTAINABILITY</a>
+            <a href="#">GLOBAL BRANDS</a>
+        </nav>
+
+
+        <div class="mega-menu" id="megaMenu">
+            <div class="mega-menu-inner">
+                <div class="mega-menu-item">
+                    <i class="material-icons">restaurant_menu</i>
+                    <span>Cookware</span>
+                </div>
+                <div class="mega-menu-item">
+                    <i class="material-icons">cake</i>
+                    <span>Bakeware</span>
+                </div>
+                <div class="mega-menu-item">
+                    <i class="material-icons">kitchen</i>
+                    <span>Kitchenware</span>
+                </div>
+                <div class="mega-menu-item">
+                    <i class="material-icons">home</i>
+                    <span>At Home</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="header-right">
+        <div class="custom-search-wrapper">
+            <button class="custom-search-button" type="button"><span class="custom-search-text">Search</span></button>
+        </div>
+        <span class="material-icons icon">call</span>
+        <span class="material-icons icon" onclick="toggleNav(true)">menu</span>
+    </div>
+</header>
+
+<div class="sidenav-overlay" onclick="toggleNav(false)"></div>
+
+<div class="sidenav" id="sidenav">
+    <div class="sidenav-header">
+        CLOSE MENU
+        <span class="material-icons close-btn-sidenav" onclick="toggleNav(false)">close</span>
+    </div>
+
+    <div class="sidenav-search">
+        <input type="text" placeholder="🔍 Search Term ..." />
+    </div>
+
+    <div class="panel-wrapper">
+        <div class="panel" id="mainMenu">
+            <div class="sidenav-section-title">Products</div>
+            <ul class="sidenav-links">
+                <li onclick="showSubmenu()"><span><i class="material-icons"
+                            style="margin-right:10px;">restaurant_menu</i>Cookware</span><i
+                        class="material-icons">chevron_right</i></li>
+                <li><span><i class="material-icons" style="margin-right:10px;">cake</i>Bakeware</span><i
+                        class="material-icons">chevron_right</i></li>
+                <li><span><i class="material-icons" style="margin-right:10px;">kitchen</i>Kitchenware</span><i
+                        class="material-icons">chevron_right</i></li>
+                <li><span><i class="material-icons" style="margin-right:10px;">home</i>At Home</span><i
+                        class="material-icons">chevron_right</i></li>
+            </ul>
+            <div class="sidenav-section-title">Home</div>
+            <div class="sidenav-section-title">About Us</div>
+            <div class="sidenav-section-title">Global Brands</div>
+            <div class="sidenav-section-title">Sustainability</div>
+            <div class="sidenav-footer"><i class="material-icons">mail_outline</i> Contact form</div>
+        </div>
+
+
+        <div class="panel" id="submenuPanel">
+            <div class="submenu-back" onclick="hideSubmenu()">
+                <i class="material-icons">arrow_back</i> BACK
+            </div>
+            <div class="sidenav-section-title">Cookware</div>
+            <ul class="sidenav-links">
+                <li onclick="toggleAccordion(this)">
+                    <span><i class="material-icons">kitchen</i>Pots</span>
+                    <i class="material-icons expand-icon">expand_more</i>
+                </li>
+                <ul class="submenu-items">
+                    <li>Show all in sets</li>
+                    <li>Saucepan</li>
+                    <li>Casserole</li>
+                    <li>Kadai</li>
+                    <li>Wok</li>
+                </ul>
+
+                <li onclick="toggleAccordion(this)">
+                    <span><i class="material-icons">restaurant</i>Pans</span>
+                    <i class="material-icons expand-icon">expand_more</i>
+                </li>
+                <ul class="submenu-items">
+                    <li>Frying Pan</li>
+                    <li>Grill Pan</li>
+                    <li>Crepe Pan</li>
+                </ul>
+
+                <li onclick="toggleAccordion(this)">
+                    <span><i class="material-icons">local_cafe</i>New Launches</span>
+                    <i class="material-icons expand-icon">expand_more</i>
+                </li>
+                <ul class="submenu-items">
+                    <li>Cast Iron Series</li>
+                    <li>Induction Friendly</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleNav(show) {
+        const sidenav = document.getElementById("sidenav");
+        const overlay = document.querySelector(".sidenav-overlay");
+        if (show) {
+            sidenav.classList.add("active");
+            overlay.style.display = "block";
+        } else {
+            sidenav.classList.remove("active");
+            overlay.style.display = "none";
+            hideSubmenu();
+        }
+    }
+
+    function showSubmenu() {
+        document.getElementById("submenuPanel").classList.add("active");
+        document.getElementById("mainMenu").classList.add("slide-out");
+    }
+
+    function hideSubmenu() {
+        document.getElementById("submenuPanel").classList.remove("active");
+        document.getElementById("mainMenu").classList.remove("slide-out");
+    }
+
+
+    function toggleAccordion(item) {
+        const allItems = document.querySelectorAll('.sidenav-links li');
+        const submenu = item.nextElementSibling;
+
+        // Collapse all other submenus
+        document.querySelectorAll('.submenu-items').forEach(el => {
+            if (el !== submenu) el.style.display = 'none';
+        });
+
+        // Remove active from all li
+        allItems.forEach(li => li.classList.remove('active'));
+
+        // Toggle current
+        if (submenu && submenu.classList.contains('submenu-items')) {
+            if (submenu.style.display === 'block') {
+                submenu.style.display = 'none';
+                item.classList.remove('active');
+            } else {
+                submenu.style.display = 'block';
+                item.classList.add('active');
+            }
+        }
+    }
+
+    document.querySelector(".close-submenu i").addEventListener("click", function () {
+        document.querySelector(".products-submenu").style.display = "none";
+    });
+
+</script>
