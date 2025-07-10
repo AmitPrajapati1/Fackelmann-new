@@ -8,6 +8,7 @@
       loop: true,
       margin: 20,
       nav: false,
+      dots: false,
       autoplayHoverPause: true,
       smartSpeed: 600,
       responsive:{
