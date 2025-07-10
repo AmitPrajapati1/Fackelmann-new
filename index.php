@@ -51,7 +51,7 @@
   </div>
 
   <div class="custom-nav custom-prev">&#10094;</div>
-  <div class="custom-nav custom-next">&#10095;</div>
+  <div class="custom-nav custom-next">&#10095;</div> 
 
   <div class="owl-carousel owl-theme">
 
