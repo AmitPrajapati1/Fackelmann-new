@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cookware Carousel</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<?php include('includes/header.php'); ?>
 
   <style>
     .custom-nav {
@@ -46,12 +38,12 @@
     .item{
         background-color: #ffffff;
     }
-
-
-
   </style>
 </head>
-<body>
+
+
+<?php include('includes/nav.php'); ?>
+
 
 <div class="container-fluid px-2 px-md-5 py-5 position-relative style="background-color: #f5f5f5;">
   <div class="text-center mb-4 fw-medium text-uppercase" style="letter-spacing: 1px;">
@@ -69,7 +61,7 @@
         <div class="text-uppercase text-danger fw-semibold small mt-2">Frypan</div>
 
         <div class="description-wrapper small mt-1">
-          <div class="description">Conical Tri-ply Frypan 24 Cm with extra durable coating and ergonomic design suitable for all stovetops.</div>
+          <div class="description">Conical Tri-ply Frypan 24 Cm with extra durable</div>
         </div>
 
         <div class="fw-bold mt-1">MRP ₹ 7,999.00</div>
@@ -95,7 +87,7 @@
         <div class="text-uppercase text-danger fw-semibold small mt-2">Frypan</div>
 
         <div class="description-wrapper small mt-1">
-          <div class="description">Stanley Rogers Matrix Non-stick Frypan 26cm with premium non-stick surface, scratch resistant & dishwasher safe.</div>
+          <div class="description">Stanley Rogers Matrix Non-stick Frypan</div>
         </div>
 
         <div class="fw-bold mt-1">MRP ₹ 9,990.00</div>
@@ -118,31 +110,4 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<script>
-  $(document).ready(function(){
-    var owl = $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 20,
-      nav: false,
-      autoplayHoverPause: true,
-      smartSpeed: 600,
-      responsive:{
-        0:{ items:1 },
-        576:{ items:2 },
-        992:{ items:3 },
-        1200:{ items:4 }
-      }
-    });
-
-    $('.custom-next').click(function() { owl.trigger('next.owl.carousel'); });
-    $('.custom-prev').click(function() { owl.trigger('prev.owl.carousel'); });
-
-  });
-</script>
-
-</body>
-</html>
+<?php include('includes/footer.php'); ?>
