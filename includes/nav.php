@@ -420,7 +420,7 @@
         position: absolute;
         top: 9px;
         left: 10px;
-        width: 40px;
+        width: 100%;
         height: 2px;
         background-color: #bf0019;
         visibility: hidden;
