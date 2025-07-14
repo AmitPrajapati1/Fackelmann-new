@@ -417,5 +417,43 @@
     </div>
 </div>
 
+<section 
+    class="d-flex justify-content-center align-items-center text-center px-3" 
+    style="background-color: #ede8e2; min-height: 300px;">
+    <div>
+      <h5 class="fw-medium text-danger mb-3">
+        Sign up for our <span class="fw-bold">Newsletter</span>
+      </h5>
+      <a href="#" class="btn btn-danger text-uppercase fw-semibold px-4 py-2" style="font-size: 0.875rem; letter-spacing: 1px;">
+        Newsletter Registration
+      </a>
+    </div>
+</section>
+
+  <section class="py-5 bg-light text-center d-none d-sm-block">
+    <div class="container">
+      <h6 class="text-uppercase fw-semibold mb-2">International Brand Presence</h6>
+      <div class="d-flex justify-content-center">
+        <div class="bg-danger" style="width: 30px; height: 3px;"></div>
+      </div>
+      <div class="mt-4">
+        <img src="assets/images/logos/all-brands-logo-desktop.webp" alt="International Brand Logos" class="img-fluid mx-auto d-block" style="max-width: 100%; height: auto;">
+      </div>
+    </div>
+  </section>
+
+<section 
+    class="text-white text-center d-flex align-items-center justify-content-center px-3" 
+    style="background: repeating-linear-gradient(-45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px); min-height: 250px;"
+  >
+    <div class="container">
+      <h5 class="fw-semibold mb-3">Our Philosophy</h5>
+      <p class="mb-0">
+        We have everything you need to cook, bake, and more, at Fackelmann. All our products are characterised by the<br class="d-none d-sm-block">
+        highest quality standards, led by a century of experience and innovation. Everything you need – and want – is<br class="d-none d-sm-block">
+        right here.
+      </p>
+    </div>
+  </section>
 
 <?php include('includes/footer.php'); ?>
