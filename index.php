@@ -19,6 +19,11 @@
     z-index: 2;
 }
 
+#home-slider > .swiper > .custom-nav {
+    background-color: #bf0019;
+    color: #fff;
+}
+
 .custom-nav:hover {
     box-shadow: inset 0 0 0 2px rgba(191, 0, 25, 1);
     background-color: #fff;
@@ -31,13 +36,6 @@
 
 .custom-next {
     right: 15px;
-}
-
-.swiper-button-next:after, .swiper-button-prev:after {
-    color: #fff !important;
-    background-color: #bf0019 !important;
-    font-size: 24px !important;
-    font-weight: bold !important;
 }
 
 @media (min-width: 768px) {
@@ -55,8 +53,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: #fff; */
-    /* padding: 1rem; */
 }
 
 .item {
@@ -85,21 +81,21 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-1.jpg" data-mobile-src="assets/images/banners/mobile/banner-01.jpg" alt="Banner 1">
+                <img data-desktop-src="assets/images/banners/banner-1.jpg" data-mobile-src="assets/images/banners/banner-mob-1.jpg" alt="Banner 1">
             </div>
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-2.jpg" data-mobile-src="assets/images/banners/mobile/banner-02.jpg" alt="Banner 2">
+                <img data-desktop-src="assets/images/banners/banner-2.jpg" data-mobile-src="assets/images/banners/banner-mob-2.jpg" alt="Banner 2">
             </div>
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-3.jpg" data-mobile-src="assets/images/banners/mobile/banner-03.jpg" alt="Banner 3">
+                <img data-desktop-src="assets/images/banners/banner-3.jpg" data-mobile-src="assets/images/banners/banner-mob-3.jpg" alt="Banner 3">
             </div>
         </div>
         <!-- Pagination -->
         <div class="swiper-pagination"></div>
 
         <!-- Custom Prev/Next -->
-        <div class="custom-nav custom-prev swiper-button-prev"></div>
-        <div class="custom-nav custom-next swiper-button-next"></div>
+        <div class="custom-nav custom-prev">&#10094;</div>
+        <div class="custom-nav custom-next">&#10095;</div>
     </div>
 </div>
 
@@ -112,7 +108,7 @@
     <div class="custom-nav custom-prev">&#10094;</div>
     <div class="custom-nav custom-next">&#10095;</div>
 
-    <div class="owl-carousel owl-theme">
+    <div class="highlight-carousel owl-carousel owl-theme">
 
         <div class="item">
             <div class="product-card">
@@ -251,7 +247,7 @@
     <div class="custom-nav custom-prev">&#10094;</div>
     <div class="custom-nav custom-next">&#10095;</div>
 
-    <div class="owl-carousel owl-theme">
+    <div class="discover-carousel owl-carousel owl-theme">
 
         <div class="item">
             <div class="product-card">
@@ -420,37 +416,6 @@
         </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-<script>
-    // Swiper Initialization
-    const swiper = new Swiper('.swiper', {
-         loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.custom-next',
-            prevEl: '.custom-prev',
-        },
-    });
-
-    // Image responsive switching
-    function updateBannerImages() {
-        const isDesktop = window.innerWidth > 767;
-        document.querySelectorAll('[data-mobile-src]').forEach(img => {
-            img.src = isDesktop ? img.getAttribute('data-desktop-src') : img.getAttribute('data-mobile-src');
-        });
-    }
-
-    window.addEventListener('resize', updateBannerImages);
-    window.addEventListener('load', updateBannerImages);
-</script>
 
 <?php include('includes/footer.php'); ?>
