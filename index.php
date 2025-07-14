@@ -1,5 +1,7 @@
 <?php include('includes/header.php'); ?>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
 <style>
 .custom-nav {
     position: absolute;
@@ -7,7 +9,6 @@
     transform: translateY(-50%);
     font-size: 24px;
     color: #bf0019;
-    /* background-color: #878787; */
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -32,6 +33,13 @@
     right: 15px;
 }
 
+.swiper-button-next:after, .swiper-button-prev:after {
+    color: #fff !important;
+    background-color: #bf0019 !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+}
+
 @media (min-width: 768px) {
     .custom-prev {
         left: 50px;
@@ -54,11 +62,46 @@
 .item {
     background-color: #f5f5f5;
 }
+
+.slider-area {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
 </style>
 </head>
 
 
 <?php include('includes/nav.php'); ?>
+
+<div class="slider-area" id="home-slider">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img data-desktop-src="assets/images/banners/banner-1.jpg" data-mobile-src="assets/images/banners/mobile/banner-01.jpg" alt="Banner 1">
+            </div>
+            <div class="swiper-slide">
+                <img data-desktop-src="assets/images/banners/banner-2.jpg" data-mobile-src="assets/images/banners/mobile/banner-02.jpg" alt="Banner 2">
+            </div>
+            <div class="swiper-slide">
+                <img data-desktop-src="assets/images/banners/banner-3.jpg" data-mobile-src="assets/images/banners/mobile/banner-03.jpg" alt="Banner 3">
+            </div>
+        </div>
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Custom Prev/Next -->
+        <div class="custom-nav custom-prev swiper-button-prev"></div>
+        <div class="custom-nav custom-next swiper-button-next"></div>
+    </div>
+</div>
 
 
 <div class="container-fluid px-2 px-md-5 py-5 position-relative" style="background-color: #f5f5f5;">
@@ -377,6 +420,37 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+<script>
+    // Swiper Initialization
+    const swiper = new Swiper('.swiper', {
+         loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.custom-next',
+            prevEl: '.custom-prev',
+        },
+    });
+
+    // Image responsive switching
+    function updateBannerImages() {
+        const isDesktop = window.innerWidth > 767;
+        document.querySelectorAll('[data-mobile-src]').forEach(img => {
+            img.src = isDesktop ? img.getAttribute('data-desktop-src') : img.getAttribute('data-mobile-src');
+        });
+    }
+
+    window.addEventListener('resize', updateBannerImages);
+    window.addEventListener('load', updateBannerImages);
+</script>
 
 <?php include('includes/footer.php'); ?>
