@@ -390,7 +390,7 @@
         background-color: #f5f5f5;
         padding: 2px 0 10px 0;
         position: absolute;
-        top: 97px;
+        top: 94px;
         left: 0;
         width: 100%;
         display: none;
@@ -420,7 +420,7 @@
         position: absolute;
         top: 9px;
         left: 10px;
-        width: 100%;
+        width: 40px;
         height: 2px;
         background-color: #bf0019;
         visibility: hidden;
@@ -478,15 +478,50 @@
         font-size: 30px;
     }
 
-    .logo-container {
-        margin-right: 30px;
+    
+    @media (min-width: 768px) {
+        .logo-container {
+            margin-right: 30px;
+            margin-top: -27px;/
+           
+            background: #ffffff;
+            border-bottom-right-radius: 12px;
+            padding: 2px 12px 0;
+            position: relative;
+            z-index: 10;
+            line-height: 1;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .logo-img {
+            height: 65px;
+            object-fit: contain;
+            display: block;
+            margin-bottom: -33px;
+        }
+
+        .header {
+            overflow: visible;
+            
+        }
     }
 
-    .logo-img {
-        height: 45px;
-        object-fit: contain;
+
+    @media (max-width: 767px) {
+        .logo-container {
+            margin-right: 30px;
+        }
+
+        .logo-img {
+            height: 45px;
+            object-fit: contain;
+        }
     }
 
+
+
+    /* 
     @media (min-width: 768px) {
         .logo-container {
             margin-top: 0;
@@ -503,7 +538,7 @@
             margin-bottom: -19px;
 
         }
-    }
+    } */
 
     @media (max-width: 991px) {
         .nav {
@@ -628,9 +663,66 @@
             display: none;
         }
     }
+
+    /* search bar */
+    .searchbar-ui {
+        background: #f9f9f9;
+        padding: 20px 30px;
+        width: 100%;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        z-index: 998;
+        position: relative;
+    }
+
+    .searchbar-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .searchbar-inner input {
+        flex: 1;
+        border: none;
+        font-size: 18px;
+        padding: 12px 8px;
+        outline: none;
+        background: transparent;
+        color: #333;
+    }
+
+    .search-icon,
+    .close-icon {
+        font-size: 24px;
+        color: #aaa;
+        cursor: pointer;
+    }
+
+    .logo-wrapper {
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        z-index: 1001;
+        background: #fff;
+        padding: 4px 10px 0;
+        border-bottom-right-radius: 8px;
+        height: auto;
+    }
+
+    .logo-wrapper img {
+        height: 65px;
+        object-fit: contain;
+    }
 </style>
 
 <div class="topbar">Life Made Easier, Since 1919!</div>
+
+<!-- <div class="logo-wrapper">
+    <a href="index.html">
+        <img src="assets/images/logo/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
+    </a>
+</div> -->
 
 <header class="header">
     <div class="header-left">
@@ -671,9 +763,10 @@
     </div>
     <div class="header-right">
         <div class="custom-search-wrapper">
-            <button class="custom-search-button" type="button"><span class="custom-search-text">Search</span></button>
+            <button class="custom-search-button" type="button" onclick="toggleSearchBar()"><span
+                    class="custom-search-text">Search</span></button>
         </div>
-        <i class="mobile-search-icon material-icons">search</i>
+        <i class="mobile-search-icon material-icons" onclick="toggleSearchBar()">search</i>
         <span class="material-icons icon">call</span>
         <span class="material-icons icon" onclick="toggleNav(true)">menu</span>
     </div>
@@ -743,6 +836,14 @@
     </div>
 
 </header>
+<div class="searchbar-ui" id="searchbarUI" style="display: none;">
+    <div class="searchbar-inner">
+        <i class="material-icons search-icon">search</i>
+        <input type="text" placeholder="Search Term ..." />
+        <i class="material-icons close-icon" onclick="toggleSearchBar()">close</i>
+    </div>
+</div>
+
 
 <div class="sidenav-overlay" onclick="toggleNav(false)"></div>
 
@@ -893,6 +994,13 @@
             submenu.style.display = "none";
         }
     });
+
+    function toggleSearchBar() {
+        const searchbar = document.getElementById("searchbarUI");
+        const isVisible = searchbar.style.display === "block";
+        searchbar.style.display = isVisible ? "none" : "block";
+    }
+
 
 </script>
 
