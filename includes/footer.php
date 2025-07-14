@@ -227,5 +227,45 @@
 
 </script>
 
+
+<script>
+$(document).ready(function () {
+  const $carousel = $("#categoryCarousel");
+  const $container = $carousel.closest(".position-relative");
+  const $prevBtn = $container.find(".custom-prev");
+  const $nextBtn = $container.find(".custom-next");
+
+  $carousel.owlCarousel({
+    loop: false,
+    margin: 20,
+    nav: false,
+    dots: false,
+    autoplayHoverPause: true,
+    smartSpeed: 600,
+    responsive: {
+      0: { items: 1 },
+      576: { items: 2 },
+      768: { items: 3 },
+      992: { items: 4 },
+    },
+    onInitialized: function (event) {
+      // Show buttons only if more than 4 items
+      if (event.item.count > 4) {
+        $prevBtn.removeClass("d-none");
+        $nextBtn.removeClass("d-none");
+      }
+    }
+  });
+
+  $nextBtn.click(function () {
+    $carousel.trigger("next.owl.carousel");
+  });
+
+  $prevBtn.click(function () {
+    $carousel.trigger("prev.owl.carousel");
+  });
+});
+</script>
+
 </body>
 </html>
