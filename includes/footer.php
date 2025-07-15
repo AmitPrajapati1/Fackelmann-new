@@ -1,9 +1,6 @@
-<!-- Add this in head -->
 <style>
-  /* Remove default Bootstrap angle arrow */
   .accordion-button::after {
     content: "+";
-    /* custom icon */
     font-weight: bold;
     font-size: 1.2rem;
     color: white;
@@ -11,17 +8,25 @@
     transform: none !important;
   }
 
-  /* Change to minus when expanded */
   .accordion-button:not(.collapsed)::after {
     content: "−";
+    color: white;
+  }
+
+  .accordion-button:hover {
+    background-color: #56575c;
+    color: white;
   }
 
   .accordion-item {
-    color: #c0c0c0 !important;
+    color: white;
   }
 
   .accordion-button:not(.collapsed) {
+    background-color: #56575c;
+    color: #ffffff !important;
     box-shadow: none !important;
+
   }
 
   .accordion-button:focus {
@@ -46,10 +51,20 @@
   .footer-main {
     background: #56575c;
   }
+
+  .accordion-button {
+    background-color: #56575c;
+    color: white;
+  }
+
+  .footer-btm-bg {
+    background: repeating-linear-gradient(-45deg, #333a45, #333a45 5px, #333a45 5px, #333a45 7px);
+
+  }
 </style>
 
 
-<footer class="footer-main text-white pt-5">
+<footer class="footer-main text-white lg:pt-5 md:pt-5">
   <div class="container">
     <div class="accordion accordion-flush d-md-none" id="footerAccordionMobile">
       <!-- Section Start -->
@@ -140,7 +155,7 @@
   </div>
 
   <!-- Footer Bottom -->
-  <div class="bg-dark text-center footer-detail py-4 mt-4">
+  <div class="footer-btm-bg text-center footer-detail py-4 px-4 mt-4">
     <div class="mb-3">
       <a href="#" class="btn btn-outline-light btn-sm me-2 rounded-1"><i class="fab fa-facebook-f"></i></a>
       <a href="#" class="btn btn-outline-light btn-sm rounded-1"><i class="fab fa-instagram"></i></a>
