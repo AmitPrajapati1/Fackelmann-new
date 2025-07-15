@@ -402,7 +402,7 @@
         padding: 25px;
         display: none;
         position: absolute;
-        top: 110px;
+        top: 80px;
         left: 0;
         z-index: 998;
         overflow-x: auto;
