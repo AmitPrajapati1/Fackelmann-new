@@ -432,8 +432,11 @@
     }
 
     .category-item {
-        flex: 1;
+        /* flex: 1;
+        min-width: 200px; */
         min-width: 200px;
+        display: flex;
+        flex-direction: column;
     }
 
     .category-heading {
@@ -578,11 +581,23 @@
         font-size: 27px;
     }
 
+    @media (min-width: 992px) and (max-width: 1439px) {
+        .category-submenu {
+            top: 80px;
+        }
+    }
+
     @media (min-width: 1440px) {
         .category-submenu {
             top: 80px;
         }
     }
+
+    /* @media (min-width: 1440px) {
+        .category-submenu {
+            top: 80px;
+        }
+    } */
 
     @media (min-width: 768px) {
         .logo-container {
