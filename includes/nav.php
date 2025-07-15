@@ -7,6 +7,7 @@
     body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
+        overflow-y: scroll;
     }
 
     .topbar {
@@ -23,6 +24,9 @@
         justify-content: space-between;
         background: repeating-linear-gradient(45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px);
         padding: 10px 40px;
+        position: sticky;
+        top: 0;
+        z-index: 999;
     }
 
     .header-left {
@@ -40,7 +44,6 @@
 
     .nav a {
         display: flex;
-        -ms-flex-align: center;
         align-items: center;
         font-size: 14px;
         font-weight: 500;
@@ -48,7 +51,7 @@
         margin: 0;
         letter-spacing: 1.2px;
         text-transform: uppercase;
-        padding: 10px 12px 10px 12px;
+        padding: 10px 12px;
         outline: none;
         text-decoration: none;
     }
@@ -246,7 +249,6 @@
         padding: 12px 16px;
         font-size: 14px;
         border-top: 1px solid #eee;
-
     }
 
     .sidenav-footer i {
@@ -335,39 +337,49 @@
     }
 
     .sub-cat {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #f5f5f5;
-        padding: 20px 0 10px 0;
         position: absolute;
-        top: 97px;
+        top: 61px;
         left: 0;
         width: 100%;
+        background-color: #f5f5f5;
+        padding: 20px 0;
         display: none;
         z-index: 999;
+    }
+
+    .sub-cat-row {
+        display: flex;
+        /* justify-content: space-around; */
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
     }
 
     .sub-categories-option {
         display: flex;
         align-items: center;
         cursor: pointer;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: #737373;
+        transition: color 0.3s;
+    }
+
+    /* .sub-categories-option:hover {
+        color: var(--primary-color);
+    } */
+
+    .sub-categories-option.active {
+        color: var(--primary-color);
     }
 
     .sub-categories-option img {
         width: 20px;
         height: 20px;
         margin-right: 5px;
-    }
-
-    .dropdown-icon {
-        margin-left: 5px;
-        font-size: 12px;
-    }
-
-    .close-btn {
-        cursor: pointer;
-        font-size: 20px;
     }
 
     .dropdown-icon-sub-categories {
@@ -383,6 +395,89 @@
     }
 
 
+
+    .category-submenu {
+        width: 100%;
+        background: #f5f5f5;
+        padding: 25px;
+        display: none;
+        position: absolute;
+        top: 110px;
+        left: 0;
+        z-index: 998;
+        overflow-x: auto;
+    }
+
+    .category-submenu::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 96%;
+        height: 2px;
+        background-color: #bf0019;
+    }
+
+
+
+    .category-submenu-inner {
+        /* max-width: 1200px;
+        margin: 0 auto; */
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .category-item {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .category-heading {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 14px;
+        color: #737373;
+        padding: 10px 0;
+        text-transform: uppercase;
+        gap: 8px;
+    }
+
+    .category-heading .material-icons {
+        font-size: 18px;
+        color: #555;
+    }
+
+    .category-sub-items {
+        list-style: none;
+        padding: 0 0 0 10px;
+        margin: 0;
+    }
+
+    .category-sub-items li {
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+        font-size: 13px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .category-sub-items li:hover {
+        color: var(--primary-color);
+    }
+
+    .sub-item-icon {
+        margin-right: 8px;
+        font-size: 16px;
+        color: #555;
+        vertical-align: middle;
+    }
+
     .sub-cat-brands {
         display: flex;
         justify-content: space-around;
@@ -390,7 +485,7 @@
         background-color: #f5f5f5;
         padding: 2px 0 10px 0;
         position: absolute;
-        top: 94px;
+        top: 61px;
         left: 0;
         width: 100%;
         display: none;
@@ -412,7 +507,6 @@
         position: relative;
         padding: 10px;
         box-sizing: border-box;
-
     }
 
     .brand-item::before {
@@ -432,8 +526,6 @@
         visibility: visible;
         opacity: 1;
     }
-
-
 
     .brand-item img {
         max-width: 150px;
@@ -478,24 +570,34 @@
         font-size: 30px;
     }
 
-    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 27px;
+    }
+
+    @media (min-width: 1440px) {
+        .category-submenu {
+            top: 80px;
+        }
+    }
+
     @media (min-width: 768px) {
         .logo-container {
-            margin-right: 30px;
-            margin-top: -27px;/
-           
-            background: #ffffff;
+            margin-top: -29px;
             border-bottom-right-radius: 12px;
             padding: 2px 12px 0;
             position: relative;
-            z-index: 10;
+            z-index: 1001;
+            /* Ensure logo is above search bar */
             line-height: 1;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            
         }
 
         .logo-img {
-            height: 65px;
+            height: 66px;
             object-fit: contain;
             display: block;
             margin-bottom: -33px;
@@ -503,10 +605,27 @@
 
         .header {
             overflow: visible;
-            
+        }
+
+        .sub-cat {
+            top: 61px;
+        }
+
+        /* .category-submenu {
+            top: 80px;
+        } */
+
+        .category-submenu-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .searchbar-ui {
+            top: 94px;
+            /* Align below header */
         }
     }
-
 
     @media (max-width: 767px) {
         .logo-container {
@@ -519,56 +638,18 @@
         }
     }
 
-
-
-    /* 
-    @media (min-width: 768px) {
-        .logo-container {
-            margin-top: 0;
-            overflow: visible;
-            position: relative;
-            line-height: 1;
-        }
-
-        .logo-img {
-            position: relative;
-            height: 60px;
-            display: block;
-            top: 0;
-            margin-bottom: -19px;
-
-        }
-    } */
-
-    @media (max-width: 991px) {
-        .nav {
-            display: none !important;
-        }
+    @media (min-width: 992px) {
+        /* .category-submenu {
+            top: 80px;
+        } */
     }
 
     @media (max-width: 991px) {
-        .header {
-            flex-direction: row;
-            align-items: center;
-            padding: 10px 20px;
-        }
-
-        .header-left {
-            flex: 1;
-            justify-content: space-between;
-        }
-
-
-        .header-right {
-            gap: 10px;
-        }
-
         .nav {
             display: none !important;
         }
 
-        .sub-cat,
-        .sub-cat-brands {
+        /* .sub-cat {
             position: fixed;
             top: 60px;
             flex-direction: column;
@@ -577,11 +658,37 @@
             overflow-y: auto;
             max-height: calc(100vh - 60px);
             background-color: #f5f5f5;
+        } */
+
+        .sub-cat-row {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
         }
 
         .sub-categories-option {
             width: 100%;
             margin-bottom: 10px;
+        }
+
+        .category-submenu {
+            display: none !important;
+            /* position: static;
+            padding: 10px 20px;
+            border-top: none; */
+        }
+
+        .sub-cat {
+            display: none !important;
+        }
+
+        .category-submenu-inner {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .category-item {
+            min-width: 100%;
         }
 
         .brands-container {
@@ -601,6 +708,12 @@
             top: 10px;
             right: 10px;
         }
+
+        .searchbar-ui {
+            position: fixed;
+            top: 94px;
+            /* Align below header on mobile */
+        }
     }
 
     @media (max-width: 768px) {
@@ -610,7 +723,6 @@
 
         .panel-wrapper {
             height: calc(100% - 130px);
-
             overflow-y: auto;
         }
 
@@ -630,7 +742,6 @@
         .sidenav-footer {
             padding: 16px;
         }
-
     }
 
     .mobile-search-icon {
@@ -640,11 +751,9 @@
         cursor: pointer;
     }
 
-
     @media (max-width: 767px) {
         .custom-search-wrapper {
             display: none;
-
         }
 
         .mobile-search-icon {
@@ -652,11 +761,9 @@
         }
     }
 
-
     @media (min-width: 768px) {
         .custom-search-wrapper {
             display: block;
-
         }
 
         .mobile-search-icon {
@@ -664,14 +771,27 @@
         }
     }
 
-    /* search bar */
     .searchbar-ui {
         background: #f9f9f9;
-        padding: 20px 30px;
+        /* padding: 20px 30px; */
+        padding-left: 270px;
+        margin: 0px auto;
         width: 100%;
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
         z-index: 998;
-        position: relative;
+        position: absolute;
+        left: 0;
+        display: none;
+
+    }
+
+    .searchbar-inner input::placeholder {
+        color: #aaa;
+        font-size: 18px;
+        font-weight: 300;
+        font-size: 21px;
+        letter-spacing: 2px;
+        padding: 18px 14px 9px;
     }
 
     .searchbar-inner {
@@ -679,7 +799,8 @@
         margin: 0 auto;
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 1px;
+        padding: 10px;
     }
 
     .searchbar-inner input {
@@ -718,12 +839,6 @@
 
 <div class="topbar">Life Made Easier, Since 1919!</div>
 
-<!-- <div class="logo-wrapper">
-    <a href="index.html">
-        <img src="assets/images/logo/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
-    </a>
-</div> -->
-
 <header class="header">
     <div class="header-left">
         <div class="logo-container">
@@ -738,7 +853,6 @@
             <a href="#" data-submenu="brandsSubmenu" onclick="toggleSubmenu(event)">GLOBAL BRANDS</a>
         </nav>
 
-
         <div class="mega-menu" id="megaMenu">
             <div class="mega-menu-inner">
                 <div class="mega-menu-item">
@@ -750,16 +864,15 @@
                     <span>Bakeware</span>
                 </div>
                 <div class="mega-menu-item">
-                    <i class="material-icons">kitchen</i>
-                    <span>Kitchenware</span>
+                    <i class="material-icons">Bundles & Sets</i>
+                    <span>Kitchen Tools & Gadgets</span>
                 </div>
                 <div class="mega-menu-item">
-                    <i class="material-icons">home</i>
-                    <span>At Home</span>
+                    <i class="material-icons">Bundles & Sets</i>
+                    <span>Bundles & Sets</span>
                 </div>
             </div>
         </div>
-
     </div>
     <div class="header-right">
         <div class="custom-search-wrapper">
@@ -770,26 +883,255 @@
         <span class="material-icons icon">call</span>
         <span class="material-icons icon" onclick="toggleNav(true)">menu</span>
     </div>
+
     <div class="sub-cat" id="productsSubmenu" style="display: none;">
-        <div class="sub-categories-option">
-            <i class='bx bx-bowl-hot sub-category-icon'></i> COOKWARE
-            <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+        <div class="sub-cat-row">
+            <div class="sub-categories-option" onclick="toggleCategorySubmenu('cookware-submenu')">
+                <i class='bx bx-bowl-hot sub-category-icon'></i> COOKWARE
+                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+            </div>
+            <div class="sub-categories-option" onclick="toggleCategorySubmenu('bakeware-submenu')">
+                <i class='bx bx-cake sub-category-icon'></i> BAKEWARE
+                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+            </div>
+            <div class="sub-categories-option" onclick="toggleCategorySubmenu('kitchenware-submenu')">
+                <i class='bx bx-restaurant sub-category-icon'></i>
+                Kitchen Tools & Gadgets
+                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+            </div>
+            <div class="sub-categories-option" onclick="toggleCategorySubmenu('athome-submenu')">
+                <i class='bx bx-home sub-category-icon'></i>
+                Bundles & Sets
+                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+            </div>
+            <div class="sub-categories-option" onclick="toggleCategorySubmenu('athome-submenu')">
+                <i class='bx bx-home sub-category-icon'></i>
+                New & Exclusives
+                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+            </div>
+            <div class="close-btn" onclick="hideSubmenu()">
+                <i class='bx bx-x'></i>
+            </div>
         </div>
-        <div class="sub-categories-option">
-            <i class='bx bx-cake sub-category-icon'></i> BAKEWARE
-            <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+        <div class="category-submenu cookware-submenu" style="display: none;">
+            <div class="category-submenu-inner">
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">kitchen</i> Fry Pan
+                    </div>
+                    <!-- <ul class="category-sub-items">
+                        <li><i class='bx bx-pan sub-item-icon'></i> Big Pan</li>
+                        <li><i class='bx bx-pan sub-item-icon'></i> Small Pan</li>
+                    </ul> -->
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">restaurant</i> Kadai
+                    </div>
+
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Tawa
+                    </div>
+
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">kitchen</i> Pressure Cooker
+                    </div>
+                    <!-- <ul class="category-sub-items">
+                        <li><i class='bx bx-pot sub-item-icon'></i> Standard Pressure Cooker</li>
+                    </ul> -->
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Casserole
+
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Tope
+
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Tadka Pan
+
+                    </div>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Tadka Pan
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="sub-categories-option">
-            <i class='bx bx-restaurant sub-category-icon'></i> KITCHENWARE
-            <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+        <div class="category-submenu bakeware-submenu" style="display: none;">
+            <div class="category-submenu-inner">
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">cake</i> Baking Moulds
+                    </div>
+                    <!-- <ul class="category-sub-items">
+                        <li><i class='bx bx-bowl-hot sub-item-icon'></i> Round Pan</li>
+                        <li><i class='bx bx-bowl-hot sub-item-icon'></i> Square Pan</li>
+                    </ul> -->
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">kitchen</i> Baking Brushes
+                    </div>
+                    <ul class="category-sub-items">
+
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">bakery_dining</i> Baking Paper
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-bowl-hot sub-item-icon'></i> Standard Muffin Tin</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">bakery_dining</i> Decorative Tools
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-bowl-hot sub-item-icon'></i> Standard Muffin Tin</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">bakery_dining</i> Cutting Tools
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-bowl-hot sub-item-icon'></i> Standard Muffin Tin</li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="sub-categories-option">
-            <i class='bx bx-home sub-category-icon'></i> AT HOME
-            <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+        <div class="category-submenu kitchenware-submenu" style="display: none;">
+            <div class="category-submenu-inner">
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">kitchen</i> Cutlery
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-knife sub-item-icon'></i> Chef Knife</li>
+                        <li><i class='bx bx-knife sub-item-icon'></i> Paring Knife</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">kitchen</i> Cutting Tools
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-knife sub-item-icon'></i> Chef Knife</li>
+                        <li><i class='bx bx-knife sub-item-icon'></i> Paring Knife</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">kitchen</i> Knives
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-knife sub-item-icon'></i> Chef Knife</li>
+                        <li><i class='bx bx-knife sub-item-icon'></i> Paring Knife</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">kitchen</i> Lighters
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-knife sub-item-icon'></i> Chef Knife</li>
+                        <li><i class='bx bx-knife sub-item-icon'></i> Paring Knife</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">restaurant</i> Serving Tools
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-spoon sub-item-icon'></i> Spatula</li>
+                        <li><i class='bx bx-spoon sub-item-icon'></i> Ladle</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Strainers
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-rectangle sub-item-icon'></i> Wooden Board</li>
+                        <li><i class='bx bx-rectangle sub-item-icon'></i> Plastic Board</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Opener / Barware
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-rectangle sub-item-icon'></i> Wooden Board</li>
+                        <li><i class='bx bx-rectangle sub-item-icon'></i> Plastic Board</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Gadgets
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-rectangle sub-item-icon'></i> Wooden Board</li>
+                        <li><i class='bx bx-rectangle sub-item-icon'></i> Plastic Board</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">flatware</i> Accessories
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-rectangle sub-item-icon'></i> Wooden Board</li>
+                        <li><i class='bx bx-rectangle sub-item-icon'></i> Plastic Board</li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="close-btn" onclick="hideSubmenu()">
-            <i class='bx bx-x'></i>
+        <div class="category-submenu athome-submenu" style="display: none;">
+            <div class="category-submenu-inner">
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">home</i> Storage
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-box sub-item-icon'></i> Containers</li>
+                        <li><i class='bx bx-box sub-item-icon'></i> Jars</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">cleaning_services</i> Cleaning
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-broom sub-item-icon'></i> Brooms</li>
+                        <li><i class='bx bx-broom sub-item-icon'></i> Mops</li> -->
+                    </ul>
+                </div>
+                <div class="category-item">
+                    <div class="category-heading">
+                        <i class="material-icons">lightbulb</i> Decor
+                    </div>
+                    <ul class="category-sub-items">
+                        <!-- <li><i class='bx bx-star sub-item-icon'></i> Vases</li>
+                        <li><i class='bx bx-star sub-item-icon'></i> Wall Art</li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
+
     </div>
 
     <div class="sub-cat-brands" id="brandsSubmenu" style="display: none;">
@@ -834,8 +1176,8 @@
             <i class='bx bx-x'></i>
         </div>
     </div>
-
 </header>
+
 <div class="searchbar-ui" id="searchbarUI" style="display: none;">
     <div class="searchbar-inner">
         <i class="material-icons search-icon">search</i>
@@ -844,7 +1186,6 @@
     </div>
 </div>
 
-
 <div class="sidenav-overlay" onclick="toggleNav(false)"></div>
 
 <div class="sidenav" id="sidenav">
@@ -852,15 +1193,12 @@
         CLOSE MENU
         <span class="material-icons close-btn-sidenav" onclick="toggleNav(false)">close</span>
     </div>
-
     <div class="sidenav-search">
         <div class="search-box">
             <i class='bx bx-search'></i>
             <input type="text" placeholder="Search term..." />
         </div>
     </div>
-
-
     <div class="panel-wrapper">
         <div class="panel" id="mainMenu">
             <div class="sidenav-section-title">Products</div>
@@ -870,9 +1208,11 @@
                         class="material-icons">chevron_right</i></li>
                 <li><span><i class="material-icons" style="margin-right:10px;">cake</i>Bakeware</span><i
                         class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">kitchen</i>Kitchenware</span><i
+                <li><span><i class="material-icons" style="margin-right:10px;">kitchen</i>Kitchen Tools &
+                        Gadgets</span><i class="material-icons">chevron_right</i></li>
+                <li><span><i class="material-icons" style="margin-right:10px;">home</i>Bundles & Sets</span><i
                         class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">home</i>At Home</span><i
+                <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
                         class="material-icons">chevron_right</i></li>
             </ul>
             <a href="index.html" class="sidenav-section-title">Home</a>
@@ -882,10 +1222,7 @@
             <a href="contact.html" class="sidenav-footer">
                 <i class="material-icons">mail_outline</i> Contact form
             </a>
-
         </div>
-
-
         <div class="panel" id="submenuPanel">
             <div class="submenu-back" onclick="hideSubmenu()">
                 <i class="material-icons">arrow_back</i> BACK
@@ -893,7 +1230,7 @@
             <div class="sidenav-section-title">Cookware</div>
             <ul class="sidenav-links">
                 <li onclick="toggleAccordion(this)">
-                    <span><i class="material-icons">kitchen</i>Pots</span>
+                    <span><i class="material-icons">kitchen</i> Fry Pan</span>
                     <i class="material-icons expand-icon">expand_more</i>
                 </li>
                 <ul class="submenu-items">
@@ -903,9 +1240,8 @@
                     <li>Kadai</li>
                     <li>Wok</li>
                 </ul>
-
                 <li onclick="toggleAccordion(this)">
-                    <span><i class="material-icons">restaurant</i>Pans</span>
+                    <span><i class="material-icons">restaurant</i> Kadai</span>
                     <i class="material-icons expand-icon">expand_more</i>
                 </li>
                 <ul class="submenu-items">
@@ -913,15 +1249,18 @@
                     <li>Grill Pan</li>
                     <li>Crepe Pan</li>
                 </ul>
-
                 <li onclick="toggleAccordion(this)">
-                    <span><i class="material-icons">local_cafe</i>New Launches</span>
+                    <span><i class="material-icons">local_cafe</i> Tawa</span>
                     <i class="material-icons expand-icon">expand_more</i>
                 </li>
                 <ul class="submenu-items">
                     <li>Cast Iron Series</li>
                     <li>Induction Friendly</li>
                 </ul>
+                <li onclick="toggleAccordion(this)">
+                    <span><i class="material-icons">local_cafe</i> Pressure Cooker</span>
+                    <i class="material-icons expand-icon">expand_more</i>
+                </li>
             </ul>
         </div>
     </div>
@@ -949,22 +1288,23 @@
     function hideSubmenu() {
         document.getElementById("submenuPanel").classList.remove("active");
         document.getElementById("mainMenu").classList.remove("slide-out");
+        document.getElementById("productsSubmenu").style.display = "none";
+        document.getElementById("brandsSubmenu").style.display = "none";
+        document.querySelectorAll('.category-submenu').forEach(submenu => {
+            submenu.style.display = 'none';
+        });
+        document.querySelectorAll('.sub-categories-option').forEach(option => {
+            option.classList.remove('active');
+        });
     }
-
 
     function toggleAccordion(item) {
         const allItems = document.querySelectorAll('.sidenav-links li');
         const submenu = item.nextElementSibling;
-
-
         document.querySelectorAll('.submenu-items').forEach(el => {
             if (el !== submenu) el.style.display = 'none';
         });
-
-
         allItems.forEach(li => li.classList.remove('active'));
-
-
         if (submenu && submenu.classList.contains('submenu-items')) {
             if (submenu.style.display === 'block') {
                 submenu.style.display = 'none';
@@ -978,22 +1318,39 @@
 
     function toggleSubmenu(event) {
         event.preventDefault();
-        const submenu = document.getElementById("brandsSubmenu");
-        if (submenu.style.display === "none" || submenu.style.display === "") {
-            submenu.style.display = "flex";
-        } else {
-            submenu.style.display = "none";
+        event.stopPropagation();
+        const targetSubmenuId = event.currentTarget.getAttribute("data-submenu");
+        const productsSubmenu = document.getElementById("productsSubmenu");
+        const brandsSubmenu = document.getElementById("brandsSubmenu");
+        if (targetSubmenuId === "productsSubmenu") {
+            productsSubmenu.style.display = productsSubmenu.style.display === "flex" ? "none" : "flex";
+            brandsSubmenu.style.display = "none";
+            document.querySelectorAll('.category-submenu').forEach(submenu => {
+                submenu.style.display = 'none';
+            });
+            document.querySelectorAll('.sub-categories-option').forEach(option => {
+                option.classList.remove('active');
+            });
+        } else if (targetSubmenuId === "brandsSubmenu") {
+            brandsSubmenu.style.display = brandsSubmenu.style.display === "flex" ? "none" : "flex";
+            productsSubmenu.style.display = "none";
         }
     }
 
-
-    document.addEventListener("click", function (event) {
-        const submenu = document.getElementById("brandsSubmenu");
-        const nav = document.querySelector(".nav");
-        if (!nav.contains(event.target)) {
-            submenu.style.display = "none";
-        }
-    });
+    function toggleCategorySubmenu(submenuClass) {
+        event.stopPropagation();
+        const submenu = document.querySelector(`.${submenuClass}`);
+        const isVisible = submenu.style.display === 'block';
+        document.querySelectorAll('.category-submenu').forEach(otherSubmenu => {
+            otherSubmenu.style.display = 'none';
+        });
+        document.querySelectorAll('.sub-categories-option').forEach(option => {
+            option.classList.remove('active');
+        });
+        submenu.style.display = isVisible ? 'none' : 'block';
+        document.querySelector(`[onclick="toggleCategorySubmenu('${submenuClass}')"]`).classList.toggle('active', !isVisible);
+        document.getElementById("productsSubmenu").style.display = 'flex';
+    }
 
     function toggleSearchBar() {
         const searchbar = document.getElementById("searchbarUI");
@@ -1001,44 +1358,26 @@
         searchbar.style.display = isVisible ? "none" : "block";
     }
 
-
-</script>
-
-<!-- <script>
-    const navLinks = document.querySelectorAll('.nav a[data-submenu]');
-
-    navLinks.forEach(link => {
-        const submenuId = link.getAttribute('data-submenu');
-        const submenu = document.getElementById(submenuId);
-
-        if (!submenu) return;
-
-        let hideTimeout;
-
-        function showSubmenu() {
-            clearTimeout(hideTimeout);
-            submenu.style.display = 'flex';
-        }
-
-        function hideSubmenu() {
-            hideTimeout = setTimeout(() => {
+    document.addEventListener("click", function (event) {
+        const productsSubmenu = document.getElementById("productsSubmenu");
+        const brandsSubmenu = document.getElementById("brandsSubmenu");
+        const nav = document.querySelector(".nav");
+        const categorySubmenus = document.querySelectorAll(".category-submenu");
+        let isClickInsideSubmenu = false;
+        categorySubmenus.forEach(submenu => {
+            if (submenu.contains(event.target)) {
+                isClickInsideSubmenu = true;
+            }
+        });
+        if (!nav.contains(event.target) && !productsSubmenu.contains(event.target) && !isClickInsideSubmenu) {
+            productsSubmenu.style.display = "none";
+            brandsSubmenu.style.display = "none";
+            categorySubmenus.forEach(submenu => {
                 submenu.style.display = 'none';
-            }, 200);
+            });
+            document.querySelectorAll('.sub-categories-option').forEach(option => {
+                option.classList.remove('active');
+            });
         }
-
-        link.addEventListener('mouseenter', showSubmenu);
-        link.addEventListener('mouseleave', hideSubmenu);
-        submenu.addEventListener('mouseenter', showSubmenu);
-        submenu.addEventListener('mouseleave', hideSubmenu);
     });
-
-    function toggleNav(show) {
-        const submenu = document.getElementById('brandsSubmenu');
-        submenu.style.display = show ? 'block' : 'none';
-    }
-
-    function hideSubmenu() {
-        document.getElementById('brandsSubmenu').style.display = 'none';
-        document.getElementById('productsSubmenu').style.display = 'none';
-    }
-</script> -->
+</script>
