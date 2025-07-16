@@ -2,10 +2,11 @@
   .accordion-button::after {
     content: "+";
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: white;
     background-image: none !important;
     transform: none !important;
+    padding-bottom: 35px;
   }
 
   .accordion-button:not(.collapsed)::after {
@@ -46,6 +47,7 @@
 
   .footer-detail {
     color: #c0c0c0;
+    font-size: 15px;
   }
 
   .footer-main {
@@ -61,107 +63,169 @@
     background: repeating-linear-gradient(-45deg, #333a45, #333a45 5px, #333a45 5px, #333a45 7px);
 
   }
+
+  /*  */
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+    /* gap: 1.5rem; */
+  }
+
+  @media (max-width: 576px) {
+    .footer-section {
+      padding: 10px 18px 0px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .footer-section {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .footer-block {
+      flex: 1;
+    }
+  }
+
+  /*  */
+  /* Style accordion-like toggle button only on mobile */
+  .footer-toggle {
+    width: 100%;
+    background: #56575c;
+    color: white;
+    border: none;
+    text-align: left;
+    font-weight: bold;
+    position: relative;
+    font-size: 16px;
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 1.88px;
+    line-height: 38px;
+    text-transform: uppercase;
+    padding: 10px 0 10px 0;
+  }
+
+  /* 
+  .footer-toggle .toggle-icon {
+    float: right;
+    font-size: 18px;
+  } */
+
+  .footer-toggle .toggle-icon {
+    float: right;
+    font-size: 24px;
+    color: #878787;
+    transition: transform 0.2s ease;
+    margin-left: 8px;
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Optional: rotate on open (e.g. for animated + to ×) */
+  .footer-toggle .toggle-icon.rotate {
+    transform: rotate(180deg);
+  }
+
+  .social-footer-icons {
+    padding: 14px 20px 20px;
+  }
+
+  .footer-quick-access {
+    padding: 20px 11px 10px;
+  }
+
+  .footer-quick-access a {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    padding: 0 4px;
+    text-transform: uppercase;
+  }
+
+  .copyright-info {
+    padding: 0 0 10px;
+    text-align: center;
+  }
+
+  .copyright {
+    display: inline-block;
+    font-size: 10.5px;
+    letter-spacing: -0.1px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    /* padding: 10px; */
+  }
 </style>
 
 
 <footer class="footer-main text-white lg:pt-5 md:pt-5">
-  <div class="container">
-    <div class="accordion accordion-flush d-md-none" id="footerAccordionMobile">
-      <!-- Section Start -->
-      <div class="accordion-item footer-main border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed footer-main footer-title fw-semibold" type="button"
-            data-bs-toggle="collapse" data-bs-target="#footerCollapse1">
-            Just Email Us!
-          </button>
-        </h2>
-        <div id="footerCollapse1" class="accordion-collapse collapse" data-bs-parent="#footerAccordionMobile">
-          <div class="accordion-body">
-            <p class="footer-detail">Let the yeast rise.<br>We’ll respond in the meantime.</p>
-            <a href="#" class="footer-detail text-decoration-none d-inline-flex align-items-center gap-2 mt-2">
-              <i class="fas fa-envelope border border-white p-1 rounded-1"></i> Contact form
-            </a>
-          </div>
+
+
+  <div class="px-4 pb-1">
+    <div class="footer-section">
+      <div class="footer-block">
+        <button class="footer-toggle d-md-none" data-bs-toggle="collapse" data-bs-target="#footerCollapse1">
+          Just Email Us! <span class="toggle-icon float-end">+</span>
+        </button>
+        <h6 class="text-uppercase fw-semibold mb-2 footer-title d-none d-md-block">Just Email Us!</h6>
+
+        <div class="collapse d-md-block" id="footerCollapse1">
+          <p class="footer-detail">Let the yeast rise.<br>We’ll respond in the meantime.</p>
+          <a href="#" class="footer-detail text-decoration-none d-inline-flex align-items-center gap-2 mt-2">
+            <i class="fas fa-envelope border border-white p-1 rounded-1"></i> Contact form
+          </a>
         </div>
       </div>
 
-      <div class="accordion-item footer-main border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed footer-main footer-title fw-semibold" type="button"
-            data-bs-toggle="collapse" data-bs-target="#footerCollapse2">
-            Help & Services
-          </button>
-        </h2>
-        <div id="footerCollapse2" class="accordion-collapse collapse" data-bs-parent="#footerAccordionMobile">
-          <div class="accordion-body">
-            <ul class="list-unstyled mb-0">
-              <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a></li>
-              <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Download</a></li>
-              <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
-              <li><a href="#" class="footer-detail text-decoration-none d-block">Contact</a></li>
-            </ul>
-          </div>
+      <div class="footer-block">
+        <button class="footer-toggle d-md-none" data-bs-toggle="collapse" data-bs-target="#footerCollapse2">
+          Help & Services<span class="toggle-icon float-end">+</span>
+        </button>
+        <h6 class="text-uppercase fw-semibold mb-2 footer-title d-none d-md-block">Help & Services</h6>
+
+        <div class="collapse d-md-block" id="footerCollapse2">
+          <ul class="list-unstyled mb-0">
+            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a></li>
+            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Download</a></li>
+            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
+            <li><a href="#" class="footer-detail text-decoration-none d-block">Contact</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="accordion-item footer-main border-0">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed footer-main footer-title fw-semibold" type="button"
-            data-bs-toggle="collapse" data-bs-target="#footerCollapse3">
-            About Fackelmann
-          </button>
-        </h2>
-        <div id="footerCollapse3" class="accordion-collapse collapse" data-bs-parent="#footerAccordionMobile">
-          <div class="accordion-body">
-            <ul class="list-unstyled mb-0">
-              <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Our History</a></li>
-              <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Sustainability</a></li>
-              <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Careers</a></li>
-              <li><a href="#" class="footer-detail text-decoration-none d-block">Locations</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="footer-block">
+        <button class="footer-toggle d-md-none" data-bs-toggle="collapse" data-bs-target="#footerCollapse3">
+          About Fackelmann<span class="toggle-icon float-end">+</span>
+        </button>
+        <h6 class="text-uppercase fw-semibold mb-2 footer-title d-none d-md-block">About Fackelmann</h6>
 
-    <!-- Desktop Grid Layout -->
-    <div class="row gy-4 d-none d-md-flex">
-      <div class="col-md-4">
-        <h6 class="text-uppercase fw-semibold mb-2 footer-title">Just Email Us!</h6>
-        <p class="mb-1 footer-detail">Let the yeast rise.<br>We’ll respond in the meantime.</p>
-        <a href="#" class="footer-detail text-decoration-none d-inline-flex align-items-center gap-2 mt-2">
-          <i class="fas fa-envelope border border-white p-1 rounded-1"></i> Contact form
-        </a>
-      </div>
-      <div class="col-md-4">
-        <h6 class="text-uppercase fw-semibold mb-2 footer-title">Help & Services</h6>
-        <ul class="list-unstyled mb-0 ">
-          <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a></li>
-          <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Download</a></li>
-          <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
-          <li><a href="#" class="footer-detail text-decoration-none d-block">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h6 class="text-uppercase fw-semibold mb-2 footer-title">About Fackelmann</h6>
-        <ul class="list-unstyled mb-0">
-          <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Our History</a></li>
-          <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Sustainability</a></li>
-          <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Careers</a></li>
-          <li><a href="#" class="footer-detail text-decoration-none d-block">Locations</a></li>
-        </ul>
+        <div class="collapse d-md-block" id="footerCollapse3">
+          <ul class="list-unstyled mb-0">
+            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Our History</a></li>
+            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Sustainability</a></li>
+            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Careers</a></li>
+            <li><a href="#" class="footer-detail text-decoration-none d-block">Locations</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Footer Bottom -->
-  <div class="footer-btm-bg text-center footer-detail py-4 px-4 mt-4">
-    <div class="mb-3">
-      <a href="#" class="btn btn-outline-light btn-sm me-2 rounded-1"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="btn btn-outline-light btn-sm rounded-1"><i class="fab fa-instagram"></i></a>
+  <div class="footer-btm-bg text-center footer-detail py-3 px-4 mt-4">
+    <div class="social-footer-icons">
+      <a href="#" class="btn btn-outline-light btn-sm me-2 rounded-1" style="font-size: 20px"><i
+          class="fab fa-facebook-f" style="font-size: 20px"></i></a>
+      <a href="#" class="btn btn-outline-light btn-sm rounded-1" style="font-size: 20px"><i class="fab fa-instagram"
+          style="font-size: 20px"></i></a>
     </div>
 
-    <div class="small text-uppercase fw-semibold">
+    <div class="text-uppercase fw-semibold footer-quick-access" style="font-size: 13px">
       <a href="#" class="text-white text-decoration-none mx-1">Imprint</a> •
       <a href="#" class="text-white text-decoration-none mx-1">Data Protection</a> •
       <a href="#" class="text-white text-decoration-none mx-1">Terms and Conditions</a> •
@@ -169,7 +233,12 @@
     </div>
 
     <div class="small mt-2">
-      © 2025 Copyright <strong>Fackelmann India Kitchenware Pvt. Ltd.</strong> – All rights reserved.
+      <!-- © 2025 Copyright <strong>Fackelmann India Kitchenware Pvt. Ltd.</strong> – All rights reserved. -->
+      <div class="copyright-info">
+        <span class="copyright">© 2025 Copyright <strong><span>Fackelmann Inda Kitchenware
+              Pvt. Ltd.</span></strong>.</span>
+        <span class="copyright">• All Rights Reserved.</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -181,7 +250,6 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
-  // Swiper Initialization
   const swiper = new Swiper('.swiper', {
     loop: true,
     pagination: {
@@ -198,7 +266,6 @@
     },
   });
 
-  // Image responsive switching
   function updateBannerImages() {
     const isDesktop = window.innerWidth > 767;
     document.querySelectorAll('[data-mobile-src]').forEach(img => {
@@ -208,11 +275,8 @@
 
   window.addEventListener('resize', updateBannerImages);
   window.addEventListener('load', updateBannerImages);
-</script>
 
-<script>
   $(document).ready(function () {
-    // Initialize the highlight carousel
     var highlightCarousel = $(".highlight-carousel").owlCarousel({
       loop: true,
       margin: 20,
@@ -259,10 +323,7 @@
     });
   });
 
-</script>
 
-
-<script>
   $(document).ready(function () {
     const $carousel = $("#categoryCarousel");
     const $container = $carousel.closest(".position-relative");
@@ -300,6 +361,45 @@
     });
   });
 </script>
+
+<script>
+  // quick links footer
+  const toggles = document.querySelectorAll(".footer-toggle");
+  toggles.forEach((btn) => {
+    const targetId = btn.getAttribute("data-bs-target");
+    const target = document.querySelector(targetId);
+    const icon = btn.querySelector(".toggle-icon");
+
+    target.addEventListener("show.bs.collapse", () => {
+      icon.textContent = "−";
+      icon.classList.add("rotate");
+
+      if (window.innerWidth < 768) {
+        toggles.forEach((otherBtn) => {
+          const otherTargetId = otherBtn.getAttribute("data-bs-target");
+          const otherTarget = document.querySelector(otherTargetId);
+          const otherIcon = otherBtn.querySelector(".toggle-icon");
+
+          if (otherTarget !== target) {
+            const bsCollapse = bootstrap.Collapse.getInstance(otherTarget);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
+            otherIcon.textContent = "+";
+            otherIcon.classList.remove("rotate");
+          }
+        });
+      }
+    });
+    target.addEventListener("hide.bs.collapse", () => {
+      icon.textContent = "+";
+      icon.classList.remove("rotate");
+    });
+  });
+
+</script>
+
+
 
 </body>
 
