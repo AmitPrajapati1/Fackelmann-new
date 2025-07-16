@@ -171,7 +171,30 @@
         position: relative;
         width: 100%;
         height: calc(100% - 100px);
+        overflow-y: scroll;
     }
+
+    /* Firefox */
+    .panel-wrapper {
+        scrollbar-width: thin;
+        scrollbar-color: #bf0019 transparent;
+    }
+
+    /* WebKit (Chrome, Edge, Safari) */
+    .panel-wrapper::-webkit-scrollbar {
+        width: 5px;
+        height: 6px;
+    }
+
+    .panel-wrapper::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .panel-wrapper::-webkit-scrollbar-thumb {
+        background-color: #bf0019;
+        border-radius: 5px;
+    }
+
 
     .panel {
         position: absolute;
@@ -349,7 +372,6 @@
 
     .sub-cat-row {
         display: flex;
-        /* justify-content: space-around; */
         align-items: center;
         flex-wrap: wrap;
         padding: 0 20px;
@@ -367,10 +389,6 @@
         color: #737373;
         transition: color 0.3s;
     }
-
-    /* .sub-categories-option:hover {
-        color: var(--primary-color);
-    } */
 
     .sub-categories-option.active {
         color: var(--primary-color);
@@ -394,15 +412,12 @@
         font-size: 18px;
     }
 
-
-
     .category-submenu {
         width: 100%;
         background: #f5f5f5;
-        padding: 25px;
+        padding: 25px 38px;
         display: none;
-        position: absolute;
-        top: 80px;
+        position: relative;
         left: 0;
         z-index: 998;
         overflow-x: auto;
@@ -419,11 +434,7 @@
         background-color: #bf0019;
     }
 
-
-
     .category-submenu-inner {
-        /* max-width: 1200px;
-        margin: 0 auto; */
         max-width: 1400px;
         margin: 0 auto;
         display: flex;
@@ -432,8 +443,6 @@
     }
 
     .category-item {
-        /* flex: 1;
-        min-width: 200px; */
         min-width: 200px;
         display: flex;
         flex-direction: column;
@@ -447,7 +456,15 @@
         color: #737373;
         padding: 10px 0;
         text-transform: uppercase;
-        gap: 8px;
+        gap: 0px;
+    }
+
+    .category-heading-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+        vertical-align: middle;
+        object-fit: contain;
     }
 
     .category-heading .material-icons {
@@ -466,8 +483,9 @@
         align-items: center;
         padding: 8px 0;
         font-size: 13px;
-        color: #333;
+        color: #737373;
         cursor: pointer;
+        font-weight: 400;
     }
 
     .category-sub-items li:hover {
@@ -560,9 +578,6 @@
         font-weight: bold;
     }
 
-    .show-more:hover {
-        text-decoration: underline;
-    }
 
     .close-btn-brands {
         position: absolute;
@@ -581,24 +596,6 @@
         font-size: 27px;
     }
 
-    @media (min-width: 992px) and (max-width: 1439px) {
-        .category-submenu {
-            top: 80px;
-        }
-    }
-
-    @media (min-width: 1440px) {
-        .category-submenu {
-            top: 80px;
-        }
-    }
-
-    /* @media (min-width: 1440px) {
-        .category-submenu {
-            top: 80px;
-        }
-    } */
-
     @media (min-width: 768px) {
         .logo-container {
             margin-top: -29px;
@@ -606,7 +603,6 @@
             padding: 2px 12px 0;
             position: relative;
             z-index: 1001;
-            /* Ensure logo is above search bar */
             line-height: 1;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -626,10 +622,6 @@
             top: 61px;
         }
 
-        /* .category-submenu {
-            top: 80px;
-        } */
-
         .category-submenu-inner {
             display: flex;
             flex-wrap: wrap;
@@ -638,7 +630,7 @@
 
         .searchbar-ui {
             top: 94px;
-            /* Align below header */
+
         }
     }
 
@@ -653,27 +645,13 @@
         }
     }
 
-    @media (min-width: 992px) {
-        /* .category-submenu {
-            top: 80px;
-        } */
-    }
+
 
     @media (max-width: 991px) {
         .nav {
             display: none !important;
         }
 
-        /* .sub-cat {
-            position: fixed;
-            top: 60px;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 20px;
-            overflow-y: auto;
-            max-height: calc(100vh - 60px);
-            background-color: #f5f5f5;
-        } */
 
         .sub-cat-row {
             flex-direction: column;
@@ -688,9 +666,7 @@
 
         .category-submenu {
             display: none !important;
-            /* position: static;
-            padding: 10px 20px;
-            border-top: none; */
+
         }
 
         .sub-cat {
@@ -727,7 +703,6 @@
         .searchbar-ui {
             position: fixed;
             top: 94px;
-            /* Align below header on mobile */
         }
     }
 
@@ -850,6 +825,18 @@
         height: 65px;
         object-fit: contain;
     }
+
+    .submenu-product-link {
+        text-decoration: none;
+    }
+
+    /* .sub-category-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    vertical-align: middle;
+    object-fit: contain;
+} */
 </style>
 
 <div class="topbar">Life Made Easier, Since 1919!</div>
@@ -858,7 +845,7 @@
     <div class="header-left">
         <div class="logo-container">
             <a href="index.html">
-                <img src="assets/images/logo/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
+                <img src="assets/images/logos/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
             </a>
         </div>
         <nav class="nav">
@@ -899,251 +886,307 @@
         <span class="material-icons icon" onclick="toggleNav(true)">menu</span>
     </div>
 
-    <div class="sub-cat" id="productsSubmenu" style="display: none;">
-        <div class="sub-cat-row">
-            <div class="sub-categories-option" onclick="toggleCategorySubmenu('cookware-submenu')">
-                <i class='bx bx-bowl-hot sub-category-icon'></i> COOKWARE
-                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
-            </div>
-            <div class="sub-categories-option" onclick="toggleCategorySubmenu('bakeware-submenu')">
-                <i class='bx bx-cake sub-category-icon'></i> BAKEWARE
-                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
-            </div>
-            <div class="sub-categories-option" onclick="toggleCategorySubmenu('kitchenware-submenu')">
-                <i class='bx bx-restaurant sub-category-icon'></i>
-                Kitchen Tools & Gadgets
-                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
-            </div>
-            <div class="sub-categories-option" onclick="toggleCategorySubmenu('athome-submenu')">
-                <i class='bx bx-home sub-category-icon'></i>
-                Bundles & Sets
-                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
-            </div>
-            <div class="sub-categories-option" onclick="toggleCategorySubmenu('athome-submenu')">
-                <i class='bx bx-home sub-category-icon'></i>
-                New & Exclusives
-                <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
-            </div>
-            <div class="close-btn" onclick="hideSubmenu()">
-                <i class='bx bx-x'></i>
-            </div>
-        </div>
-        <div class="category-submenu cookware-submenu" style="display: none;">
-            <div class="category-submenu-inner">
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">kitchen</i> Fry Pan
-                    </div>
-                    <!-- <ul class="category-sub-items">
-                        <li><i class='bx bx-pan sub-item-icon'></i> Big Pan</li>
-                        <li><i class='bx bx-pan sub-item-icon'></i> Small Pan</li>
-                    </ul> -->
+    <div class="sub-cat" id="productsSubmenu" style="display: none; ">
+        <div class="w-100">
+            <div class="sub-cat-row">
+                <div class="sub-categories-option" onclick="toggleCategorySubmenu('cookware-submenu')">
+                    <!-- <img src="assets/images/icon/bakeware/bake.png" class="sub-category-icon" alt="Category Icon"> -->
+                    <i class='bx bx-bowl-hot sub-category-icon'></i> COOKWARE
+                    <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
                 </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">restaurant</i> Kadai
-                    </div>
+                <div class="sub-categories-option" onclick="toggleCategorySubmenu('bakeware-submenu')">
+                    <i class='bx bx-cake sub-category-icon'></i> BAKEWARE
+                    <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+                </div>
+                <div class="sub-categories-option" onclick="toggleCategorySubmenu('kitchenware-submenu')">
+                    <i class='bx bx-restaurant sub-category-icon'></i>Kitchen Tools & Gadgets
+                    <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+                </div>
+                <div class="sub-categories-option" onclick="toggleCategorySubmenu('bundlessets-submenu')">
+                    <i class='bx bx-package sub-category-icon'></i>Bundles & Sets
+                    <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+                </div>
+                <div class="sub-categories-option" onclick="toggleCategorySubmenu('newexclusives-submenu')">
+                    <i class='bx bx-package sub-category-icon'></i>New & Exclusives
+                    <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
+                </div>
+                <div class="close-btn" onclick="hideSubmenu()">
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+            <div>
+                <div class="category-submenu cookware-submenu" style="display: none;">
+                    <div class="category-submenu-inner">
+                        <a href="product-listing.php" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/frying_pan.png" class="category-heading-icon"
+                                        alt="Frying pan Icon"> Fry Pan
+                                </div>
+                                <ul class="category-sub-items">
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </a>
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
+                                        alt="Kadai Icon"> Kadai
+                                </div>
 
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Tawa
-                    </div>
+                            </div>
+                        </a>
 
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">kitchen</i> Pressure Cooker
-                    </div>
-                    <!-- <ul class="category-sub-items">
-                        <li><i class='bx bx-pot sub-item-icon'></i> Standard Pressure Cooker</li>
-                    </ul> -->
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Casserole
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/cooker.png" class="category-heading-icon"
+                                        alt="Tawa Icon"> Tawa
+                                </div>
 
-                    </div>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Tope
+                            </div>
+                        </a>
 
-                    </div>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Tadka Pan
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/cooker.png" class="category-heading-icon"
+                                        alt="Cooker Icon"> Pressure Cooker
+                                </div>
+                            </div>
+                        </a>
 
-                    </div>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Tadka Pan
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/casserole.png" class="category-heading-icon"
+                                        alt="Casserole Icon"> Casserole
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="category-submenu bakeware-submenu" style="display: none;">
-            <div class="category-submenu-inner">
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">cake</i> Baking Moulds
-                    </div>
-                    <!-- <ul class="category-sub-items">
-                        <li><i class='bx bx-bowl-hot sub-item-icon'></i> Round Pan</li>
-                        <li><i class='bx bx-bowl-hot sub-item-icon'></i> Square Pan</li>
-                    </ul> -->
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">kitchen</i> Baking Brushes
-                    </div>
-                    <ul class="category-sub-items">
+                                </div>
+                            </div>
+                        </a>
 
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">bakery_dining</i> Baking Paper
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/casserole.png" class="category-heading-icon"
+                                        alt="Tope Icon"> Tope
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/pan.png" class="category-heading-icon"
+                                        alt="Pan Icon"> Tadka Pan
+
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-bowl-hot sub-item-icon'></i> Standard Muffin Tin</li> -->
-                    </ul>
                 </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">bakery_dining</i> Decorative Tools
+                <div class="category-submenu bakeware-submenu" style="display: none;">
+                    <div class="category-submenu-inner">
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
+                                    <img src="assets/images/icon/bakeware/bake.png" class="category-heading-icon"
+                                        alt="Baking Moulds Icon"> Baking Moulds
+                                </div>
+                                <ul class="category-sub-items">
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </a>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/bakeware/brush.png" class="category-heading-icon"
+                                    alt="Baking Brushes Icon"> Baking Brushes
+                            </div>
+                            <ul class="category-sub-items">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/bakeware/brush.png" class="category-heading-icon"
+                                    alt="Baking Paper Icon"> Baking Paper
+                            </div>
+                            <ul class="category-sub-items">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/bakeware/brush.png" class="category-heading-icon"
+                                    alt="Decorative Tools Icon"> Decorative Tools
+                            </div>
+                            <ul class="category-sub-items">
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-bowl-hot sub-item-icon'></i> Standard Muffin Tin</li> -->
-                    </ul>
                 </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">bakery_dining</i> Cutting Tools
+                <div class="category-submenu kitchenware-submenu" style="display: none;">
+                    <div class="category-submenu-inner">
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/cutlery.png" class="category-heading-icon"
+                                    alt="Category Icon"> Cutlery
+                            </div>
+                            <ul class="category-sub-items">
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/cutting-board.png"
+                                    class="category-heading-icon" alt="Category Icon"> Cutting Tools
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/knife.png" class="category-heading-icon"
+                                    alt="Category Icon"> Knives
+                            </div>
+                            <ul class="category-sub-items">
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/lighter.png" class="category-heading-icon"
+                                    alt="Category Icon"> Lighters
+                            </div>
+                            <ul class="category-sub-items">
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/serve.png" class="category-heading-icon"
+                                    alt="Category Icon"> Serving Tools
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/strainer.png" class="category-heading-icon"
+                                    alt="Category Icon"> Strainers
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/bottle-opener.png"
+                                    class="category-heading-icon" alt="Category Icon"> Opener / Barware
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/bottle-opener.png"
+                                    class="category-heading-icon" alt="Category Icon"> Gadgets
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/kitchenware/bottle-opener.png"
+                                    class="category-heading-icon" alt="Category Icon"> Accessories
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-bowl-hot sub-item-icon'></i> Standard Muffin Tin</li> -->
-                    </ul>
                 </div>
-            </div>
-        </div>
-        <div class="category-submenu kitchenware-submenu" style="display: none;">
-            <div class="category-submenu-inner">
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">kitchen</i> Cutlery
+                <div class="category-submenu bundlessets-submenu" style="display: none;">
+                    <div class="category-submenu-inner">
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/bundels_and_sets/rice_cooker.png"
+                                    class="category-heading-icon" alt="Category Icon"> Pressure Cooker Combos
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/bundels_and_sets/kitchen_tools.png"
+                                    class="category-heading-icon" alt="Category Icon"> 3 Colonge 3pcs Set
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/bundels_and_sets/kitchen_tools.png"
+                                    class="category-heading-icon" alt="Category Icon"> DGP 1 & 2
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/bundels_and_sets/kitchen_tools.png"
+                                    class="category-heading-icon" alt="3in1 Kitchen Utility Combo"> 3in1 Kitchen Utility
+                                Combo
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <img src="assets/images/icon/bundels_and_sets/cutlery_kitchen_set.png"
+                                    class="category-heading-icon" alt="Cutlery sets Icon"> Cutlery sets
+                            </div>
+                            <ul class="category-sub-items">
+
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-knife sub-item-icon'></i> Chef Knife</li>
-                        <li><i class='bx bx-knife sub-item-icon'></i> Paring Knife</li> -->
-                    </ul>
                 </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">kitchen</i> Cutting Tools
+                <div class="category-submenu newexclusives-submenu" style="display: none;">
+                    <div class="category-submenu-inner">
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <i class="material-icons">home</i> Gift Ideas
+                            </div>
+                            <ul class="category-sub-items">
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <i class="material-icons">cleaning_services</i> Best-Selling
+                            </div>
+                            <ul class="category-sub-items">
+                            </ul>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-heading">
+                                <i class="material-icons">lightbulb</i> Trending Designs
+                            </div>
+                            <ul class="category-sub-items">
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-knife sub-item-icon'></i> Chef Knife</li>
-                        <li><i class='bx bx-knife sub-item-icon'></i> Paring Knife</li> -->
-                    </ul>
                 </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">kitchen</i> Knives
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-knife sub-item-icon'></i> Chef Knife</li>
-                        <li><i class='bx bx-knife sub-item-icon'></i> Paring Knife</li> -->
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">kitchen</i> Lighters
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-knife sub-item-icon'></i> Chef Knife</li>
-                        <li><i class='bx bx-knife sub-item-icon'></i> Paring Knife</li> -->
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">restaurant</i> Serving Tools
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-spoon sub-item-icon'></i> Spatula</li>
-                        <li><i class='bx bx-spoon sub-item-icon'></i> Ladle</li> -->
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Strainers
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-rectangle sub-item-icon'></i> Wooden Board</li>
-                        <li><i class='bx bx-rectangle sub-item-icon'></i> Plastic Board</li> -->
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Opener / Barware
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-rectangle sub-item-icon'></i> Wooden Board</li>
-                        <li><i class='bx bx-rectangle sub-item-icon'></i> Plastic Board</li> -->
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Gadgets
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-rectangle sub-item-icon'></i> Wooden Board</li>
-                        <li><i class='bx bx-rectangle sub-item-icon'></i> Plastic Board</li> -->
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">flatware</i> Accessories
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-rectangle sub-item-icon'></i> Wooden Board</li>
-                        <li><i class='bx bx-rectangle sub-item-icon'></i> Plastic Board</li> -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="category-submenu athome-submenu" style="display: none;">
-            <div class="category-submenu-inner">
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">home</i> Storage
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-box sub-item-icon'></i> Containers</li>
-                        <li><i class='bx bx-box sub-item-icon'></i> Jars</li> -->
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">cleaning_services</i> Cleaning
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-broom sub-item-icon'></i> Brooms</li>
-                        <li><i class='bx bx-broom sub-item-icon'></i> Mops</li> -->
-                    </ul>
-                </div>
-                <div class="category-item">
-                    <div class="category-heading">
-                        <i class="material-icons">lightbulb</i> Decor
-                    </div>
-                    <ul class="category-sub-items">
-                        <!-- <li><i class='bx bx-star sub-item-icon'></i> Vases</li>
-                        <li><i class='bx bx-star sub-item-icon'></i> Wall Art</li> -->
-                    </ul>
-                </div>
+
             </div>
         </div>
 
@@ -1152,31 +1195,32 @@
     <div class="sub-cat-brands" id="brandsSubmenu" style="display: none;">
         <div class="brands-container">
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/cktfm_200x125.jpg" alt="Fackelmann"></a>
+                <a href="#"><img src="assets/images/brands/fm_200x125.jpg" alt="Fackelmann"></a>
                 <div class="brand-desc">
                     <p>Popular kitchen helpers & diverse household items</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Paris Hilton"></a>
+                <a href="#"><img src="assets/images/brands/paris-hilton_200x125.jpg" alt="Paris Hilton"></a>
                 <div class="brand-desc">
                     <p>Glamour for the kitchen with Paris Hilton Cookware.</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Stanley Rogers"></a>
+                <a href="#"><img src="assets/images/brands/zenker_200x125.jpg" alt="Stanley Rogers"></a>
                 <div class="brand-desc">
-                    <p>Cookware, kitchen gadgets & cutlery of the highest quality</p>
+                    <p>Zenker baking tins – great baking results for every occasion</p>
                 </div>
             </div>
             <div class="brand-item">
                 <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Tasty"></a>
+
                 <div class="brand-desc">
                     <p>Creative & versatile – colorful kitchen tools from Tasty.</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Chefkoch Fackelmann"></a>
+                <a href="#"><img src="assets/images/brands/cktfm_200x125.jpg" alt="Chefkoch Fackelmann"></a>
                 <div class="brand-desc">
                     <p>Chef meets Fackelmann – You can cook anything with this.</p>
                 </div>
@@ -1226,6 +1270,12 @@
                 <li><span><i class="material-icons" style="margin-right:10px;">kitchen</i>Kitchen Tools &
                         Gadgets</span><i class="material-icons">chevron_right</i></li>
                 <li><span><i class="material-icons" style="margin-right:10px;">home</i>Bundles & Sets</span><i
+                        class="material-icons">chevron_right</i></li>
+                <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
+                        class="material-icons">chevron_right</i></li>
+                <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
+                        class="material-icons">chevron_right</i></li>
+                <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
                         class="material-icons">chevron_right</i></li>
                 <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
                         class="material-icons">chevron_right</i></li>

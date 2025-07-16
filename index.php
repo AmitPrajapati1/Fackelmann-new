@@ -35,7 +35,7 @@
     }
 
     .custom-next {
-        right: 15px;
+        right: 25px;
     }
 
     @media (min-width: 768px) {
@@ -68,7 +68,6 @@
         flex-direction: column;
         justify-content: space-between;
         /* align-items: center; */
-
     }
 
     .item {
@@ -112,14 +111,16 @@
     .custom-card-style {
         border-radius: 6px;
         overflow: hidden;
-
         max-width: 100%;
         align-items: center;
+        margin: 0 auto;
     }
 
     .custom-card-style .image-wrapper {
-        width: 450px;
-        height: 300px;
+        /* width: 450px;
+        height: 300px; */
+        width: 300px;
+        height: 350px;
         overflow: hidden;
         border-radius: 6px;
         position: relative;
@@ -163,7 +164,6 @@
     @media (max-width: 575.98px) {
         .custom-btn-style {
             font-size: 13px;
-
         }
 
     }
@@ -172,6 +172,18 @@
         .main-sub-cat {
             padding: 30px;
         }
+    }
+
+    .swiper-pagination-bullet {
+        background-color: #c51a30 !important;
+    }
+
+    .swiper-pagination-bullet.active {
+        background-color: #7a001c !important;
+    }
+
+    .swiper-pagination-bullet:hover {
+        background-color: #7a001c !important;
     }
 </style>
 
@@ -237,11 +249,8 @@
         color: white;
     }
 
-    .view-more-button {
-        /* width: 100%; */
-        /* max-width: 160px; */
-        text-align: center;
-        /* background-color: #bf0019; */
+    .view-more-button {       
+        text-align: center;        
         border: 1px solid #bf0019;
         color: #bf0019;
         padding: 9px 95px;
@@ -257,8 +266,7 @@
         flex-wrap: wrap;
         gap: 30px;
         justify-content: space-between;
-        align-items: stretch;
-        /* padding: 0 15px; */
+        align-items: stretch;        
     }
 
 
@@ -283,6 +291,13 @@
         color: #bf0019;
         padding: 9px 24px;
         font-weight: 600;
+    }
+
+    .newsletter-button:hover {
+
+        border: 1px solid #bf0019;
+        color: #bf0019;
+
     }
 
 
@@ -341,11 +356,8 @@
                 <img data-desktop-src="assets/images/banners/banner-3.jpg"
                     data-mobile-src="assets/images/banners/banner-mob-3.jpg" alt="Banner 3">
             </div>
-        </div>
-        <!-- Pagination -->
-        <div class="swiper-pagination"></div>
-
-        <!-- Custom Prev/Next -->
+        </div>        
+        <div class="swiper-pagination"></div>       
         <div class="custom-nav custom-prev">&#10094;</div>
         <div class="custom-nav custom-next">&#10095;</div>
     </div>
@@ -353,7 +365,7 @@
 
 <div class="container-fluid py-5 main-sub-cat" style="background: #EDE8E2">
     <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-12 col-lg-5">
+        <div class="col-md-6 col-12 col-lg-3">
             <div class="product-card custom-card-style">
                 <div class="image-wrapper">
                     <img src="assets/images/categories/cookware-1.jpg" alt="Cookware">
@@ -363,7 +375,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-12 col-lg-5">
+        <div class="col-md-6 col-12 col-lg-3">
             <div class="product-card custom-card-style">
                 <div class="image-wrapper">
                     <img src="assets/images/categories/bakeware-2.jpeg" alt="Bakeware">
@@ -373,7 +385,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-12 col-lg-5">
+        <div class="col-md-6 col-12 col-lg-3">
             <div class="product-card custom-card-style">
                 <div class="image-wrapper">
                     <img src="assets/images/categories/kitch-3.jpeg" alt="Kitchenware">
@@ -383,7 +395,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-12 col-lg-5">
+        <div class="col-md-6 col-12 col-lg-3">
             <div class="product-card custom-card-style">
                 <div class="image-wrapper">
                     <img src="assets/images/categories/knives-4.jpeg" alt="Knives">
@@ -401,8 +413,11 @@
         Cleverly Combined - Save in the Set
     </div>
 
-    <div class="product-flex">
-        <div class="flex-item">
+    <div class="custom-nav custom-prev">❮</div>
+    <div class="custom-nav custom-next">❯</div>
+
+    <div class="discover-carousel owl-carousel owl-theme">
+        <div class="item">
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid" src="assets/images/product_highlight/conical_tri_ply_frypan_24_cm.webp"
@@ -412,7 +427,7 @@
             </div>
         </div>
 
-        <div class="flex-item">
+        <div class="item">
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid"
@@ -423,7 +438,7 @@
             </div>
         </div>
 
-        <div class="flex-item">
+        <div class="item">
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid" src="assets/images/product_highlight/fackelmann_bamboo_rice_spoon_23_cm.webp"
@@ -433,7 +448,7 @@
             </div>
         </div>
 
-        <div class="flex-item">
+        <div class="item">
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid"
@@ -443,6 +458,7 @@
             </div>
         </div>
     </div>
+
     <div class="text-center mt-5">
         <button class="view-more-button btn btn-sm">Browse All Sets</button>
     </div>
@@ -454,7 +470,52 @@
         Now Discover - Our Highlights
     </div>
 
-    <div class="product-flex">
+    <div class="custom-nav custom-prev">❮</div>
+    <div class="custom-nav custom-next">❯</div>
+    <div class="discover-carousel owl-carousel owl-theme">
+        <div class="item">
+            <div class="item-card">
+                <div class="image-container">
+                    <img class="img-fluid" src="assets/images/product_highlight/conical_tri_ply_frypan_24_cm.webp"
+                        alt="Frypan">
+                </div>
+                <button class="product-button btn btn-sm mt-2">Frypan</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-card">
+                <div class="image-container">
+                    <img class="img-fluid"
+                        src="assets/images/product_highlight/conical_tri_ply_saucepan_20_cm_2_5_litres.webp"
+                        alt="Casserole">
+                </div>
+                <button class="product-button btn btn-sm mt-2">Casserole</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-card">
+                <div class="image-container">
+                    <img class="img-fluid" src="assets/images/product_highlight/fackelmann_bamboo_rice_spoon_23_cm.webp"
+                        alt="Tawa">
+                </div>
+                <button class="product-button btn btn-sm mt-2">Tawa</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="item-card">
+                <div class="image-container">
+                    <img class="img-fluid"
+                        src="assets/images/product_highlight/fackelmann_bamboo_slotted_turner_30_cm.webp" alt="Kadai">
+                </div>
+                <button class="product-button btn btn-sm mt-2">Kadai</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="product-flex">
         <div class="flex-item">
             <div class="item-card">
                 <div class="image-container">
@@ -495,7 +556,7 @@
                 <button class="product-button btn btn-sm mt-2">Kadai</button>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="text-center mt-5">
         <button class="view-more-button btn btn-sm">Explore Highlights</button>
     </div>
@@ -759,6 +820,7 @@
     </div>
 </div> -->
 
+
 <!-- <div class="container-fluid px-2 px-md-5 py-5 position-relative" style="background-color: #f5f5f5;">
     <div class="text-center mb-4 fw-medium text-uppercase" style="letter-spacing: 1px;">
         Now Discover - Our Highlights
@@ -939,11 +1001,10 @@
     </div>
 </div>
 
-
 <div class="container-fluid px-0">
     <div class="combined-section">
         <div class="newsletter-section p-5" style="background-color: #ede8e2;border-radius: 0px">
-            <h5 class="fw-medium text-black mb-4">
+            <h5 class="fw-medium text-black mb-3 mt-5">
                 Sign up for our <span class="fw-bold">Newsletter</span>
             </h5>
             <a href="#" class="btn text-uppercase fw-semibold newsletter-button">
@@ -990,10 +1051,10 @@
 </section> -->
 
 <section class="text-white text-center d-flex align-items-center justify-content-center px-3"
-    style="background: repeating-linear-gradient(-45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px); min-height: 250px;">
+    style="background: repeating-linear-gradient(-45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px); min-height: 203px;">
     <div class="container">
-        <h5 class="fw-semibold mb-3">Our Philosophy</h5>
-        <p class="mb-0">
+        <h5 class="fw-semibold mb-3 pt-3">Our Philosophy</h5>
+        <p class="mb-0 pb-3">
             We have everything you need to cook, bake, and more, at Fackelmann. All our products are characterised by
             the<br class="d-none d-sm-block">
             highest quality standards, led by a century of experience and innovation. Everything you need – and want –
