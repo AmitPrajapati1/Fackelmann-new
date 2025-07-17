@@ -629,8 +629,20 @@
         }
 
         .searchbar-ui {
-            top: 94px;
+            top: 61px;
 
+        }
+    }
+
+    @media (min-width: 992px) {
+        .searchbar-ui {
+            padding-left: 270px;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .searchbar-ui {
+            padding-left: 100px;
         }
     }
 
@@ -706,8 +718,7 @@
 
         .searchbar-ui {
             position: fixed;
-            top: 92px;
-            padding-left: 270px;
+            top: 59px;
         }
     }
 
@@ -773,6 +784,7 @@
 
     .searchbar-ui {
         background: #f9f9f9;
+        /* padding-left: 270px; */
         /* padding-left: 270px; */
         margin: 0px auto;
         width: 100%;
@@ -929,6 +941,15 @@
                         <a href="product-listing.php" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
+                                        alt="Kadai Icon"> Kadai
+                                </div>
+
+                            </div>
+                        </a>
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
                                     <img src="assets/images/icon/cookware/frying_pan.png" class="category-heading-icon"
                                         alt="Frying pan Icon"> Fry Pan
                                 </div>
@@ -937,15 +958,7 @@
                                 </ul>
                             </div>
                         </a>
-                        <a href="#" class="submenu-product-link">
-                            <div class="category-item">
-                                <div class="category-heading">
-                                    <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
-                                        alt="Kadai Icon"> Kadai
-                                </div>
 
-                            </div>
-                        </a>
 
                         <a href="#" class="submenu-product-link">
                             <div class="category-item">
@@ -1244,15 +1257,23 @@
             <i class='bx bx-x'></i>
         </div>
     </div>
+
+    <div class="searchbar-ui" id="searchbarUI" style="display: none;">
+        <div class="searchbar-inner">
+            <i class="material-icons search-icon">search</i>
+            <input type="text" placeholder="Search Term ..." />
+            <i class="material-icons close-icon" onclick="toggleSearchBar()">close</i>
+        </div>
+    </div>
 </header>
 
-<div class="searchbar-ui" id="searchbarUI" style="display: none;">
+<!-- <div class="searchbar-ui" id="searchbarUI" style="display: none;">
     <div class="searchbar-inner">
         <i class="material-icons search-icon">search</i>
         <input type="text" placeholder="Search Term ..." />
         <i class="material-icons close-icon" onclick="toggleSearchBar()">close</i>
     </div>
-</div>
+</div> -->
 
 <div class="sidenav-overlay" onclick="toggleNav(false)"></div>
 
