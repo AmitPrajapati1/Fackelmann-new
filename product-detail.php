@@ -54,6 +54,24 @@ body {
     background-size: 50%, 50%;
     padding: 15px;
 }
+
+/* ✅ Zoom View on Right Column */
+.zoom-view {
+    display: none;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.zoom-view img {
+    position: relative;
+    width: 200%;
+    height: auto;
+    transform: translate(0, 0);
+    transition: transform 0.1s ease;
+    cursor: crosshair;
+}
 </style>
 
 <div class="container py-4">
@@ -74,23 +92,23 @@ body {
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp"
-                            class="d-block w-100" alt="Product 1">
+                            class="d-block w-100 zoom-image" alt="Product 1">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp"
-                            class="d-block w-100" alt="Product 2">
+                            class="d-block w-100 zoom-image" alt="Product 2">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp"
-                            class="d-block w-100" alt="Product 3">
+                            class="d-block w-100 zoom-image" alt="Product 3">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp"
-                            class="d-block w-100" alt="Product 4">
+                            class="d-block w-100 zoom-image" alt="Product 4">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
-                            class="d-block w-100" alt="Product 5">
+                            class="d-block w-100 zoom-image" alt="Product 5">
                     </div>
                 </div>
 
@@ -130,75 +148,26 @@ body {
         <!-- Product Info Section -->
         <div class="col-lg-6">
             <h2 class="product-title mb-2">SR BI-PLY Professional Frypan 24 Cm</h2>
-            <div>
+            
+            <!-- Product Info -->
+            <div class="product-info">
                 <p class="mb-2">
                     <span class="price">MRP ₹ 7,990.00</span><br>
                     <span class="old-price">RRP: ₹ 8,490.00</span> &nbsp; <span>(6% Off)</span>
                 </p>
                 <ul class="feature-list list-unstyled">
-                    <li>✔ Innovative BI-PLY construction. Hard anodised aluminium exterior. Premium 18/10 stainless
-                        steel
-                        interior</li>
-                    <li>✔ Induction and all cooktop compatible. Solid induction plate gives optimum connectivity and
-                        heat
-                        transfer on induction cooktops</li>
-                    <li>✔ Double riveted, Cool Touch™ brushed stainless steel handles. Reduce heat transfer during
-                        cooktop
-                        use. Riveted for durability</li>
+                    <li>✔ Innovative BI-PLY construction. Hard anodised aluminium exterior. Premium 18/10 stainless steel interior</li>
+                    <li>✔ Induction and all cooktop compatible. Solid induction plate gives optimum connectivity and heat transfer on induction cooktops</li>
+                    <li>✔ Double riveted, Cool Touch™ brushed stainless steel handles. Reduce heat transfer during cooktop use. Riveted for durability</li>
                     <li>✔ Metal utensil safe</li>
                     <li>✔ Oven safe 200°C</li>
                 </ul>
                 <button class="request-btn mt-3">REQUEST QUOTE</button>
             </div>
-        </div>
-    </div>
 
-    <!-- Description, Care Instructions, Technical Data -->
-    <div class="mt-4">
-        <div class="accordion" id="productDetails">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingDesc">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseDesc" aria-expanded="true" aria-controls="collapseDesc">
-                        DESCRIPTION
-                    </button>
-                </h2>
-                <div id="collapseDesc" class="accordion-collapse collapse show" aria-labelledby="headingDesc"
-                    data-bs-parent="#productDetails">
-                    <div class="accordion-body">
-                        Designed to meet the rigorous demands of the toughest kitchens. Innovative BI-PLY construction
-                        combines an extremely durable hard anodised exterior with premium 18/10 stainless steel
-                        interior.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingCare">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseCare" aria-expanded="false" aria-controls="collapseCare">
-                        CARE INSTRUCTIONS
-                    </button>
-                </h2>
-                <div id="collapseCare" class="accordion-collapse collapse" aria-labelledby="headingCare"
-                    data-bs-parent="#productDetails">
-                    <div class="accordion-body">
-                        Add your care instructions here.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTech">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTech" aria-expanded="false" aria-controls="collapseTech">
-                        TECHNICAL DATA
-                    </button>
-                </h2>
-                <div id="collapseTech" class="accordion-collapse collapse" aria-labelledby="headingTech"
-                    data-bs-parent="#productDetails">
-                    <div class="accordion-body">
-                        Add your technical data here.
-                    </div>
-                </div>
+            <!-- Zoom View (Hidden by default) -->
+            <div class="zoom-view">
+                <img id="zoomedImage" src="" alt="Zoom Image">
             </div>
         </div>
     </div>
@@ -218,6 +187,33 @@ carousel.addEventListener('slide.bs.carousel', function(event) {
     const thumbs = document.querySelectorAll('.thumb-img');
     thumbs.forEach(img => img.classList.remove('active'));
     thumbs[index].classList.add('active');
+});
+
+// ✅ Zoom effect replaces product-info for ALL images
+const zoomImages = document.querySelectorAll('.zoom-image');
+const zoomedImage = document.getElementById('zoomedImage');
+const productInfo = document.querySelector('.product-info');
+const zoomView = document.querySelector('.zoom-view');
+
+zoomImages.forEach(img => {
+    img.addEventListener('mouseenter', () => {
+        const src = img.getAttribute('src');
+        zoomedImage.src = src; // Update zoom image with hovered image
+        productInfo.style.display = 'none';
+        zoomView.style.display = 'block';
+    });
+
+    img.addEventListener('mouseleave', () => {
+        productInfo.style.display = 'block';
+        zoomView.style.display = 'none';
+    });
+
+    img.addEventListener('mousemove', (e) => {
+        const rect = e.target.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        zoomedImage.style.transform = `translate(-${x}%, -${y}%) scale(2)`;
+    });
 });
 </script>
 
