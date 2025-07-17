@@ -941,6 +941,15 @@
                         <a href="product-listing.php" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
+                                    <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
+                                        alt="Kadai Icon"> Kadai
+                                </div>
+
+                            </div>
+                        </a>
+                        <a href="#" class="submenu-product-link">
+                            <div class="category-item">
+                                <div class="category-heading">
                                     <img src="assets/images/icon/cookware/frying_pan.png" class="category-heading-icon"
                                         alt="Frying pan Icon"> Fry Pan
                                 </div>
@@ -949,15 +958,7 @@
                                 </ul>
                             </div>
                         </a>
-                        <a href="#" class="submenu-product-link">
-                            <div class="category-item">
-                                <div class="category-heading">
-                                    <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
-                                        alt="Kadai Icon"> Kadai
-                                </div>
 
-                            </div>
-                        </a>
 
                         <a href="#" class="submenu-product-link">
                             <div class="category-item">
