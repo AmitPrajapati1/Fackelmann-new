@@ -74,7 +74,7 @@ body {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .swiper-button-next::after,
@@ -85,6 +85,40 @@ body {
 
 .swiper-pagination {
     bottom: 5px;
+}
+</style>
+
+<style>
+.section-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.divider {
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+}
+
+.care-icon {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.tech-data td:first-child {
+    font-weight: 600;
+    width: 120px;
+    color: #444;
+}
+
+.tech-data td:last-child {
+    color: #555;
+}
+
+.section-block {
+    padding: 10px 0;
 }
 </style>
 
@@ -104,11 +138,21 @@ body {
             <!-- Swiper Main Slider -->
             <div class="swiper mySwiperMain mb-3">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp" class="w-100 zoom-image" alt="Product 1"></div>
-                    <div class="swiper-slide"><img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp" class="w-100 zoom-image" alt="Product 2"></div>
-                    <div class="swiper-slide"><img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp" class="w-100 zoom-image" alt="Product 3"></div>
-                    <div class="swiper-slide"><img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp" class="w-100 zoom-image" alt="Product 4"></div>
-                    <div class="swiper-slide"><img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp" class="w-100 zoom-image" alt="Product 5"></div>
+                    <div class="swiper-slide"><img
+                            src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp"
+                            class="w-100 zoom-image" alt="Product 1"></div>
+                    <div class="swiper-slide"><img
+                            src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp"
+                            class="w-100 zoom-image" alt="Product 2"></div>
+                    <div class="swiper-slide"><img
+                            src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp"
+                            class="w-100 zoom-image" alt="Product 3"></div>
+                    <div class="swiper-slide"><img
+                            src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp"
+                            class="w-100 zoom-image" alt="Product 4"></div>
+                    <div class="swiper-slide"><img
+                            src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
+                            class="w-100 zoom-image" alt="Product 5"></div>
                 </div>
 
                 <!-- Navigation Buttons -->
@@ -120,18 +164,23 @@ body {
 
             <!-- Thumbnail Images -->
             <div class="d-flex justify-content-start gap-2">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp" class="thumb-img active" onclick="slideToIndex(0, this)">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp" class="thumb-img" onclick="slideToIndex(1, this)">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp" class="thumb-img" onclick="slideToIndex(2, this)">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp" class="thumb-img" onclick="slideToIndex(3, this)">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp" class="thumb-img" onclick="slideToIndex(4, this)">
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp"
+                    class="thumb-img active" onclick="slideToIndex(0, this)">
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp"
+                    class="thumb-img" onclick="slideToIndex(1, this)">
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp"
+                    class="thumb-img" onclick="slideToIndex(2, this)">
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp"
+                    class="thumb-img" onclick="slideToIndex(3, this)">
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
+                    class="thumb-img" onclick="slideToIndex(4, this)">
             </div>
         </div>
 
         <!-- Product Info Section -->
         <div class="col-lg-6">
             <h2 class="product-title mb-2">SR BI-PLY Professional Frypan 24 Cm</h2>
-            
+
             <!-- Product Info -->
             <div class="product-info">
                 <p class="mb-2">
@@ -139,9 +188,12 @@ body {
                     <span class="old-price">RRP: ₹ 8,490.00</span> &nbsp; <span>(6% Off)</span>
                 </p>
                 <ul class="feature-list list-unstyled">
-                    <li>✔ Innovative BI-PLY construction. Hard anodised aluminium exterior. Premium 18/10 stainless steel interior</li>
-                    <li>✔ Induction and all cooktop compatible. Solid induction plate gives optimum connectivity and heat transfer on induction cooktops</li>
-                    <li>✔ Double riveted, Cool Touch™ brushed stainless steel handles. Reduce heat transfer during cooktop use. Riveted for durability</li>
+                    <li>✔ Innovative BI-PLY construction. Hard anodised aluminium exterior. Premium 18/10 stainless
+                        steel interior</li>
+                    <li>✔ Induction and all cooktop compatible. Solid induction plate gives optimum connectivity and
+                        heat transfer on induction cooktops</li>
+                    <li>✔ Double riveted, Cool Touch™ brushed stainless steel handles. Reduce heat transfer during
+                        cooktop use. Riveted for durability</li>
                     <li>✔ Metal utensil safe</li>
                     <li>✔ Oven safe 200°C</li>
                 </ul>
@@ -154,7 +206,6 @@ body {
             </div>
         </div>
     </div>
-</div>
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
