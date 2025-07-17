@@ -96,15 +96,15 @@ body {
 .custom-sort-btn {
     background-color: #fff;
     border: none;
-    color: #000;
-    font-weight: 700;
-    font-size: 0.85rem;
+    color: #737373;
+    font-weight: 600;
+    font-size: 12px;
     letter-spacing: 1px;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
     padding: 6px 12px;
-    width: 150px;
+    width: 200px;
     text-transform: uppercase;
     box-shadow: none;
     border-radius: 0;
@@ -113,8 +113,15 @@ body {
 .custom-sort-btn:focus,
 .custom-sort-btn:hover {
     background-color: #fff;
-    color: #000;
+    color: #737373;
     box-shadow: none;
+}
+
+.dropdown-menu.match-button-width {
+    min-width: unset;
+    width: 200px;
+    line-height: 30px;
+    font-size: 13px;
 }
 
 .custom-sort-btn i {
@@ -135,15 +142,11 @@ body {
     --bs-dropdown-padding-y: 0rem !important;
     --bs-dropdown-link-active-bg: #fff;
     border-radius: 0rem;
+    z-index: 2;
 }
 
 .dropdown-item:active {
     color: #000 !important;
-}
-
-.dropdown-menu.match-button-width {
-    min-width: unset;
-    width: 150px;
 }
 
 .form-check-label {
@@ -175,6 +178,12 @@ body {
 .form-check-input:focus:checked {
   box-shadow: none !important;
   outline: none !important; 
+}
+
+.form-check-input {
+    width: 13px;
+    height: 13px;
+    margin-top: 8px;
 }
 
 </style>

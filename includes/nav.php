@@ -655,6 +655,10 @@
             height: 45px;
             object-fit: contain;
         }
+
+        .searchbar-ui {
+            padding-left: 0px !important;
+        }
     }
 
 
@@ -744,6 +748,7 @@
         .sidenav-footer {
             padding: 16px;
         }
+
     }
 
     .mobile-search-icon {
@@ -761,6 +766,10 @@
         .mobile-search-icon {
             display: inline-block;
         }
+
+        .searchbar-inner {
+            max-width: 100%
+        }
     }
 
     @media (min-width: 768px) {
@@ -775,6 +784,7 @@
 
     .searchbar-ui {
         background: #f9f9f9;
+        /* padding-left: 270px; */
         /* padding-left: 270px; */
         margin: 0px auto;
         width: 100%;
