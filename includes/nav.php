@@ -844,12 +844,12 @@
 <header class="header">
     <div class="header-left">
         <div class="logo-container">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/images/logos/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
             </a>
         </div>
         <nav class="nav">
-            <a href="#">HOME</a>
+            <a href="/">HOME</a>
             <a href="#" data-submenu="productsSubmenu" onclick="toggleSubmenu(event)">PRODUCTS</a>
             <a href="#">SUSTAINABILITY</a>
             <a href="#" data-submenu="brandsSubmenu" onclick="toggleSubmenu(event)">GLOBAL BRANDS</a>
@@ -917,7 +917,7 @@
             <div>
                 <div class="category-submenu cookware-submenu" style="display: none;">
                     <div class="category-submenu-inner">
-                        <a href="product-listing.php" class="submenu-product-link">
+                        <a href="#" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
                                     <img src="assets/images/icon/cookware/frying_pan.png" class="category-heading-icon"
@@ -928,7 +928,7 @@
                                 </ul>
                             </div>
                         </a>
-                        <a href="#" class="submenu-product-link">
+                        <a href="product-listing.php" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
                                     <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
