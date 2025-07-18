@@ -129,10 +129,8 @@
     .custom-card-style img {
         width: 100%;
         height: 100%;
-        /* object-fit: cover; */
         object-fit: contain;
         background: white;
-        /*  */
         transition: transform 2s ease;
         display: block;
         object-position: center;
@@ -150,8 +148,9 @@
         border: none;
         border-radius: 5px;
         margin: 0 auto;
-        width: 100%;
-        max-width: 160px;
+        width: 160px;
+        /* width: 100%;
+        max-width: 160px; */
         transition: background-color 0.3s ease;
         display: block;
 
@@ -187,6 +186,7 @@
     }
 </style>
 
+
 <style>
     .product-flex {
         display: flex;
@@ -204,29 +204,29 @@
 
     .item-card {
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
         border-radius: 9px;
         overflow: hidden;
-        background: white;
-        padding: 15px;
+        background: transparent;
+        padding: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .image-container {
-        border-radius: 6px;
-        overflow: hidden;
         width: 100%;
-        height: 200px;
+        height: 100%;
         position: relative;
+        border-radius: 9px;
+        overflow: hidden;
     }
 
     .image-container img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
-        background: white;
+        object-fit: cover;
         transition: transform 0.3s ease;
         display: block;
     }
@@ -236,12 +236,23 @@
     }
 
     .product-button {
-        width: 100%;
-        max-width: 160px;
-        text-align: center;
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: #bf0019;
         color: white;
+        /* 
         padding: 9px 27px;
+        max-width: 160px;
+        width: auto;   
+        white-space: nowrap; */
+        padding: 9px 0;
+        width: 160px;
+        text-align: center;
+        z-index: 10;
+        cursor: pointer;
+        font-size: 14px;
     }
 
     .product-button:hover {
@@ -345,16 +356,16 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-1.jpg"
-                    data-mobile-src="assets/images/banners/banner-mob-1.jpg" alt="Banner 1">
+                <img data-desktop-src="assets/images/banners/banner-hero-dsk-3.jpg"
+                    data-mobile-src="assets/images/banners/banner-hero-mobile-3.jpg" alt="Banner 1">
             </div>
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-2.jpg"
-                    data-mobile-src="assets/images/banners/banner-mob-2.jpg" alt="Banner 2">
+                <img data-desktop-src="assets/images/banners/banner-hero-dsk-2.jpg"
+                    data-mobile-src="assets/images/banners/banner-hero-mobile-2.jpg" alt="Banner 2">
             </div>
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-3.jpg"
-                    data-mobile-src="assets/images/banners/banner-mob-3.jpg" alt="Banner 3">
+                <img data-desktop-src="assets/images/banners/banner-hero-dsk-1.jpg"
+                    data-mobile-src="assets/images/banners/banner-hero-mobile-1.jpg" alt="Banner 3">
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -965,7 +976,7 @@
         <div class="row align-items-start">
 
             <!-- Left Content -->
-            <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="col-lg-6 mb-4 mb-lg-0" style="margin-top: 12px">
                 <img src="assets/images/logos/sustainability_img.webp" alt="50 Sustainability & Climate Leaders"
                     class="mb-3 img-fluid">
 

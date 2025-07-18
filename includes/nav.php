@@ -870,9 +870,9 @@
             </a>
         </div>
         <nav class="nav">
-            <a href="#">HOME</a>
+            <a href="index.php">HOME</a>
             <a href="#" data-submenu="productsSubmenu" onclick="toggleSubmenu(event)">PRODUCTS</a>
-            <a href="#">SUSTAINABILITY</a>
+            <a href="sustainability.php">SUSTAINABILITY</a>
             <a href="#" data-submenu="brandsSubmenu" onclick="toggleSubmenu(event)">GLOBAL BRANDS</a>
         </nav>
 
@@ -1310,11 +1310,11 @@
                 <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
                         class="material-icons">chevron_right</i></li>
             </ul>
-            <a href="index.html" class="sidenav-section-title">Home</a>
-            <a href="about-us.html" class="sidenav-section-title">About Us</a>
-            <a href="global-brands.html" class="sidenav-section-title">Global Brands</a>
-            <a href="sustainability.html" class="sidenav-section-title">Sustainability</a>
-            <a href="contact.html" class="sidenav-footer">
+            <a href="index.php" class="sidenav-section-title">Home</a>
+            <a href="#" class="sidenav-section-title">About Us</a>
+            <a href="#" class="sidenav-section-title">Global Brands</a>
+            <a href="sustainability.php" class="sidenav-section-title">Sustainability</a>
+            <a href="#" class="sidenav-footer">
                 <i class="material-icons">mail_outline</i> Contact form
             </a>
         </div>
