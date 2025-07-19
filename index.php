@@ -38,6 +38,14 @@
         right: 25px;
     }
 
+    .highlight-prev {
+        left: 15px;
+    }
+
+    .highlight-next {
+        right: 25px;
+    }
+
     @media (min-width: 768px) {
         #categoryCarousel~.custom-prev {
             left: 0px;
@@ -58,6 +66,14 @@
         }
 
         .custom-next {
+            right: 50px;
+        }
+
+        .highlight-prev {
+            left: 50px;
+        }
+
+        .highlight-next {
             right: 50px;
         }
     }
@@ -432,7 +448,7 @@
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid" src="assets/images/product_highlight/conical_tri_ply_frypan_24_cm.webp"
-                        alt="Frypan">
+                        alt="Frypan" loading="lazy">
                 </div>
                 <button class="product-button btn btn-sm mt-2">Frypan</button>
             </div>
@@ -443,7 +459,7 @@
                 <div class="image-container">
                     <img class="img-fluid"
                         src="assets/images/product_highlight/conical_tri_ply_saucepan_20_cm_2_5_litres.webp"
-                        alt="Casserole">
+                        alt="Casserole" loading="lazy">
                 </div>
                 <button class="product-button btn btn-sm mt-2">Casserole</button>
             </div>
@@ -453,7 +469,7 @@
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid" src="assets/images/product_highlight/fackelmann_bamboo_rice_spoon_23_cm.webp"
-                        alt="Tawa">
+                        alt="Tawa" loading="lazy">
                 </div>
                 <button class="product-button btn btn-sm mt-2">Tawa</button>
             </div>
@@ -463,7 +479,8 @@
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid"
-                        src="assets/images/product_highlight/fackelmann_bamboo_slotted_turner_30_cm.webp" alt="Kadai">
+                        src="assets/images/product_highlight/fackelmann_bamboo_slotted_turner_30_cm.webp" alt="Kadai"
+                        loading="lazy">
                 </div>
                 <button class="product-button btn btn-sm mt-2">Kadai</button>
             </div>
@@ -483,12 +500,13 @@
 
     <div class="custom-nav custom-prev">❮</div>
     <div class="custom-nav custom-next">❯</div>
-    <div class="discover-carousel owl-carousel owl-theme">
+
+    <div class="highlight-carousel owl-carousel owl-theme">
         <div class="item">
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid" src="assets/images/product_highlight/conical_tri_ply_frypan_24_cm.webp"
-                        alt="Frypan">
+                        alt="Frypan" loading="lazy">
                 </div>
                 <button class="product-button btn btn-sm mt-2">Frypan</button>
             </div>
@@ -499,7 +517,7 @@
                 <div class="image-container">
                     <img class="img-fluid"
                         src="assets/images/product_highlight/conical_tri_ply_saucepan_20_cm_2_5_litres.webp"
-                        alt="Casserole">
+                        alt="Casserole" loading="lazy">
                 </div>
                 <button class="product-button btn btn-sm mt-2">Casserole</button>
             </div>
@@ -509,7 +527,7 @@
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid" src="assets/images/product_highlight/fackelmann_bamboo_rice_spoon_23_cm.webp"
-                        alt="Tawa">
+                        alt="Tawa" loading="lazy">
                 </div>
                 <button class="product-button btn btn-sm mt-2">Tawa</button>
             </div>
@@ -519,55 +537,14 @@
             <div class="item-card">
                 <div class="image-container">
                     <img class="img-fluid"
-                        src="assets/images/product_highlight/fackelmann_bamboo_slotted_turner_30_cm.webp" alt="Kadai">
+                        src="assets/images/product_highlight/fackelmann_bamboo_slotted_turner_30_cm.webp" alt="Kadai"
+                        loading="lazy">
                 </div>
                 <button class="product-button btn btn-sm mt-2">Kadai</button>
             </div>
         </div>
     </div>
 
-    <!-- <div class="product-flex">
-        <div class="flex-item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid" src="assets/images/product_highlight/conical_tri_ply_frypan_24_cm.webp"
-                        alt="Frypan">
-                </div>
-                <button class="product-button btn btn-sm mt-2">Frypan</button>
-            </div>
-        </div>
-
-        <div class="flex-item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid"
-                        src="assets/images/product_highlight/conical_tri_ply_saucepan_20_cm_2_5_litres.webp"
-                        alt="Casserole">
-                </div>
-                <button class="product-button btn btn-sm mt-2">Casserole</button>
-            </div>
-        </div>
-
-        <div class="flex-item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid" src="assets/images/product_highlight/fackelmann_bamboo_rice_spoon_23_cm.webp"
-                        alt="Tawa">
-                </div>
-                <button class="product-button btn btn-sm mt-2">Tawa</button>
-            </div>
-        </div>
-
-        <div class="flex-item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid"
-                        src="assets/images/product_highlight/fackelmann_bamboo_slotted_turner_30_cm.webp" alt="Kadai">
-                </div>
-                <button class="product-button btn btn-sm mt-2">Kadai</button>
-            </div>
-        </div>
-    </div> -->
     <div class="text-center mt-5">
         <button class="view-more-button btn btn-sm">Explore Highlights</button>
     </div>
