@@ -18,8 +18,8 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        height: 50vh;
+        width: 100%;
+        height: 60vh;
         min-height: 250px;
         max-height: 500px;
         display: flex;
@@ -27,12 +27,8 @@
         justify-content: center;
         text-align: center;
         color: var(--white);
-        width: 100vw;
         position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+        z-index: 1;
     }
 
     .sustainability-banner h2 {
@@ -46,10 +42,6 @@
     .sustainability-section-padding {
         padding: 70px 15px;
     }
-
-    /* .journey {
-        padding: 70px 0;
-    } */
 
     .sustainability-about-com {
         display: flex;
@@ -221,10 +213,6 @@
     }
 
     @media (min-width: 992px) {
-        /* .sustainability-section-padding {
-            padding: 0 45px;
-        } */
-
         .strg-left img {
             max-width: 300px;
         }
@@ -232,10 +220,10 @@
 
     @media (max-width: 767px) {
         .sustainability-banner {
-            background-attachment: scroll;
-            height: 30vh;
+            height: auto;
             min-height: 150px;
             background-size: cover;
+            background-position: center;
         }
 
         .sustainability-about-com img {
@@ -264,8 +252,10 @@
         }
 
         .tab-button.active {
-            background-color: #e0f2f0;
-            color: #2f958e;
+            /* background-color: #e0f2f0; */
+            background-color: #f0dcde;
+            color: #cf939b;
+            /* color: #2f958e; */
             /* color: #bf0019; */
         }
 
@@ -274,7 +264,7 @@
         }
 
         .strg-left {
-            margin-bottom: 15px;
+            margin-bottom: 1px;
         }
 
         .tab-pane .row {
@@ -368,7 +358,7 @@
         margin: 0 auto;
         padding: 40px 20px;
         text-align: center;
-        background: var(--white);
+        background: white;
     }
 
     .certifications-section-sustainability h2 {
@@ -504,7 +494,7 @@
 
 
 <section class="sustainability-banner">
-    <h2>Let's Start<br>Together</h2>
+    <h2 class="content">Let's Start<br>Together</h2>
 </section>
 
 <section class="journey sustainability-section-padding" data-aos="fade-up">
