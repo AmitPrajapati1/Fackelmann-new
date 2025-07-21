@@ -64,13 +64,13 @@
 
   }
 
-  /*  */
+
 
   .footer-section {
     display: flex;
     flex-direction: column;
     padding-bottom: 5px;
-    /* gap: 1.5rem; */
+
   }
 
   @media (max-width: 576px) {
@@ -90,8 +90,7 @@
     }
   }
 
-  /*  */
-  /* Style accordion-like toggle button only on mobile */
+
   .footer-toggle {
     width: 100%;
     background: #56575c;
@@ -108,11 +107,6 @@
     padding: 10px 0 10px 0;
   }
 
-  /* 
-  .footer-toggle .toggle-icon {
-    float: right;
-    font-size: 18px;
-  } */
 
   .footer-toggle .toggle-icon {
     float: right;
@@ -124,10 +118,6 @@
     height: 22px;
   }
 
-  /* Optional: rotate on open (e.g. for animated + to ×) */
-  .footer-toggle .toggle-icon.rotate {
-    transform: rotate(180deg);
-  }
 
   .social-footer-icons {
     padding: 14px 20px 20px;
@@ -135,6 +125,11 @@
 
   .footer-quick-access {
     padding: 20px 11px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
   }
 
   .footer-quick-access a {
@@ -142,9 +137,33 @@
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.7px;
-    padding: 0 4px;
     text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    position: relative;
   }
+
+  .footer-quick-access a::after {
+    content: ' ·';
+    margin-left: 5px;
+  }
+
+  .footer-quick-access a:last-child::after {
+    content: '';
+  }
+
+  @media (max-width: 767px) {
+    .footer-quick-access {
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-quick-access a::after {
+      content: '';
+    }
+  }
+
 
   .copyright-info {
     padding: 0 0 10px;
@@ -158,13 +177,12 @@
     text-align: center;
     text-transform: uppercase;
     color: white;
-    /* padding: 10px; */
+
   }
 </style>
 
 
 <footer class="footer-main text-white lg:pt-5 md:pt-5">
-
 
   <div class="px-4 pb-1">
     <div class="footer-section">
@@ -176,7 +194,8 @@
 
         <div class="collapse d-md-block" id="footerCollapse1">
           <p class="footer-detail">Let the yeast rise.<br>We’ll respond in the meantime.</p>
-          <a href="#" class="footer-detail text-decoration-none d-inline-flex align-items-center gap-2 mt-2">
+          <a href="contact-us.php"
+            class="footer-detail text-decoration-none d-inline-flex align-items-center gap-2 mt-2">
             <i class="fas fa-envelope border border-white p-1 rounded-1"></i> Contact form
           </a>
         </div>
@@ -193,7 +212,7 @@
             <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a></li>
             <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Download</a></li>
             <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
-            <li><a href="#" class="footer-detail text-decoration-none d-block">Contact</a></li>
+            <li><a href="contact-us.php" class="footer-detail text-decoration-none d-block">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -216,7 +235,6 @@
     </div>
   </div>
 
-  <!-- Footer Bottom -->
   <div class="footer-btm-bg text-center footer-detail py-3 px-4 mt-4">
     <div class="social-footer-icons">
       <a href="#" class="btn btn-outline-light btn-sm me-2 rounded-1" style="font-size: 20px"><i
@@ -226,14 +244,13 @@
     </div>
 
     <div class="text-uppercase fw-semibold footer-quick-access" style="font-size: 13px">
-      <a href="#" class="text-white text-decoration-none mx-1">Imprint</a> •
-      <a href="#" class="text-white text-decoration-none mx-1">Data Protection</a> •
-      <a href="#" class="text-white text-decoration-none mx-1">Terms and Conditions</a> •
+      <a href="#" class="text-white text-decoration-none mx-1">Imprint</a>
+      <a href="#" class="text-white text-decoration-none mx-1">Data Protection</a>
+      <a href="#" class="text-white text-decoration-none mx-1">Terms and Conditions</a>
       <a href="#" class="text-white text-decoration-none mx-1">Privacy Policy</a>
     </div>
 
     <div class="small mt-2">
-      <!-- © 2025 Copyright <strong>Fackelmann India Kitchenware Pvt. Ltd.</strong> – All rights reserved. -->
       <div class="copyright-info">
         <span class="copyright">© 2025 Copyright <strong><span>Fackelmann Inda Kitchenware
               Pvt. Ltd.</span></strong>.</span>

@@ -1,4 +1,3 @@
-
 <style>
     :root {
         --primary-color: #7a001c;
@@ -905,7 +904,8 @@
                     class="custom-search-text">Search</span></button>
         </div>
         <i class="mobile-search-icon material-icons" onclick="toggleSearchBar()">search</i>
-        <span class="material-icons icon">call</span>
+        <a href="contact-us.php"><span class="material-icons icon">call</span></a>
+
         <span class="material-icons icon" onclick="toggleNav(true)">menu</span>
     </div>
 
@@ -1315,7 +1315,7 @@
             <a href="#" class="sidenav-section-title">About Us</a>
             <a href="global-brands.php" class="sidenav-section-title">Global Brands</a>
             <a href="sustainability.php" class="sidenav-section-title">Sustainability</a>
-            <a href="#" class="sidenav-footer">
+            <a href="contact-us.php" class="sidenav-footer">
                 <i class="material-icons">mail_outline</i> Contact form
             </a>
         </div>

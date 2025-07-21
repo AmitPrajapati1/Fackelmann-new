@@ -116,7 +116,7 @@
     }
 
     .zoom-container img {
-        transition: transform 2s ease;
+        transition: transform 1s ease;
         display: block;
     }
 
@@ -172,6 +172,12 @@
         transition: background-color 0.3s ease;
         display: block;
 
+    }
+
+    :not(.custom-btn-style)+.btn:active {
+        background-color: #bf0019 !important;
+        color: white !important;
+        border: 1px solid #bf0019;
     }
 
     .custom-btn-style:hover {
@@ -405,7 +411,7 @@
             <a href="product-listing.php">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_1.jpg" alt="Cookware">
+                        <img src="assets/images/home_page/our_categories/cat_1.jpeg" alt="Cookware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Cookware</button>
@@ -414,10 +420,10 @@
             </a>
         </div>
         <div class="col-md-6 col-12 col-lg-4">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_2.jpg" alt="Bakeware">
+                        <img src="assets/images/home_page/our_categories/cat_2.jpeg" alt="Bakeware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Bakeware</button>
@@ -428,10 +434,10 @@
     </div>
     <div class="row g-4 justify-content-center mt-3">
         <div class="col-md-6 col-12 col-lg-4">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_3.jpg" alt="Knives">
+                        <img src="assets/images/home_page/our_categories/cat_3.jpeg" alt="Knives">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Knives</button>
@@ -440,10 +446,10 @@
             </a>
         </div>
         <div class="col-md-6 col-12 col-lg-4">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_4.jpg" alt="Kitchenware">
+                        <img src="assets/images/home_page/our_categories/cat_4.jpeg" alt="Kitchenware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Kitchenware</button>
@@ -513,7 +519,7 @@
 
     <div class="discover-carousel owl-carousel owl-theme">
         <div class="item">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_1.jpeg"
@@ -524,7 +530,7 @@
             </a>
         </div>
         <div class="item">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_2.jpeg"
@@ -535,7 +541,7 @@
             </a>
         </div>
         <div class="item">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_3.jpeg"
@@ -546,7 +552,7 @@
             </a>
         </div>
         <div class="item">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_4.jpeg"
@@ -574,7 +580,7 @@
 
     <div class="highlight-carousel owl-carousel owl-theme">
         <div class="item">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_1.jpeg"
@@ -586,7 +592,7 @@
         </div>
 
         <div class="item">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_2.jpeg"
@@ -598,7 +604,7 @@
         </div>
 
         <div class="item">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_3.jpeg"
@@ -610,7 +616,7 @@
         </div>
 
         <div class="item">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_4.jpeg"
@@ -1047,7 +1053,7 @@
 
                 <p class="text-muted small">Come with us on a journey into a greener future.</p>
 
-                <a href="#" class="btn btn-sm fw-semibold text-uppercase"
+                <a href="javascript:void(0)" class="btn btn-sm fw-semibold text-uppercase"
                     style="font-size: 0.875rem; letter-spacing: 1px;border: 1px solid #bf0019;color: #bf0019">MORE
                     INFORMATION</a>
             </div>
@@ -1072,7 +1078,7 @@
             <h5 class="fw-medium text-black mb-3 mt-5">
                 Sign up for our <span class="fw-bold">Newsletter</span>
             </h5>
-            <a href="#" class="btn text-uppercase fw-semibold newsletter-button">
+            <a href="javascript:void(0)" class="btn text-uppercase fw-semibold newsletter-button">
                 Newsletter Registration
             </a>
         </div>
