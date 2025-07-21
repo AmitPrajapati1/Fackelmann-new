@@ -10,6 +10,7 @@
         font-size: 24px;
         color: #bf0019;
         border-radius: 50%;
+        background-color: #fff;
         width: 40px;
         height: 40px;
         line-height: 38px;
@@ -80,7 +81,7 @@
 
     .product-card {
         height: 100%;
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
         justify-content: space-between;
         /* align-items: center; */
@@ -135,8 +136,8 @@
     .custom-card-style .image-wrapper {
         /* width: 450px;
         height: 300px; */
-        width: 300px;
-        height: 350px;
+        /* width: 300px; */
+        height: 300px;
         overflow: hidden;
         border-radius: 6px;
         position: relative;
@@ -145,7 +146,8 @@
     .custom-card-style img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        /* object-fit: contain; */
+        object-fit: fill;
         background: white;
         transition: transform 2s ease;
         display: block;
@@ -200,10 +202,7 @@
     .swiper-pagination-bullet:hover {
         background-color: #7a001c !important;
     }
-</style>
 
-
-<style>
     .product-flex {
         display: flex;
         flex-wrap: wrap;
@@ -256,8 +255,10 @@
         bottom: 15px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: #bf0019;
-        color: white;
+        /* background-color: #bf0019; */
+        background-color: white;
+        color: #bf0019;
+        border: 1px solid #bf0019;
         /* 
         padding: 9px 27px;
         max-width: 160px;
@@ -269,6 +270,7 @@
         z-index: 10;
         cursor: pointer;
         font-size: 14px;
+
     }
 
     .product-button:hover {
@@ -363,6 +365,12 @@
             max-width: calc(60% - 15px);
         }
     }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
 </style>
 
 
@@ -390,50 +398,110 @@
     </div>
 </div>
 
+
 <div class="container-fluid py-5 main-sub-cat" style="background: #EDE8E2">
     <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-12 col-lg-3">
+        <div class="col-md-6 col-12 col-lg-4">
+            <a href="product-listing.php">
+                <div class="product-card custom-card-style">
+                    <div class="image-wrapper">
+                        <img src="assets/images/home_page/our_categories/cat_1.jpg" alt="Cookware">
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="custom-btn-style text-uppercase">Cookware</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 col-12 col-lg-4">
+            <a href="#">
+                <div class="product-card custom-card-style">
+                    <div class="image-wrapper">
+                        <img src="assets/images/home_page/our_categories/cat_2.jpg" alt="Bakeware">
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="custom-btn-style text-uppercase">Bakeware</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row g-4 justify-content-center mt-3">
+        <div class="col-md-6 col-12 col-lg-4">
+            <a href="#">
+                <div class="product-card custom-card-style">
+                    <div class="image-wrapper">
+                        <img src="assets/images/home_page/our_categories/cat_3.jpg" alt="Knives">
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="custom-btn-style text-uppercase">Knives</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-6 col-12 col-lg-4">
+            <a href="#">
+                <div class="product-card custom-card-style">
+                    <div class="image-wrapper">
+                        <img src="assets/images/home_page/our_categories/cat_4.jpg" alt="Kitchenware">
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="custom-btn-style text-uppercase">Kitchenware</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="container-fluid py-5 main-sub-cat" style="background: #EDE8E2">
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-12 col-lg-4">
             <div class="product-card custom-card-style">
                 <div class="image-wrapper">
-                    <img src="assets/images/categories/cookware-1.jpg" alt="Cookware">
+                    <img src="assets/images/home_page/our_categories/cat_1.jpeg" alt="Cookware">
                 </div>
                 <div class="text-center mt-3">
                     <button class="custom-btn-style text-uppercase">Cookware</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-12 col-lg-3">
+        <div class="col-md-6 col-12 col-lg-4">
             <div class="product-card custom-card-style">
                 <div class="image-wrapper">
-                    <img src="assets/images/categories/bakeware-2.jpeg" alt="Bakeware">
+                    <img src="assets/images/home_page/our_categories/cat_2.jpeg" alt="Bakeware">
                 </div>
                 <div class="text-center mt-3">
                     <button class="custom-btn-style text-uppercase">Bakeware</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 col-12 col-lg-3">
+    </div>
+    <div class="row g-4 justify-content-center mt-3">
+        <div class="col-md-6 col-12 col-lg-4">
             <div class="product-card custom-card-style">
                 <div class="image-wrapper">
-                    <img src="assets/images/categories/kitch-3.jpeg" alt="Kitchenware">
-                </div>
-                <div class="text-center mt-3">
-                    <button class="custom-btn-style text-uppercase">Kitchenware</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-12 col-lg-3">
-            <div class="product-card custom-card-style">
-                <div class="image-wrapper">
-                    <img src="assets/images/categories/knives-4.jpeg" alt="Knives">
+                    <img src="assets/images/home_page/our_categories/cat_3.jpeg" alt="Knives">
                 </div>
                 <div class="text-center mt-3">
                     <button class="custom-btn-style text-uppercase">Knives</button>
                 </div>
             </div>
         </div>
+        <div class="col-md-6 col-12 col-lg-4">
+            <div class="product-card custom-card-style">
+                <div class="image-wrapper">
+                    <img src="assets/images/home_page/our_categories/cat_4.jpeg" alt="Kitchenware">
+                </div>
+                <div class="text-center mt-3">
+                    <button class="custom-btn-style text-uppercase">Kitchenware</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</div> -->
+
 
 <div class="container-fluid px-2 px-md-5 py-5 position-relative" style="background-color: #f5f5f5;">
     <div class="text-center mb-4 fw-bold text-uppercase" style="letter-spacing: 1px;">
@@ -445,45 +513,48 @@
 
     <div class="discover-carousel owl-carousel owl-theme">
         <div class="item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid" src="assets/images/product_highlight/conical_tri_ply_frypan_24_cm.webp"
-                        alt="Frypan" loading="lazy">
+            <a href="#">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_1.jpeg"
+                            alt="Saucepans Set" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Saucepans</button>
                 </div>
-                <button class="product-button btn btn-sm mt-2">Frypan</button>
-            </div>
+            </a>
         </div>
-
         <div class="item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid"
-                        src="assets/images/product_highlight/conical_tri_ply_saucepan_20_cm_2_5_litres.webp"
-                        alt="Casserole" loading="lazy">
+            <a href="#">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_2.jpeg"
+                            alt="Frypan" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Lightweight Tawa</button>
                 </div>
-                <button class="product-button btn btn-sm mt-2">Casserole</button>
-            </div>
+            </a>
         </div>
-
         <div class="item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid" src="assets/images/product_highlight/fackelmann_bamboo_rice_spoon_23_cm.webp"
-                        alt="Tawa" loading="lazy">
+            <a href="#">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_3.jpeg"
+                            alt="Tawa" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Stainless Steel Frypan</button>
                 </div>
-                <button class="product-button btn btn-sm mt-2">Tawa</button>
-            </div>
+            </a>
         </div>
-
         <div class="item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid"
-                        src="assets/images/product_highlight/fackelmann_bamboo_slotted_turner_30_cm.webp" alt="Kadai"
-                        loading="lazy">
+            <a href="#">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_4.jpeg"
+                            alt="Non-Stick" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Non-Stick Cookware</button>
                 </div>
-                <button class="product-button btn btn-sm mt-2">Kadai</button>
-            </div>
+            </a>
         </div>
     </div>
 
@@ -503,45 +574,51 @@
 
     <div class="highlight-carousel owl-carousel owl-theme">
         <div class="item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid" src="assets/images/product_highlight/conical_tri_ply_frypan_24_cm.webp"
-                        alt="Frypan" loading="lazy">
+            <a href="#">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_1.jpeg"
+                            alt="Water Bottle" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Water Bottle</button>
                 </div>
-                <button class="product-button btn btn-sm mt-2">Frypan</button>
-            </div>
+            </a>
         </div>
 
         <div class="item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid"
-                        src="assets/images/product_highlight/conical_tri_ply_saucepan_20_cm_2_5_litres.webp"
-                        alt="Casserole" loading="lazy">
+            <a href="#">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_2.jpeg"
+                            alt="cake pan tin" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Cake Pan Tin</button>
                 </div>
-                <button class="product-button btn btn-sm mt-2">Casserole</button>
-            </div>
+            </a>
         </div>
 
         <div class="item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid" src="assets/images/product_highlight/fackelmann_bamboo_rice_spoon_23_cm.webp"
-                        alt="Tawa" loading="lazy">
+            <a href="#">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_3.jpeg"
+                            alt="strainer" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Strainer</button>
                 </div>
-                <button class="product-button btn btn-sm mt-2">Tawa</button>
-            </div>
+            </a>
         </div>
 
         <div class="item">
-            <div class="item-card">
-                <div class="image-container">
-                    <img class="img-fluid"
-                        src="assets/images/product_highlight/fackelmann_bamboo_slotted_turner_30_cm.webp" alt="Kadai"
-                        loading="lazy">
+            <a href="#">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_4.jpeg"
+                            alt="gas stove lighter" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Gas Stove Lighter</button>
                 </div>
-                <button class="product-button btn btn-sm mt-2">Kadai</button>
-            </div>
+            </a>
         </div>
     </div>
 

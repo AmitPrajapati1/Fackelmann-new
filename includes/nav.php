@@ -866,7 +866,7 @@
 <header class="header">
     <div class="header-left">
         <div class="logo-container">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="assets/images/logos/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
             </a>
         </div>
