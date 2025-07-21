@@ -93,6 +93,13 @@ body {
     transform: scale(1);
 }
 
+.product-card a,
+.product-card a:hover,
+.product-card a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
 .custom-sort-btn {
     background-color: #fff;
     border: none;
@@ -142,7 +149,8 @@ body {
     --bs-dropdown-padding-y: 0rem !important;
     --bs-dropdown-link-active-bg: #fff;
     border-radius: 0rem;
-    z-index: 2;
+    color: #444;
+    z-index: 4;
 }
 
 .dropdown-item:active {
@@ -186,6 +194,27 @@ body {
     margin-top: 8px;
 }
 
+.dropdown-item.active{
+    color: #444;
+    background-color: #f5f5f5;
+}
+
+/* check icon */
+.dropdown-item .check-icon {
+    float: right;
+    font-size: 0.85rem;
+    color: #444;
+    background-color: #f5f5f5;
+    visibility: hidden;
+}
+.dropdown-item.active .check-icon {
+    visibility: visible;
+}
+@media (max-width: 767.98px) {
+    .product-price {
+        font-size: 16px;
+    }
+}
 </style>
 
 <!-- Hero Section -->
@@ -217,10 +246,10 @@ body {
                     <i class="bi bi-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu w-100" aria-labelledby="sortDropdownMobile">
-                    <li><a class="dropdown-item" href="#">Relevance</a></li>
-                    <li><a class="dropdown-item" href="#">Newest first</a></li>
-                    <li><a class="dropdown-item" href="#">Price ascending</a></li>
-                    <li><a class="dropdown-item" href="#">Price descending</a></li>
+                    <li><a class="dropdown-item active" href="#">Relevance <i class="bi bi-check check-icon"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Newest first <i class="bi bi-check check-icon"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Price ascending <i class="bi bi-check check-icon"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Price descending <i class="bi bi-check check-icon"></i></a></li>
                     <li><a class="dropdown-item text-center text-white bg-secondary" href="#"
                             onclick="closeDropdown(event)">CLOSE</a></li>
                 </ul>
@@ -235,10 +264,10 @@ body {
                     SORT <i class="bi bi-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu match-button-width dropdown-menu-end" aria-labelledby="sortDropdown">
-                    <li><a class="dropdown-item" href="#">Relevance</a></li>
-                    <li><a class="dropdown-item" href="#">Newest first</a></li>
-                    <li><a class="dropdown-item" href="#">Price ascending</a></li>
-                    <li><a class="dropdown-item" href="#">Price descending</a></li>
+                    <li><a class="dropdown-item active" href="#">Relevance <i class="bi bi-check check-icon"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Newest first <i class="bi bi-check check-icon"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Price ascending <i class="bi bi-check check-icon"></i></a></li>
+                    <li><a class="dropdown-item" href="#">Price descending <i class="bi bi-check check-icon"></i></a></li>
                     <li><a class="dropdown-item text-center text-white bg-secondary" href="#"
                             onclick="closeDropdown(event)">CLOSE</a></li>
                 </ul>
@@ -250,101 +279,187 @@ body {
         <!-- Sidebar Filter (Desktop Only) -->
         <div class="col-lg-3 mb-4 d-none d-lg-block">
             <div class="bg-white p-4">
-                <?php
-        $filters = [
-            'SHOP BY CATEGORIES' => ['Pots', 'Pans', 'New Launches'],
-            'SHOP BY BRAND' => ['Fackelmann', 'Stanley Rogers'],
-            'SHOP BY TYPE' => ['Uncoated', 'Stainless Steel BI-PLY', 'Stainless Steel TRI-PLY', 'Non-Stick', 'Non-Stick Granite'],
-            'SHOP BY SIZES' => ['24cm', '28cm', '32cm'],
-        ];
-        $filterId = 1;
-        foreach ($filters as $title => $options): ?>
+                <!-- SHOP BY CATEGORIES -->
                 <div class="mb-4 border-bottom pb-2">
                     <div class="filter-title d-flex justify-content-between align-items-center"
-                        data-bs-toggle="collapse" data-bs-target="#filter<?= $filterId ?>" aria-expanded="true"
-                        aria-controls="filter<?= $filterId ?>">
-                        <?= $title ?>
-                        <i class="bi bi-chevron-up ms-1" id="icon<?= $filterId ?>"></i>
+                        data-bs-toggle="collapse" data-bs-target="#filter1" aria-expanded="true"
+                        aria-controls="filter1">
+                        SHOP BY CATEGORIES
+                        <i class="bi bi-chevron-up ms-1" id="icon1"></i>
                     </div>
-                    <div class="collapse show" id="filter<?= $filterId ?>">
-                        <?php foreach ($options as $opt): ?>
+                    <div class="collapse show" id="filter1">
                         <div class="form-check ps-4 text-dark">
-                            <input class="form-check-input" type="checkbox"
-                                id="<?= strtolower(str_replace(' ', '_', $opt)) ?>">
-                            <label class="form-check-label"
-                                for="<?= strtolower(str_replace(' ', '_', $opt)) ?>"><?= $opt ?></label>
+                            <input class="form-check-input" type="checkbox" id="pots">
+                            <label class="form-check-label" for="pots">Pots</label>
                         </div>
-                        <?php endforeach; ?>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="pans">
+                            <label class="form-check-label" for="pans">Pans</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="new_launches">
+                            <label class="form-check-label" for="new_launches">New Launches</label>
+                        </div>
                     </div>
                 </div>
-                <?php $filterId++; endforeach; ?>
+
+                <!-- SHOP BY BRAND -->
+                <div class="mb-4 border-bottom pb-2">
+                    <div class="filter-title d-flex justify-content-between align-items-center"
+                        data-bs-toggle="collapse" data-bs-target="#filter2" aria-expanded="true"
+                        aria-controls="filter2">
+                        SHOP BY BRAND
+                        <i class="bi bi-chevron-up ms-1" id="icon2"></i>
+                    </div>
+                    <div class="collapse show" id="filter2">
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="fackelmann">
+                            <label class="form-check-label" for="fackelmann">Fackelmann</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="stanley_rogers">
+                            <label class="form-check-label" for="stanley_rogers">Stanley Rogers</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHOP BY TYPE -->
+                <div class="mb-4 border-bottom pb-2">
+                    <div class="filter-title d-flex justify-content-between align-items-center"
+                        data-bs-toggle="collapse" data-bs-target="#filter3" aria-expanded="true"
+                        aria-controls="filter3">
+                        SHOP BY TYPE
+                        <i class="bi bi-chevron-up ms-1" id="icon3"></i>
+                    </div>
+                    <div class="collapse show" id="filter3">
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="uncoated">
+                            <label class="form-check-label" for="uncoated">Uncoated</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="stainless_steel_bi-ply">
+                            <label class="form-check-label" for="stainless_steel_bi-ply">Stainless Steel BI-PLY</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="stainless_steel_tri-ply">
+                            <label class="form-check-label" for="stainless_steel_tri-ply">Stainless Steel TRI-PLY</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="non-stick">
+                            <label class="form-check-label" for="non-stick">Non-Stick</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="non-stick_granite">
+                            <label class="form-check-label" for="non-stick_granite">Non-Stick Granite</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHOP BY SIZES -->
+                <div class="mb-4 border-bottom pb-2">
+                    <div class="filter-title d-flex justify-content-between align-items-center"
+                        data-bs-toggle="collapse" data-bs-target="#filter4" aria-expanded="true"
+                        aria-controls="filter4">
+                        SHOP BY SIZES
+                        <i class="bi bi-chevron-up ms-1" id="icon4"></i>
+                    </div>
+                    <div class="collapse show" id="filter4">
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="24cm">
+                            <label class="form-check-label" for="24cm">24cm</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="28cm">
+                            <label class="form-check-label" for="28cm">28cm</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="32cm">
+                            <label class="form-check-label" for="32cm">32cm</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Product Grid -->
         <div class="col-lg-9 pb-4">
             <div class="row g-4">
-                <?php
-        $products = [
-            [
-                'category' => 'Kadai',
-                'img' => 'assets/images/product_highlight/kadai/kadai_1.jpg',
-                'overlay' => 'assets/images/product_highlight/kadai/kadai_overlay_1.jpg',
-                'desc' => 'Fackelmann Non-Stick Aluminum Deep Kadhai with Glass Lid (26.5 cm) – Ceramik.',
-                'price' => '₹ 8,990.00'
-            ],
-            [
-                'category' => 'Kadai',
-                'img' => 'assets/images/product_highlight/kadai/kadai_2.jpg',
-                'overlay' => 'assets/images/product_highlight/kadai/kadai_overlay_2.jpg',
-                'desc' => 'Fackelmann Steel Kadhai with Designer Lid- 26 cm, 3.25 litres – Ceramik.',
-                'price' => '₹ 8,149.00'
-            ],
-            [
-                'category' => 'Kadai',
-                'img' => 'assets/images/product_highlight/kadai/kadai_3.jpg',
-                'overlay' => 'assets/images/product_highlight/kadai/kadai_overlay_3.jpg',
-                'desc' => 'Fackelmann Nonstick Kadai with Glass Lid 24 cm Grey – Ceramik.',
-                'price' => '₹ 2,899.00'
-            ],
-            [
-                'category' => 'Kadai',
-                'img' => 'assets/images/product_highlight/kadai/kadai_4.jpg',
-                'overlay' => 'assets/images/product_highlight/kadai/kadai_overlay_4.jpg',
-                'desc' => 'Fackelmann Kadhai with Designer Lid- 26 cm, 3.25 litres – Ceramik.',
-                'price' => '₹ 6,549.00'
-            ],
-            [
-                'category' => 'Kadai',
-                'img' => 'assets/images/product_highlight/kadai/kadai_5.jpg',
-                'overlay' => 'assets/images/product_highlight/kadai/kadai_overlay_5.jpg',
-                'desc' => 'Fackelmann Nonstick Kadai with Glass Lid 28 cm Grey – Ceramik.',
-                'price' => '₹ 6,549.00'
-            ],
-            [
-                'category' => 'Kadai',
-                'img' => 'assets/images/product_highlight/kadai/kadai_6.jpg',
-                'overlay' => 'assets/images/product_highlight/kadai/kadai_overlay_6.jpg',
-                'desc' => 'Fackelmann Kadhai with Designer Lid- 22 cm, 2.0 litres – Ceramik.',
-                'price' => '₹ 2,599.00'
-            ],
-            // Add more products as needed
-        ];
-        foreach ($products as $product): ?>
-                <div class="col-md-4">
+                <!-- Product 1 -->
+                <div class="col-6 col-md-4">
+                <a href="product-detail.php" class="text-decoration-none text-dark">
                     <div class="product-card">
-                        <img src="<?= $product['img'] ?>" class="img-fluid main-img" alt="">
-                        <img src="<?= $product['overlay'] ?>" class="img-fluid hover-img" alt="">
-                        <div class="product-category text-uppercase"><?= $product['category'] ?></div>
-                        <div class="product-description"><?= $product['desc'] ?></div>
-                        <div class="product-price"><?= $product['price'] ?></div>
+                        <img src="assets/images/product_highlight/kadai/kadai_1.jpg" class="img-fluid main-img" alt="">
+                        <img src="assets/images/product_highlight/kadai/kadai_overlay_1.jpg" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Fackelmann</div>
+                        <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 20 cm, 1.5 litres</div>
+                        <div class="product-price">₹ 2,749.00</div>
+                    </div>
+                    </a>
+                </div>
+                <!-- Product 2 -->
+                <div class="col-6 col-md-4">
+                    <div class="product-card">
+                        <img src="assets/images/product_highlight/kadai/kadai_2.jpg" class="img-fluid main-img" alt="">
+                        <img src="assets/images/product_highlight/kadai/kadai_overlay_2.jpg" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Fackelmann</div>
+                        <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 22 cm, 2.0 litres</div>
+                        <div class="product-price">₹ 3,049.00</div>
                     </div>
                 </div>
-                <?php endforeach; ?>
+                <!-- Product 3 -->
+                <div class="col-6 col-md-4">
+                    <div class="product-card">
+                        <img src="assets/images/product_highlight/kadai/kadai_3.jpg" class="img-fluid main-img" alt="">
+                        <img src="assets/images/product_highlight/kadai/kadai_overlay_3.jpg" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Fackelmann</div>
+                        <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 24 cm, 2.5 litres</div>
+                        <div class="product-price">₹ 3,449.00</div>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="col-6 col-md-4">
+                    <div class="product-card">
+                        <img src="assets/images/product_highlight/kadai/kadai_4.jpg" class="img-fluid main-img" alt="">
+                        <img src="assets/images/product_highlight/kadai/kadai_overlay_4.jpg" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Fackelmann</div>
+                        <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 26 cm, 3.25 litres</div>
+                        <div class="product-price">₹ 3,699.00</div>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="col-6 col-md-4">
+                    <div class="product-card">
+                        <img src="assets/images/product_highlight/kadai/kadai_5.jpg" class="img-fluid main-img" alt="">
+                        <img src="assets/images/product_highlight/kadai/kadai_overlay_5.jpg" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Fackelmann</div>
+                        <div class="product-description">Fackelmann Non-Stick Aluminum Deep Kadhai with Glass Lid 26.5 cm</div>
+                        <div class="product-price">₹ 1,799.00</div>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div class="col-6 col-md-4">
+                    <div class="product-card">
+                        <img src="assets/images/product_highlight/kadai/kadai_6.jpg" class="img-fluid main-img" alt="">
+                        <img src="assets/images/product_highlight/kadai/kadai_overlay_6.jpg" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Fackelmann</div>
+                        <div class="product-description">Fackelmann Nonstick Kadai with Glass Lid 24 cm Grey</div>
+                        <div class="product-price">₹ 1,649.00</div>
+                    </div>
+                </div>
+                <!-- Product 7 -->
+                <div class="col-6 col-md-4">
+                    <div class="product-card">
+                        <img src="assets/images/product_highlight/kadai/kadai_7.jpg" class="img-fluid main-img" alt="">
+                        <img src="assets/images/product_highlight/kadai/kadai_overlay_7.jpg" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Fackelmann</div>
+                        <div class="product-description">Fackelmann Nonstick Kadai with Glass Lid 28 cm Grey</div>
+                        <div class="product-price">₹ 1,999.00</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </div><!-- /.row -->
+</div><!-- /.container-ish wrapper -->
 
 <!-- Mobile Filter Modal -->
 <div class="modal fade" id="mobileFilterModal" tabindex="-1" aria-labelledby="mobileFilterModalLabel"
@@ -356,29 +471,106 @@ body {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <?php
-        $filterId = 1;
-        foreach ($filters as $title => $options): ?>
+                <!-- SHOP BY CATEGORIES (Mobile) -->
                 <div class="mb-4 border-bottom pb-2">
                     <div class="filter-title d-flex justify-content-between align-items-center"
-                        data-bs-toggle="collapse" data-bs-target="#modalFilter<?= $filterId ?>" aria-expanded="true"
-                        aria-controls="modalFilter<?= $filterId ?>">
-                        <?= $title ?>
-                        <i class="bi bi-chevron-up ms-1" id="modalIcon<?= $filterId ?>"></i>
+                        data-bs-toggle="collapse" data-bs-target="#modalFilter1" aria-expanded="true"
+                        aria-controls="modalFilter1">
+                        SHOP BY CATEGORIES
+                        <i class="bi bi-chevron-up ms-1" id="modalIcon1"></i>
                     </div>
-                    <div class="collapse show" id="modalFilter<?= $filterId ?>">
-                        <?php foreach ($options as $opt): ?>
+                    <div class="collapse show" id="modalFilter1">
                         <div class="form-check ps-4 text-dark">
-                            <input class="form-check-input" type="checkbox"
-                                id="modal_<?= strtolower(str_replace(' ', '_', $opt)) ?>">
-                            <label class="form-check-label"
-                                for="modal_<?= strtolower(str_replace(' ', '_', $opt)) ?>"><?= $opt ?></label>
+                            <input class="form-check-input" type="checkbox" id="modal_pots">
+                            <label class="form-check-label" for="modal_pots">Pots</label>
                         </div>
-                        <?php endforeach; ?>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_pans">
+                            <label class="form-check-label" for="modal_pans">Pans</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_new_launches">
+                            <label class="form-check-label" for="modal_new_launches">New Launches</label>
+                        </div>
                     </div>
                 </div>
-                <?php $filterId++; endforeach; ?>
-            </div>
+
+                <!-- SHOP BY BRAND (Mobile) -->
+                <div class="mb-4 border-bottom pb-2">
+                    <div class="filter-title d-flex justify-content-between align-items-center"
+                        data-bs-toggle="collapse" data-bs-target="#modalFilter2" aria-expanded="true"
+                        aria-controls="modalFilter2">
+                        SHOP BY BRAND
+                        <i class="bi bi-chevron-up ms-1" id="modalIcon2"></i>
+                    </div>
+                    <div class="collapse show" id="modalFilter2">
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_fackelmann">
+                            <label class="form-check-label" for="modal_fackelmann">Fackelmann</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_stanley_rogers">
+                            <label class="form-check-label" for="modal_stanley_rogers">Stanley Rogers</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHOP BY TYPE (Mobile) -->
+                <div class="mb-4 border-bottom pb-2">
+                    <div class="filter-title d-flex justify-content-between align-items-center"
+                        data-bs-toggle="collapse" data-bs-target="#modalFilter3" aria-expanded="true"
+                        aria-controls="modalFilter3">
+                        SHOP BY TYPE
+                        <i class="bi bi-chevron-up ms-1" id="modalIcon3"></i>
+                    </div>
+                    <div class="collapse show" id="modalFilter3">
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_uncoated">
+                            <label class="form-check-label" for="modal_uncoated">Uncoated</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_stainless_steel_bi-ply">
+                            <label class="form-check-label" for="modal_stainless_steel_bi-ply">Stainless Steel BI-PLY</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_stainless_steel_tri-ply">
+                            <label class="form-check-label" for="modal_stainless_steel_tri-ply">Stainless Steel TRI-PLY</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_non-stick">
+                            <label class="form-check-label" for="modal_non-stick">Non-Stick</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_non-stick_granite">
+                            <label class="form-check-label" for="modal_non-stick_granite">Non-Stick Granite</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHOP BY SIZES (Mobile) -->
+                <div class="mb-4 border-bottom pb-2">
+                    <div class="filter-title d-flex justify-content-between align-items-center"
+                        data-bs-toggle="collapse" data-bs-target="#modalFilter4" aria-expanded="true"
+                        aria-controls="modalFilter4">
+                        SHOP BY SIZES
+                        <i class="bi bi-chevron-up ms-1" id="modalIcon4"></i>
+                    </div>
+                    <div class="collapse show" id="modalFilter4">
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_24cm">
+                            <label class="form-check-label" for="modal_24cm">24cm</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_28cm">
+                            <label class="form-check-label" for="modal_28cm">28cm</label>
+                        </div>
+                        <div class="form-check ps-4 text-dark">
+                            <input class="form-check-input" type="checkbox" id="modal_32cm">
+                            <label class="form-check-label" for="modal_32cm">32cm</label>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-body -->
         </div>
     </div>
 </div>
@@ -401,6 +593,22 @@ document.querySelectorAll('.collapse').forEach(collapse => {
         const icon = this.previousElementSibling.querySelector('i');
         icon.classList.remove('bi-chevron-up');
         icon.classList.add('bi-chevron-down');
+    });
+});
+
+// Handle multiple selection with check icons
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdowns = document.querySelectorAll('.dropdown-menu');
+
+    dropdowns.forEach(menu => {
+        menu.querySelectorAll('.dropdown-item').forEach(item => {
+            if (!item.classList.contains('text-center')) { // Skip CLOSE button
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    this.classList.toggle('active'); // Toggle active state
+                });
+            }
+        });
     });
 });
 </script>
