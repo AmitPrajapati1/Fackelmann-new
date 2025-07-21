@@ -1,4 +1,3 @@
-
 <style>
     :root {
         --primary-color: #7a001c;
@@ -571,6 +570,7 @@
         cursor: pointer;
         min-height: 100px;
         text-align: center;
+        padding-top: 30px;
     }
 
     .show-more p {
@@ -866,12 +866,12 @@
 <header class="header">
     <div class="header-left">
         <div class="logo-container">
-            <a href="index.php">
+            <a href="index.html">
                 <img src="assets/images/logos/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
             </a>
         </div>
         <nav class="nav">
-            <a href="/">HOME</a>
+            <a href="index.php">HOME</a>
             <a href="#" data-submenu="productsSubmenu" onclick="toggleSubmenu(event)">PRODUCTS</a>
             <a href="sustainability.php">SUSTAINABILITY</a>
             <a href="#" data-submenu="brandsSubmenu" onclick="toggleSubmenu(event)">GLOBAL BRANDS</a>
@@ -939,7 +939,7 @@
             <div>
                 <div class="category-submenu cookware-submenu" style="display: none;">
                     <div class="category-submenu-inner">
-                        <a href="#" class="submenu-product-link">
+                        <a href="product-listing.php" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
                                     <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
@@ -959,6 +959,7 @@
                                 </ul>
                             </div>
                         </a>
+
 
                         <a href="#" class="submenu-product-link">
                             <div class="category-item">
@@ -1217,41 +1218,46 @@
     <div class="sub-cat-brands" id="brandsSubmenu" style="display: none;">
         <div class="brands-container">
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/fm_200x125.jpg" alt="Fackelmann"></a>
+                <a href="https://www.fackelmann.de/marken/fackelmann"><img src="assets/images/brands/fm_200x125.jpg"
+                        alt="Fackelmann"></a>
                 <div class="brand-desc">
                     <p>Popular kitchen helpers & diverse household items</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/paris-hilton_200x125.jpg" alt="Paris Hilton"></a>
+                <a href="https://www.fackelmann.de/marken/paris-hilton"><img
+                        src="assets/images/brands/paris-hilton_200x125.jpg" alt="Paris Hilton"></a>
                 <div class="brand-desc">
                     <p>Glamour for the kitchen with Paris Hilton Cookware.</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/zenker_200x125.jpg" alt="Stanley Rogers"></a>
+                <a href="https://www.fackelmann.de/marken/stanley-rogers"><img
+                        src="assets/images/brands/zenker_200x125.jpg" alt="Stanley Rogers"></a>
                 <div class="brand-desc">
                     <p>Zenker baking tins – great baking results for every occasion</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/tasty_200x125.jpg" alt="Tasty"></a>
+                <a href="https://www.fackelmann.de/marken/tasty?m=c6,t16"><img
+                        src="assets/images/brands/tasty_200x125.jpg" alt="Tasty"></a>
 
                 <div class="brand-desc">
                     <p>Creative & versatile – colorful kitchen tools from Tasty.</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="#"><img src="assets/images/brands/cktfm_200x125.jpg" alt="Chefkoch Fackelmann"></a>
+                <a href="https://www.fackelmann.de/marken/chefkoch-trifft-fackelmann?m=c6,t7"><img
+                        src="assets/images/brands/cktfm_200x125.jpg" alt="Chefkoch Fackelmann"></a>
                 <div class="brand-desc">
                     <p>Chef meets Fackelmann – You can cook anything with this.</p>
                 </div>
             </div>
-            <div class="brand-item show-more">
+            <a class="brand-item show-more" href="global-brands.php" style="text-decoration: none;">
                 <div class="brand-desc">
                     <p>Show More</p>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="close-btn-brands" onclick="hideSubmenu()">
             <i class='bx bx-x'></i>
@@ -1303,16 +1309,10 @@
                         class="material-icons">chevron_right</i></li>
                 <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
                         class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
-                        class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
-                        class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
-                        class="material-icons">chevron_right</i></li>
             </ul>
             <a href="index.php" class="sidenav-section-title">Home</a>
             <a href="#" class="sidenav-section-title">About Us</a>
-            <a href="#" class="sidenav-section-title">Global Brands</a>
+            <a href="global-brands.php" class="sidenav-section-title">Global Brands</a>
             <a href="sustainability.php" class="sidenav-section-title">Sustainability</a>
             <a href="#" class="sidenav-footer">
                 <i class="material-icons">mail_outline</i> Contact form
@@ -1476,4 +1476,3 @@
         }
     });
 </script>
-
