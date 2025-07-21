@@ -1,6 +1,8 @@
 <?php include('includes/header.php'); ?>
 <?php include('includes/nav.php'); ?>
 
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
 <style>
     :root {
         --primary-color: #80001d;
@@ -50,6 +52,7 @@
         padding: 10px 14px;
         background-color: var(--white);
         width: 100%;
+        outline: none;
     }
 
     .form-control-contact:focus {
@@ -65,24 +68,10 @@
         color: var(--text-gray);
         font-weight: 400;
         background-color: var(--white);
-    }
-
-    .form-control-dropdown {
-        border: 1px solid var(--bg-gray);
-        border-radius: 0;
-        color: var(--text-gray);
-        font-weight: 400;
-        height: 39px;
-        background-color: var(--white);
         width: 100%;
-        font-size: 14px;
-    }
-
-    .form-control-dropdown:focus {
-        background-color: var(--bg-gray);
-        border-color: var(--text-gray);
-        box-shadow: none;
-        color: var(--text-gray);
+        padding: 10px 14px;
+        outline: none;
+        margin: 5px 0px;
     }
 
     .form-control-msg:focus {
@@ -92,23 +81,36 @@
         color: var(--text-gray);
     }
 
-    .btn-type-2 {
-        border: none;
-        text-transform: uppercase;
-        font-size: 20px;
-        letter-spacing: 2px;
+    .form-control-dropdown {
+        border: 1px solid var(--bg-gray);
+        border-radius: 0;
+        color: var(--text-gray);
+        font-weight: 400;
+        height: 35px;
+        padding: 8px 14px;
+        background-color: var(--white);
+        width: 100%;
+        font-size: 14px;
+        outline: none;
+    }
+
+    .form-control-dropdown:focus {
+        background-color: var(--bg-gray);
+        border-color: var(--text-gray);
+        box-shadow: none;
+        color: var(--text-gray);
     }
 
     .contact-main {
-        padding: 50px;
+        padding: 35px;
     }
 
     .add-details {
-        padding: 40px;
+        padding: 35px;
     }
 
     .add-details h3 {
-        color: var(--secondary-color);
+        color: var(--text-red);
     }
 
     .g-map {
@@ -131,94 +133,83 @@
 
     .leave-msg {
         font-size: 32px;
-
-        color: var(--secondary-color);
-
+        color: var(--text-red);
         text-transform: uppercase;
         padding-bottom: 25px;
     }
 
-    tr td a {
-        color: #c51a30;
-    }
-
-    input::placeholder {
+    /* .add-details table td {
         color: var(--text-gray);
+    } */
+
+    .add-details table td a {
+        color: var(--text-red);
+        text-decoration: none;
     }
 
-    .form-control-msg::placeholder {
+    .add-details table td a:hover {
+        text-decoration: underline;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
         color: var(--text-gray);
         opacity: 1;
+        font-size: 13px;
+    }
+
+    .form-control-dropdown:invalid {
+        color: var(--text-gray);
+        font-size: 13px;
     }
 
     .contact-custom-select {
         background-color: var(--white);
-        border: 0;
+        border: 1px solid var(--bg-gray);
         border-radius: 0;
         color: var(--text-gray);
         font-weight: 400;
-        height: 2.1875rem;
-        line-height: 1.2;
-        padding-left: .9rem;
+        height: 35px;
+        padding: 8px 11px;
+        font-size: 14px;
     }
 
-    .custom-label-contact {
-        font-weight: 400;
-    }
-
-    .form-control-dropdown.contact-custom-select {
-        background-color: var(--white);
-        /* border: 1px solid #ccc; */
-        color: #333;
-    }
-
-    .form-control-dropdown.contact-custom-select option:hover {
-        background-color: #d3d3d3;
-        color: #333;
-    }
-
-    .form-control-dropdown.contact-custom-select option:checked {
-        background-color: #a9a9a9;
-        color: var(--white);
-    }
-
-    .form-control-dropdown.contact-custom-select option:focus {
-        border-color: #a9a9a9;
-        box-shadow: 0 0 5px rgba(169, 169, 169, 0.5);
-        outline: none;
-    }
-
-    .contact-main input[type="text"] {
-        margin: 5px 0;
-    }
-
-    .contact-main input[type="tel"] {
-        margin: 5px 0;
-    }
-
+    .contact-main input[type="text"],
+    .contact-main input[type="tel"],
+    .contact-main input[type="email"],
     .contact-main select {
         margin: 5px 0;
-        padding: 10px 14px;
-        height: 35px;
     }
 
-    .contact-main input[type="email"] {
-        margin: 5px 0;
-    }
-
-    .contact-btn {
+    /* .contact-btn {
         background: var(--secondary-color);
+        color: var(--white);
+        border: none;
+        border-radius: 0;
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background 0.2s ease, color 0.2s ease;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
     }
 
     .contact-btn:hover {
-        color: var(--white);
         background: var(--btn-hover-gray);
-    }
+        color: var(--white);
+    } */
 
     input.is-invalid,
     select.is-invalid,
     textarea.is-invalid {
-        border: 1px solid red;
+        border: 1px solid #e2e2e2;
+    }
+
+    .form-control.is-invalid {
+        border-color: #e2e2e2 !important;
     }
 
     .contact-msg {
@@ -227,56 +218,117 @@
         margin-top: 0px;
         margin-left: 2px;
         display: block;
+        margin-bottom: 5px;
+
     }
 
     .btn-type-1 {
-        padding: 15px 25px;
+        padding: 12px 30px;
         margin: 15px 0;
-        color: white;
+        color: var(--white);
         background: repeating-linear-gradient(-45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px);
-        font-weight: bold;
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 0;
         display: inline-block;
-        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        transition: background 0.15s ease-in-out;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
     }
 
     .btn-type-1:hover {
-        color: white;
         background: #c51a30;
+        color: var(--white);
+    }
+
+    .custom-label-contact {
+        /* color: var(--text-gray); */
+        font-weight: 400;
+        margin-bottom: 2px;
+        display: inline-block;
+        font-size: 13px;
+    }
+
+    .custom-label-contact a {
+        color: var(--text-red);
+        text-decoration: none;
+    }
+
+    .custom-label-contact a:hover {
+        text-decoration: underline;
+    }
+
+    .privacy-policy-container {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+    .required-field {
+        color: var(--text-gray);
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 576px) {
+        .privacy-policy-container {
+            flex-wrap: wrap;
+        }
+    }
+
+    .form-control-dropdown:focus {
+        background-color: var(--bg-gray);
+        border-color: var(--black);
+        box-shadow: none;
+        color: var(--text-gray) !important;
+    }
+
+    .add-details table td.icon-cell {
+        vertical-align: top;
+        color: var(--text-red);
     }
 </style>
 
 <section class="contact-us-banner"></section>
 
-
 <main id="main" style="background-color: #F5F5F5">
     <section class="sec-padding">
         <div class="container" data-aos="fade-up">
-            <div class="row" style="padding-bottom: 40px;">
+            <div class="row">
                 <div class="col-md-12" id="contact-msg-box">
                     <form id="contact-frm">
                         <input type="hidden" name="action_type" value="contact-enquiry" />
                         <div class="contact-form contact-main">
                             <p class="leave-msg">Leave a Message</p>
+                            <div id="formAlert"
+                                style="display: none; padding: 10px 15px; margin-bottom: 20px; border-radius: 4px; font-weight: 500;">
+                            </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <input type="text" name="name" placeholder="Your Name*"
-                                        class="form-control form-control-contact" Required>
+                                        class="form-control form-control-contact" required>
                                     <span class="message contact-msg" id="msgname"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <input type="email" name="email" placeholder="Your Email*"
-                                        class="form-control form-control-contact" Required>
+                                        class="form-control form-control-contact" required>
                                     <span class="message contact-msg" id="msgemail"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <input type="tel" name="mobile" placeholder="Your Mobile No.*"
-                                        class="form-control form-control-contact" Required>
+                                        class="form-control form-control-contact" required>
                                     <span class="message contact-msg" id="msgmobile"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <select name="state"
-                                        class="form-control-dropdown custom-select contact-custom-select" Required>
-                                        <option value="" selected>State</option>
+                                        class="form-control-dropdown custom-select contact-custom-select" required>
+                                        <option value="" disabled selected>State</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -318,45 +370,42 @@
                                 </div>
                                 <div class="col-md-6">
                                     <input type="text" name="pincode" placeholder="Your Pincode*"
-                                        class="form-control form-control-contact" Required>
+                                        class="form-control form-control-contact" required>
                                     <span class="message contact-msg" id="msgpincode"></span>
                                 </div>
                                 <div class="col-md-6">
                                     <select name="subject"
-                                        class="form-control-dropdown custom-select contact-custom-select" Required>
-                                        <option>Sales</option>
-                                        <option>Other</option>
+                                        class="form-control-dropdown custom-select contact-custom-select" required>
+                                        <option value="" disabled selected>Subject</option>
+                                        <option value="Sales">Sales</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                     <span class="message contact-msg" id="msgsubject"></span>
                                 </div>
                                 <div class="col-md-12">
-                                    <textarea name="comment" placeholder="Message"
-                                        class="form-control-msg mb-0"></textarea>
+                                    <textarea name="comment" placeholder="Message" class="form-control-msg"></textarea>
                                     <span class="message contact-msg" id="msgcomment"></span>
                                 </div>
                                 <div class="col-md-12">
-                                    <p style="font-size: large; font-weight: 600; margin-top: 10px;">Privacy Policy</p>
-                                    <div class="clearfix"></div>
-                                    <label class="custom-label-contact mb-0">
-                                        <input type="checkbox" name="terms" value="1" />&nbsp;I
-                                        have read and
-                                        understood the Privacy Policy.
-                                    </label>
-                                    <label class="mb-0">*Required field</label>
-
-                                    <a href="#" target="_blank" class="custom-label-contact">Read More</a>
-                                    <div class="clearfix"></div>
+                                    <p
+                                        style="font-size: large; font-weight: 600; color: var(--text-gray); margin-top: 10px;">
+                                        Privacy Policy</p>
+                                    <div class="privacy-policy-container">
+                                        <label class="custom-label-contact">
+                                            <input type="checkbox" name="terms" value="1" required /> I have read and
+                                            understood the <a href="#" target="_blank"
+                                                class="custom-label-contact">Privacy Policy</a>
+                                            <span class="required-field">*</span>
+                                        </label>
+                                    </div>
                                     <span class="message contact-msg" id="msgterms"></span>
-                                    <div class="clearfix"></div>
                                     <label class="custom-label-contact">
-                                        <input type="checkbox" name="news" value="1" />&nbsp;I wish
-                                        to receive the
-                                        latest news and offers from Fackelmann India</label>
-                                    <div class="clearfix"></div>
+                                        <input type="checkbox" name="news" value="1" /> I wish to receive the latest
+                                        news and offers from Fackelmann India
+                                    </label>
                                     <span class="message contact-msg" id="msgnews"></span>
-                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="col-md-12 d-flex ">
+                                <div class="col-md-12 d-flex">
                                     <button class="btn-type-1 contact-btn" type="button"
                                         id="authenticateContact">Submit</button>
                                 </div>
@@ -374,37 +423,33 @@
                             <tbody>
                                 <tr>
                                     <td colspan='2'>
-                                        <h4 style="color: black">Gurgaon</h4>
+                                        <h4>Gurgaon</h4>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><i class="bx bx-map bx-sm text-primary"></i></td>
-
+                                    <td class="icon-cell"><i class='bx bx-map bx-sm'></i></td>
                                     <td>
-                                        <p style="color: black">Corporate Office:<br />
-                                            Fackelmann Inda Kitchenware Pvt. Ltd.<br />
-                                            7th Floor, Building No 5, Tower- A, DLF Cyber City, <br />
-                                            DLF Phase- 3, Gurugram - 122002,<br />
-                                            Haryana </p>
+                                        <p>Corporate Office:<br />
+                                            Fackelmann India Kitchenware Pvt. Ltd.<br />
+                                            7th Floor, Building No 5, Tower-A, DLF Cyber City,<br />
+                                            DLF Phase-3, Gurugram - 122002,<br />
+                                            Haryana</p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><i class="bx bx-envelope bx-sm text-primary"></i></td>
+                                    <td class="icon-cell"><i class='bx bx-envelope bx-sm'></i></td>
                                     <td><a href="mailto:consumer@fackelmann.co.in">consumer@fackelmann.co.in</a></td>
                                 </tr>
                                 <tr>
-                                    <td><i class="bx bx-phone-call bx-sm text-primary"></i></td>
-                                    <td><a href="tel:+91-8800997550"> +91-8800997550</a></td>
+                                    <td class="icon-cell"><i class='bx bx-phone bx-sm'></i></td>
+                                    <td><a href="tel:+91-8800997550">+91-8800997550</a></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style="color: black">
-                                        <p>(Weekdays:- 9: 30 AM to 6:00 PM (Saturday, Sunday & National Holidays
-                                            Closed))
+                                    <td colspan="2">
+                                        <p>(Weekdays: 9:30 AM to 6:00 PM (Saturday, Sunday & National Holidays Closed))
                                         </p>
                                     </td>
-                                    <td>&nbsp;</td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
@@ -421,8 +466,91 @@
             </div>
         </div>
     </section>
-    <div class="clearfix"></div>
-    </section>
 </main>
 
 <?php include('includes/footer.php'); ?>
+
+<script>
+    document.getElementById("authenticateContact").addEventListener("click", function () {
+        const form = document.getElementById("contact-frm");
+
+        // Reset messages
+        document.querySelectorAll(".contact-msg").forEach(el => el.textContent = "");
+        document.querySelectorAll(".is-invalid").forEach(el => el.classList.remove("is-invalid"));
+
+        const alertBox = document.getElementById("formAlert");
+        alertBox.style.display = "none";
+        alertBox.textContent = "";
+        alertBox.className = "";
+
+        let isValid = true;
+
+        function showError(name, message) {
+            const input = form[name];
+            input.classList.add("is-invalid");
+            document.getElementById("msg" + name).textContent = message;
+            isValid = false;
+        }
+
+        // Form validations
+        const name = form["name"].value.trim();
+        if (!name) showError("name", "Name is required.");
+
+        const email = form["email"].value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email) {
+            showError("email", "Email is required.");
+        } else if (!emailRegex.test(email)) {
+            showError("email", "Invalid email format.");
+        }
+
+        const mobile = form["mobile"].value.trim();
+        const mobileRegex = /^[6-9]\d{9}$/;
+        if (!mobile) {
+            showError("mobile", "Mobile number is required.");
+        } else if (!mobileRegex.test(mobile)) {
+            showError("mobile", "Enter a valid 10-digit mobile number.");
+        }
+
+        const state = form["state"].value;
+        if (!state) showError("state", "Please select a state.");
+
+        const pincode = form["pincode"].value.trim();
+        const pincodeRegex = /^[1-9][0-9]{5}$/;
+        if (!pincode) {
+            showError("pincode", "Pincode is required.");
+        } else if (!pincodeRegex.test(pincode)) {
+            showError("pincode", "Invalid pincode.");
+        }
+
+        const subject = form["subject"].value;
+        if (!subject) showError("subject", "Please select a subject.");
+
+        const comment = form["comment"].value.trim();
+        if (!comment) showError("comment", "Message cannot be empty.");
+
+        const terms = form["terms"].checked;
+        if (!terms) showError("terms", "You must agree to the privacy policy.");
+
+        if (isValid) {
+            // Simulate success
+            alertBox.style.display = "block";
+            alertBox.style.backgroundColor = "#d4edda";
+            alertBox.style.color = "#155724";
+            alertBox.textContent = "Your message has been successfully submitted!";
+
+            form.reset();
+
+            // Optional: auto-hide the message after 5 seconds
+            setTimeout(() => {
+                alertBox.style.display = "none";
+            }, 5000);
+        } else {
+            // Show error message
+            alertBox.style.display = "block";
+            alertBox.style.backgroundColor = "#f8d7da";
+            alertBox.style.color = "#721c24";
+            alertBox.textContent = "Please correct the highlighted errors and try again.";
+        }
+    });
+</script>
