@@ -6,34 +6,36 @@ body {
     background-color: #fff;
 }
 
+/* ---------- GLOBAL PRODUCT TYPOGRAPHY ---------- */
 .product-title {
     font-size: 20px;
     font-weight: 600;
 }
 
+/* Legacy price styles (kept for backward compatibility) */
 .price {
     color: #d00;
     font-size: 24px;
     font-weight: bold;
 }
-
 .old-price {
     text-decoration: line-through;
     font-size: 16px;
     color: #666;
 }
 
+/* ---------- REQUEST QUOTE BUTTON ---------- */
 .request-btn {
     background-color: #73c0a8;
     color: #fff;
     border: none;
     padding: 10px 20px;
 }
-
 .request-btn:hover {
     background-color: #5ea68f;
 }
 
+/* ---------- THUMBNAILS ---------- */
 .thumb-img {
     width: 60px;
     height: 60px;
@@ -42,11 +44,11 @@ body {
     cursor: pointer;
     transition: border 0.3s ease;
 }
-
 .thumb-img.active {
     border: 2px solid #73c0a8;
 }
 
+/* ---------- CAROUSEL CONTROLS ---------- */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.6);
@@ -55,7 +57,7 @@ body {
     padding: 15px;
 }
 
-/* ✅ Zoom View on Right Column */
+/* ---------- ZOOM VIEW (Right Column) ---------- */
 .zoom-view {
     display: none;
     width: 100%;
@@ -63,7 +65,6 @@ body {
     overflow: hidden;
     border: 1px solid #ccc;
 }
-
 .zoom-view img {
     position: relative;
     width: 200%;
@@ -72,58 +73,153 @@ body {
     transition: transform 0.1s ease;
     cursor: crosshair;
 }
-</style>
 
-<style>
+/* ---------- ACCORDION CUSTOM ICONS ---------- */
 .accordion-button::after {
     display: none;
-    /* Hide default Bootstrap chevron */
 }
 
 .toggle-icon {
-    font-weight: bold;
-    font-size: 18px;
+    font-size: 28px;
     margin-left: auto;
+    color: #878787; /* Same color as original */
+    transition: transform 0.2s ease;
 }
 
-.accordion-button.collapsed .toggle-icon::before {
-    content: "+";
-}
-
-.accordion-button:not(.collapsed) .toggle-icon::before {
-    content: "-";
+.accordion-item {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
 }
 
 .section-title {
-    font-weight: 600;
     text-transform: uppercase;
-    font-size: 14px;
-    color: #333;
+    font-size: 16px !important;
+    color: #737373;
+    font-weight: 400;
+    letter-spacing: .7px;
+    line-height: 50px;
+    margin: 0 -20px;
+    padding: 0;
 }
-
 .care-icon {
     width: 40px;
     margin-right: 10px;
 }
-
 .tech-data td:first-child {
     font-weight: 600;
     width: 120px;
     color: #444;
 }
-
 .tech-data td:last-child {
     color: #555;
 }
+
+/* =========================================================
+   PRODUCT INFO BLOCK  (Styled per reference image)
+   ========================================================= */
+.product-info {
+    max-width: 520px;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.35;
+}
+.product-info h1.pi-title {
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000;
+}
+.product-info .pi-sku {
+    font-size: 14px;
+    color: #9a9a9a;
+    margin-bottom: 16px;
+}
+.product-info .pi-mrp {
+    font-size: 26px;
+    font-weight: 700;
+    color: #d00;
+    margin-bottom: 4px;
+}
+.product-info .pi-rrp {
+    font-size: 16px;
+    color: #222;
+    margin-bottom: 16px;
+}
+.product-info .pi-availability-label {
+    display: block;
+    font-size: 13px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #737373;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+.product-info .pi-availability-logo {
+    height: 28px;
+    width: auto;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+/* Bullet list styled w/ red dot like screenshot */
+.product-info .pi-feature-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    color: #1a1a1a;
+}
+.product-info .pi-feature-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 10px;
+}
+.product-info .pi-feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    background: #d00;
+    border-radius: 50%;
+}
+
+/* Space before CTA */
+.product-info .pi-cta-wrap {
+    margin-top: 20px;
+}
+
+.accordion-body {
+    padding: 0px !important;
+}
+
+.accordion-button {
+    background-color: transparent !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 575.98px) {
+    .product-info h1.pi-title {
+        font-size: 22px;
+    }
+    .product-info .pi-mrp {
+        font-size: 22px;
+    }
+}
 </style>
 
-<div class="container py-4">
+<div class="px-4 py-4">
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Cook</a></li>
-            <li class="breadcrumb-item"><a href="#">Pans</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Frypan</li>
+            <!-- <li class="breadcrumb-item"><a href="#">Pans</a></li> -->
+            <li class="breadcrumb-item active" aria-current="page">Kadai</li>
         </ol>
     </nav>
 
@@ -135,34 +231,34 @@ body {
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp"
-                            class="d-block w-100 zoom-image" alt="Product 1">
+                             class="d-block w-100 zoom-image" alt="Product 1">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp"
-                            class="d-block w-100 zoom-image" alt="Product 2">
+                             class="d-block w-100 zoom-image" alt="Product 2">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp"
-                            class="d-block w-100 zoom-image" alt="Product 3">
+                             class="d-block w-100 zoom-image" alt="Product 3">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp"
-                            class="d-block w-100 zoom-image" alt="Product 4">
+                             class="d-block w-100 zoom-image" alt="Product 4">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
-                            class="d-block w-100 zoom-image" alt="Product 5">
+                             class="d-block w-100 zoom-image" alt="Product 5">
                     </div>
                 </div>
 
                 <!-- Carousel Controls -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
-                    data-bs-slide="prev">
+                        data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
-                    data-bs-slide="next">
+                        data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -171,70 +267,73 @@ body {
             <!-- Thumbnail Images -->
             <div class="d-flex justify-content-start gap-2">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp"
-                    class="thumb-img active" data-bs-target="#productCarousel" data-bs-slide-to="0"
-                    onclick="setActiveThumb(this)">
+                     class="thumb-img active" data-bs-target="#productCarousel" data-bs-slide-to="0"
+                     onclick="setActiveThumb(this)">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp"
-                    class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="1"
-                    onclick="setActiveThumb(this)">
+                     class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="1"
+                     onclick="setActiveThumb(this)">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp"
-                    class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="2"
-                    onclick="setActiveThumb(this)">
+                     class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="2"
+                     onclick="setActiveThumb(this)">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp"
-                    class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="3"
-                    onclick="setActiveThumb(this)">
+                     class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="3"
+                     onclick="setActiveThumb(this)">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
-                    class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="4"
-                    onclick="setActiveThumb(this)">
+                     class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="4"
+                     onclick="setActiveThumb(this)">
             </div>
         </div>
 
         <!-- Product Info Section -->
         <div class="col-lg-6">
-            <h2 class="product-title mb-2">SR BI-PLY Professional Frypan 24 Cm</h2>
-
-            <!-- Product Info -->
             <div class="product-info">
-                <p class="mb-2">
-                    <span class="price">MRP ₹ 7,990.00</span><br>
-                    <span class="old-price">RRP: ₹ 8,490.00</span> &nbsp; <span>(6% Off)</span>
-                </p>
-                <ul class="feature-list list-unstyled">
-                    <li>✔ Innovative BI-PLY construction. Hard anodised aluminium exterior. Premium 18/10 stainless
-                        steel interior</li>
-                    <li>✔ Induction and all cooktop compatible. Solid induction plate gives optimum connectivity and
-                        heat transfer on induction cooktops</li>
-                    <li>✔ Double riveted, Cool Touch™ brushed stainless steel handles. Reduce heat transfer during
-                        cooktop use. Riveted for durability</li>
-                    <li>✔ Metal utensil safe</li>
-                    <li>✔ Oven safe 200°C</li>
+                <h1 class="pi-title">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 20 cm, 1.5 litres</h1>
+                <div class="pi-sku">SKU ID: 5568481</div>
+                <div class="pi-mrp">MRP ₹ 2,749.00</div>
+
+                <span class="pi-availability-label">Available At</span>
+                    <a href="https://www.amazon.in/dp/B07X24NQTX?th=1" target="_blank" class="pi-availability-logo" aria-label="Amazon">
+                        <i class="bi bi-amazon"></i>
+                    </a>
+                <ul class="pi-feature-list">
+                    <li>Material: 18/10 Stainless Steel Base | Color: Silver</li>
+                    <li>The inside layer (the one that touches your food) is premium 18/10 stainless steel base, giving durability &amp; high stain / non-stick resistance.</li>
+                    <li>Aluminium core in between layer is made of fine grade aluminium and extends from base up through the top edges to ensure even heating.</li>
+                    <li>Exterior cookware surface is high-density 430-series magnetic stainless steel for use on any cooktop (gas, glass, induction, etc.).</li>
+                    <li>5 Years warranty on all stainless steel cookware.</li>
+                    <li>Less Oil. No Burning. Induction Cookware.</li>
+                    <li>Perfect grip handles for better hold.</li>
+                    <li>Package Content: 1 Stainless Steel Kadhai and 1 Designer Lid.</li>
                 </ul>
-                <button class="request-btn mt-3">REQUEST QUOTE</button>
+
+                <div class="pi-cta-wrap">
+                    <button class="request-btn mt-3">REQUEST QUOTE</button>
+                </div>
             </div>
 
-            <!-- Zoom View (Hidden by default) -->
+            <!-- Zoom View -->
             <div class="zoom-view">
                 <img id="zoomedImage" src="" alt="Zoom Image">
             </div>
         </div>
     </div>
 
-    <!-- Description -->
+    <!-- Accordion -->
     <div class="accordion py-4" id="productDetailsAccordion">
         <!-- Description -->
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingDescription">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
+                        data-bs-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
                     <span class="section-title">Description</span>
-                    <span class="toggle-icon"></span>
+                    <i class="toggle-icon bi bi-plus"></i>
                 </button>
             </h2>
             <div id="collapseDescription" class="accordion-collapse collapse" aria-labelledby="headingDescription"
-                data-bs-parent="#productDetailsAccordion">
+                 data-bs-parent="#productDetailsAccordion">
                 <div class="accordion-body text-muted">
                     Designed to meet the rigorous demands of the toughest kitchens. Innovative BI-PLY construction
-                    combines an
-                    extremely durable hard anodised exterior with premium 18/10 stainless steel interior.
+                    combines an extremely durable hard anodised exterior with premium 18/10 stainless steel interior.
                 </div>
             </div>
         </div>
@@ -243,13 +342,13 @@ body {
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingCare">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseCare" aria-expanded="false" aria-controls="collapseCare">
+                        data-bs-target="#collapseCare" aria-expanded="false" aria-controls="collapseCare">
                     <span class="section-title">Care Instructions</span>
-                    <span class="toggle-icon"></span>
+                    <i class="toggle-icon bi bi-plus"></i>
                 </button>
             </h2>
             <div id="collapseCare" class="accordion-collapse collapse" aria-labelledby="headingCare"
-                data-bs-parent="#productDetailsAccordion">
+                 data-bs-parent="#productDetailsAccordion">
                 <div class="accordion-body d-flex align-items-center text-muted">
                     <img src="assets/images/icons/dishwasher-icon.png" alt="Care Icon" class="care-icon">
                     Dishwasher safe, hand wash recommended.
@@ -261,13 +360,13 @@ body {
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingTechnical">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTechnical" aria-expanded="false" aria-controls="collapseTechnical">
+                        data-bs-target="#collapseTechnical" aria-expanded="false" aria-controls="collapseTechnical">
                     <span class="section-title">Technical Data</span>
-                    <span class="toggle-icon"></span>
+                    <i class="toggle-icon bi bi-plus"></i>
                 </button>
             </h2>
             <div id="collapseTechnical" class="accordion-collapse collapse" aria-labelledby="headingTechnical"
-                data-bs-parent="#productDetailsAccordion">
+                 data-bs-parent="#productDetailsAccordion">
                 <div class="accordion-body">
                     <div class="table-responsive">
                         <table class="table table-borderless tech-data mb-0">
@@ -305,8 +404,6 @@ body {
     </div>
 </div>
 
-
-
 <script>
 // Active thumbnail highlight on click
 function setActiveThumb(element) {
@@ -323,7 +420,7 @@ carousel.addEventListener('slide.bs.carousel', function(event) {
     thumbs[index].classList.add('active');
 });
 
-// ✅ Zoom effect replaces product-info for ALL images
+// Zoom effect
 const zoomImages = document.querySelectorAll('.zoom-image');
 const zoomedImage = document.getElementById('zoomedImage');
 const productInfo = document.querySelector('.product-info');
@@ -332,7 +429,7 @@ const zoomView = document.querySelector('.zoom-view');
 zoomImages.forEach(img => {
     img.addEventListener('mouseenter', () => {
         const src = img.getAttribute('src');
-        zoomedImage.src = src; // Update zoom image with hovered image
+        zoomedImage.src = src;
         productInfo.style.display = 'none';
         zoomView.style.display = 'block';
     });
@@ -349,6 +446,19 @@ zoomImages.forEach(img => {
         zoomedImage.style.transform = `translate(-${x}%, -${y}%) scale(2)`;
     });
 });
+
+// Accordion icon toggle
+document.querySelectorAll('.accordion-button').forEach(button => {
+    button.addEventListener('click', function () {
+        const icon = this.querySelector('.toggle-icon');
+        document.querySelectorAll('.toggle-icon').forEach(i => i.classList.replace('bi-dash', 'bi-plus'));
+        if (!this.classList.contains('collapsed')) {
+            icon.classList.replace('bi-plus', 'bi-dash');
+        } else {
+            icon.classList.replace('bi-dash', 'bi-plus');
+        }
+    });
+});
 </script>
 
-<?php include('includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?> 
