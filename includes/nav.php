@@ -938,7 +938,7 @@
             <div>
                 <div class="category-submenu cookware-submenu" style="display: none;">
                     <div class="category-submenu-inner">
-                        <a href="#" class="submenu-product-link">
+                        <a href="product-listing.php" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
                                     <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
