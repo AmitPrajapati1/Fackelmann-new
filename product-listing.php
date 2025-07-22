@@ -165,7 +165,6 @@ body {
     text-transform: capitalize;
     font-size: 14px;
     font-weight: unset !important;
-    font-family: Roboto, sans-serif !important;
 }
 
 .form-check-label:hover {
@@ -219,10 +218,12 @@ body {
 
 <!-- Hero Section -->
 <section style="position: relative; overflow: hidden;">
-    <div style="aspect-ratio: 16 / 9; width: 100%; position: relative;">
-        <video autoplay muted loop playsinline
-            style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-            <source src="assets/images/banners/videos/kitchenware_video.mp4" type="video/mp4">
+    <div style="width: 100%; position: relative;">
+        <video autoplay muted loop playsinline style="width: 100%; height: auto; object-fit: cover; display: block;">
+            <!-- Mobile Video -->
+            <source src="assets/images/banners/videos/kitchenware 640 x 795px.mp4" type="video/mp4" media="(max-width: 767px)">
+            <!-- Desktop Video -->
+            <source src="assets/images/banners/videos/kitchenware.mp4" type="video/mp4" media="(min-width: 768px)">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -386,9 +387,9 @@ body {
                 <div class="col-6 col-md-4">
                 <a href="product-detail.php" class="text-decoration-none text-dark">
                     <div class="product-card">
-                        <img src="assets/images/product_highlight/kadai/kadai_1.jpg" class="img-fluid main-img" alt="">
-                        <img src="assets/images/product_highlight/kadai/kadai_overlay_1.jpg" class="img-fluid hover-img" alt="">
-                        <div class="product-category text-uppercase">Fackelmann</div>
+                        <img src="assets/images/product_highlight/kadai/1.jpg" class="img-fluid main-img" alt="">
+                        <img src="assets/images/product_highlight/kadai/2.jpg" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Quartz Kadai</div>
                         <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 20 cm, 1.5 litres</div>
                         <div class="product-price">₹ 2,749.00</div>
                     </div>

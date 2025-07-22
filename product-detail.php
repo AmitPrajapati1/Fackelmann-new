@@ -246,6 +246,15 @@ body {
     color: #737373;
 }
 
+.breadcrumb a {
+    color: #c4c4c4;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #737373;
+}
+
 .breadcrumb-item + .breadcrumb-item::before {
     content: "\f285"; 
     font-family: "bootstrap-icons";
@@ -259,8 +268,15 @@ body {
     <!-- Breadcrumb -->
     <div aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">Cookware</li>
-            <li class="breadcrumb-item active" aria-current="page">Kadai</li>
+            <li class="breadcrumb-item">
+                <a href="#">Cookware</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="product-listing.php">Kadai</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Quartz Kadai
+            </li>
         </ol>
     </div>
 
@@ -271,25 +287,25 @@ body {
             <div id="productCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp"
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/Quartz-Kadai_1.jpg"
                              class="d-block w-100 zoom-image" alt="Product 1">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp"
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/Quartz-Kadai_2.jpg"
                              class="d-block w-100 zoom-image" alt="Product 2">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp"
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/Quartz-Kadai_3.jpg"
                              class="d-block w-100 zoom-image" alt="Product 3">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp"
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/Quartz-Kadai_4.jpg"
                              class="d-block w-100 zoom-image" alt="Product 4">
                     </div>
-                    <div class="carousel-item">
+                    <!-- <div class="carousel-item">
                         <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
                              class="d-block w-100 zoom-image" alt="Product 5">
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Carousel Controls -->
@@ -307,21 +323,21 @@ body {
 
             <!-- Thumbnail Images -->
             <div class="d-flex justify-content-start gap-2">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/Quartz-Kadai_1.jpg"
                      class="thumb-img active" data-bs-target="#productCarousel" data-bs-slide-to="0"
                      onclick="setActiveThumb(this)" alt="Thumb 1">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/Quartz-Kadai_2.jpg"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="1"
                      onclick="setActiveThumb(this)" alt="Thumb 2">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/Quartz-Kadai_3.jpg"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="2"
                      onclick="setActiveThumb(this)" alt="Thumb 3">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/Quartz-Kadai_4.jpg"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="3"
                      onclick="setActiveThumb(this)" alt="Thumb 4">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
+                <!-- <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="4"
-                     onclick="setActiveThumb(this)" alt="Thumb 5">
+                     onclick="setActiveThumb(this)" alt="Thumb 5"> -->
             </div>
         </div>
 
