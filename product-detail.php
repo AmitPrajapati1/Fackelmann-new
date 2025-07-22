@@ -148,7 +148,7 @@ body {
 .product-info .pi-mrp {
     font-size: 26px;
     font-weight: 700;
-    color: #d00;
+    color: #c51a30;
     margin-bottom: 4px;
 }
 .product-info .pi-rrp {
@@ -178,8 +178,8 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 15px;
-    color: #1a1a1a;
+    font-size: 12px;
+    color: #444;
 }
 .product-info .pi-feature-list li {
     position: relative;
