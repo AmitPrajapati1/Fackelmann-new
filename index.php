@@ -1171,17 +1171,14 @@
 <section class="text-white d-flex align-items-center justify-content-center px-3 py-5"
     style="background-color: #bf0019;">
     <div class="container">
-        <div class="mx-auto p-4 p-md-5 philosophy-main">
+        <div class="mx-auto p-4 p-md-4 philosophy-main">
             <div class="row">
-                <div class="col-12 col-md-4 text-md-start text-center mb-3 mb-md-0">
-                    <h2 class="fw-bold m-0" style="line-height: 1.2;">OUR<br>PHILOSOPHY</h2>
+                <div class="col-12 col-md-4 text-md-start mb-3 mb-md-0">
+                    <h2 class="fw-bold m-0 fs-1" style="line-height: 1.2;">OUR<br>PHILOSOPHY</h2>
                 </div>
-                <div class="col-12 col-md-8 text-md-start text-center">
+                <div class="col-12 col-md-8 text-sm-start">
                     <p class="mb-0" style="line-height: 1.7; font-size: 14px">
-                        We have everything you need to cook, bake, and more, at Fackelmann. All our products are
-                        characterised by the
-                        highest quality standards, led by a century of experience and innovation. Everything you need –
-                        and want – is right here.
+                        We have everything you need to cook, bake, and more, at Fackelmann. All our products are characterised by the highest quality standards, led by a century of experience and innovation. Everything you need – and want – is right here.
                     </p>
                 </div>
             </div>
