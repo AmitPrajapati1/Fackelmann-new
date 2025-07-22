@@ -14,36 +14,6 @@
         --text-red: #bf0019;
     }
 
-    .newsletter-banner {
-        background-image: url('assets/images/contact/contact-banner.webp');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 60vh;
-        min-height: 250px;
-        max-height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: var(--white);
-        position: relative;
-        z-index: 1;
-    }
-
-    @media (max-width: 767px) {
-        .newsletter-banner {
-            height: auto;
-            min-height: 150px;
-            background-size: cover;
-            background-position: center;
-        }
-    }
-
-
-    /* newsletter page */
-
     .custom-label-newsletter {
         font-weight: 400;
     }
@@ -78,6 +48,7 @@
         margin: 5px 0;
         width: 100%;
         box-sizing: border-box;
+        font-size: 15px !important;
     }
 
     .form-control-newsletter:focus {
@@ -88,7 +59,7 @@
     }
 
     .newsletter-form-main {
-        background-color: #ececec !important;
+        background-color: #f2e8e8 !important;
     }
 
     .custom-label-newsletter {
@@ -105,6 +76,11 @@
         width: 14px;
         height: 14px;
         flex-shrink: 0;
+    }
+
+    .custom-label-newsletter input[type="email"],
+    .custom-label-newsletter input[type="text"] {
+        margin: 5px 0;
     }
 
     .newsletter-msg {
@@ -204,7 +180,7 @@
         margin: 0;
         padding: 70px 100px 100px 100px;
         float: left;
-        background: var(--white);
+        /* background: var(--white); */
     }
 
     .newsleter-form h2 {
@@ -213,6 +189,7 @@
         padding-bottom: 25px;
     }
 
+    /* 
     .newsleter-form input[type="text"],
     .newsleter-form input[type="file"],
     .newsleter-form select {
@@ -224,7 +201,7 @@
         border-color: rgba(133, 133, 133, 1);
         color: rgba(133, 133, 133, 1);
     
-    }
+    } */
 
     .newsleter-form button {
         float: right;
@@ -260,28 +237,116 @@
         color: var(--text-red);
         text-decoration: none;
     }
+
+    .newsletter-frm {
+        padding-bottom: 70px;
+    }
+
+    .success-msg {
+        display: none;
+        background-color: #d4edda;
+        color: #155724;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+    /* banner */
+    .slider-area-newsletter {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: #c51a30 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #7a001c !important;
+    }
+
+    /* Nav Arrows */
+    .banner-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        background-color: #bf0019;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .banner-prev {
+        left: 15px;
+    }
+
+    .banner-next {
+        right: 15px;
+    }
+
+    @media (min-width: 768px) {
+        .banner-prev {
+            left: 50px;
+        }
+
+        .banner-next {
+            right: 50px;
+        }
+    }
 </style>
 
-<section class="newsletter-banner"></section>
+<div class="slider-area-newsletter" id="home-slider">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img data-desktop-src="assets/images/contact/contact-banner.webp"
+                    data-mobile-src="assets/images/contact/contact-banner.webp" alt="">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="banner-nav banner-prev">&#10094;</div>
+        <div class="banner-nav banner-next">&#10095;</div>
+    </div>
+</div>
 <div>
     <section class="newsletter">
         <div class="container">
             <div class="row dflex justify-content-center">
-                <div class="col-md-7"> <img src='{{ asset(' images/newsletter/service_newsletter.webp') }}'
-                        class="img-fluid"></div>
+                <!-- <div class="col-md-7"> <img src='assets/images/newsletter/service_newsletter.webp' class="img-fluid">
+                </div> -->
             </div>
             <div class="nesletter-header newsletter-h-custom">
                 <h2> Your exclusive newsletter advantages:</h2>
                 <p>+ Benefit from special promotions for newsletter subscribers</p>
-                <p>+ Receive all the latest news from fackelmann.de 2-3 times a week </p>
+                <p>+ Receive all the latest news from fackelmann 2-3 times a week </p>
                 <p>+ Look forward to a 15% welcome discount after successful newsletter registration</p>
                 <p>+ Receive a discount for the 1-year newsletter anniversary and also if you specify your date of birth
                     for birthday</p>
             </div>
-            <div class="row dflex justify-content-center">
+            <div class="row dflex justify-content-center newsletter-frm">
                 <div class="col-md-7">
                     <div class="newsleter-form newsletter-form-main" id="subscribe-msg-box">
                         <h2>SUBSCRIBE TO NEWSLETTER</h2>
+                        <div id="success-message" class="success-msg" style="">
+                            You have successfully subscribed to our newsletter!
+                        </div>
                         <form id="subscribe-frm">
                             <input type="hidden" name="action_type" value="subscribe-enquiry">
                             <input type="text" name="name" placeholder="Your Name*"
@@ -306,5 +371,92 @@
             </div>
         </div>
     </section>
+
 </div>
 <?php include('includes/footer.php'); ?>
+
+
+<script>
+    document.getElementById('authenticateSubscribe').addEventListener('click', function () {
+        document.getElementById('msgname').innerText = '';
+        document.getElementById('msgemail').innerText = '';
+        document.getElementById('msgterms').innerText = '';
+        document.getElementById('success-message').style.display = 'none';
+
+        let name = document.querySelector('input[name="name"]');
+        let email = document.querySelector('input[name="email"]');
+        let terms = document.querySelector('input[name="terms"]');
+
+        let isValid = true;
+
+        if (name.value.trim() === '') {
+            document.getElementById('msgname').innerText = 'Please enter your name.';
+            name.classList.add('errorNewsletter');
+            isValid = false;
+        } else {
+            name.classList.remove('errorNewsletter');
+        }
+
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (email.value.trim() === '') {
+            document.getElementById('msgemail').innerText = 'Please enter your email.';
+            email.classList.add('errorNewsletter');
+            isValid = false;
+        } else if (!emailPattern.test(email.value.trim())) {
+            document.getElementById('msgemail').innerText = 'Please enter a valid email address.';
+            email.classList.add('errorNewsletter');
+            isValid = false;
+        } else {
+            email.classList.remove('errorNewsletter');
+        }
+
+        if (!terms.checked) {
+            document.getElementById('msgterms').innerText = 'You must agree to the privacy policy.';
+            isValid = false;
+        }
+
+        if (isValid) {
+            document.getElementById('success-message').style.display = 'block';
+            document.getElementById('subscribe-frm').reset();
+        }
+    });
+</script>
+
+<script>
+    function updateBannerImages() {
+        const isDesktop = window.innerWidth > 767;
+        document.querySelectorAll('[data-mobile-src]').forEach(img => {
+            img.src = isDesktop
+                ? img.getAttribute('data-desktop-src')
+                : img.getAttribute('data-mobile-src');
+        });
+    }
+
+    window.addEventListener('resize', updateBannerImages);
+    window.addEventListener('load', updateBannerImages);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const slideCount = document.querySelectorAll('.swiper-slide').length;
+
+        const swiperConfig = {
+            loop: slideCount > 1,
+            autoplay: slideCount > 1 ? { delay: 4000, disableOnInteraction: false } : false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.banner-next',
+                prevEl: '.banner-prev'
+            }
+        };
+
+        const swiper = new Swiper('.swiper', swiperConfig);
+
+        if (slideCount <= 1) {
+            document.querySelector('.banner-prev')?.classList.add('d-none');
+            document.querySelector('.banner-next')?.classList.add('d-none');
+            document.querySelector('.swiper-pagination')?.classList.add('d-none');
+        }
+    });
+</script>

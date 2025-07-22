@@ -7,8 +7,12 @@
     body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
+        font-weight: 500 !important;
         overflow-y: scroll;
     }
+
+
+
 
     .topbar {
         background-color: var(--primary-color);
@@ -75,7 +79,6 @@
         font-weight: 700;
         height: 39px;
         min-width: 150px;
-        font-family: "Roboto Condensed", sans-serif;
         letter-spacing: 2px;
         border: none;
         cursor: pointer;
