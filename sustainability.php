@@ -111,10 +111,10 @@
     .info-p {
         text-align: justify;
         /* text-align: center; */
-        color: #54565a;
+        color: #737373;
         font-size: 16px;
         line-height: 1.6;
-        margin: 0;
+        margin: 10px 0px;
     }
 
     .strategy-nav-panel {
@@ -548,6 +548,15 @@
             right: 50px;
         }
     }
+
+    .materials-detail {
+        color: #737373;
+        font-weight: 400 !important;
+    }
+
+    .material-card {
+        padding: 20px 0px 20px 0px;
+    }
 </style>
 
 
@@ -806,7 +815,8 @@
                 <div class="col-md-6">
                     <div class="sustainability-materials">
                         <h4>Green PE</h4>
-                        <p>Green PE is a natural plastic that is obtained from sugar cane and is used in kitchen
+                        <p class="materials-detail">Green PE is a natural plastic that is obtained from sugar cane and
+                            is used in kitchen
                             utensils. During the production of the raw material, oxygen is also produced and the
                             bagasse, i.e. the waste, can be converted into energy, e.g. to operate the sugar cane
                             mills. In its pure form, Green PE is dishwasher-safe, but not heat-resistant. It is
@@ -825,7 +835,8 @@
                 <div class="col-md-6 order-sm-1">
                     <div class="sustainability-materials">
                         <h4>Ecolution</h4>
-                        <p>The products of the Ecolution series made from renewable PE and FSC ™ certified wood
+                        <p class="materials-detail">The products of the Ecolution series made from renewable PE and FSC
+                            ™ certified wood
                             stand for natural materials such as wood fibers and sugar cane, which are combined in a
                             new material that is particularly resistant - all products can be safely used in the
                             usual areas of application and are easy to use in the dishwasher. There is a combination
@@ -843,7 +854,8 @@
                 <div class="col-md-6">
                     <div class="sustainability-materials">
                         <h4>FSC wood-paper</h4>
-                        <p>FSC ™ is the abbreviation for Forest Stewardship Council ™, ie the promotion of
+                        <p class="materials-detail">FSC ™ is the abbreviation for Forest Stewardship Council ™, ie the
+                            promotion of
                             environmentally friendly, socially beneficial and economically viable management of
                             forests. From wooden spoons to cutting boards, around 140 wooden items are manufactured
                             at Fackelmann Brands in accordance with FSC ™ standards. The range is gradually being
@@ -862,7 +874,8 @@
                 <div class="col-md-6 order-sm-1">
                     <div class="sustainability-materials">
                         <h4>Carnauba wax</h4>
-                        <p>Baking molds have to withstand particularly high requirements: They have to be
+                        <p class="materials-detail">Baking molds have to withstand particularly high requirements: They
+                            have to be
                             heat-resistant and have an excellent coating so that baked goods can easily be removed
                             from the mold. The coating consists partly of the wax of the carnauba palm and makes up
                             about 5% of the same - the currently possible maximum so as not to impair the functions
@@ -881,7 +894,8 @@
                 <div class="col-md-6">
                     <div class="sustainability-materials">
                         <h4>Cocoa shell</h4>
-                        <p>The shell of the cocoa bean is the natural "packaging" of the valuable kernel, which is
+                        <p class="materials-detail">The shell of the cocoa bean is the natural "packaging" of the
+                            valuable kernel, which is
                             processed in many individual steps into cocoa mass and then into fine chocolate as we
                             know it. Once the shell is broken, it is considered a vegetable waste product and is
                             normally disposed of. An alternative that breathes new life into the cocoa shell is

@@ -3,6 +3,12 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 
 <style>
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500 !important;
+    }
+
     .custom-nav {
         position: absolute;
         top: 47%;
@@ -137,7 +143,7 @@
         /* width: 450px;
         height: 300px; */
         /* width: 300px; */
-        height: 300px;
+        /* height: 300px; */
         overflow: hidden;
         border-radius: 6px;
         position: relative;
@@ -149,13 +155,14 @@
         /* object-fit: contain; */
         object-fit: fill;
         background: white;
-        transition: transform 2s ease;
+        /* transition: transform 2s ease; */
+        transition: transform 3s cubic-bezier(0.25, 1.5, 0.5, 1);
         display: block;
         object-position: center;
     }
 
     .custom-card-style:hover img {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 
     .custom-btn-style {
@@ -264,7 +271,7 @@
         /* background-color: #bf0019; */
         background-color: white;
         color: #bf0019;
-        border: 1px solid #bf0019;
+        /* border: 1px solid #bf0019; */
         /* 
         padding: 9px 27px;
         max-width: 160px;
@@ -276,6 +283,7 @@
         z-index: 10;
         cursor: pointer;
         font-size: 14px;
+        font-weight: 500;
 
     }
 
@@ -289,6 +297,7 @@
         border: 1px solid #bf0019;
         color: #bf0019;
         padding: 9px 95px;
+        font-weight: 500;
     }
 
     .view-more-button:hover {
@@ -325,7 +334,7 @@
         border: 1px solid #bf0019;
         color: #bf0019;
         padding: 9px 24px;
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .newsletter-button:hover {
@@ -377,6 +386,14 @@
         color: inherit;
         display: block;
     }
+
+    .philosophy-main {
+        background-color: #bf0019;
+        border-radius: 20px;
+        border: 1px solid white;
+        max-width: 900px;
+        box-shadow: 8px 8px 0 white;
+    }
 </style>
 
 
@@ -386,16 +403,16 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-hero-dsk-3.jpg"
-                    data-mobile-src="assets/images/banners/banner-hero-mobile-3.jpg" alt="Banner 1">
+                <img data-desktop-src="assets/images/banners/hero_banner_desktop_3.jpg"
+                    data-mobile-src="assets/images/banners/hero_banner_mob_3.jpg" alt="Banner 1">
             </div>
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-hero-dsk-2.jpg"
-                    data-mobile-src="assets/images/banners/banner-hero-mobile-2.jpg" alt="Banner 2">
+                <img data-desktop-src="assets/images/banners/hero_banner_desktop_2.jpg"
+                    data-mobile-src="assets/images/banners/hero_banner_mob_2.jpg" alt="Banner 2">
             </div>
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/banner-hero-dsk-1.jpg"
-                    data-mobile-src="assets/images/banners/banner-hero-mobile-1.jpg" alt="Banner 3">
+                <img data-desktop-src="assets/images/banners/hero_banner_desktop_1.jpg"
+                    data-mobile-src="assets/images/banners/hero_banner_mob_1.jpg" alt="Banner 3">
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -411,7 +428,7 @@
             <a href="product-listing.php">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_5.jpeg" alt="Cookware">
+                        <img src="assets/images/home_page/our_categories/cat_9.jpg" alt="Cookware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Cookware</button>
@@ -423,7 +440,7 @@
             <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_6.jpeg" alt="Bakeware">
+                        <img src="assets/images/home_page/our_categories/cat_10.jpg" alt="Bakeware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Bakeware</button>
@@ -437,7 +454,7 @@
             <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_7.jpeg" alt="Knives">
+                        <img src="assets/images/home_page/our_categories/cat_11.jpg" alt="Knives">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Knives</button>
@@ -449,7 +466,7 @@
             <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_8.jpeg" alt="Kitchenware">
+                        <img src="assets/images/home_page/our_categories/cat_12.jpg" alt="Kitchenware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Kitchenware</button>
@@ -519,6 +536,17 @@
 
     <div class="discover-carousel owl-carousel owl-theme">
         <div class="item">
+            <a href="product-listing.php">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_4.jpeg"
+                            alt="Non-Stick" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Non-Stick Cookware</button>
+                </div>
+            </a>
+        </div>
+        <div class="item">
             <a href="javascript:void(0)">
                 <div class="item-card">
                     <div class="image-container">
@@ -551,17 +579,7 @@
                 </div>
             </a>
         </div>
-        <div class="item">
-            <a href="javascript:void(0)">
-                <div class="item-card">
-                    <div class="image-container">
-                        <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_4.jpeg"
-                            alt="Non-Stick" loading="lazy">
-                    </div>
-                    <button class="product-button btn btn-sm mt-2">Non-Stick Cookware</button>
-                </div>
-            </a>
-        </div>
+
     </div>
 
     <div class="text-center mt-5">
@@ -579,6 +597,18 @@
     <div class="custom-nav custom-next">❯</div>
 
     <div class="highlight-carousel owl-carousel owl-theme">
+        <div class="item">
+            <a href="product-detail.php">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/images/home_page/our_highlights/highlight_5.jpg" alt="Kadai"
+                            loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Kadai</button>
+                </div>
+            </a>
+        </div>
+
         <div class="item">
             <a href="javascript:void(0)">
                 <div class="item-card">
@@ -1054,7 +1084,7 @@
                 <p class="text-muted small">Come with us on a journey into a greener future.</p>
 
                 <a href="javascript:void(0)" class="btn btn-sm fw-semibold text-uppercase"
-                    style="font-size: 0.875rem; letter-spacing: 1px;border: 1px solid #bf0019;color: #bf0019">MORE
+                    style="font-size: 0.875rem; letter-spacing: 1px;border: 1px solid #bf0019;color: #bf0019; font-weight: 500 !important">MORE
                     INFORMATION</a>
             </div>
 
@@ -1075,11 +1105,11 @@
 <div class="container-fluid px-0">
     <div class="combined-section">
         <div class="newsletter-section p-5" style="background-color: #ede8e2;border-radius: 0px">
-            <h5 class="fw-medium text-black mb-3 mt-5">
-                Sign up for our <span class="fw-bold">Newsletter</span>
+            <h5 class="fw-bold text-black mb-3 mt-5">
+                Sign up for our <span class="fw-bold"></span>
             </h5>
             <a href="javascript:void(0)" class="btn text-uppercase fw-semibold newsletter-button">
-                Newsletter Registration
+                Newsletter
             </a>
         </div>
         <div class="brand-presence-section p-5">
@@ -1120,7 +1150,7 @@
         </div>
     </div>
 </section> -->
-
+<!-- 
 <section class="text-white text-center d-flex align-items-center justify-content-center px-3"
     style="background: repeating-linear-gradient(-45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px); min-height: 203px;">
     <div class="container">
@@ -1133,6 +1163,31 @@
             right here.
         </p>
     </div>
+</section> -->
+
+
+
+
+<section class="text-white d-flex align-items-center justify-content-center px-3 py-5"
+    style="background-color: #bf0019;">
+    <div class="container">
+        <div class="mx-auto p-4 p-md-5 philosophy-main">
+            <div class="row">
+                <div class="col-12 col-md-4 text-md-start text-center mb-3 mb-md-0">
+                    <h2 class="fw-bold m-0" style="line-height: 1.2;">OUR<br>PHILOSOPHY</h2>
+                </div>
+                <div class="col-12 col-md-8 text-md-start text-center">
+                    <p class="mb-0" style="line-height: 1.7; font-size: 14px">
+                        We have everything you need to cook, bake, and more, at Fackelmann. All our products are
+                        characterised by the
+                        highest quality standards, led by a century of experience and innovation. Everything you need –
+                        and want – is right here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 
 <?php include('includes/footer.php'); ?>

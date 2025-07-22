@@ -36,7 +36,6 @@
 
   .footer-title {
     color: #c0c0c0;
-    font-family: "Roboto Condensed", sans-serif;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1.88px;
@@ -100,7 +99,6 @@
     font-weight: bold;
     position: relative;
     font-size: 16px;
-    font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 1.88px;
     line-height: 38px;
     text-transform: uppercase;
@@ -133,7 +131,6 @@
   }
 
   .footer-quick-access a {
-    font-family: "Roboto Condensed", sans-serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.7px;
@@ -209,9 +206,10 @@
 
         <div class="collapse d-md-block" id="footerCollapse2">
           <ul class="list-unstyled mb-0">
-            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a></li>
-            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Download</a></li>
-            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
+            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a>
+            </li>
+            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Download</a></li>
+            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
             <li><a href="contact-us.php" class="footer-detail text-decoration-none d-block">Contact</a></li>
           </ul>
         </div>
@@ -225,10 +223,12 @@
 
         <div class="collapse d-md-block" id="footerCollapse3">
           <ul class="list-unstyled mb-0">
-            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Our History</a></li>
-            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Sustainability</a></li>
-            <li><a href="#" class="footer-detail text-decoration-none d-block mb-1">Careers</a></li>
-            <li><a href="#" class="footer-detail text-decoration-none d-block">Locations</a></li>
+            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Our History</a>
+            </li>
+            <li><a href="sustainability.php" class="footer-detail text-decoration-none d-block mb-1">Sustainability</a>
+            </li>
+            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Careers</a></li>
+            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block">Locations</a></li>
           </ul>
         </div>
       </div>
@@ -237,17 +237,17 @@
 
   <div class="footer-btm-bg text-center footer-detail py-3 px-4 mt-4">
     <div class="social-footer-icons">
-      <a href="#" class="btn btn-outline-light btn-sm me-2 rounded-1" style="font-size: 20px"><i
-          class="fab fa-facebook-f" style="font-size: 20px"></i></a>
-      <a href="#" class="btn btn-outline-light btn-sm rounded-1" style="font-size: 20px"><i class="fab fa-instagram"
-          style="font-size: 20px"></i></a>
+      <a href="https://www.instagram.com/fackelmannindia/" class="btn btn-outline-light btn-sm me-2 rounded-1"
+        style="font-size: 20px"><i class="fab fa-facebook-f" style="font-size: 20px"></i></a>
+      <a href="https://www.facebook.com/FackelmannIndia/" class="btn btn-outline-light btn-sm rounded-1"
+        style="font-size: 20px"><i class="fab fa-instagram" style="font-size: 20px"></i></a>
     </div>
 
     <div class="text-uppercase fw-semibold footer-quick-access" style="font-size: 13px">
-      <a href="#" class="text-white text-decoration-none mx-1">Imprint</a>
-      <a href="#" class="text-white text-decoration-none mx-1">Data Protection</a>
-      <a href="#" class="text-white text-decoration-none mx-1">Terms and Conditions</a>
-      <a href="#" class="text-white text-decoration-none mx-1">Privacy Policy</a>
+      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Imprint</a>
+      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Data Protection</a>
+      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Terms and Conditions</a>
+      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Privacy Policy</a>
     </div>
 
     <div class="small mt-2">
