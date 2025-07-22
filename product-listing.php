@@ -250,8 +250,7 @@ body {
                     <li><a class="dropdown-item" href="#">Newest first <i class="bi bi-check check-icon"></i></a></li>
                     <li><a class="dropdown-item" href="#">Price ascending <i class="bi bi-check check-icon"></i></a></li>
                     <li><a class="dropdown-item" href="#">Price descending <i class="bi bi-check check-icon"></i></a></li>
-                    <li><a class="dropdown-item text-center text-white bg-secondary" href="#"
-                            onclick="closeDropdown(event)">CLOSE</a></li>
+                    <li><a class="dropdown-item text-center text-white bg-secondary" href="#" onclick="closeDropdown(event)">CLOSE</a></li>
                 </ul>
             </div>
         </div>
@@ -268,8 +267,7 @@ body {
                     <li><a class="dropdown-item" href="#">Newest first <i class="bi bi-check check-icon"></i></a></li>
                     <li><a class="dropdown-item" href="#">Price ascending <i class="bi bi-check check-icon"></i></a></li>
                     <li><a class="dropdown-item" href="#">Price descending <i class="bi bi-check check-icon"></i></a></li>
-                    <li><a class="dropdown-item text-center text-white bg-secondary" href="#"
-                            onclick="closeDropdown(event)">CLOSE</a></li>
+                    <li><a class="dropdown-item text-center text-white bg-secondary" href="#" onclick="closeDropdown(event)">CLOSE</a></li>
                 </ul>
             </div>
         </div>
@@ -583,6 +581,7 @@ function closeDropdown(event) {
 }
 
 // Toggle icons for collapse
+// (unchanged)
 document.querySelectorAll('.collapse').forEach(collapse => {
     collapse.addEventListener('show.bs.collapse', function() {
         const icon = this.previousElementSibling.querySelector('i');
@@ -596,20 +595,38 @@ document.querySelectorAll('.collapse').forEach(collapse => {
     });
 });
 
-// Handle multiple selection with check icons
+// -----------------------------
+// SINGLE-SELECT SORT MENUS
+// -----------------------------
 document.addEventListener('DOMContentLoaded', function () {
-    const dropdowns = document.querySelectorAll('.dropdown-menu');
+    function setupSingleSelect(menuSelector, buttonSelector) {
+        const menuEl = document.querySelector(menuSelector);
+        const btnEl  = document.querySelector(buttonSelector);
+        if (!menuEl || !btnEl) return;
 
-    dropdowns.forEach(menu => {
-        menu.querySelectorAll('.dropdown-item').forEach(item => {
-            if (!item.classList.contains('text-center')) { // Skip CLOSE button
-                item.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    this.classList.toggle('active'); // Toggle active state
+        // Attach click handlers to each sortable option (skip CLOSE row)
+        menuEl.querySelectorAll('.dropdown-item').forEach(item => {
+            if (item.classList.contains('text-center')) return; // skip CLOSE
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Clear any existing active state in this menu
+                menuEl.querySelectorAll('.dropdown-item.active').forEach(activeItem => {
+                    activeItem.classList.remove('active');
                 });
-            }
+
+                // Set the clicked item active
+                this.classList.add('active');
+
+                // Hide the dropdown after selection (standard single-select behavior)
+                bootstrap.Dropdown.getOrCreateInstance(btnEl).hide();
+            });
         });
-    });
+    }
+
+    // Desktop & Mobile sort dropdowns
+    setupSingleSelect('[aria-labelledby="sortDropdown"]', '#sortDropdown');
+    setupSingleSelect('[aria-labelledby="sortDropdownMobile"]', '#sortDropdownMobile');
 });
 </script>
 

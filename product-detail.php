@@ -2,8 +2,9 @@
 <?php include('includes/nav.php'); ?>
 
 <style>
+
 body {
-    background-color: #fff;
+    background-color: #f5f5f5;
 }
 
 /* ---------- GLOBAL PRODUCT TYPOGRAPHY ---------- */
@@ -107,6 +108,9 @@ body {
     width: 40px;
     margin-right: 10px;
 }
+
+
+
 .tech-data td:first-child {
     font-weight: 600;
     width: 120px;
@@ -114,6 +118,10 @@ body {
 }
 .tech-data td:last-child {
     color: #555;
+}
+
+#collapseTechnical table tbody tr td  {
+    background-color: #f5f5f5 !important;
 }
 
 /* =========================================================
@@ -140,7 +148,7 @@ body {
 .product-info .pi-mrp {
     font-size: 26px;
     font-weight: 700;
-    color: #d00;
+    color: #c51a30;
     margin-bottom: 4px;
 }
 .product-info .pi-rrp {
@@ -170,8 +178,8 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: 15px;
-    color: #1a1a1a;
+    font-size: 12px;
+    color: #444;
 }
 .product-info .pi-feature-list li {
     position: relative;
@@ -194,12 +202,29 @@ body {
     margin-top: 20px;
 }
 
+.request-btn {
+    padding: 15px 25px;
+    margin: 15px 0;
+    color: white;
+    background: repeating-linear-gradient(-45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px);
+    font-weight: bold;
+    display: inline-block;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.pi-availability-logo img {
+    display:block;
+    height:22px;
+    width:auto;
+}
 .accordion-body {
-    padding: 0px !important;
+    padding: 0px 0px 10px 5px !important;
+    background-color: #f5f5f5 !important;
+
 }
 
 .accordion-button {
-    background-color: transparent !important;
+    background-color: #f5f5f5 !important;
 }
 
 /* Responsive tweaks */
@@ -215,13 +240,12 @@ body {
 
 <div class="px-4 py-4">
     <!-- Breadcrumb -->
-    <nav aria-label="breadcrumb">
+    <div aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Cook</a></li>
-            <!-- <li class="breadcrumb-item"><a href="#">Pans</a></li> -->
-            <li class="breadcrumb-item active" aria-current="page">Kadai</li>
+            <li class="breadcrumb-item">Cookware</li>
+            <li class="breadcrumb-item" aria-current="page">Kadai</li>
         </ol>
-    </nav>
+    </div>
 
     <div class="row">
         <!-- Product Image Section -->
@@ -268,19 +292,19 @@ body {
             <div class="d-flex justify-content-start gap-2">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-1.webp"
                      class="thumb-img active" data-bs-target="#productCarousel" data-bs-slide-to="0"
-                     onclick="setActiveThumb(this)">
+                     onclick="setActiveThumb(this)" alt="Thumb 1">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-2.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="1"
-                     onclick="setActiveThumb(this)">
+                     onclick="setActiveThumb(this)" alt="Thumb 2">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-3.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="2"
-                     onclick="setActiveThumb(this)">
+                     onclick="setActiveThumb(this)" alt="Thumb 3">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-4.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="3"
-                     onclick="setActiveThumb(this)">
+                     onclick="setActiveThumb(this)" alt="Thumb 4">
                 <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="4"
-                     onclick="setActiveThumb(this)">
+                     onclick="setActiveThumb(this)" alt="Thumb 5">
             </div>
         </div>
 
@@ -288,27 +312,32 @@ body {
         <div class="col-lg-6">
             <div class="product-info">
                 <h1 class="pi-title">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 20 cm, 1.5 litres</h1>
-                <div class="pi-sku">SKU ID: 5568481</div>
-                <div class="pi-mrp">MRP ₹ 2,749.00</div>
+                <!-- NEW WRAPPER: Everything below stays hideable; title stays visible -->
+                <div class="pi-content">
+                    <div class="pi-sku">SKU ID: 5568481</div>
+                    <div class="pi-mrp">MRP ₹ 2,749.00</div>
 
-                <span class="pi-availability-label">Available At</span>
-                    <a href="https://www.amazon.in/dp/B07X24NQTX?th=1" target="_blank" class="pi-availability-logo" aria-label="Amazon">
-                        <i class="bi bi-amazon"></i>
-                    </a>
-                <ul class="pi-feature-list">
-                    <li>Material: 18/10 Stainless Steel Base | Color: Silver</li>
-                    <li>The inside layer (the one that touches your food) is premium 18/10 stainless steel base, giving durability &amp; high stain / non-stick resistance.</li>
-                    <li>Aluminium core in between layer is made of fine grade aluminium and extends from base up through the top edges to ensure even heating.</li>
-                    <li>Exterior cookware surface is high-density 430-series magnetic stainless steel for use on any cooktop (gas, glass, induction, etc.).</li>
-                    <li>5 Years warranty on all stainless steel cookware.</li>
-                    <li>Less Oil. No Burning. Induction Cookware.</li>
-                    <li>Perfect grip handles for better hold.</li>
-                    <li>Package Content: 1 Stainless Steel Kadhai and 1 Designer Lid.</li>
-                </ul>
+                    <span class="pi-availability-label">Available At</span>
+                        <a href="https://www.amazon.in/dp/B07X24NQTX?th=1" target="_blank" class="pi-availability-logo" aria-label="Amazon">
+                             <img src="assets/images/icons/amazon.svg" alt="">
+                        </a>
+                    <ul class="pi-feature-list">
+                        <li>Material: 18/10 Stainless Steel Base | Color: Silver</li>
+                        <li>The inside layer (the one that touches your food) is premium 18/10 stainless steel base, giving durability &amp; high stain / non-stick resistance.</li>
+                        <li>Aluminium core in between layer is made of fine grade aluminium and extends from base up through the top edges to ensure even heating.</li>
+                        <li>Exterior cookware surface is high-density 430-series magnetic stainless steel for use on any cooktop (gas, glass, induction, etc.).</li>
+                        <li>5 Years warranty on all stainless steel cookware.</li>
+                        <li>Less Oil. No Burning. Induction Cookware.</li>
+                        <li>Perfect grip handles for better hold.</li>
+                        <li>Package Content: 1 Stainless Steel Kadhai and 1 Designer Lid.</li>
+                    </ul>
 
-                <div class="pi-cta-wrap">
-                    <button class="request-btn mt-3">REQUEST QUOTE</button>
-                </div>
+                    <div class="pi-cta-wrap">
+                        <a href="contact-us.php">
+                            <button class="request-btn mt-3">REQUEST QUOTE</button>
+                        </a>
+                    </div>
+                </div><!-- /.pi-content -->
             </div>
 
             <!-- Zoom View -->
@@ -348,9 +377,9 @@ body {
                 </button>
             </h2>
             <div id="collapseCare" class="accordion-collapse collapse" aria-labelledby="headingCare"
-                 data-bs-parent="#productDetailsAccordion">
-                <div class="accordion-body d-flex align-items-center text-muted">
-                    <img src="assets/images/icons/dishwasher-icon.png" alt="Care Icon" class="care-icon">
+            data-bs-parent="#productDetailsAccordion">
+            <div class="accordion-body d-flex align-items-center text-muted">
+                 <i class="fas fa-hands-wash"></i>
                     Dishwasher safe, hand wash recommended.
                 </div>
             </div>
@@ -417,25 +446,27 @@ carousel.addEventListener('slide.bs.carousel', function(event) {
     const index = event.to;
     const thumbs = document.querySelectorAll('.thumb-img');
     thumbs.forEach(img => img.classList.remove('active'));
-    thumbs[index].classList.add('active');
+    if (thumbs[index]) {
+        thumbs[index].classList.add('active');
+    }
 });
 
 // Zoom effect
 const zoomImages = document.querySelectorAll('.zoom-image');
 const zoomedImage = document.getElementById('zoomedImage');
-const productInfo = document.querySelector('.product-info');
+const piContent = document.querySelector('.pi-content'); // NEW: only hide content, keep title visible
 const zoomView = document.querySelector('.zoom-view');
 
 zoomImages.forEach(img => {
     img.addEventListener('mouseenter', () => {
         const src = img.getAttribute('src');
         zoomedImage.src = src;
-        productInfo.style.display = 'none';
+        if (piContent) piContent.style.display = 'none';
         zoomView.style.display = 'block';
     });
 
     img.addEventListener('mouseleave', () => {
-        productInfo.style.display = 'block';
+        if (piContent) piContent.style.display = 'block';
         zoomView.style.display = 'none';
     });
 
@@ -448,17 +479,21 @@ zoomImages.forEach(img => {
 });
 
 // Accordion icon toggle
-document.querySelectorAll('.accordion-button').forEach(button => {
+// Reset all icons to plus when any header clicked, then set the active one based on collapse state
+const accordButtons = document.querySelectorAll('.accordion-button');
+
+accordButtons.forEach(button => {
     button.addEventListener('click', function () {
-        const icon = this.querySelector('.toggle-icon');
-        document.querySelectorAll('.toggle-icon').forEach(i => i.classList.replace('bi-dash', 'bi-plus'));
-        if (!this.classList.contains('collapsed')) {
-            icon.classList.replace('bi-plus', 'bi-dash');
-        } else {
-            icon.classList.replace('bi-dash', 'bi-plus');
-        }
+        // Wait a tick for Bootstrap to update classes, then adjust icons
+        setTimeout(() => {
+            document.querySelectorAll('.toggle-icon').forEach(i => i.classList.replace('bi-dash', 'bi-plus'));
+            if (!this.classList.contains('collapsed')) {
+                const icon = this.querySelector('.toggle-icon');
+                if (icon) icon.classList.replace('bi-plus', 'bi-dash');
+            }
+        }, 0);
     });
 });
 </script>
 
-<?php include('includes/footer.php'); ?> 
+<?php include('includes/footer.php'); ?>
