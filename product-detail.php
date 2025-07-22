@@ -236,6 +236,23 @@ body {
         font-size: 22px;
     }
 }
+
+.breadcrumb{
+    color: #c4c4c4;
+    font-size: 12px;
+}
+
+.breadcrumb > .active{
+    color: #737373;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "\f285"; 
+    font-family: "bootstrap-icons";
+    font-size: 12px;
+    color: #c4c4c4; 
+}
+
 </style>
 
 <div class="px-4 py-4">
@@ -243,7 +260,7 @@ body {
     <div aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">Cookware</li>
-            <li class="breadcrumb-item" aria-current="page">Kadai</li>
+            <li class="breadcrumb-item active" aria-current="page">Kadai</li>
         </ol>
     </div>
 

@@ -18,7 +18,7 @@ body {
 }
 
 .product-category {
-    color: #8bc7c0;
+    color: #bf0019;
     font-size: 12px;
     display: -webkit-box;
     -webkit-line-clamp: 1;
@@ -52,7 +52,7 @@ body {
     font-size: 21px;
     margin-top: 3px;
     font-weight: 600;
-    color: #bf0019;
+    color: #bf0019 !important;
 }
 
 .product-card {
