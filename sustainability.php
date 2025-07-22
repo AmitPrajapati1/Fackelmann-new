@@ -490,12 +490,84 @@
         /* float: left; */
         align-items: center;
     }
+
+    /* banner */
+    .slider-area-sustainability {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: #c51a30 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #7a001c !important;
+    }
+
+    /* Nav Arrows */
+    .banner-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        background-color: #bf0019;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .banner-prev {
+        left: 15px;
+    }
+
+    .banner-next {
+        right: 15px;
+    }
+
+    @media (min-width: 768px) {
+        .banner-prev {
+            left: 50px;
+        }
+
+        .banner-next {
+            right: 50px;
+        }
+    }
 </style>
 
 
-<section class="sustainability-banner">
+<!-- <section class="sustainability-banner">
     <h2 class="content">Let's Start<br>Together</h2>
-</section>
+</section> -->
+
+<div class="slider-area-sustainability" id="home-slider">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img data-desktop-src="assets/images/banners/sustainability/header-sustainability.webp"
+                    data-mobile-src="assets/images/banners/sustainability/header-sustainability.webp" alt="Banner 1">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="banner-nav banner-prev">&#10094;</div>
+        <div class="banner-nav banner-next">&#10095;</div>
+    </div>
+</div>
 
 <section class="journey sustainability-section-padding" data-aos="fade-up">
     <div class="container sustainability-b-container">
@@ -899,6 +971,45 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         openTab('pills-home', { currentTarget: document.querySelector('.tab-button.active') || document.querySelector('.tab-button') });
+    });
+</script>
+
+<script>
+    function updateBannerImages() {
+        const isDesktop = window.innerWidth > 767;
+        document.querySelectorAll('[data-mobile-src]').forEach(img => {
+            img.src = isDesktop
+                ? img.getAttribute('data-desktop-src')
+                : img.getAttribute('data-mobile-src');
+        });
+    }
+
+    window.addEventListener('resize', updateBannerImages);
+    window.addEventListener('load', updateBannerImages);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const slideCount = document.querySelectorAll('.swiper-slide').length;
+
+        const swiperConfig = {
+            loop: slideCount > 1,
+            autoplay: slideCount > 1 ? { delay: 4000, disableOnInteraction: false } : false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.banner-next',
+                prevEl: '.banner-prev'
+            }
+        };
+
+        const swiper = new Swiper('.swiper', swiperConfig);
+
+        if (slideCount <= 1) {
+            document.querySelector('.banner-prev')?.classList.add('d-none');
+            document.querySelector('.banner-next')?.classList.add('d-none');
+            document.querySelector('.swiper-pagination')?.classList.add('d-none');
+        }
     });
 </script>
 

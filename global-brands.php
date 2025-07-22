@@ -2,40 +2,6 @@
 <?php include('includes/nav.php'); ?>
 
 <style>
-    /* .global-brands-banner {
-        background-image: url('assets/images/brands/banner/brand_banner.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        height: 60vh;
-        min-height: 250px;
-        max-height: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: var(--white);
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
-    }
-
-    @media (max-width: 767px) {
-        .global-brands-banner {
-            background-attachment: scroll;
-            height: 60vh;
-            min-height: 150px;
-            background-size: cover;
-
-            
-        }
-    } */
-
-
     .global-brands-banner {
         background-image: url('assets/images/brands/banner/brand_banner.jpg');
         background-size: cover;
@@ -544,9 +510,80 @@
             width: 100%;
         }
     }
+
+    /*  */
+    .slider-area-brands {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: #c51a30 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #7a001c !important;
+    }
+
+    /* Nav Arrows */
+    .banner-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        background-color: #bf0019;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .banner-prev {
+        left: 15px;
+    }
+
+    .banner-next {
+        right: 15px;
+    }
+
+    @media (min-width: 768px) {
+        .banner-prev {
+            left: 50px;
+        }
+
+        .banner-next {
+            right: 50px;
+        }
+    }
 </style>
 
-<section class="global-brands-banner"></section>
+<!-- <section class="global-brands-banner"></section> -->
+<div class="slider-area-brands" id="home-slider">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img data-desktop-src="assets/images/brands/banner/brand_banner.jpg"
+                    data-mobile-src="assets/images/brands/banner/brand_banner.jpg" alt="Banner 1">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="banner-nav banner-prev">&#10094;</div>
+        <div class="banner-nav banner-next">&#10095;</div>
+    </div>
+</div>
 
 <div>
     <div class="brands-heading">
@@ -762,4 +799,43 @@
         }
     });
 
+</script>
+
+<script>
+    function updateBannerImages() {
+        const isDesktop = window.innerWidth > 767;
+        document.querySelectorAll('[data-mobile-src]').forEach(img => {
+            img.src = isDesktop
+                ? img.getAttribute('data-desktop-src')
+                : img.getAttribute('data-mobile-src');
+        });
+    }
+
+    window.addEventListener('resize', updateBannerImages);
+    window.addEventListener('load', updateBannerImages);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const slideCount = document.querySelectorAll('.swiper-slide').length;
+
+        const swiperConfig = {
+            loop: slideCount > 1,
+            autoplay: slideCount > 1 ? { delay: 4000, disableOnInteraction: false } : false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.banner-next',
+                prevEl: '.banner-prev'
+            }
+        };
+
+        const swiper = new Swiper('.swiper', swiperConfig);
+
+        if (slideCount <= 1) {
+            document.querySelector('.banner-prev')?.classList.add('d-none');
+            document.querySelector('.banner-next')?.classList.add('d-none');
+            document.querySelector('.swiper-pagination')?.classList.add('d-none');
+        }
+    });
 </script>

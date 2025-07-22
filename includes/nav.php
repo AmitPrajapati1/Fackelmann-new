@@ -913,8 +913,8 @@
         <div class="w-100">
             <div class="sub-cat-row">
                 <div class="sub-categories-option" onclick="toggleCategorySubmenu('cookware-submenu')">
-                    <!-- <img src="assets/images/icon/bakeware/bake.png" class="sub-category-icon" alt="Category Icon"> -->
-                    <i class='bx bx-bowl-hot sub-category-icon'></i> COOKWARE
+                    <img src="assets/images/icon/cookware_1.png" class="sub-category-icon" alt="cookware">
+                    COOKWARE
                     <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
                 </div>
                 <div class="sub-categories-option" onclick="toggleCategorySubmenu('bakeware-submenu')">
@@ -930,7 +930,9 @@
                     <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
                 </div>
                 <div class="sub-categories-option" onclick="toggleCategorySubmenu('newexclusives-submenu')">
-                    <i class='bx bx-package sub-category-icon'></i>New & Exclusives
+                    <img src="assets/images/icon/new_and_exclusives.png" class="sub-category-icon"
+                        alt="Category Icon">New &
+                    Exclusives
                     <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
                 </div>
                 <div class="close-btn" onclick="hideSubmenu()">
@@ -943,7 +945,7 @@
                         <a href="product-listing.php" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/cookware/kadai.png" class="category-heading-icon"
+                                    <img src="assets/images/icon/cookware/kadai_3.png" class="category-heading-icon"
                                         alt="Kadai Icon"> Kadai
                                 </div>
 
@@ -965,7 +967,7 @@
                         <a href="#" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/cookware/cooker.png" class="category-heading-icon"
+                                    <img src="assets/images/icon/cookware/tawa_1.png" class="category-heading-icon"
                                         alt="Tawa Icon"> Tawa
                                 </div>
 
@@ -975,7 +977,7 @@
                         <a href="#" class="submenu-product-link">
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/cookware/cooker.png" class="category-heading-icon"
+                                    <img src="assets/images/icon/cookware/cooker_1.png" class="category-heading-icon"
                                         alt="Cooker Icon"> Pressure Cooker
                                 </div>
                             </div>
@@ -1035,8 +1037,7 @@
                         </div>
                         <div class="category-item">
                             <div class="category-heading">
-                                <img src="assets/images/icon/bakeware/brush.png" class="category-heading-icon"
-                                    alt="Baking Paper Icon"> Baking Paper
+                                <img src="" class="category-heading-icon" alt="Baking Paper Icon"> Baking Paper
                             </div>
                             <ul class="category-sub-items">
                                 <li></li>
@@ -1044,8 +1045,7 @@
                         </div>
                         <div class="category-item">
                             <div class="category-heading">
-                                <img src="assets/images/icon/bakeware/brush.png" class="category-heading-icon"
-                                    alt="Decorative Tools Icon"> Decorative Tools
+                                <img src="" class="category-heading-icon" alt="Decorative Tools Icon"> Decorative Tools
                             </div>
                             <ul class="category-sub-items">
                                 <li></li>
@@ -1117,8 +1117,7 @@
                         </div>
                         <div class="category-item">
                             <div class="category-heading">
-                                <img src="assets/images/icon/kitchenware/bottle-opener.png"
-                                    class="category-heading-icon" alt="Category Icon"> Gadgets
+                                <img src="" class="category-heading-icon" alt="Category Icon"> Gadgets
                             </div>
                             <ul class="category-sub-items">
 
@@ -1126,8 +1125,7 @@
                         </div>
                         <div class="category-item">
                             <div class="category-heading">
-                                <img src="assets/images/icon/kitchenware/bottle-opener.png"
-                                    class="category-heading-icon" alt="Category Icon"> Accessories
+                                <img src="" class="category-heading-icon" alt="Category Icon"> Accessories
                             </div>
                             <ul class="category-sub-items">
 
@@ -1148,8 +1146,7 @@
                         </div>
                         <div class="category-item">
                             <div class="category-heading">
-                                <img src="assets/images/icon/bundels_and_sets/kitchen_tools.png"
-                                    class="category-heading-icon" alt="Category Icon"> 3 Colonge 3pcs Set
+                                <img src="" class="category-heading-icon" alt="Category Icon"> 3 Colonge 3pcs Set
                             </div>
                             <ul class="category-sub-items">
 
@@ -1157,8 +1154,7 @@
                         </div>
                         <div class="category-item">
                             <div class="category-heading">
-                                <img src="assets/images/icon/bundels_and_sets/kitchen_tools.png"
-                                    class="category-heading-icon" alt="Category Icon"> DGP 1 & 2
+                                <img src="" class="category-heading-icon" alt="Category Icon"> DGP 1 & 2
                             </div>
                             <ul class="category-sub-items">
 
