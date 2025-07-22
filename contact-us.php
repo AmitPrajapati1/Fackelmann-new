@@ -181,26 +181,6 @@
         margin: 5px 0;
     }
 
-    /* .contact-btn {
-        background: var(--secondary-color);
-        color: var(--white);
-        border: none;
-        border-radius: 0;
-        padding: 12px 30px;
-        font-size: 16px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: background 0.2s ease, color 0.2s ease;
-        width: 100%;
-        max-width: 200px;
-        text-align: center;
-    }
-
-    .contact-btn:hover {
-        background: var(--btn-hover-gray);
-        color: var(--white);
-    } */
 
     input.is-invalid,
     select.is-invalid,
@@ -292,9 +272,80 @@
         vertical-align: top;
         color: var(--text-red);
     }
+
+    /* banner */
+    .slider-area-contact-us {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: #c51a30 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #7a001c !important;
+    }
+
+    /* Nav Arrows */
+    .banner-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        background-color: #bf0019;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .banner-prev {
+        left: 15px;
+    }
+
+    .banner-next {
+        right: 15px;
+    }
+
+    @media (min-width: 768px) {
+        .banner-prev {
+            left: 50px;
+        }
+
+        .banner-next {
+            right: 50px;
+        }
+    }
 </style>
 
-<section class="contact-us-banner"></section>
+<!-- <section class="contact-us-banner"></section> -->
+<div class="slider-area-contact-us" id="home-slider">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img data-desktop-src="assets/images/contact/contact-banner.webp"
+                    data-mobile-src="assets/images/contact/contact-banner.webp" alt="">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="banner-nav banner-prev">&#10094;</div>
+        <div class="banner-nav banner-next">&#10095;</div>
+    </div>
+</div>
 
 <main id="main" style="background-color: #F5F5F5">
     <section class="sec-padding">
@@ -551,6 +602,45 @@
             alertBox.style.backgroundColor = "#f8d7da";
             alertBox.style.color = "#721c24";
             alertBox.textContent = "Please correct the highlighted errors and try again.";
+        }
+    });
+</script>
+
+<script>
+    function updateBannerImages() {
+        const isDesktop = window.innerWidth > 767;
+        document.querySelectorAll('[data-mobile-src]').forEach(img => {
+            img.src = isDesktop
+                ? img.getAttribute('data-desktop-src')
+                : img.getAttribute('data-mobile-src');
+        });
+    }
+
+    window.addEventListener('resize', updateBannerImages);
+    window.addEventListener('load', updateBannerImages);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const slideCount = document.querySelectorAll('.swiper-slide').length;
+
+        const swiperConfig = {
+            loop: slideCount > 1,
+            autoplay: slideCount > 1 ? { delay: 4000, disableOnInteraction: false } : false,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.banner-next',
+                prevEl: '.banner-prev'
+            }
+        };
+
+        const swiper = new Swiper('.swiper', swiperConfig);
+
+        if (slideCount <= 1) {
+            document.querySelector('.banner-prev')?.classList.add('d-none');
+            document.querySelector('.banner-next')?.classList.add('d-none');
+            document.querySelector('.swiper-pagination')?.classList.add('d-none');
         }
     });
 </script>

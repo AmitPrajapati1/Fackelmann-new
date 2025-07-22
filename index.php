@@ -411,7 +411,7 @@
             <a href="product-listing.php">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_1.jpeg" alt="Cookware">
+                        <img src="assets/images/home_page/our_categories/cat_5.jpeg" alt="Cookware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Cookware</button>
@@ -423,7 +423,7 @@
             <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_2.jpeg" alt="Bakeware">
+                        <img src="assets/images/home_page/our_categories/cat_6.jpeg" alt="Bakeware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Bakeware</button>
@@ -437,7 +437,7 @@
             <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_3.jpeg" alt="Knives">
+                        <img src="assets/images/home_page/our_categories/cat_7.jpeg" alt="Knives">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Knives</button>
@@ -449,7 +449,7 @@
             <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_4.jpeg" alt="Kitchenware">
+                        <img src="assets/images/home_page/our_categories/cat_8.jpeg" alt="Kitchenware">
                     </div>
                     <div class="text-center mt-3">
                         <button class="custom-btn-style text-uppercase">Kitchenware</button>
