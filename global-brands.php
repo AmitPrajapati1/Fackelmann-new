@@ -54,7 +54,6 @@
         color: white;
         background: transparent;
         border: 1px solid white;
-        font-family: "Roboto Condensed", sans-serif;
         font-size: 13px;
         font-weight: 700;
         padding: 2px 20px;
