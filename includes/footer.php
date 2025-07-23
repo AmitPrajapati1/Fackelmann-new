@@ -209,7 +209,7 @@
             <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a>
             </li>
             <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Download</a></li>
-            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
+            <li><a href="newsletter.php" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
             <li><a href="contact-us.php" class="footer-detail text-decoration-none d-block">Contact</a></li>
           </ul>
         </div>
