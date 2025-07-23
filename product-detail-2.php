@@ -280,6 +280,7 @@ body {
         </ol>
     </div>
 
+    
     <div class="row">
         <!-- Product Image Section -->
         <div class="col-lg-6">
