@@ -247,7 +247,7 @@
       <a href="imprint.php" class="text-white text-decoration-none mx-1">Imprint</a>
       <a href="data-protection.php" class="text-white text-decoration-none mx-1">Data Protection</a>
       <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Terms and Conditions</a>
-      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Privacy Policy</a>
+      <a href="privacy-policy.php" class="text-white text-decoration-none mx-1">Privacy Policy</a>
     </div>
 
     <div class="small mt-2">
