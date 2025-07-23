@@ -46,12 +46,25 @@ h3 {
     text-decoration: underline;
 }
 
+.parallax {
+  background-image: url("assets/images/banners/Imprint-4.webp");
+  /* width: 100%; */
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  aspect-ratio: 64 / 13;
+}
+
 @media (max-width: 576px) {
     h1 { font-size: 1.75rem; }
     .section-title { font-size: 1.5rem; }
     .subsection-title { font-size: 1.25rem; }
 }
 </style>
+
+<!-- <div class="parallax"></div> -->
+
 
 <div class="container my-5">
     <div class="privacy-container">

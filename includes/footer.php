@@ -553,7 +553,19 @@
 
 </script>
 
-
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loader = document.querySelector('.loader');
+        // Hide the loader once the page is fully loaded
+        window.addEventListener('load', function () {
+            loader.classList.add('hidden');
+            // Optionally, remove the loader from the DOM after transition
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); // Match the transition duration
+        });
+    });
+</script>
 
 </body>
 
