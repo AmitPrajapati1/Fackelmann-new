@@ -94,12 +94,28 @@
         outline: none;
     }
 
-    .form-control-dropdown:focus {
+    /* .form-control-dropdown:focus {
         background-color: var(--bg-gray);
         border-color: var(--text-gray);
         box-shadow: none;
         color: var(--text-gray);
+    } */
+
+    .form-control-dropdown option[disabled] {
+        color: #b0b0b0;
+        background-color: var(--bg-gray);
     }
+
+
+    .form-control-dropdown,
+    .form-control-dropdown:focus,
+    .form-control-dropdown:valid {
+        background-color: var(--bg-gray);
+        border-color: var(--black);
+        color: var(--text-gray);
+        box-shadow: none;
+    }
+
 
     .contact-main {
         padding: 35px;
@@ -230,7 +246,7 @@
         font-weight: 400;
         margin-bottom: 2px;
         display: inline-block;
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .custom-label-contact a {
