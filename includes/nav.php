@@ -602,7 +602,7 @@
 
     @media (min-width: 768px) {
         .logo-container {
-            margin-top: -29px;
+            margin-top: -31px;
             border-bottom-right-radius: 12px;
             padding: 2px 12px 0;
             position: relative;
@@ -612,10 +612,13 @@
         }
 
         .logo-img {
-            height: 66px;
+            height: 65px;
             object-fit: contain;
             display: block;
             margin-bottom: -33px;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background-color: #fff;
         }
 
         .header {
@@ -870,7 +873,7 @@
     <div class="header-left">
         <div class="logo-container">
             <a href="index.php">
-                <img src="assets/images/logos/fackelmann_main_logo.png" alt="Fackelmann Logo" class="logo-img" />
+                <img src="assets/images/logos/Logo.jpg" alt="Fackelmann Logo" class="logo-img" />
             </a>
         </div>
         <nav class="nav">
