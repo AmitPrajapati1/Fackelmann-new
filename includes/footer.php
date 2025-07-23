@@ -244,8 +244,8 @@
     </div>
 
     <div class="text-uppercase fw-semibold footer-quick-access" style="font-size: 13px">
-      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Imprint</a>
-      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Data Protection</a>
+      <a href="imprint.php" class="text-white text-decoration-none mx-1">Imprint</a>
+      <a href="data-protection.php" class="text-white text-decoration-none mx-1">Data Protection</a>
       <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Terms and Conditions</a>
       <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Privacy Policy</a>
     </div>
