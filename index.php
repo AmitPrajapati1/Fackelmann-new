@@ -11,7 +11,7 @@
 
     .custom-nav {
         position: absolute;
-        top: 47%;
+        top: 52%;
         transform: translateY(-50%);
         font-size: 24px;
         color: #bf0019;
@@ -69,11 +69,11 @@
 
     @media (min-width: 768px) {
         .custom-prev {
-            left: 50px;
+            left: 31px;
         }
 
         .custom-next {
-            right: 50px;
+            right: 31px;
         }
 
         .highlight-prev {
@@ -403,16 +403,16 @@
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/hero_banner_desktop_3.jpg"
-                    data-mobile-src="assets/images/banners/hero_banner_mob_3.jpg" alt="Banner 1">
+                <img data-desktop-src="assets/images/banners/hero_banner_desktop_1.jpg"
+                    data-mobile-src="assets/images/banners/hero_banner_mob_1.jpg" alt="Banner 1">
             </div>
             <div class="swiper-slide">
                 <img data-desktop-src="assets/images/banners/hero_banner_desktop_2.jpg"
                     data-mobile-src="assets/images/banners/hero_banner_mob_2.jpg" alt="Banner 2">
             </div>
             <div class="swiper-slide">
-                <img data-desktop-src="assets/images/banners/hero_banner_desktop_1.jpg"
-                    data-mobile-src="assets/images/banners/hero_banner_mob_1.jpg" alt="Banner 3">
+                <img data-desktop-src="assets/images/banners/hero_banner_desktop_3.jpg"
+                    data-mobile-src="assets/images/banners/hero_banner_mob_3.jpg" alt="Banner 3">
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -1108,7 +1108,7 @@
             <h5 class="fw-bold text-black mb-3 mt-5">
                 Sign up for our <span class="fw-bold"></span>
             </h5>
-            <a href="javascript:void(0)" class="btn text-uppercase fw-semibold newsletter-button">
+            <a href="newsletter.php" class="btn text-uppercase fw-semibold newsletter-button">
                 Newsletter
             </a>
         </div>
@@ -1178,7 +1178,9 @@
                 </div>
                 <div class="col-12 col-md-8 text-sm-start">
                     <p class="mb-0" style="line-height: 1.7; font-size: 14px">
-                        We have everything you need to cook, bake, and more, at Fackelmann. All our products are characterised by the highest quality standards, led by a century of experience and innovation. Everything you need – and want – is right here.
+                        We have everything you need to cook, bake, and more, at Fackelmann. All our products are
+                        characterised by the highest quality standards, led by a century of experience and innovation.
+                        Everything you need – and want – is right here.
                     </p>
                 </div>
             </div>
