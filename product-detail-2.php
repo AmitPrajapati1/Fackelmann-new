@@ -109,13 +109,12 @@ body {
     margin-right: 10px;
 }
 
-
-
 .tech-data td:first-child {
     font-weight: 600;
     width: 1px;
     color: #444;
     white-space: nowrap;
+    
 }
 .tech-data td:last-child {
     color: #555;
@@ -276,7 +275,7 @@ body {
                 <a href="product-listing.php">Kadai</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-                Quartz Kadai
+                Deep Kadai
             </li>
         </ol>
     </div>
@@ -288,25 +287,25 @@ body {
             <div id="productCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/QK_1.jpg"
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-1.webp"
                              class="d-block w-100 zoom-image" alt="Product 1">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/QK_2.jpg"
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-2.webp"
                              class="d-block w-100 zoom-image" alt="Product 2">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/QK_3.jpg"
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-3.webp"
                              class="d-block w-100 zoom-image" alt="Product 3">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/QK_4.jpg"
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-4.webp"
                              class="d-block w-100 zoom-image" alt="Product 4">
                     </div>
-                    <!-- <div class="carousel-item">
-                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
+                    <div class="carousel-item">
+                        <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-5.webp"
                              class="d-block w-100 zoom-image" alt="Product 5">
-                    </div> -->
+                    </div>
                 </div>
 
                 <!-- Carousel Controls -->
@@ -324,46 +323,45 @@ body {
 
             <!-- Thumbnail Images -->
             <div class="d-flex justify-content-start gap-2">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/QK_1.jpg"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-1.webp"
                      class="thumb-img active" data-bs-target="#productCarousel" data-bs-slide-to="0"
                      onclick="setActiveThumb(this)" alt="Thumb 1">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/QK_2.jpg"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-2.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="1"
                      onclick="setActiveThumb(this)" alt="Thumb 2">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/QK_3.jpg"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-3.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="2"
                      onclick="setActiveThumb(this)" alt="Thumb 3">
-                <img src="assets/images/product_highlight/kadai/product-detail/kadai/QK_4.jpg"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-4.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="3"
                      onclick="setActiveThumb(this)" alt="Thumb 4">
-                <!-- <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-detail-5.webp"
+                <img src="assets/images/product_highlight/kadai/product-detail/kadai/product-5.webp"
                      class="thumb-img" data-bs-target="#productCarousel" data-bs-slide-to="4"
-                     onclick="setActiveThumb(this)" alt="Thumb 5"> -->
+                     onclick="setActiveThumb(this)" alt="Thumb 5">
             </div>
         </div>
 
         <!-- Product Info Section -->
         <div class="col-lg-6">
             <div class="product-info">
-                <h1 class="pi-title">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 20 cm, 1.5 litres</h1>
+                <h1 class="pi-title">Fackelmann Non-Stick Aluminum Deep Kadhai with Glass Lid 26.5 cm</h1>
                 <!-- NEW WRAPPER: Everything below stays hideable; title stays visible -->
                 <div class="pi-content">
-                    <div class="pi-sku">SKU ID: 5568481</div>
-                    <div class="pi-mrp">MRP ₹ 2,749.00</div>
+                    <div class="pi-sku">Sku Id: 5567681</div>
+                    <div class="pi-mrp">MRP ₹ 1,799.00</div>
 
                     <span class="pi-availability-label">Available At</span>
                         <a href="https://www.amazon.in/dp/B07X24NQTX?th=1" target="_blank" class="pi-availability-logo" aria-label="Amazon">
                              <img src="assets/images/icons/amazon.svg" alt="">
                         </a>
                     <ul class="pi-feature-list">
-                        <li>Material: 18/10 Stainless Steel Base | Color: Silver</li>
-                        <li>The inside layer (the one that touches your food) is premium 18/10 stainless steel base, giving durability &amp; high stain / non-stick resistance.</li>
-                        <li>Aluminium core in between layer is made of fine grade aluminium and extends from base up through the top edges to ensure even heating.</li>
-                        <li>Exterior cookware surface is high-density 430-series magnetic stainless steel for use on any cooktop (gas, glass, induction, etc.).</li>
-                        <li>5 Years warranty on all stainless steel cookware.</li>
-                        <li>Less Oil. No Burning. Induction Cookware.</li>
-                        <li>Perfect grip handles for better hold.</li>
-                        <li>Package Content: 1 Stainless Steel Kadhai and 1 Designer Lid.</li>
+                        <li>Material: Non-stick Aluminium; Size: Kadhai (26.5 cm)</li>
+                        <li>Base type: Induction Base; Base thickness (in mm): 3; Colour: Grey</li>
+                        <li>3 Layer non-stick DuPont (Select) coating last three times longer than ordinary non-stick cookware.</li>
+                        <li>Soft grip handles & tempered glass lid with steam release vent; induction bottom, use on flame, ceramic or electric stoves; for a long life, avoid using metal spatulas while cooking or serving; no dry heating; allow the Kadhai to cool before washing, clean with plastic scrubber & soap water only</li>
+                        <li>Dishwasher safe</li>
+                        <li>Warranty: 1 Years; Included in warranty: Manufacturing defects will be covered in the warranty. Remaining things have been mentioned in the user manual.</li>
+                        <li>Included items: 1 x Kadhai 26.5 cm with Glass Lid</li>
                     </ul>
 
                     <div class="pi-cta-wrap">
@@ -395,8 +393,8 @@ body {
             <div id="collapseDescription" class="accordion-collapse collapse" aria-labelledby="headingDescription"
                  data-bs-parent="#productDetailsAccordion">
                 <div class="accordion-body text-muted">
-                    Designed to meet the rigorous demands of the toughest kitchens. Innovative BI-PLY construction
-                    combines an extremely durable hard anodised exterior with premium 18/10 stainless steel interior.
+                    <p>The Fackelmann non-stick Kadhai have a 3 mm aluminium core with DuPont Select Coating.</p>
+                    <p>With a tempered glass lid and steam release vent, this item can be used on flames or induction stoves. It will last a long time.</p>
                 </div>
             </div>
         </div>
@@ -412,9 +410,13 @@ body {
             </h2>
             <div id="collapseCare" class="accordion-collapse collapse" aria-labelledby="headingCare"
             data-bs-parent="#productDetailsAccordion">
-            <div class="accordion-body d-flex align-items-center text-muted">
-                 <i class="fas fa-hands-wash"></i>
-                    Dishwasher safe, hand wash recommended.
+            <div class="accordion-body text-muted">
+                    <p style="font-weight: bold">Tips to Maintain Non-stick Cookware</p>
+                    <p>1. Condition before the first use with a thin smear of cooking oil.</p>
+                    <p>2. Cook over low to medium heat for best cooking results. High heat can burn food, waste energy and cause surface discoloration after some time.</p>
+                    <p>3. Do not use sharp objects like knives/ forks and metal spoons with sharp corners/edges.</p>
+                    <p>4. Cool pans before washing to safeguard against rapid temperature changes that can cause warping.</p>
+                    <p>5. Clean you cookware with soapy water using the sponge scrubber after each use to prevent oil deposition.</p>
                 </div>
             </div>
         </div>
@@ -435,28 +437,39 @@ body {
                         <table class="table table-borderless tech-data mb-0">
                             <tbody>
                                 <tr>
-                                    <td>Color:</td>
-                                    <td>Dark grey exterior, stainless steel interior</td>
-                                </tr>
-                                <tr>
                                     <td>Material:</td>
-                                    <td>3.5mm hard anodised aluminium and premium 18/10 stainless steel</td>
+                                    <td>Aluminium</td>
                                 </tr>
                                 <tr>
-                                    <td>Size:</td>
-                                    <td>24 cm</td>
+                                    <td>Item Diameter:</td>
+                                    <td>26.5 cm</td>
                                 </tr>
                                 <tr>
-                                    <td>Finish:</td>
-                                    <td>Matte exterior, satin interior</td>
+                                    <td>Colour:</td>
+                                    <td>Grey & Black</td>
                                 </tr>
                                 <tr>
-                                    <td>Handle:</td>
-                                    <td>Cool Touch® cast stainless steel</td>
+                                    <td>Item Dimensions (L X W X H):</td>
+                                    <td>28 x 35 x 9 Centimetres</td>
                                 </tr>
                                 <tr>
-                                    <td>Guarantee:</td>
-                                    <td>50 Years</td>
+                                    <td>Weight:</td>
+                                    <td>1929 grams</td>
+                                </tr>
+                                <tr>
+                                    <td>Has Nonstock Coating:</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Is Dishwasher Safe:</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>HEAN:</td>
+                                    <td>6944804556766</td>
+                                </tr>
+                                <tr>
+                                    <td>Made in India</td>
                                 </tr>
                             </tbody>
                         </table>

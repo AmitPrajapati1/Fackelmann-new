@@ -385,14 +385,26 @@ body {
             <div class="row g-4">
                 <!-- Product 1 -->
                 <div class="col-6 col-md-4">
-                <a href="product-detail.php" class="text-decoration-none text-dark">
-                    <div class="product-card">
-                        <img src="assets/images/product_highlight/kadai/1.jpg" class="img-fluid main-img" alt="">
-                        <img src="assets/images/product_highlight/kadai/2.jpg" class="img-fluid hover-img" alt="">
-                        <div class="product-category text-uppercase">Quartz Kadai</div>
-                        <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 20 cm, 1.5 litres</div>
-                        <div class="product-price">₹ 2,749.00</div>
-                    </div>
+                    <a href="product-detail.php" class="text-decoration-none text-dark">
+                        <div class="product-card">
+                            <img src="assets/images/product_highlight/kadai/1.jpg" class="img-fluid main-img" alt="">
+                            <img src="assets/images/product_highlight/kadai/2.jpg" class="img-fluid hover-img" alt="">
+                            <div class="product-category text-uppercase">Quartz Kadai</div>
+                            <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 20 cm, 1.5 litres</div>
+                            <div class="product-price">₹ 2,749.00</div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Product 5 -->
+                <div class="col-6 col-md-4">
+                    <a href="product-detail-2.php" class="text-decoration-none text-dark">
+                        <div class="product-card">
+                            <img src="assets/images/product_highlight/kadai/kadai_5.jpg" class="img-fluid main-img" alt="">
+                            <img src="assets/images/product_highlight/kadai/kadai_overlay_5.jpg" class="img-fluid hover-img" alt="">
+                            <div class="product-category text-uppercase">Fackelmann</div>
+                            <div class="product-description">Fackelmann Non-Stick Aluminum Deep Kadhai with Glass Lid 26.5 cm</div>
+                            <div class="product-price">₹ 1,799.00</div>
+                        </div>
                     </a>
                 </div>
                 <!-- Product 2 -->
@@ -425,16 +437,7 @@ body {
                         <div class="product-price">₹ 3,699.00</div>
                     </div>
                 </div>
-                <!-- Product 5 -->
-                <div class="col-6 col-md-4">
-                    <div class="product-card">
-                        <img src="assets/images/product_highlight/kadai/kadai_5.jpg" class="img-fluid main-img" alt="">
-                        <img src="assets/images/product_highlight/kadai/kadai_overlay_5.jpg" class="img-fluid hover-img" alt="">
-                        <div class="product-category text-uppercase">Fackelmann</div>
-                        <div class="product-description">Fackelmann Non-Stick Aluminum Deep Kadhai with Glass Lid 26.5 cm</div>
-                        <div class="product-price">₹ 1,799.00</div>
-                    </div>
-                </div>
+                
                 <!-- Product 6 -->
                 <div class="col-6 col-md-4">
                     <div class="product-card">
