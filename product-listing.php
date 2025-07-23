@@ -401,7 +401,7 @@ body {
                         <div class="product-card">
                             <img src="assets/images/product_highlight/kadai/kadai_5.jpg" class="img-fluid main-img" alt="">
                             <img src="assets/images/product_highlight/kadai/kadai_overlay_5.jpg" class="img-fluid hover-img" alt="">
-                            <div class="product-category text-uppercase">Fackelmann</div>
+                            <div class="product-category text-uppercase">Aluminum Deep Kadhai</div>
                             <div class="product-description">Fackelmann Non-Stick Aluminum Deep Kadhai with Glass Lid 26.5 cm</div>
                             <div class="product-price">₹ 1,799.00</div>
                         </div>

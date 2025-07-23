@@ -275,7 +275,7 @@ body {
                 <a href="product-listing.php">Kadai</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">
-                Deep Kadai
+                Aluminum Deep Kadhai
             </li>
         </ol>
     </div>
