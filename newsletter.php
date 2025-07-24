@@ -152,8 +152,7 @@
     }
 
     .newsletter-form-main .newsletter-button:hover {
-        color: var(--white);
-        background: #c51a30;
+        color: var(--white) !important;
     }
 
 
