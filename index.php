@@ -479,7 +479,7 @@
 <div class="container-fluid py-5 main-sub-cat" style="background: #EDE8E2">
     <div class="row g-4 justify-content-center">
         <div class="col-md-6 col-12 col-lg-4">
-            <a href="product-listing.php">
+            <a href="category-listing.php">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
                         <img src="assets/images/home_page/our_categories/cat_9.jpg" alt="Cookware">
@@ -603,7 +603,7 @@
             </a>
         </div> -->
         <div class="item">
-            <a href="product-listing.php">
+            <a href="category-listing.php">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_4.jpeg"

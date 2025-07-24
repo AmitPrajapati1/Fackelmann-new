@@ -399,49 +399,49 @@ body {
                 </div>
                 <!-- Product 5 -->
                 <div class="col-6 col-md-4">
-                    <a href="product-detail-2.php" class="text-decoration-none text-dark">
+                    <!-- <a href="product-detail-2.php" class="text-decoration-none text-dark"> -->
                         <div class="product-card">
-                            <img src="assets/images/product_highlight/kadai/kadai_5.jpg" class="img-fluid main-img" alt="">
-                            <img src="assets/images/product_highlight/kadai/kadai_overlay_5.jpg" class="img-fluid hover-img" alt="">
-                            <div class="product-category text-uppercase">Aluminum Deep Kadhai</div>
-                            <div class="product-description">Fackelmann Non-Stick Aluminum Deep Kadhai with Glass Lid 26.5 cm</div>
-                            <div class="product-price">₹ 1,799.00</div>
+                            <img src="assets/images/categories/saucepan-1.webp" class="img-fluid main-img" alt="">
+                            <img src="assets/images/categories/saucepan-overlay-1.webp" class="img-fluid hover-img" alt="">
+                            <div class="product-category text-uppercase">Saucepan</div>
+                            <div class="product-description">Stanley Rogers BI-PLY Professional Saucepan 16 Cm,1.5 Litres</div>
+                            <div class="product-price">₹ 8,990.00</div>
                         </div>
-                    </a>
+                    <!-- </a> -->
                 </div>
                 <!-- Product 2 -->
                 <div class="col-6 col-md-4">
                     <div class="product-card">
-                        <img src="assets/images/product_highlight/kadai/kadai_2.jpg" class="img-fluid main-img" alt="">
-                        <img src="assets/images/product_highlight/kadai/kadai_overlay_2.jpg" class="img-fluid hover-img" alt="">
-                        <div class="product-category text-uppercase">Fackelmann</div>
-                        <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 22 cm, 2.0 litres</div>
-                        <div class="product-price">₹ 3,049.00</div>
+                        <img src="assets/images/categories/wok-1.webp" class="img-fluid main-img" alt="">
+                        <img src="assets/images/categories/wok-overlay-1.webp" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Wok</div>
+                        <div class="product-description">Stanley Rogers Conical TRI-PLY Wok Pan 28 Cm</div>
+                        <div class="product-price">₹ 10,149.00</div>
                     </div>
                 </div>
                 <!-- Product 3 -->
                 <div class="col-6 col-md-4">
                     <div class="product-card">
-                        <img src="assets/images/product_highlight/kadai/kadai_3.jpg" class="img-fluid main-img" alt="">
-                        <img src="assets/images/product_highlight/kadai/kadai_overlay_3.jpg" class="img-fluid hover-img" alt="">
-                        <div class="product-category text-uppercase">Fackelmann</div>
-                        <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 24 cm, 2.5 litres</div>
-                        <div class="product-price">₹ 3,449.00</div>
+                        <img src="assets/images/categories/tawa-1.webp" class="img-fluid main-img" alt="">
+                        <img src="assets/images/categories/tawa-overlay-1.webp" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Tawa</div>
+                        <div class="product-description">Fackelmann Non Stick Dosa Tawa, 28 cm</div>
+                        <div class="product-price">₹ 1,149.00</div>
                     </div>
                 </div>
                 <!-- Product 4 -->
                 <div class="col-6 col-md-4">
                     <div class="product-card">
-                        <img src="assets/images/product_highlight/kadai/kadai_4.jpg" class="img-fluid main-img" alt="">
-                        <img src="assets/images/product_highlight/kadai/kadai_overlay_4.jpg" class="img-fluid hover-img" alt="">
-                        <div class="product-category text-uppercase">Fackelmann</div>
-                        <div class="product-description">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 26 cm, 3.25 litres</div>
-                        <div class="product-price">₹ 3,699.00</div>
+                        <img src="assets/images/categories/frying-pan-1.webp" class="img-fluid main-img" alt="">
+                        <img src="assets/images/categories/frying-pan-overlay-1.webp" class="img-fluid hover-img" alt="">
+                        <div class="product-category text-uppercase">Frying Pan</div>
+                        <div class="product-description">SR BI-PLY Professional Frypan 24 Cm</div>
+                        <div class="product-price">₹ 7,990.00</div>
                     </div>
                 </div>
                 
                 <!-- Product 6 -->
-                <div class="col-6 col-md-4">
+                <!-- <div class="col-6 col-md-4">
                     <div class="product-card">
                         <img src="assets/images/product_highlight/kadai/kadai_6.jpg" class="img-fluid main-img" alt="">
                         <img src="assets/images/product_highlight/kadai/kadai_overlay_6.jpg" class="img-fluid hover-img" alt="">
@@ -449,9 +449,9 @@ body {
                         <div class="product-description">Fackelmann Nonstick Kadai with Glass Lid 24 cm Grey</div>
                         <div class="product-price">₹ 1,649.00</div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Product 7 -->
-                <div class="col-6 col-md-4">
+                <!-- <div class="col-6 col-md-4">
                     <div class="product-card">
                         <img src="assets/images/product_highlight/kadai/kadai_7.jpg" class="img-fluid main-img" alt="">
                         <img src="assets/images/product_highlight/kadai/kadai_overlay_7.jpg" class="img-fluid hover-img" alt="">
@@ -459,7 +459,7 @@ body {
                         <div class="product-description">Fackelmann Nonstick Kadai with Glass Lid 28 cm Grey</div>
                         <div class="product-price">₹ 1,999.00</div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div><!-- /.row -->
