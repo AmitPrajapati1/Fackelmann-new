@@ -244,10 +244,10 @@
     </div>
 
     <div class="text-uppercase fw-semibold footer-quick-access" style="font-size: 13px">
-      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Imprint</a>
-      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Data Protection</a>
+      <a href="imprint.php" class="text-white text-decoration-none mx-1">Imprint</a>
+      <a href="data-protection.php" class="text-white text-decoration-none mx-1">Data Protection</a>
       <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Terms and Conditions</a>
-      <a href="javascript:void(0)" class="text-white text-decoration-none mx-1">Privacy Policy</a>
+      <a href="privacy-policy.php" class="text-white text-decoration-none mx-1">Privacy Policy</a>
     </div>
 
     <div class="small mt-2">
@@ -553,7 +553,19 @@
 
 </script>
 
-
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loader = document.querySelector('.loader');
+        // Hide the loader once the page is fully loaded
+        window.addEventListener('load', function () {
+            loader.classList.add('hidden');
+            // Optionally, remove the loader from the DOM after transition
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); // Match the transition duration
+        });
+    });
+</script>
 
 </body>
 
