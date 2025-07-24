@@ -237,8 +237,7 @@
     }
 
     .btn-type-1:hover {
-        background: #c51a30;
-        color: var(--white);
+        color: var(--white) !important;
     }
 
     .custom-label-contact {
