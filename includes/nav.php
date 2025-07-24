@@ -11,9 +11,6 @@
         overflow-y: scroll;
     }
 
-
-
-
     .topbar {
         background-color: var(--primary-color);
         color: var(--white);
@@ -51,7 +48,7 @@
         align-items: center;
         font-size: 14px;
         font-weight: 500;
-        color: #fff;
+        color: #fff !important;
         margin: 0;
         letter-spacing: 1.2px;
         text-transform: uppercase;
@@ -183,7 +180,6 @@
         scrollbar-color: #bf0019 transparent;
     }
 
-    /* WebKit (Chrome, Edge, Safari) */
     .panel-wrapper::-webkit-scrollbar {
         width: 5px;
         height: 6px;
@@ -858,13 +854,29 @@
         text-decoration: none;
     }
 
-    /* .sub-category-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
-    vertical-align: middle;
-    object-fit: contain;
-} */
+    .nav-link {
+        position: relative;
+        color: white;
+        text-decoration: none;
+        padding-bottom: 10px;
+        display: inline-block;
+    }
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -24%;
+        width: 0%;
+        height: 3px;
+        background-color: white;
+        transition: width 0.3s ease, left 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+        width: 70%;
+    }
 </style>
 
 <div class="topbar">Life Made Easier, Since 1919!</div>
@@ -877,10 +889,12 @@
             </a>
         </div>
         <nav class="nav">
-            <a href="index.php">HOME</a>
-            <a href="#" data-submenu="productsSubmenu" onclick="toggleSubmenu(event)">PRODUCTS</a>
-            <a href="sustainability.php">SUSTAINABILITY</a>
-            <a href="#" data-submenu="brandsSubmenu" onclick="toggleSubmenu(event)">GLOBAL BRANDS</a>
+            <a href="index.php" class="nav-link">HOME</a>
+            <a href="#" class="nav-link" data-submenu="productsSubmenu" onmouseenter="showProductsSubmenu()"
+                onmouseleave="scheduleHideProductsSubmenu()">Products</a>
+            <a href="sustainability.php" class="nav-link">SUSTAINABILITY</a>
+            <a class="nav-link" data-submenu="brandsSubmenu" onmouseenter="showBrandsSubmenu()"
+                onmouseleave="scheduleHideBrandsSubmenu()">Global Brands</a>
         </nav>
 
         <div class="mega-menu" id="megaMenu">
@@ -915,7 +929,9 @@
         <span class="material-icons icon" onclick="toggleNav(true)">menu</span>
     </div>
 
-    <div class="sub-cat" id="productsSubmenu" style="display: none; ">
+    <div class="sub-cat" id="productsSubmenu" onmouseenter="clearTimeout(productsHoverTimeout)"
+        onmouseleave="scheduleHideProductsSubmenu()">
+
         <div class="w-100">
             <div class="sub-cat-row">
                 <div class="sub-categories-option" onclick="toggleCategorySubmenu('cookware-submenu')">
@@ -1051,7 +1067,8 @@
                         </div>
                         <div class="category-item">
                             <div class="category-heading">
-                                <img src="" class="category-heading-icon" alt="Decorative Tools Icon"> Decorative Tools
+                                <img src="" class="category-heading-icon" alt="Decorative Tools Icon"> Decorative
+                                Tools
                             </div>
                             <ul class="category-sub-items">
                                 <li></li>
@@ -1169,7 +1186,8 @@
                         <div class="category-item">
                             <div class="category-heading">
                                 <img src="assets/images/icon/bundels_and_sets/kitchen_tools.png"
-                                    class="category-heading-icon" alt="3in1 Kitchen Utility Combo"> 3in1 Kitchen Utility
+                                    class="category-heading-icon" alt="3in1 Kitchen Utility Combo"> 3in1 Kitchen
+                                Utility
                                 Combo
                             </div>
                             <ul class="category-sub-items">
@@ -1217,8 +1235,9 @@
         </div>
 
     </div>
+    <div class="sub-cat-brands" id="brandsSubmenu" onmouseenter="clearTimeout(brandsHoverTimeout)"
+        onmouseleave="scheduleHideBrandsSubmenu()">
 
-    <div class="sub-cat-brands" id="brandsSubmenu" style="display: none;">
         <div class="brands-container">
             <div class="brand-item">
                 <a href="https://www.fackelmann.de/marken/fackelmann"><img src="assets/images/brands/fm_200x125.jpg"
@@ -1275,14 +1294,6 @@
         </div>
     </div>
 </header>
-
-<!-- <div class="searchbar-ui" id="searchbarUI" style="display: none;">
-    <div class="searchbar-inner">
-        <i class="material-icons search-icon">search</i>
-        <input type="text" placeholder="Search Term ..." />
-        <i class="material-icons close-icon" onclick="toggleSearchBar()">close</i>
-    </div>
-</div> -->
 
 <div class="sidenav-overlay" onclick="toggleNav(false)"></div>
 
@@ -1478,4 +1489,48 @@
             });
         }
     });
+
+    // hover effect 
+    let productsHoverTimeout;
+    let brandsHoverTimeout;
+
+    function showProductsSubmenu() {
+        clearTimeout(productsHoverTimeout);
+        const productsSubmenu = document.getElementById("productsSubmenu");
+        const brandsSubmenu = document.getElementById("brandsSubmenu");
+
+        brandsSubmenu.style.display = "none";
+        productsSubmenu.style.display = "flex";
+    }
+
+    function scheduleHideProductsSubmenu() {
+        productsHoverTimeout = setTimeout(() => {
+            const submenu = document.getElementById("productsSubmenu");
+            submenu.style.display = "none";
+
+            document.querySelectorAll('.category-submenu').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.sub-categories-option').forEach(el => el.classList.remove('active'));
+        }, 200);
+    }
+
+    function showBrandsSubmenu() {
+        clearTimeout(brandsHoverTimeout);
+        const brandsSubmenu = document.getElementById("brandsSubmenu");
+        const productsSubmenu = document.getElementById("productsSubmenu");
+
+        productsSubmenu.style.display = "none";
+        brandsSubmenu.style.display = "flex";
+    }
+
+    function scheduleHideBrandsSubmenu() {
+        brandsHoverTimeout = setTimeout(() => {
+            document.getElementById("brandsSubmenu").style.display = "none";
+        }, 200);
+    }
+
+    function hideSubmenu() {
+        document.getElementById("productsSubmenu").style.display = "none";
+        document.getElementById("brandsSubmenu").style.display = "none";
+    }
+
 </script>

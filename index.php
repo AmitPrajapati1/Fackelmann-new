@@ -263,20 +263,74 @@
         transform: scale(1.1);
     }
 
+    /* .image-container {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        border-radius: 9px;
+        overflow: hidden;
+    }
+
+    .image-container .img-main,
+    .image-container .img-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.4s ease, transform 0.3s ease;
+        display: block;
+        transform: scale(1);
+        transform-origin: center center;
+        backface-visibility: hidden;
+        will-change: transform, opacity;
+    }
+
+    .image-container .img-hover {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    .image-container:hover .img-main {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    .image-container:hover .img-hover {
+        opacity: 1;
+        transform: scale(1.1);
+    } */
+
+
+
     .product-button {
         position: absolute;
         bottom: 15px;
         left: 50%;
         transform: translateX(-50%);
-        /* background-color: #bf0019; */
         background-color: white;
         color: #bf0019;
-        /* border: 1px solid #bf0019; */
-        /* 
-        padding: 9px 27px;
-        max-width: 160px;
-        width: auto;   
-        white-space: nowrap; */
+        padding: 9px 0;
+        width: 160px;
+        text-align: center;
+        z-index: 10;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        pointer-events: none;
+        /* Prevent hover shift */
+    }
+
+
+
+    /* .product-button {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        color: #bf0019;
         padding: 9px 0;
         width: 160px;
         text-align: center;
@@ -285,7 +339,7 @@
         font-size: 14px;
         font-weight: 500;
 
-    }
+    } */
 
     .product-button:hover {
         background-color: #bf0019;
@@ -466,10 +520,10 @@
             <a href="javascript:void(0)">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
-                        <img src="assets/images/home_page/our_categories/cat_12.jpg" alt="Kitchenware">
+                        <img src="assets/images/home_page/our_categories/cat_12.jpg" alt="Kitchen Tools">
                     </div>
                     <div class="text-center mt-3">
-                        <button class="custom-btn-style text-uppercase">Kitchenware</button>
+                        <button class="custom-btn-style text-uppercase">Kitchen Tools</button>
                     </div>
                 </div>
             </a>
@@ -535,6 +589,19 @@
     <div class="custom-nav custom-next">❯</div>
 
     <div class="discover-carousel owl-carousel owl-theme">
+        <!-- <div class="item">
+            <a href="product-listing.php">
+                <div class="item-card">
+                    <div class="image-container">
+                        <img class="img-main img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_4.jpeg"
+                            alt="Non-Stick" loading="lazy">
+                        <img class="img-hover img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_1.jpeg"
+                            alt="Non-Stick Hover" loading="lazy">
+                    </div>
+                    <button class="product-button btn btn-sm mt-2">Non-Stick Cookware</button>
+                </div>
+            </a>
+        </div> -->
         <div class="item">
             <a href="product-listing.php">
                 <div class="item-card">
@@ -1065,7 +1132,6 @@
     <div class="container py-5">
         <div class="row align-items-start">
 
-            <!-- Left Content -->
             <div class="col-lg-6 mb-4 mb-lg-0" style="margin-top: 12px">
                 <img src="assets/images/logos/sustainability_img.webp" alt="50 Sustainability & Climate Leaders"
                     class="mb-3 img-fluid">
@@ -1088,7 +1154,6 @@
                     INFORMATION</a>
             </div>
 
-            <!-- Right Video Section -->
             <div class="col-lg-6">
                 <div class="ratio ratio-16x9">
                     <video controls poster="assets/images/logos/sustainability_poster.png">
@@ -1150,8 +1215,7 @@
         </div>
     </div>
 </section> -->
-<!-- 
-<section class="text-white text-center d-flex align-items-center justify-content-center px-3"
+<!-- <section class="text-white text-center d-flex align-items-center justify-content-center px-3"
     style="background: repeating-linear-gradient(-45deg, #bf0019, #bf0019 5px, #c51a30 5px, #c51a30 7px); min-height: 203px;">
     <div class="container">
         <h5 class="fw-semibold mb-3 pt-3">Our Philosophy</h5>
@@ -1164,8 +1228,6 @@
         </p>
     </div>
 </section> -->
-
-
 
 
 <section class="text-white d-flex align-items-center justify-content-center px-3 py-5"
