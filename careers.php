@@ -230,8 +230,16 @@
     }
 
     .btn-type-1:hover {
-        background: #c51a30;
-        color: var(--white);
+        color: var(--white) !important;
+    }
+
+    @media (max-width: 480px) {
+        .btn-type-1 {
+            padding: 10px 20px;
+            font-size: 14px;
+            max-width: 160px;
+        }
+
     }
 
     #form-status-msg.success {
@@ -318,7 +326,7 @@
                             <div class="clearfix"></div>
                             <div class="text-center">
                                 <button type="button" id="authenticateJob"
-                                    class="btn btn-type-1 d-inline-block mt-3 career-button">Submit</button>
+                                    class="btn btn-type-1 d-inline-block mt-3">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -370,7 +378,84 @@
     });
 </script>
 
+<script>
+    function showStatusMessage(type, message) {
+        const msgBox = document.getElementById('form-status-msg');
+        msgBox.className = '';
+        msgBox.classList.add(type === 'success' ? 'success' : 'error');
+        msgBox.textContent = message;
+        msgBox.style.display = 'block';
+        msgBox.scrollIntoView({ behavior: 'smooth' });
+    }
 
+    document.getElementById('authenticateJob').addEventListener('click', function () {
+        let isValid = true;
+
+        document.querySelectorAll('.career-msg').forEach(msg => msg.textContent = '');
+        document.getElementById('form-status-msg').style.display = 'none';
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mobile = document.getElementById('mobile').value.trim();
+        const designation = document.getElementById('designation').value.trim();
+        const fileInput = document.getElementById('file_1');
+        const file = fileInput.files[0];
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const mobileRegex = /^[0-9]{10}$/;
+
+        if (name === '') {
+            document.getElementById('msgname').textContent = 'Please enter your name.';
+            isValid = false;
+        }
+
+        if (email === '') {
+            document.getElementById('msgemail').textContent = 'Please enter your email.';
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            document.getElementById('msgemail').textContent = 'Please enter a valid email.';
+            isValid = false;
+        }
+
+        if (mobile === '') {
+            document.getElementById('msgmobile').textContent = 'Please enter your mobile number.';
+            isValid = false;
+        } else if (!mobileRegex.test(mobile)) {
+            document.getElementById('msgmobile').textContent = 'Enter a valid 10-digit number.';
+            isValid = false;
+        }
+
+        if (designation === '') {
+            document.getElementById('msgdesignation').textContent = 'Please select a designation.';
+            isValid = false;
+        }
+
+        if (!file) {
+            document.getElementById('msgfile_1').textContent = 'Please upload your resume.';
+            isValid = false;
+        } else if (file.type !== 'application/pdf') {
+            document.getElementById('msgfile_1').textContent = 'Only PDF files allowed.';
+            isValid = false;
+        }
+
+        if (isValid) {
+            showStatusMessage('success', 'Your application has been submitted successfully.');
+        } else {
+            showStatusMessage('error', 'Please fill in all required fields before submitting the form.');
+        }
+    });
+
+    document.getElementById('file_1').addEventListener('change', function () {
+        const fileDisplay = document.getElementById('file-name-display');
+        const file = this.files[0];
+        if (file) {
+            const fileSize = (file.size / 1024).toFixed(1); // size in KB
+            fileDisplay.textContent = `${file.name} (${fileSize} KB)`;
+        } else {
+            fileDisplay.textContent = '';
+        }
+    });
+</script>
 
 
 <?php include('includes/footer.php'); ?>
