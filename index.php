@@ -448,6 +448,52 @@
         max-width: 900px;
         box-shadow: 8px 8px 0 white;
     }
+
+    /* play button */
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Full-size video */
+    .video-wrapper video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Red rounded play button */
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 64px;
+        height: 64px;
+        background-color: #bf0019;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 2;
+        opacity: 0.9;
+        transition: opacity 0.3s;
+    }
+
+    /* White triangle inside */
+    .play-button::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 16px solid #fff;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        margin-left: 4px;
+    }
+
 </style>
 
 
@@ -1155,11 +1201,14 @@
             </div>
 
             <div class="col-lg-6">
-                <div class="ratio ratio-16x9">
-                    <video controls poster="assets/images/logos/sustainability_poster.png">
-                        <source src="https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <div class="ratio">
+                    <div class="video-wrapper" id="videoWrapper">
+                        <video id="customVideo" poster="assets/images/logos/sustainability_poster.png">
+                            <source src="https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-button" id="playBtn"></div>
+                    </div>
                 </div>
             </div>
 

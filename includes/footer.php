@@ -565,6 +565,30 @@
     });
 </script>
 
+<script>
+    const video = document.getElementById('customVideo');
+    const playBtn = document.getElementById('playBtn');
+
+    // Only play when clicking the button
+    playBtn.addEventListener('click', function (e) {
+        video.play();
+        playBtn.style.display = 'none';
+    });
+
+    // Pause video and show play button when video is clicked
+    video.addEventListener('click', function () {
+        if (!video.paused) {
+            video.pause();
+            playBtn.style.display = 'flex';
+        }
+    });
+
+    // Ensure play button shows again when video ends
+    video.addEventListener('ended', function () {
+        playBtn.style.display = 'flex';
+    });
+</script>
+
 </body>
 
 </html>
