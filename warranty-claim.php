@@ -14,7 +14,6 @@
         --text-red: #c51a30;
     }
 
-    /* banner */
     .slider-area-warranty-claim {
         position: relative;
         width: 100%;
@@ -71,7 +70,6 @@
         }
     }
 
-    /* warranty-claim page*/
     .warranty-form {
         background-color: var(--bg-gray) !important;
         padding: 20px;
@@ -106,8 +104,8 @@
         border: none !important;
         background-color: white !important;
         margin: 3px 0px !important;
-        color: #d1d1d1 !important;
-        font-weight: 600 !important;
+        color: #595959 !important;
+        font-weight: 100;
     }
 
     .input-file.errorWarranty {
@@ -117,7 +115,7 @@
 
     .warranty-form .input-file {
         height: 35px !important;
-        line-height: 39px !important;
+        line-height: 24px !important;
     }
 
     .warranty-form textarea {
@@ -128,8 +126,6 @@
     .custom-label-warranty {
         font-weight: 400 !important;
     }
-
-
 
     .warranty-msg {
         color: red;
@@ -169,7 +165,11 @@
         }
 
         .warranty-form .input-file {
-            line-height: 20px !important;
+            line-height: 26px !important;
+            font-size: 0.85rem !important;
+            padding: 7px 12px !important;
+            margin: 5px 0 !important;
+            font-weight: 100;
         }
     }
 
@@ -276,7 +276,7 @@
         border-color: var(--text-gray);
     }
 
-    /* Make file input and complaint textarea responsive and consistent */
+
     textarea[name="comment"] {
         width: 100%;
         min-height: 120px;
@@ -286,7 +286,7 @@
         color: var(--text-gray);
     }
 
-    /* Optional: Better styling for mobile */
+
     @media (max-width: 576px) {
         .input-file {
             font-size: 0.8rem;
@@ -320,20 +320,21 @@
     }
 
     .custom-label-contact {
-        /* color: var(--text-gray); */
+        color: var(--text-red) !important;
         font-weight: 400;
         margin-bottom: 2px;
         display: inline-block;
         font-size: 14px;
+        text-decoration: none !important;
     }
 
     .custom-label-contact a {
         color: var(--text-red);
-        text-decoration: none !important;
+        text-decoration: none;
     }
 
     .custom-label-contact a:hover {
-        text-decoration: underline !important;
+        text-decoration: underline;
     }
 </style>
 <div class="slider-area-warranty-claim" id="home-slider">
@@ -410,7 +411,11 @@
                                 </label>
                                 <span class="message warranty-msg" id="msgfile_1"></span>
                             </div>
-                            <div class="col-md-12">
+                            <small id="file-name-display" style="display:block; margin-top:5px; color:#595959;"></small>
+
+
+
+                            <div class="col-md-12 pt-1">
                                 <textarea name="comment" placeholder="Complaint Remark"></textarea>
                                 <span class="message warranty-msg" id="msgcomment"></span>
                             </div>
@@ -423,9 +428,7 @@
                                         More</a>
 
                                 </label>
-                                <!-- <label class="mb-0" style="font-size: 14px !important">*Required field</label>
-                                <a href="#" target="_blank" style="font-size: 14px !important"> Read More</a>
-                                <span class="message warranty-msg" id="msgterms"></span> -->
+
                                 <label class="custom-label-warranty" style="font-size: 14px !important">
                                     <input type="checkbox" name="news" value="1" />&nbsp;I wish to receive the latest
                                     news and offers from Fackelmann India
@@ -487,8 +490,87 @@
 </script>
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const fileInput = document.getElementById('file_1');
+        const fileNameDisplay = document.getElementById('file-name-display');
+
+        fileInput.addEventListener('change', function () {
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        });
+
+        flatpickr("#date", {
+            dateFormat: "Y-m-d",
+            altInput: true,
+            altFormat: "F j, Y",
+            altInputClass: "form-control flatpickr-input form-control-warranty",
+            allowInput: true,
+            onReady: function (selectedDates, dateStr, instance) {
+                instance.altInput.placeholder = "Purchase Date";
+            }
+        });
+
+        document.getElementById('authenticateComplaint').addEventListener('click', function () {
+            let isValid = true;
+
+            const successMsg = document.getElementById('success-msg');
+            const errorMsg = document.getElementById('error-msg');
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            function validateField(name, validator = null, errorMessage = 'This field is required.') {
+                const field = document.querySelector(`[name="${name}"]`);
+                const errorSpan = document.getElementById(`msg${name}`);
+                field.classList.remove('errorWarranty');
+                errorSpan.textContent = '';
+
+                if (!field || !field.value.trim()) {
+                    isValid = false;
+                    if (field) field.classList.add('errorWarranty');
+                    errorSpan.textContent = errorMessage;
+                } else if (validator && !validator(field.value.trim())) {
+                    isValid = false;
+                    field.classList.add('errorWarranty');
+                    errorSpan.textContent = errorMessage;
+                }
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const mobileRegex = /^\d{10}$/;
+
+            validateField('name');
+            validateField('email', value => emailRegex.test(value), 'Enter a valid email.');
+            validateField('mobile', value => mobileRegex.test(value), 'Enter a valid 10-digit mobile number.');
+            validateField('address');
+            validateField('pincode');
+            validateField('product_number');
+            validateField('purchase_date');
+            validateField('file_1', () => document.querySelector('[name="file_1"]').files.length > 0, 'Please upload a file.');
+
+            const terms = document.querySelector('[name="terms"]');
+            const msgterms = document.getElementById('msgterms');
+            msgterms.textContent = '';
+            if (!terms.checked) {
+                isValid = false;
+                msgterms.textContent = 'Please accept the Privacy Policy.';
+            }
+
+            if (isValid) {
+                successMsg.style.display = 'block';
+                errorMsg.style.display = 'none';
+
+            } else {
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+            }
+        });
+    });
 
 
-
-
+</script>
 <?php include('includes/footer.php'); ?>
