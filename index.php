@@ -456,12 +456,18 @@
         height: 100%;
     }
 
+    .video-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
     /* Full-size video */
-    .video-wrapper video {
+    /* .video-wrapper video {
         width: 100%;
         height: auto;
         display: block;
-    }
+    } */
 
     /* Red rounded play button */
     .play-button {
@@ -1200,17 +1206,17 @@
                     INFORMATION</a>
             </div>
 
-            <div class="col-lg-6">
-                <div class="ratio">
-                    <div class="video-wrapper" id="videoWrapper">
-                        <video id="customVideo" poster="assets/images/logos/sustainability_poster.png">
-                            <source src="https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="play-button" id="playBtn"></div>
-                    </div>
+            <div class="col-md-6">
+                <div class="video-wrapper" id="youtubeWrapper">
+                    <img src="assets/images/logos/sustainability_poster.png" 
+                        alt="electric bikes in India"
+                        title="electric bikes in India"
+                        style="cursor: pointer; width: 100%; display: block;"
+                        id="youtubeThumbnail" />
+                    <div class="play-button" id="youtubePlayBtn"></div>
                 </div>
             </div>
+
 
         </div>
     </div>

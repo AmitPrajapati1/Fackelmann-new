@@ -566,28 +566,23 @@
 </script>
 
 <script>
-    const video = document.getElementById('customVideo');
-    const playBtn = document.getElementById('playBtn');
+    const youtubeWrapper = document.getElementById('youtubeWrapper');
+    const youtubePlayBtn = document.getElementById('youtubePlayBtn');
+    const youtubeThumbnail = document.getElementById('youtubeThumbnail');
+    const youtubeURL = "https://www.youtube.com/embed/fBm86vhUOX0?autoplay=1";
 
-    // Only play when clicking the button
-    playBtn.addEventListener('click', function (e) {
-        video.play();
-        playBtn.style.display = 'none';
-    });
+    function replaceWithIframe() {
+        const thumbHeight = youtubeThumbnail.offsetHeight;
+        youtubeWrapper.innerHTML = `<iframe style="width: 100%; height: ${thumbHeight}px;" 
+            src="${youtubeURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+            gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
 
-    // Pause video and show play button when video is clicked
-    video.addEventListener('click', function () {
-        if (!video.paused) {
-            video.pause();
-            playBtn.style.display = 'flex';
-        }
-    });
-
-    // Ensure play button shows again when video ends
-    video.addEventListener('ended', function () {
-        playBtn.style.display = 'flex';
-    });
+    // Click triggers
+    youtubePlayBtn.addEventListener('click', replaceWithIframe);
+    youtubeThumbnail.addEventListener('click', replaceWithIframe);
 </script>
+
 
 </body>
 
