@@ -565,6 +565,25 @@
     });
 </script>
 
+<script>
+    const youtubeWrapper = document.getElementById('youtubeWrapper');
+    const youtubePlayBtn = document.getElementById('youtubePlayBtn');
+    const youtubeThumbnail = document.getElementById('youtubeThumbnail');
+    const youtubeURL = "https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4";
+
+    function replaceWithIframe() {
+        const thumbHeight = youtubeThumbnail.offsetHeight;
+        youtubeWrapper.innerHTML = `<iframe style="width: 100%; height: ${thumbHeight}px;" 
+            src="${youtubeURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+            gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
+
+    // Click triggers
+    youtubePlayBtn.addEventListener('click', replaceWithIframe);
+    youtubeThumbnail.addEventListener('click', replaceWithIframe);
+</script>
+
+
 </body>
 
 </html>

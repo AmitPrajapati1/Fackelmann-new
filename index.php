@@ -448,6 +448,58 @@
         max-width: 900px;
         box-shadow: 8px 8px 0 white;
     }
+
+    /* play button */
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+    /* Full-size video */
+    /* .video-wrapper video {
+        width: 100%;
+        height: auto;
+        display: block;
+    } */
+
+    /* Red rounded play button */
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 64px;
+        height: 64px;
+        background-color: #bf0019;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 2;
+        opacity: 0.9;
+        transition: opacity 0.3s;
+    }
+
+    /* White triangle inside */
+    .play-button::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 16px solid #fff;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        margin-left: 4px;
+    }
+
 </style>
 
 <style>
@@ -722,7 +774,7 @@
 <!-- <div class="container-fluid py-5 main-sub-cat" style="background: #EDE8E2">
     <div class="row g-4 justify-content-center">
         <div class="col-md-6 col-12 col-lg-4">
-            <a href="category-listing.php">
+            <a href="product-listing.php">
                 <div class="product-card custom-card-style">
                     <div class="image-wrapper">
                         <img src="assets/images/home_page/our_categories/cat_9.jpg" alt="Cookware">
@@ -1002,7 +1054,7 @@
 
     <div class="discover-carousel owl-carousel owl-theme">
         <div class="item">
-            <a href="category-listing.php">
+            <a href="product-listing.php">
                 <div class="item-card">
                     <div class="image-container">
                         <img class="img-fluid" src="assets/images/home_page/cleverly_combined_sets/set_4.jpeg"
@@ -1553,14 +1605,17 @@
                     INFORMATION</a>
             </div>
 
-            <div class="col-lg-6">
-                <div class="ratio ratio-16x9">
-                    <video controls poster="assets/images/logos/sustainability_poster.png">
-                        <source src="https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+            <div class="col-md-6">
+                <div class="video-wrapper" id="youtubeWrapper">
+                    <img src="assets/images/logos/sustainability_poster.png" 
+                        alt="electric bikes in India"
+                        title="electric bikes in India"
+                        style="cursor: pointer; width: 100%; display: block;"
+                        id="youtubeThumbnail" />
+                    <div class="play-button" id="youtubePlayBtn"></div>
                 </div>
             </div>
+
 
         </div>
     </div>

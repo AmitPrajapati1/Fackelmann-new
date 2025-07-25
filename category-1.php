@@ -71,43 +71,43 @@
 
         <div class="category-carousel" style="width: 100%;">
             <div class="item">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <img src="assets/images/categories/cookware/kadai.jpg" alt="Kadai">
                     <div>Kadai</div>
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <img src="assets/images/categories/cookware/Frypan.webp" alt="Frypan">
                     <div>Frypan</div>
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <img src="assets/images/categories/cookware/Tawa.webp" alt="Tawa">
                     <div>Tawa</div>
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <img src="assets/images/categories/cookware/pressure_cooker.jpg" alt="Pressure Cooker">
                     <div>Pressure Cooker</div>
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <img src="assets/images/categories/cookware/casserole.jpg" alt="Casserole">
                     <div>Casserole</div>
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <img src="assets/images/categories/cookware/tope.jpg" alt="Tope">
                     <div>Tope</div>
                 </a>
             </div>
             <div class="item">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <img src="assets/images/categories/cookware/tadkapan.jpg" alt="Tadka Pan">
                     <div>Tadka Pan</div>
                 </a>

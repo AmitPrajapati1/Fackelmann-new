@@ -171,7 +171,6 @@ body {
     height: 28px;
     width: auto;
     display: inline-block;
-    margin-bottom: 16px;
 }
 
 /* Bullet list styled w/ red dot like screenshot */
@@ -352,7 +351,7 @@ body {
                     <div class="pi-mrp">MRP ₹ 2,749.00</div>
 
                     <span class="pi-availability-label">Available At</span>
-                        <a href="https://www.amazon.in/dp/B07X24NQTX?th=1" target="_blank" class="pi-availability-logo" aria-label="Amazon">
+                        <a href="https://www.amazon.in/dp/B07X24NQTX?th=1" target="_blank" title="Order Now" class="pi-availability-logo" aria-label="Amazon">
                              <img src="assets/images/icons/amazon.svg" alt="">
                         </a>
                     <ul class="pi-feature-list">

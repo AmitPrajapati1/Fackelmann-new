@@ -229,8 +229,6 @@ body {
     </div>
 </section>
 
-<?php include 'category-1.php';?>
-
 <div class="px-4 py-3 px-lg-5 py-lg-4">
     <!-- Mobile Filter & Sort Buttons -->
     <div class="row mb-3">
@@ -281,7 +279,7 @@ body {
         <div class="col-lg-3 mb-4 d-none d-lg-block">
             <div class="bg-white p-4">
                 <!-- SHOP BY CATEGORIES -->
-                <!-- <div class="mb-4 border-bottom pb-2">
+                <div class="mb-4 border-bottom pb-2">
                     <div class="filter-title d-flex justify-content-between align-items-center"
                         data-bs-toggle="collapse" data-bs-target="#filter1" aria-expanded="true"
                         aria-controls="filter1">
@@ -302,7 +300,7 @@ body {
                             <label class="form-check-label" for="new_launches">New Launches</label>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <!-- SHOP BY BRAND -->
                 <div class="mb-4 border-bottom pb-2">
@@ -476,7 +474,7 @@ body {
             </div>
             <div class="modal-body">
                 <!-- SHOP BY CATEGORIES (Mobile) -->
-                <!-- <div class="mb-4 border-bottom pb-2">
+                <div class="mb-4 border-bottom pb-2">
                     <div class="filter-title d-flex justify-content-between align-items-center"
                         data-bs-toggle="collapse" data-bs-target="#modalFilter1" aria-expanded="true"
                         aria-controls="modalFilter1">
@@ -497,7 +495,7 @@ body {
                             <label class="form-check-label" for="modal_new_launches">New Launches</label>
                         </div>
                     </div>
-                </div> -->
+                </div>
 
                 <!-- SHOP BY BRAND (Mobile) -->
                 <div class="mb-4 border-bottom pb-2">
