@@ -569,7 +569,7 @@
     const youtubeWrapper = document.getElementById('youtubeWrapper');
     const youtubePlayBtn = document.getElementById('youtubePlayBtn');
     const youtubeThumbnail = document.getElementById('youtubeThumbnail');
-    const youtubeURL = "https://www.youtube.com/embed/fBm86vhUOX0?autoplay=1";
+    const youtubeURL = "https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4";
 
     function replaceWithIframe() {
         const thumbHeight = youtubeThumbnail.offsetHeight;
