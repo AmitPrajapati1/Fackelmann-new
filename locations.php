@@ -23,6 +23,19 @@
 }
 </style>
 
+<!-- Hero Section -->
+<section style="position: relative; overflow: hidden;">
+    <div style="width: 100%; position: relative;">
+        <video autoplay muted loop playsinline style="width: 100%; height: auto; object-fit: cover; display: block;">
+            <!-- Mobile Video -->
+            <source src="assets/images/banners/videos/Fackelmann_Headquarters.mp4" type="video/mp4" media="(max-width: 767px)">
+            <!-- Desktop Video -->
+            <source src="assets/images/banners/videos/Fackelmann_Headquarters.mp4" type="video/mp4" media="(min-width: 768px)">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
+
 <div class="container py-5 bg-white">
     <!-- Section Title -->
     <div class="row">
