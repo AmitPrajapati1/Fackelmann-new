@@ -206,7 +206,7 @@
 
         <div class="collapse d-md-block" id="footerCollapse2">
           <ul class="list-unstyled mb-0">
-            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a>
+            <li><a href="warranty-claim.php" class="footer-detail text-decoration-none d-block mb-1">Warranty Claim</a>
             </li>
             <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Download</a></li>
             <li><a href="newsletter.php" class="footer-detail text-decoration-none d-block mb-1">Newsletter</a></li>
@@ -227,8 +227,8 @@
             </li>
             <li><a href="sustainability.php" class="footer-detail text-decoration-none d-block mb-1">Sustainability</a>
             </li>
-            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Careers</a></li>
-            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block">Locations</a></li>
+            <li><a href="careers.php" class="footer-detail text-decoration-none d-block mb-1">Careers</a></li>
+            <li><a href="locations.php" class="footer-detail text-decoration-none d-block">Locations</a></li>
           </ul>
         </div>
       </div>
@@ -265,6 +265,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+
 
 <!-- <script>
   $(document).ready(function () {
@@ -554,33 +556,36 @@
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const loader = document.querySelector('.loader');
-        window.addEventListener('load', function () {
-            loader.classList.add('hidden');
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500); 
-        });
+  document.addEventListener('DOMContentLoaded', function () {
+    const loader = document.querySelector('.loader');
+    window.addEventListener('load', function () {
+      loader.classList.add('hidden');
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 500);
     });
+  });
 </script>
 
 <script>
-    const youtubeWrapper = document.getElementById('youtubeWrapper');
-    const youtubePlayBtn = document.getElementById('youtubePlayBtn');
-    const youtubeThumbnail = document.getElementById('youtubeThumbnail');
-    const youtubeURL = "https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4";
+  const youtubeWrapper = document.getElementById('youtubeWrapper');
+  const youtubePlayBtn = document.getElementById('youtubePlayBtn');
+  const youtubeThumbnail = document.getElementById('youtubeThumbnail');
+  const youtubeURL = "https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4";
 
-    function replaceWithIframe() {
-        const thumbHeight = youtubeThumbnail.offsetHeight;
-        youtubeWrapper.innerHTML = `<iframe style="width: 100%; height: ${thumbHeight}px;" 
+  function replaceWithIframe() {
+    const thumbHeight = youtubeThumbnail.offsetHeight;
+    youtubeWrapper.innerHTML = `<iframe style="width: 100%; height: ${thumbHeight}px;" 
             src="${youtubeURL}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
             gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-    }
+  }
 
-    // Click triggers
-    youtubePlayBtn.addEventListener('click', replaceWithIframe);
-    youtubeThumbnail.addEventListener('click', replaceWithIframe);
+  // Click triggers
+  youtubePlayBtn.addEventListener('click', replaceWithIframe);
+  youtubeThumbnail.addEventListener('click', replaceWithIframe);
+
+
+
 </script>
 
 

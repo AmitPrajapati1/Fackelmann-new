@@ -457,10 +457,10 @@
     }
 
     .video-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
     /* Full-size video */
     /* .video-wrapper video {
@@ -499,7 +499,6 @@
         border-bottom: 10px solid transparent;
         margin-left: 4px;
     }
-
 </style>
 
 <style>
@@ -1607,10 +1606,8 @@
 
             <div class="col-md-6">
                 <div class="video-wrapper" id="youtubeWrapper">
-                    <img src="assets/images/logos/sustainability_poster.png" 
-                        alt="electric bikes in India"
-                        title="electric bikes in India"
-                        style="cursor: pointer; width: 100%; display: block;"
+                    <img src="assets/images/logos/sustainability_poster.png" alt="electric bikes in India"
+                        title="electric bikes in India" style="cursor: pointer; width: 100%; display: block;"
                         id="youtubeThumbnail" />
                     <div class="play-button" id="youtubePlayBtn"></div>
                 </div>
