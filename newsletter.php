@@ -177,9 +177,19 @@
     .newsleter-form {
         width: 100%;
         margin: 0;
-        padding: 70px 100px 100px 100px;
+        padding: 70px 60px 60px 60px;
         float: left;
         /* background: var(--white); */
+    }
+
+    @media (max-width: 768px) {
+        .newsleter-form {
+            padding: 25px 20px;
+        }
+
+        .nesletter-header p {
+            font-size: 16px;
+        }
     }
 
     .newsleter-form h2 {
@@ -217,7 +227,7 @@
     }
 
     .newsleter-form button:hover {
-        background: #000;
+        background: repeating-linear-gradient(-45deg, var(--text-red), var(--text-red) 5px, #c51a30 5px, #c51a30 7px);
     }
 
     .newsleter-form .input-file {
@@ -309,6 +319,26 @@
             right: 50px;
         }
     }
+
+    .newsletter-alert {
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 15px 0;
+    }
+
+    .newsletter-alert.success-msg {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .newsletter-alert.error-msg {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
 </style>
 
 <div class="slider-area-newsletter" id="home-slider">
@@ -343,9 +373,13 @@
                 <div class="col-md-7">
                     <div class="newsleter-form newsletter-form-main" id="subscribe-msg-box">
                         <h2>SUBSCRIBE TO NEWSLETTER</h2>
-                        <div id="success-message" class="success-msg" style="">
+                        <div id="success-message" class="newsletter-alert success-msg" style="display:none;">
                             You have successfully subscribed to our newsletter!
                         </div>
+                        <div id="error-message" class="newsletter-alert error-msg" style="display:none;">
+                            Please fill in all required fields before submitting the form.
+                        </div>
+
                         <form id="subscribe-frm">
                             <input type="hidden" name="action_type" value="subscribe-enquiry">
                             <input type="text" name="name" placeholder="Your Name*"
@@ -358,7 +392,7 @@
                             <label class="custom-label-newsletter"><input type="checkbox" name="terms" value="1"
                                     style=""> I have
                                 read the
-                                <a href="https://www.fackelmann.co.in/privacy-policy">privacy policy </a>.</label>
+                                <a href="privacy-policy.php">privacy policy </a>.</label>
                             <div class="clearfix"></div>
                             <span class="message newsletter-msg" id="msgterms"></span>
                             <div class="clearfix"></div>
@@ -374,13 +408,14 @@
 </div>
 <?php include('includes/footer.php'); ?>
 
-
 <script>
     document.getElementById('authenticateSubscribe').addEventListener('click', function () {
+        // Clear previous messages
         document.getElementById('msgname').innerText = '';
         document.getElementById('msgemail').innerText = '';
         document.getElementById('msgterms').innerText = '';
         document.getElementById('success-message').style.display = 'none';
+        document.getElementById('error-message').style.display = 'none';
 
         let name = document.querySelector('input[name="name"]');
         let email = document.querySelector('input[name="email"]');
@@ -388,6 +423,7 @@
 
         let isValid = true;
 
+        // Name validation
         if (name.value.trim() === '') {
             document.getElementById('msgname').innerText = 'Please enter your name.';
             name.classList.add('errorNewsletter');
@@ -396,7 +432,8 @@
             name.classList.remove('errorNewsletter');
         }
 
-        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        // Email validation
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
         if (email.value.trim() === '') {
             document.getElementById('msgemail').innerText = 'Please enter your email.';
             email.classList.add('errorNewsletter');
@@ -409,17 +446,26 @@
             email.classList.remove('errorNewsletter');
         }
 
+        // Terms validation
         if (!terms.checked) {
             document.getElementById('msgterms').innerText = 'You must agree to the privacy policy.';
             isValid = false;
         }
 
+        // Show result
         if (isValid) {
             document.getElementById('success-message').style.display = 'block';
+            document.getElementById('error-message').style.display = 'none';
             document.getElementById('subscribe-frm').reset();
+        } else {
+            document.getElementById('success-message').style.display = 'none';
+            document.getElementById('error-message').style.display = 'block';
         }
     });
 </script>
+
+
+
 
 <script>
     function updateBannerImages() {

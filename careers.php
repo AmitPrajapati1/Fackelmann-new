@@ -11,7 +11,7 @@
         --text-gray: #737373;
         --bg-gray: #f5f5f5;
         --silver: #c0c0c0;
-        --text-red: #c51a30;
+        --text-red: #bf0019;
     }
 
     /* banner */

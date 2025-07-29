@@ -218,6 +218,29 @@
 
     }
 
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea,
+    select {
+        background-color: #fff !important;
+        border-color: var(--bg-gray) !important;
+        color: var(--text-gray) !important;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
+    textarea:focus,
+    select:focus {
+        background-color: #fff !important;
+        border-color: var(--text-gray) !important;
+        outline: none;
+        box-shadow: none !important;
+    }
+
     .btn-type-1 {
         padding: 12px 30px;
         margin: 15px 0;
@@ -347,7 +370,6 @@
     }
 </style>
 
-<!-- <section class="contact-us-banner"></section> -->
 <div class="slider-area-contact-us" id="home-slider">
     <div class="swiper">
         <div class="swiper-wrapper">
@@ -450,7 +472,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <textarea name="comment" placeholder="Message" class="form-control-msg"></textarea>
-                                    <span class="message contact-msg" id="msgcomment"></span>
+                                    <!-- <span class="message contact-msg" id="msgcomment"></span> -->
                                 </div>
                                 <div class="col-md-12">
                                     <p
@@ -459,7 +481,7 @@
                                     <div class="privacy-policy-container">
                                         <label class="custom-label-contact">
                                             <input type="checkbox" name="terms" value="1" required /> I have read and
-                                            understood the <a href="#" target="_blank"
+                                            understood the <a href="privacy-policy.php" target="_blank"
                                                 class="custom-label-contact">Privacy Policy</a>
                                             <span class="required-field">*</span>
                                         </label>
@@ -592,8 +614,8 @@
         const subject = form["subject"].value;
         if (!subject) showError("subject", "Please select a subject.");
 
-        const comment = form["comment"].value.trim();
-        if (!comment) showError("comment", "Message cannot be empty.");
+        // const comment = form["comment"].value.trim();
+        // if (!comment) showError("comment", "Message cannot be empty.");
 
         const terms = form["terms"].checked;
         if (!terms) showError("terms", "You must agree to the privacy policy.");
