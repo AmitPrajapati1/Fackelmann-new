@@ -654,9 +654,20 @@
             margin-right: 30px;
         }
 
-        .logo-img {
+        /* .logo-img {
             height: 45px;
             object-fit: contain;
+        } */
+
+        .logo-img {
+            height: 52px;
+            position: absolute;
+            top: -24px;
+            left: -27px;
+            object-fit: contain;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            background-color: #fff;
         }
 
         .searchbar-ui {
