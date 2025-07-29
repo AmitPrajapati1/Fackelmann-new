@@ -107,15 +107,14 @@
         font-weight: bold !important;
     }
 
-    .tabs-container.sticky-tabs {
+    /* .tabs-container.sticky-tabs {
         position: fixed;
         top: var(--navbar-height, 60px);
-        /* fallback */
         width: 100%;
-        z-index: 999;
+        z-index: 998;
         background: white;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+    } */
 
     .js-close-megamenu.megamenu-close {
         color: #54565a;
@@ -200,10 +199,17 @@
         font-weight: 400 !important;
     }
 
-    @media (max-width: 991px) {
-        .custom-padding-about-us {
-            padding-left: 24px !important;
-            padding-right: 24px !important;
+    .tabs.grd.no-gap a.active {
+        background-color: var(--text-red);
+        color: white;
+    }
+
+    /* Tablet styles */
+    @media only screen and (min-width: 640px) {
+        .tabs.grd.no-gap {
+            padding-left: 20px;
+            padding-right: 20px;
+
         }
     }
 </style>
@@ -257,9 +263,7 @@
         .stat-label {
             font-size: 12px;
         }
-</style>
 
-<style>
     .about-us-images,
     .the-world-images {
         display: flex;
@@ -304,7 +308,7 @@
         }
     }
 
-    img {
+    .about-brands-section img {
         width: 100% !important;
         height: auto !important;
     }
@@ -314,6 +318,7 @@
     }
 </style>
 
+<!--  -->
 <main class="about">
     <div class="slider-area-about-us" id="home-slider">
         <div class="swiper">
@@ -453,7 +458,7 @@
         </div>
     </section>
 
-    <section class="container mb-5">
+    <section class="container mb-5 about-brands-section">
         <h2 class="deko-headline">
             Our Brands
         </h2>
@@ -517,69 +522,63 @@
         </div>
     </section>
 
-    <section class="wrapper m-bXL">
-        <h2 class="deko-headline">
-            Fackelmann's partner brands
-        </h2>
-        <div class="grd S-gap -t6 -l4 j-c-center">
-            <a class="col markenteaser m-bgapS2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="{{ asset('images/other_images/brands/logo-12.webp') }}" alt="Elo" />
-                <img class="markenteaser__logo"
-                    src="{{ asset('images/other_images/about_us_page/brand/brands-elo-logo.svg') }}" alt="Elo" />
-            </a>
-            <a class="col markenteaser m-bgapS2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="{{ asset('images/other_images/brands/logo-13.webp') }}"
-                    alt="Chef'n" />
-                <img class="markenteaser__logo"
-                    src="{{ asset('images/other_images/about_us_page/brand/brands-chefn-logo.svg') }}" alt="Chef'n" />
-            </a>
-            <a class="col markenteaser m-bgapS2">
-                <img class="markenteaser__img" src="{{ asset('images/other_images/brands/logo-14.webp') }}"
-                    alt="Luigi Bomioli" />
-                <img class="markenteaser__logo"
-                    src="{{ asset('images/other_images/about_us_page/brand/brands-luigi-logo.svg') }}"
-                    alt="Luigi Bomioli" />
-            </a>
-            <a class="col markenteaser m-bgapS2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="{{ asset('images/other_images/brands/logo-15.webp') }}"
-                    alt="Bomioli Rocco" />
-                <img class="markenteaser__logo"
-                    src="{{ asset('images/other_images/about_us_page/brand/brands-rocco-logo.svg') }}"
-                    alt="Bomioli Rocco" />
-            </a>
+
+    <section class="mb-4 histories-section px-5 about-brands-section">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div class="row g-0">
+                    <div class="col-6">
+                        <img class="img-fluid-custom" src="assets/images/logos/about-us/historie-01.jpg"
+                            alt="Historie 1" />
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid-custom" src="assets/images/logos/about-us/historie-02.jpg"
+                            alt="Historie 2" />
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid-custom" src="assets/images/logos/about-us/historie-03.jpg"
+                            alt="Historie 3" />
+                    </div>
+                    <div class="col-6">
+                        <img class="img-fluid-custom" src="assets/images/logos/about-us/historie-04.png"
+                            alt="Historie 4" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 d-flex">
+                <img class="img-fluid-custom w-100 align-self-stretch"
+                    src="assets/images/logos/about-us/historie-big-05.png" alt="Historie 5" />
+            </div>
         </div>
     </section>
-
-
-
-
-
-    <section class="p-tXL p-bXL historie">
+    <!-- timeline -->
+    <section class="py-5 historie">
         <div class='tabs-container'>
             <div class='wrapper--full-l'>
                 <nav class='tabs grd no-gap'>
-                    <a class='col -m4 -tauto sscroll sscroll--offset select-on-scroll' href='#h1-1919'>
+                    <a class='col -m4 -tauto sscroll sscroll--offset' href='#h1-1919'>
                         1919&nbsp;›
                     </a>
-                    <a class='col -m4 -tauto sscroll sscroll--offset select-on-scroll' href='#h3-1948'>
+                    <a class='col -m4 -tauto sscroll sscroll--offset' href='#h3-1948'>
                         1948&nbsp;›
                     </a>
-                    <a class='col -m4 -tauto sscroll sscroll--offset select-on-scroll' href='#h5-1981'>
+                    <a class='col -m4 -tauto sscroll sscroll--offset' href='#h5-1981'>
                         1981&nbsp;›
                     </a>
-                    <a class='col -m4 -tauto sscroll sscroll--offset select-on-scroll' href='#h9-1993'>
+                    <a class='col -m4 -tauto sscroll sscroll--offset' href='#h9-1993'>
                         1993&nbsp;›
                     </a>
-                    <a class='col -m4 -tauto sscroll sscroll--offset select-on-scroll' href='#h12-2011'>
+                    <a class='col -m4 -tauto sscroll sscroll--offset' href='#h12-2011'>
                         2011&nbsp;›
                     </a>
-                    <a class='col -m4 -tauto sscroll sscroll--offset select-on-scroll' href='#h16-2018'>
+                    <a class='col -m4 -tauto sscroll sscroll--offset' href='#h16-2018'>
                         2018&nbsp;›
                     </a>
                 </nav>
             </div>
         </div>
-        <div class='wrapper m-tL p-bL'>
+        <div class='wrapper about-brands-section' style="margin-top: 32px; padding-bottom: 32px">
             <div class='grd historie__item' id='h1-1919'>
                 <div class='historie__bar'>
                 </div>
@@ -590,7 +589,7 @@
                         <h4 class='historie__jahr'>
                             1919
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-1-1.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-1-1.jpeg"
                             alt='Founding by the Fackelmann brothers' />
                     </div>
                 </div>
@@ -620,7 +619,7 @@
                         <h4 class='historie__jahr'>
                             1921
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-2-2.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-2-2.jpeg"
                             alt='Expansion of commercial agencies' />
                     </div>
                 </div>
@@ -649,7 +648,7 @@
                         <h4 class='historie__jahr'>
                             1948
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-3-3.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-3-3.jpeg"
                             alt='Sebastian Fackelmann takes over the business' />
                     </div>
                 </div>
@@ -680,7 +679,7 @@
                         <h4 class='historie__jahr'>
                             1958
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-4-4.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-4-4.jpeg"
                             alt='From wholesale to in-house production' />
                     </div>
                 </div>
@@ -711,7 +710,7 @@
                         <h4 class='historie__jahr'>
                             1981
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-5-5.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-5-5.jpeg"
                             alt='Küchenhelfer für den modernen Haushalt' />
                     </div>
                 </div>
@@ -740,7 +739,7 @@
                         <h4 class='historie__jahr'>
                             1984
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-6-6.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-6-6.jpeg"
                             alt='The 3rd generation joins the company' />
                     </div>
                 </div>
@@ -767,7 +766,7 @@
                         <h4 class='historie__jahr'>
                             1987
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-7-7.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-7-7.jpeg"
                             alt='Establishment of the first foreign branch' />
                     </div>
                 </div>
@@ -796,7 +795,7 @@
                         <h4 class='historie__jahr'>
                             1989
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-8-8.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-8-8.jpeg"
                             alt='Modular system and distinctive logo' />
                     </div>
                 </div>
@@ -827,7 +826,7 @@
                         <h4 class='historie__jahr'>
                             1993
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-9-9.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-9-9.jpeg"
                             alt='Starting shot for international expansion' />
                     </div>
                 </div>
@@ -856,7 +855,7 @@
                         <h4 class='historie__jahr'>
                             2003
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-10-10.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-10-10.jpeg"
                             alt='New on board: the baking mold expert Zenker' />
                     </div>
                 </div>
@@ -888,7 +887,7 @@
                         <h4 class='historie__jahr'>
                             2004
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-11-11.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-11-11.jpeg"
                             alt='Europe and the whole world' />
                     </div>
                 </div>
@@ -918,7 +917,7 @@
                         <h4 class='historie__jahr'>
                             2011
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-12-12.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-12-12.jpeg"
                             alt='Opening of the new logistics center in Hersbruck' />
                     </div>
                 </div>
@@ -945,7 +944,7 @@
                         <h4 class='historie__jahr'>
                             2013
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-13-13.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-13-13.jpeg"
                             alt='Backen auf höchstem Niveau: Dr. Oetker Küchenhelfer' />
                     </div>
                 </div>
@@ -969,6 +968,26 @@
                 </div>
             </div>
             <div class='grd historie__item' id='h14-2013'>
+                <div class='historie__bar'></div>
+                <div class='historie__dot'></div>
+                <div class='col -t6 historie__figure'>
+                    <div class='inside'>
+                        <h4 class='historie__jahr'>2013</h4><img class='historie__bild'
+                            src='assets/images/about_us_page/timeline/historie-2013-2.jpg'
+                            alt='Die 4. Generation tritt operativ ins Unternehmen ein' />
+                    </div>
+                </div>
+                <div class='col -t6 historie__text _tfirst _lfirst _dfirst'>
+                    <div class='inside'>
+                        <h5 class='historie__headline c-rot'>Die 4. Generation tritt operativ ins Unternehmen ein
+                        </h5>
+                        <p>Saskia Fackelmann verantwortet zunächst den Bereich Dr. Oetker Küchenhelfer und ist heute
+                            neben ihren Aufgaben im Management Board mit ihrem Koch- und Lifestyle Account „Homemade
+                            by Saskia“ als Unternehmens-Influencerin auf Social Media aktiv.</p>
+                    </div>
+                </div>
+            </div>
+            <div class='grd historie__item' id='h15-2015'>
                 <div class='historie__bar'>
                 </div>
                 <div class='historie__dot'>
@@ -978,11 +997,11 @@
                         <h4 class='historie__jahr'>
                             2015
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-15-14.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-15-14.jpeg"
                             alt="Let's go down under!" />
                     </div>
                 </div>
-                <div class='col -t6 historie__text  _tfirst _lfirst _dfirst'>
+                <div class='col -t6 historie__text'>
                     <div class='inside'>
                         <h5 class='historie__headline c-rot'>
                             Let's go down under!
@@ -1000,7 +1019,7 @@
                     </div>
                 </div>
             </div>
-            <div class='grd historie__item' id='h15-2015'>
+            <div class='grd historie__item' id='h16-2018'>
                 <div class='historie__bar'>
                 </div>
                 <div class='historie__dot'>
@@ -1010,11 +1029,11 @@
                         <h4 class='historie__jahr'>
                             2018
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-18-15.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-18-15.jpeg"
                             alt='Two new additions for Fackelmann Brands' />
                     </div>
                 </div>
-                <div class='col -t6 historie__text '>
+                <div class='col -t6 historie__text _tfirst _lfirst _dfirst'>
                     <div class='inside'>
                         <h5 class='historie__headline c-rot'>
                             Two new additions for Fackelmann Brands
@@ -1033,7 +1052,7 @@
                     </div>
                 </div>
             </div>
-            <div class='grd historie__item' id='h16-2018'>
+            <div class='grd historie__item' id='h17-2019'>
                 <div class='historie__bar'>
                 </div>
                 <div class='historie__dot'>
@@ -1043,11 +1062,11 @@
                         <h4 class='historie__jahr'>
                             2019
                         </h4>
-                        <img class='historie__bild' src="{{ asset('storage/images/about-us/h-19-16.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-19-16.jpeg"
                             alt='Happy Birthday Torchman!' />
                     </div>
                 </div>
-                <div class='col -t6 historie__text  _tfirst _lfirst _dfirst'>
+                <div class='col -t6 historie__text'>
                     <div class='inside'>
                         <h5 class='historie__headline c-rot'>
                             Happy Birthday Torchman!
@@ -1066,7 +1085,7 @@
                     </div>
                 </div>
             </div>
-            <div class='grd historie__item' id='h17-2019'>
+            <div class='grd historie__item' id='h18-2019'>
                 <div class='historie__bar'>
                 </div>
                 <div class='historie__dot'>
@@ -1076,12 +1095,11 @@
                         <h4 class='historie__jahr'>
                             2019
                         </h4>
-                        <img class='historie__bild'
-                            src="{{ asset('storage/images/about-us/historie-2019_02-17.jpeg') }}"
+                        <img class='historie__bild' src="assets/images/about_us_page/timeline/historie-2019_02.jpg"
                             alt='Happy Birthday Fackelmann!' />
                     </div>
                 </div>
-                <div class='col -t6 historie__text '>
+                <div class='col -t6 historie__text _tfirst _lfirst _dfirst'>
                     <div class='inside'>
                         <h5 class='historie__headline c-rot'>
                             New in the portfolio: pots, pans and roasters
@@ -1096,39 +1114,48 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    <section class="b-c-rot p-tXL -dsize150">
-        <div class="wrapper center">
-            <h2 class="c-weiss upper bold">
+
+    <section class="b-c-rot pt-5 about-brands-section">
+        <div class="wrapper text-center pt-3">
+            <p class="c-weiss text-uppercase fw-bold" style="font-size: 28px">
                 "Enthusiastic Customers and Committed Employees Are the Guarantee for Lasting Success!"
-            </h2>
+            </p>
         </div>
-        <div class="wrapper--s center">
+        <div class="wrapper--s text-center mb-3">
             <p class="c-weiss">
                 Alexander Fackelmann, CEO
             </p>
         </div>
-        <img class="m-tXL m-b0" src="{{ asset('images/other_images/about_us_page/statement-trenner.webp') }}" alt="" />
+        <img class="mt-5 mb-0" src="assets/images/about_us_page/statement-trenner.webp" alt="" />
     </section>
-    <section class="p-0">
-        <picture class='mb-0 HDimg m-bgapS2 block'>
-            <source media='(max-width:640px)' srcset="{{ asset('images/banners/about_us_bottom_banner.jpg') }}">
-            <img class="mb-0" src="{{ asset('images/banners/about_us_bottom_banner.jpg') }}" alt='Fackelmann Welt' />
+    <section class="p-0 about-brands-section">
+        <picture class='mb-0 block'>
+            <source media='(max-width:640px)' srcset="assets/images/banners/about_us_bottom_banner.jpg">
+            <img class="mb-0" src="assets/images/banners/about_us_bottom_banner.jpg" alt='Fackelmann Welt' />
         </picture>
     </section>
 </main>
-<a href="#top" id="top-link" class="button button--rund sscroll" title="nach oben">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        width="138px" height="138px" viewBox="0 0 138 138" style="enable-background:new 0 0 138 138;"
-        xml:space="preserve">
-        <path d="M47.3,82.5c-0.7,0-1.4-0.3-1.9-0.8c-1.1-1.1-1.1-2.8,0-3.8l21.7-21.6c1.1-1.1,2.8-1.1,3.8,0l21.6,21.6
-            c1.1,1.1,1.1,2.8,0,3.8c-1.1,1.1-2.8,1.1-3.8,0L69.1,62L49.3,81.7C48.7,82.2,48,82.5,47.3,82.5z" />
-    </svg>
-</a>
+
 <?php include('includes/footer.php'); ?>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tabLinks = document.querySelectorAll(".tabs a");
+
+        if (tabLinks.length > 0) {
+            tabLinks[0].classList.add("active");
+        }
+
+        tabLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                tabLinks.forEach(tab => tab.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    });
+</script>
 
 <script>
     function updateBannerImages() {
@@ -1168,3 +1195,39 @@
         }
     });
 </script>
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tabLinks = document.querySelectorAll(".tabs a");
+        const sections = document.querySelectorAll(".historie__item[id]");
+        const tabsContainer = document.querySelector(".tabs-container");
+
+        // Sticky logic
+        const stickyOffset = tabsContainer.offsetTop;
+        window.addEventListener("scroll", () => {
+            if (window.scrollY >= stickyOffset) {
+                tabsContainer.classList.add("sticky-tabs");
+            } else {
+                tabsContainer.classList.remove("sticky-tabs");
+            }
+        });
+
+        // Active tab logic using IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    tabLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: "-200px 0px -70% 0px", // tweak to trigger earlier/later
+            threshold: 0
+        });
+
+        sections.forEach(section => observer.observe(section));
+    });
+</script> -->
