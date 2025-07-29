@@ -201,13 +201,32 @@
         color: var(--text-gray);
     }
 
-    /* @media (max-width: 991px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea,
+    select {
+        background-color: #fff !important;
+        border-color: var(--bg-gray) !important;
+        color: var(--text-gray) !important;
+    }
 
-        input::placeholder,
-        textarea::placeholder {
-            font-size: 12px;
-        }
-    } */
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
+    textarea:focus,
+    select:focus {
+        background-color: #fff !important;
+        border-color: var(--text-gray) !important;
+        outline: none;
+        box-shadow: none !important;
+    }
+
+    
+
+
 
     .btn-type-1 {
         padding: 12px 30px;
@@ -336,6 +355,15 @@
     .custom-label-contact a:hover {
         text-decoration: underline;
     }
+
+    input[type="date"] {
+        font-size: 0.85rem;
+        height: 35px;
+        padding: 10px 14px;
+        color: var(--text-gray);
+        background-color: var(--white);
+        border: 1px solid var(--bg-gray);
+    }
 </style>
 <div class="slider-area-warranty-claim" id="home-slider">
     <div class="swiper">
@@ -397,13 +425,14 @@
                                     class="form-control form-control-warranty">
                                 <span class="message warranty-msg" id="msgproduct_number"></span>
                             </div>
+
                             <div class="col-md-6">
-                                <div class="calendar_blk">
-                                    <input id="date" class="form-control form-control-warranty" type="text"
-                                        name=" purchase_date" placeholder="Purchase Date*" tabindex="1" required>
-                                </div>
+                                <input id="date" class="form-control form-control-warranty" type="date"
+                                    name="purchase_date" required>
                                 <span class="message warranty-msg" id="msgpurchase_date"></span>
                             </div>
+
+
                             <div class="col-md-6">
                                 <label for="file_1" class="input-file warranty-input-file">Upload Bill (PDF or Image)
                                     <input type="file" name="file_1" id="file_1" placeholder="Attach Bill/Invoice Here"
@@ -421,13 +450,14 @@
                             </div>
                             <div class="col-md-12">
                                 <p style="font-weight: 500;">Privacy Policy</p>
-                                <label class="custom-label-warranty mb-0" style="font-size: 14px !important">
+                                <label class="custom-label-warranty mb-0"
+                                    style="font-size: 14px !important; display:block;">
                                     <input type="checkbox" name="terms" value="1" />&nbsp;I have read and understood the
-                                    Privacy Policy.<span class="required-field">* </span><a href="#" target="_blank"
-                                        class="custom-label-contact">Read
-                                        More</a>
-
+                                    Privacy Policy.<span class="required-field">*</span>
+                                    <a href="#" target="_blank" class="custom-label-contact">Read More</a>
                                 </label>
+                                <span class="message warranty-msg" id="msgterms" style="display:block;"></span>
+
 
                                 <label class="custom-label-warranty" style="font-size: 14px !important">
                                     <input type="checkbox" name="news" value="1" />&nbsp;I wish to receive the latest
@@ -447,26 +477,25 @@
         </div>
     </div>
 </main>
-
-<script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
+<?php include('includes/footer.php'); ?>
 <script>
+    window.addEventListener("load", function () {
+        // Banner
+        function updateBannerImages() {
+            const isDesktop = window.innerWidth > 767;
+            document.querySelectorAll('[data-mobile-src]').forEach(img => {
+                img.src = isDesktop
+                    ? img.getAttribute('data-desktop-src')
+                    : img.getAttribute('data-mobile-src');
+            });
+        }
 
-    function updateBannerImages() {
-        const isDesktop = window.innerWidth > 767;
-        document.querySelectorAll('[data-mobile-src]').forEach(img => {
-            img.src = isDesktop
-                ? img.getAttribute('data-desktop-src')
-                : img.getAttribute('data-mobile-src');
-        });
-    }
+        window.addEventListener('resize', updateBannerImages);
+        updateBannerImages();
 
-    window.addEventListener('resize', updateBannerImages);
-    window.addEventListener('load', updateBannerImages);
 
-    document.addEventListener('DOMContentLoaded', function () {
         const slideCount = document.querySelectorAll('.swiper-slide').length;
-
-        const swiperConfig = {
+        const swiper = new Swiper('.swiper', {
             loop: slideCount > 1,
             autoplay: slideCount > 1 ? { delay: 4000, disableOnInteraction: false } : false,
             pagination: {
@@ -477,100 +506,83 @@
                 nextEl: '.banner-next',
                 prevEl: '.banner-prev'
             }
-        };
-
-        const swiper = new Swiper('.swiper', swiperConfig);
+        });
 
         if (slideCount <= 1) {
             document.querySelector('.banner-prev')?.classList.add('d-none');
             document.querySelector('.banner-next')?.classList.add('d-none');
             document.querySelector('.swiper-pagination')?.classList.add('d-none');
         }
-    });
-</script>
-
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+        // Banner
 
         const fileInput = document.getElementById('file_1');
         const fileNameDisplay = document.getElementById('file-name-display');
 
-        fileInput.addEventListener('change', function () {
-            if (fileInput.files.length > 0) {
-                fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
-            } else {
-                fileNameDisplay.textContent = '';
-            }
-        });
+        if (fileInput) {
+            fileInput.addEventListener('change', function () {
+                fileNameDisplay.textContent = fileInput.files.length > 0
+                    ? `Selected file: ${fileInput.files[0].name}`
+                    : '';
+            });
+        }
 
-        flatpickr("#date", {
-            dateFormat: "Y-m-d",
-            altInput: true,
-            altFormat: "F j, Y",
-            altInputClass: "form-control flatpickr-input form-control-warranty",
-            allowInput: true,
-            onReady: function (selectedDates, dateStr, instance) {
-                instance.altInput.placeholder = "Purchase Date";
-            }
-        });
+        const submitBtn = document.getElementById('authenticateComplaint');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', function () {
+                let isValid = true;
 
-        document.getElementById('authenticateComplaint').addEventListener('click', function () {
-            let isValid = true;
-
-            const successMsg = document.getElementById('success-msg');
-            const errorMsg = document.getElementById('error-msg');
-            successMsg.style.display = 'none';
-            errorMsg.style.display = 'none';
-
-            function validateField(name, validator = null, errorMessage = 'This field is required.') {
-                const field = document.querySelector(`[name="${name}"]`);
-                const errorSpan = document.getElementById(`msg${name}`);
-                field.classList.remove('errorWarranty');
-                errorSpan.textContent = '';
-
-                if (!field || !field.value.trim()) {
-                    isValid = false;
-                    if (field) field.classList.add('errorWarranty');
-                    errorSpan.textContent = errorMessage;
-                } else if (validator && !validator(field.value.trim())) {
-                    isValid = false;
-                    field.classList.add('errorWarranty');
-                    errorSpan.textContent = errorMessage;
-                }
-            }
-
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const mobileRegex = /^\d{10}$/;
-
-            validateField('name');
-            validateField('email', value => emailRegex.test(value), 'Enter a valid email.');
-            validateField('mobile', value => mobileRegex.test(value), 'Enter a valid 10-digit mobile number.');
-            validateField('address');
-            validateField('pincode');
-            validateField('product_number');
-            validateField('purchase_date');
-            validateField('file_1', () => document.querySelector('[name="file_1"]').files.length > 0, 'Please upload a file.');
-
-            const terms = document.querySelector('[name="terms"]');
-            const msgterms = document.getElementById('msgterms');
-            msgterms.textContent = '';
-            if (!terms.checked) {
-                isValid = false;
-                msgterms.textContent = 'Please accept the Privacy Policy.';
-            }
-
-            if (isValid) {
-                successMsg.style.display = 'block';
+                const successMsg = document.getElementById('success-msg');
+                const errorMsg = document.getElementById('error-msg');
+                successMsg.style.display = 'none';
                 errorMsg.style.display = 'none';
 
-            } else {
-                errorMsg.style.display = 'block';
-                successMsg.style.display = 'none';
-            }
-        });
+                function validateField(name, validator = null, errorMessage = 'This field is required.') {
+                    const field = document.querySelector(`[name="${name}"]`);
+                    const errorSpan = document.getElementById(`msg${name}`);
+                    if (!field || !errorSpan) return;
+
+                    field.classList.remove('errorWarranty');
+                    errorSpan.textContent = '';
+
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add('errorWarranty');
+                        errorSpan.textContent = errorMessage;
+                    } else if (validator && !validator(field.value.trim())) {
+                        isValid = false;
+                        field.classList.add('errorWarranty');
+                        errorSpan.textContent = errorMessage;
+                    }
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const mobileRegex = /^\d{10}$/;
+
+                validateField('name');
+                validateField('email', val => emailRegex.test(val), 'Enter a valid email.');
+                validateField('mobile', val => mobileRegex.test(val), 'Enter a valid 10-digit mobile number.');
+                validateField('address');
+                validateField('pincode');
+                validateField('product_number');
+                validateField('purchase_date');
+                validateField('file_1', () => fileInput.files.length > 0, 'Please upload a file.');
+
+                const terms = document.querySelector('[name="terms"]');
+                const msgterms = document.getElementById('msgterms');
+                msgterms.textContent = '';
+                if (!terms || !terms.checked) {
+                    isValid = false;
+                    if (msgterms) msgterms.textContent = 'Please accept the Privacy Policy.';
+                }
+
+                if (isValid) {
+                    successMsg.style.display = 'block';
+                    errorMsg.style.display = 'none';
+                } else {
+                    errorMsg.style.display = 'block';
+                    successMsg.style.display = 'none';
+                }
+            });
+        }
     });
-
-
 </script>
-<?php include('includes/footer.php'); ?>
