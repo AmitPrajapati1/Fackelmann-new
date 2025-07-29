@@ -9,6 +9,12 @@
     padding: 4px 0;
 }
 
+.country-locations a {
+    color: #54565a;
+}
+
+
+
 .country-locations h3 {
     font-size: 1.8em;
 }
@@ -22,6 +28,19 @@
     width: 50px;
 }
 </style>
+
+<!-- Hero Section -->
+<section style="position: relative; overflow: hidden;">
+    <div style="width: 100%; position: relative;">
+        <video autoplay muted loop playsinline style="width: 100%; height: auto; object-fit: cover; display: block;">
+            <!-- Mobile Video -->
+            <source src="assets/images/banners/videos/Fackelmann_Headquarters.mp4" type="video/mp4" media="(max-width: 767px)">
+            <!-- Desktop Video -->
+            <source src="assets/images/banners/videos/Fackelmann_Headquarters.mp4" type="video/mp4" media="(min-width: 768px)">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</section>
 
 <div class="container py-5 bg-white">
     <!-- Section Title -->
@@ -82,7 +101,7 @@
                 <strong>UKRAINE</strong>
             </h3>
             <p><strong>Phone:</strong> 0038 044 586 4470</p>
-            <p><strong>Email:</strong> <a href="mailto:info@fackelmann.ua">info@fackelmann.ua</a></p>
+            <p><strong>Email:</strong> <a style="text-decoration: none" href="mailto:info@fackelmann.ua">info@fackelmann.ua</a></p>
             <p><strong>Website:</strong> <a href="#" target="_blank">FACKELMANN Ukraine LLC</a></p>
             <h4>FACKELMANN Singapore Ltd.</h4>
             <p><strong>Address:</strong> 16 Valentiny Chayki str., Village <br> Chayki, <br>
@@ -98,7 +117,7 @@
                 <strong>UAE</strong>
             </h3>
             <p><strong>Phone:</strong> 00662 571 3923 4</p>
-            <p><strong>Email:</strong> <a href="mailto:chanon.boonkhong@fdagrp.com">chanon.boonkhong@fdagrp.com</a></p>
+            <p><strong>Email:</strong> <a style="text-decoration: none" href="mailto:chanon.boonkhong@fdagrp.com">chanon.boonkhong@fdagrp.com</a></p>
             <h4>FACKELMANN DISTRIBUTION Thailand Co. Ltd.</h4>
             <p><strong>Address:</strong> # 53/2 MOO 1 Bangbuathon <br>
                 Nonthaburi 11110</p>
@@ -111,7 +130,7 @@
                 <strong>THAILAND</strong>
             </h3>
             <p><strong>Phone:</strong> 00886 222521147</p>
-            <p><strong>Email:</strong> <a href="mailto:fda.taiwan@msa.hinet.net">info@fackelmann.msk.ru</a></p>
+            <p><strong>Email:</strong> <a style="text-decoration: none" href="mailto:fda.taiwan@msa.hinet.net">info@fackelmann.msk.ru</a></p>
             <h4>FACKELMANN DISTRIBUTION Thailand Co. Ltd.</h4>
             <p><strong>Address:</strong> Yuzhnoportovaja Str. 5<br>115088 Moscow</p>
         </div>
@@ -122,7 +141,7 @@
                 <strong>TAIWAN</strong>
             </h3>
             <p><strong>Phone:</strong> 0065 65216820</p>
-            <p><strong>Email:</strong> <a href="mailto:achen@fackelmann.com.sg">achen@fackelmann.com.sg</a></p>
+            <p><strong>Email:</strong> <a style="text-decoration: none" href="mailto:achen@fackelmann.com.sg">achen@fackelmann.com.sg</a></p>
             <p><strong>Website:</strong> <a href="http://www.fackelmann.asia" target="_blank">www.fackelmann.asia</a>
             </p>
             <h4>FACKELMANN Taiwan Co. Ltd.</h4>
@@ -363,7 +382,7 @@
         <!-- HUNGARY -->
         <div class="col-12 col-md-6 col-lg-4">
             <h3>
-                <img src="assets/images/locations/icons/Hungary.svg" alt="Flag">
+                <img src="assets/images/locations/icons/Hungray.svg" alt="Flag">
                 <strong>HUNGARY</strong>
             </h3>
             <p><strong>Phone:</strong> 0036 1 432 1481</p>

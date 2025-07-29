@@ -364,6 +364,14 @@
         background-color: var(--white);
         border: 1px solid var(--bg-gray);
     }
+
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px var(--white) inset !important;
+        box-shadow: 0 0 0px 1000px var(--white) inset !important;
+        -webkit-text-fill-color: var(--text-gray) !important;
+        transition: background-color 9999s ease-in-out 0s !important;
+    }
+
 </style>
 <div class="slider-area-warranty-claim" id="home-slider">
     <div class="swiper">
