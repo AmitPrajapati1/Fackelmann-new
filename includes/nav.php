@@ -49,7 +49,7 @@
             align-items: center;
             font-size: 14px;
             font-weight: 500;
-            color: #fff !important;
+            color: #fff;
             margin: 0;
             letter-spacing: 1.2px;
             text-transform: uppercase;
@@ -62,6 +62,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            padding: 2px 0px;
         }
 
         .custom-search-wrapper .custom-search-button {
@@ -172,14 +173,16 @@
             position: relative;
             width: 100%;
             height: calc(100% - 100px);
-            /* overflow-y: scroll; */
+            overflow-y: scroll;
         }
 
-        /* .panel-wrapper {
+        /* Firefox */
+        .panel-wrapper {
             scrollbar-width: thin;
             scrollbar-color: #bf0019 transparent;
-        } */
+        }
 
+        /* WebKit (Chrome, Edge, Safari) */
         .panel-wrapper::-webkit-scrollbar {
             width: 5px;
             height: 6px;
@@ -200,25 +203,23 @@
             height: 100%;
             top: 0;
             left: 0;
-            transition: transform 0.5s ease;
         }
 
         #mainMenu {
-            transform: translateX(0%);
             z-index: 1;
         }
 
         #submenuPanel {
-            transform: translateX(100%);
+            display: none;
             z-index: 2;
         }
 
         #submenuPanel.active {
-            transform: translateX(0%);
+            display: block;
         }
 
         #mainMenu.slide-out {
-            transform: translateX(-100%);
+            display: none;
         }
 
         .sidenav-section-title {
@@ -351,10 +352,6 @@
 
         .mega-menu-item:hover {
             color: var(--primary-color);
-        }
-
-        .header-left {
-            position: relative;
         }
 
         .sub-cat {
@@ -654,8 +651,8 @@
             .logo-img {
                 height: 52px;
                 position: absolute;
-                top: -24px;
-                left: -27px;
+                top: 0px;
+                left: 8px;
                 object-fit: contain;
                 border-bottom-right-radius: 8px;
                 border-bottom-left-radius: 8px;
@@ -731,7 +728,7 @@
 
             .panel-wrapper {
                 height: calc(100% - 130px);
-                /* overflow-y: auto; */
+                overflow-y: auto;
             }
 
             .sidenav-links li {
@@ -755,7 +752,7 @@
         .mobile-search-icon {
             display: none;
             color: var(--white);
-            font-size: 28px;
+            /* font-size: 28px; */
             cursor: pointer;
         }
 
@@ -798,6 +795,7 @@
             color: #aaa;
             font-size: 18px;
             font-weight: 300;
+            font-size: 21px;
             letter-spacing: 2px;
             padding: 18px 14px 9px;
         }
@@ -847,30 +845,6 @@
         .submenu-product-link {
             text-decoration: none;
         }
-
-        .nav-link {
-            position: relative;
-            color: white;
-            text-decoration: none;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: -24%;
-            width: 0%;
-            height: 3px;
-            background-color: white;
-            transition: width 0.3s ease, left 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after {
-            width: 70%;
-        }
     </style>
 
     <div class="topbar">Life Made Easier, Since 1919!</div>
@@ -883,12 +857,10 @@
                 </a>
             </div>
             <nav class="nav">
-                <a href="index.php" class="nav-link">HOME</a>
-                <a href="#" class="nav-link" data-submenu="productsSubmenu" onmouseenter="showProductsSubmenu()"
-                    onmouseleave="scheduleHideProductsSubmenu()">Products</a>
-                <a href="sustainability.php" class="nav-link">SUSTAINABILITY</a>
-                <a class="nav-link" data-submenu="brandsSubmenu" onmouseenter="showBrandsSubmenu()"
-                    onmouseleave="scheduleHideBrandsSubmenu()">Global Brands</a>
+                <a href="index.php">HOME</a>
+                <a href="#" data-submenu="productsSubmenu" onclick="toggleSubmenu(event)">PRODUCTS</a>
+                <a href="sustainability.php">SUSTAINABILITY</a>
+                <a href="#" data-submenu="brandsSubmenu" onclick="toggleSubmenu(event)">GLOBAL BRANDS</a>
             </nav>
 
             <div class="mega-menu" id="megaMenu">
@@ -918,12 +890,11 @@
                         class="custom-search-text">Search</span></button>
             </div>
             <i class="mobile-search-icon material-icons" onclick="toggleSearchBar()">search</i>
-            <a href="contact-us.php"><span class="material-icons icon">call</span></a>
+            <a href="contact-us.php" style="display: grid; place-items: center; text-decoration: none;"><span class="material-icons icon">call</span></a>
             <span class="material-icons icon" onclick="toggleNav(true)">menu</span>
         </div>
 
-        <div class="sub-cat" id="productsSubmenu" onmouseenter="clearTimeout(productsHoverTimeout)"
-            onmouseleave="scheduleHideProductsSubmenu()">
+        <div class="sub-cat" id="productsSubmenu" style="display: none;">
             <div class="w-100">
                 <div class="sub-cat-row">
                     <div class="sub-categories-option" onclick="toggleCategorySubmenu('cookware-submenu')">
@@ -933,9 +904,7 @@
                     </div>
                     <div class="sub-categories-option" onclick="toggleCategorySubmenu('bakeware-submenu')">
                         <i class='bx bx-cake sub-category-icon'></i> BAKEWARE
-                        <i class='bx
-
- bx-chevron-down dropdown-icon-sub-categories'></i>
+                        <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
                     </div>
                     <div class="sub-categories-option" onclick="toggleCategorySubmenu('kitchenware-submenu')">
                         <i class='bx bx-restaurant sub-category-icon'></i>Kitchen Tools & Gadgets
@@ -946,8 +915,7 @@
                         <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
                     </div>
                     <div class="sub-categories-option" onclick="toggleCategorySubmenu('newexclusives-submenu')">
-                        <img src="assets/images/icon/new_and_exclusives.png" class="sub-category-icon"
-                            alt="Category Icon">New & Exclusives
+                        <img src="assets/images/icon/new_and_exclusives.png" class="sub-category-icon" alt="Category Icon">New & Exclusives
                         <i class='bx bx-chevron-down dropdown-icon-sub-categories'></i>
                     </div>
                     <div class="close-btn" onclick="hideSubmenu()">
@@ -960,16 +928,14 @@
                             <a href="product-listing.php" class="submenu-product-link">
                                 <div class="category-item">
                                     <div class="category-heading">
-                                        <img src="assets/images/icon/cookware/kadai_3.png" class="category-heading-icon"
-                                            alt="Kadai Icon"> Kadai
+                                        <img src="assets/images/icon/cookware/kadai_3.png" class="category-heading-icon" alt="Kadai Icon"> Kadai
                                     </div>
                                 </div>
                             </a>
                             <a href="#" class="submenu-product-link">
                                 <div class="category-item">
                                     <div class="category-heading">
-                                        <img src="assets/images/icon/cookware/frying_pan.png" class="category-heading-icon"
-                                            alt="Frying pan Icon"> Fry Pan
+                                        <img src="assets/images/icon/cookware/frying_pan.png" class="category-heading-icon" alt="Frying pan Icon"> Fry Pan
                                     </div>
                                     <ul class="category-sub-items">
                                         <li></li>
@@ -979,40 +945,35 @@
                             <a href="#" class="submenu-product-link">
                                 <div class="category-item">
                                     <div class="category-heading">
-                                        <img src="assets/images/icon/cookware/tawa_1.png" class="category-heading-icon"
-                                            alt="Tawa Icon"> Tawa
+                                        <img src="assets/images/icon/cookware/tawa_1.png" class="category-heading-icon" alt="Tawa Icon"> Tawa
                                     </div>
                                 </div>
                             </a>
                             <a href="#" class="submenu-product-link">
                                 <div class="category-item">
                                     <div class="category-heading">
-                                        <img src="assets/images/icon/cookware/cooker_1.png" class="category-heading-icon"
-                                            alt="Cooker Icon"> Pressure Cooker
+                                        <img src="assets/images/icon/cookware/cooker_1.png" class="category-heading-icon" alt="Cooker Icon"> Pressure Cooker
                                     </div>
                                 </div>
                             </a>
                             <a href="#" class="submenu-product-link">
                                 <div class="category-item">
                                     <div class="category-heading">
-                                        <img src="assets/images/icon/cookware/casserole.png" class="category-heading-icon"
-                                            alt="Casserole Icon"> Casserole
+                                        <img src="assets/images/icon/cookware/casserole.png" class="category-heading-icon" alt="Casserole Icon"> Casserole
                                     </div>
                                 </div>
                             </a>
                             <a href="#" class="submenu-product-link">
                                 <div class="category-item">
                                     <div class="category-heading">
-                                        <img src="assets/images/icon/cookware/casserole.png" class="category-heading-icon"
-                                            alt="Tope Icon"> Tope
+                                        <img src="assets/images/icon/cookware/casserole.png" class="category-heading-icon" alt="Tope Icon"> Tope
                                     </div>
                                 </div>
                             </a>
                             <a href="#" class="submenu-product-link">
                                 <div class="category-item">
                                     <div class="category-heading">
-                                        <img src="assets/images/icon/cookware/pan.png" class="category-heading-icon"
-                                            alt="Pan Icon"> Tadka Pan
+                                        <img src="assets/images/icon/cookware/pan.png" class="category-heading-icon" alt="Pan Icon"> Tadka Pan
                                     </div>
                                 </div>
                             </a>
@@ -1023,8 +984,7 @@
                             <a href="#" class="submenu-product-link">
                                 <div class="category-item">
                                     <div class="category-heading">
-                                        <img src="assets/images/icon/bakeware/bake.png" class="category-heading-icon"
-                                            alt="Baking Moulds Icon"> Baking Moulds
+                                        <img src="assets/images/icon/bakeware/bake.png" class="category-heading-icon" alt="Baking Moulds Icon"> Baking Moulds
                                     </div>
                                     <ul class="category-sub-items">
                                         <li></li>
@@ -1033,8 +993,7 @@
                             </a>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/bakeware/brush.png" class="category-heading-icon"
-                                        alt="Baking Brushes Icon"> Baking Brushes
+                                    <img src="assets/images/icon/bakeware/brush.png" class="category-heading-icon" alt="Baking Brushes Icon"> Baking Brushes
                                 </div>
                                 <ul class="category-sub-items">
                                     <li></li>
@@ -1062,56 +1021,49 @@
                         <div class="category-submenu-inner">
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/kitchenware/cutlery.png" class="category-heading-icon"
-                                        alt="Category Icon"> Cutlery
+                                    <img src="assets/images/icon/kitchenware/cutlery.png" class="category-heading-icon" alt="Category Icon"> Cutlery
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
                             </div>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/kitchenware/cutting-board.png"
-                                        class="category-heading-icon" alt="Category Icon"> Cutting Tools
+                                    <img src="assets/images/icon/kitchenware/cutting-board.png" class="category-heading-icon" alt="Category Icon"> Cutting Tools
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
                             </div>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/kitchenware/knife.png" class="category-heading-icon"
-                                        alt="Category Icon"> Knives
+                                    <img src="assets/images/icon/kitchenware/knife.png" class="category-heading-icon" alt="Category Icon"> Knives
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
                             </div>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/kitchenware/lighter.png" class="category-heading-icon"
-                                        alt="Category Icon"> Lighters
+                                    <img src="assets/images/icon/kitchenware/lighter.png" class="category-heading-icon" alt="Category Icon"> Lighters
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
                             </div>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/kitchenware/serve.png" class="category-heading-icon"
-                                        alt="Category Icon"> Serving Tools
+                                    <img src="assets/images/icon/kitchenware/serve.png" class="category-heading-icon" alt="Category Icon"> Serving Tools
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
                             </div>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/kitchenware/strainer.png" class="category-heading-icon"
-                                        alt="Category Icon"> Strainers
+                                    <img src="assets/images/icon/kitchenware/strainer.png" class="category-heading-icon" alt="Category Icon"> Strainers
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
                             </div>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/kitchenware/bottle-opener.png"
-                                        class="category-heading-icon" alt="Category Icon"> Opener / Barware
+                                    <img src="assets/images/icon/kitchenware/bottle-opener.png" class="category-heading-icon" alt="Category Icon"> Opener / Barware
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
@@ -1136,8 +1088,7 @@
                         <div class="category-submenu-inner">
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/bundels_and_sets/rice_cooker.png"
-                                        class="category-heading-icon" alt="Category Icon"> Pressure Cooker Combos
+                                    <img src="assets/images/icon/bundels_and_sets/rice_cooker.png" class="category-heading-icon" alt="Category Icon"> Pressure Cooker Combos
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
@@ -1158,16 +1109,14 @@
                             </div>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/bundels_and_sets/kitchen_tools.png"
-                                        class="category-heading-icon" alt="3in1 Kitchen Utility Combo"> 3in1 Kitchen Utility Combo
+                                    <img src="assets/images/icon/bundels_and_sets/kitchen_tools.png" class="category-heading-icon" alt="3in1 Kitchen Utility Combo"> 3in1 Kitchen Utility Combo
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
                             </div>
                             <div class="category-item">
                                 <div class="category-heading">
-                                    <img src="assets/images/icon/bundels_and_sets/cutlery_kitchen_set.png"
-                                        class="category-heading-icon" alt="Cutlery sets Icon"> Cutlery sets
+                                    <img src="assets/images/icon/bundels_and_sets/cutlery_kitchen_set.png" class="category-heading-icon" alt="Cutlery sets Icon"> Cutlery sets
                                 </div>
                                 <ul class="category-sub-items">
                                 </ul>
@@ -1202,40 +1151,35 @@
                 </div>
             </div>
         </div>
-        <div class="sub-cat-brands" id="brandsSubmenu" onmouseenter="clearTimeout(brandsHoverTimeout)"
-            onmouseleave="scheduleHideBrandsSubmenu()">
+
+        <div class="sub-cat-brands" id="brandsSubmenu" style="display: none;">
             <div class="brands-container">
                 <div class="brand-item">
-                    <a href="https://www.fackelmann.de/marken/fackelmann"><img src="assets/images/brands/fm_200x125.jpg"
-                            alt="Fackelmann"></a>
+                    <a href="https://www.fackelmann.de/marken/fackelmann"><img src="assets/images/brands/fm_200x125.jpg" alt="Fackelmann"></a>
                     <div class="brand-desc">
                         <p>Popular kitchen helpers & diverse household items</p>
                     </div>
                 </div>
                 <div class="brand-item">
-                    <a href="https://www.fackelmann.de/marken/paris-hilton"><img
-                            src="assets/images/brands/paris-hilton_200x125.jpg" alt="Paris Hilton"></a>
+                    <a href="https://www.fackelmann.de/marken/paris-hilton"><img src="assets/images/brands/paris-hilton_200x125.jpg" alt="Paris Hilton"></a>
                     <div class="brand-desc">
                         <p>Glamour for the kitchen with Paris Hilton Cookware.</p>
                     </div>
                 </div>
                 <div class="brand-item">
-                    <a href="https://www.fackelmann.de/marken/stanley-rogers"><img
-                            src="assets/images/brands/zenker_200x125.jpg" alt="Stanley Rogers"></a>
+                    <a href="https://www.fackelmann.de/marken/stanley-rogers"><img src="assets/images/brands/zenker_200x125.jpg" alt="Stanley Rogers"></a>
                     <div class="brand-desc">
                         <p>Zenker baking tins – great baking results for every occasion</p>
                     </div>
                 </div>
                 <div class="brand-item">
-                    <a href="https://www.fackelmann.de/marken/tasty?m=c6,t16"><img
-                            src="assets/images/brands/tasty_200x125.jpg" alt="Tasty"></a>
+                    <a href="https://www.fackelmann.de/marken/tasty?m=c6,t16"><img src="assets/images/brands/tasty_200x125.jpg" alt="Tasty"></a>
                     <div class="brand-desc">
                         <p>Creative & versatile – colorful kitchen tools from Tasty.</p>
                     </div>
                 </div>
                 <div class="brand-item">
-                    <a href="https://www.fackelmann.de/marken/chefkoch-trifft-fackelmann?m=c6,t7"><img
-                            src="assets/images/brands/cktfm_200x125.jpg" alt="Chefkoch Fackelmann"></a>
+                    <a href="https://www.fackelmann.de/marken/chefkoch-trifft-fackelmann?m=c6,t7"><img src="assets/images/brands/cktfm_200x125.jpg" alt="Chefkoch Fackelmann"></a>
                     <div class="brand-desc">
                         <p>Chef meets Fackelmann – You can cook anything with this.</p>
                     </div>
@@ -1277,17 +1221,11 @@
             <div class="panel" id="mainMenu">
                 <div class="sidenav-section-title">Products</div>
                 <ul class="sidenav-links">
-                    <li onclick="showSubmenu()"><span><i class="material-icons"
-                                style="margin-right:10px;">restaurant_menu</i>Cookware</span><i
-                            class="material-icons">chevron_right</i></li>
-                    <li><span><i class="material-icons" style="margin-right:10px;">cake</i>Bakeware</span><i
-                            class="material-icons">chevron_right</i></li>
-                    <li><span><i class="material-icons" style="margin-right:10px;">kitchen</i>Kitchen Tools &
-                            Gadgets</span><i class="material-icons">chevron_right</i></li>
-                    <li><span><i class="material-icons" style="margin-right:10px;">home</i>Bundles & Sets</span><i
-                            class="material-icons">chevron_right</i></li>
-                    <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
-                            class="material-icons">chevron_right</i></li>
+                    <li onclick="showSubmenu()"><span><i class="material-icons" style="margin-right:10px;">restaurant_menu</i>Cookware</span><i class="material-icons">chevron_right</i></li>
+                    <li><span><i class="material-icons" style="margin-right:10px;">cake</i>Bakeware</span><i class="material-icons">chevron_right</i></li>
+                    <li><span><i class="material-icons" style="margin-right:10px;">kitchen</i>Kitchen Tools & Gadgets</span><i class="material-icons">chevron_right</i></li>
+                    <li><span><i class="material-icons" style="margin-right:10px;">home</i>Bundles & Sets</span><i class="material-icons">chevron_right</i></li>
+                    <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i class="material-icons">chevron_right</i></li>
                 </ul>
                 <a href="index.php" class="sidenav-section-title">Home</a>
                 <a href="#" class="sidenav-section-title">About Us</a>
@@ -1344,41 +1282,32 @@
         function toggleNav(show) {
             const sidenav = document.getElementById("sidenav");
             const overlay = document.querySelector(".sidenav-overlay");
-            if (sidenav && overlay) {
-                if (show) {
-                    sidenav.classList.add("active");
-                    overlay.style.display = "block";
-                } else {
-                    sidenav.classList.remove("active");
-                    overlay.style.display = "none";
-                    hideSubmenu();
-                }
+            if (show) {
+                sidenav.classList.add("active");
+                overlay.style.display = "block";
+            } else {
+                sidenav.classList.remove("active");
+                overlay.style.display = "none";
+                hideSubmenu();
             }
         }
 
         function showSubmenu() {
-            const submenuPanel = document.getElementById("submenuPanel");
-            const mainMenu = document.getElementById("mainMenu");
-            if (submenuPanel && mainMenu) {
-                submenuPanel.classList.add("active");
-                mainMenu.classList.add("slide-out");
-            }
+            document.getElementById("submenuPanel").classList.add("active");
+            document.getElementById("mainMenu").classList.add("slide-out");
         }
 
         function hideSubmenu() {
-            const submenuPanel = document.getElementById("submenuPanel");
-            const mainMenu = document.getElementById("mainMenu");
-            const productsSubmenu = document.getElementById("productsSubmenu");
-            const brandsSubmenu = document.getElementById("brandsSubmenu");
-            const categorySubmenus = document.querySelectorAll('.category-submenu');
-            const subCategoriesOptions = document.querySelectorAll('.sub-categories-option');
-
-            if (submenuPanel) submenuPanel.classList.remove("active");
-            if (mainMenu) mainMenu.classList.remove("slide-out");
-            if (productsSubmenu) productsSubmenu.style.display = "none";
-            if (brandsSubmenu) brandsSubmenu.style.display = "none";
-            categorySubmenus.forEach(submenu => submenu.style.display = 'none');
-            subCategoriesOptions.forEach(option => option.classList.remove('active'));
+            document.getElementById("submenuPanel").classList.remove("active");
+            document.getElementById("mainMenu").classList.remove("slide-out");
+            document.getElementById("productsSubmenu").style.display = "none";
+            document.getElementById("brandsSubmenu").style.display = "none";
+            document.querySelectorAll('.category-submenu').forEach(submenu => {
+                submenu.style.display = 'none';
+            });
+            document.querySelectorAll('.sub-categories-option').forEach(option => {
+                option.classList.remove('active');
+            });
         }
 
         function toggleAccordion(item) {
@@ -1405,47 +1334,40 @@
             const targetSubmenuId = event.currentTarget.getAttribute("data-submenu");
             const productsSubmenu = document.getElementById("productsSubmenu");
             const brandsSubmenu = document.getElementById("brandsSubmenu");
-            if (targetSubmenuId && productsSubmenu && brandsSubmenu) {
-                if (targetSubmenuId === "productsSubmenu") {
-                    productsSubmenu.style.display = productsSubmenu.style.display === "flex" ? "none" : "flex";
-                    brandsSubmenu.style.display = "none";
-                    document.querySelectorAll('.category-submenu').forEach(submenu => {
-                        submenu.style.display = 'none';
-                    });
-                    document.querySelectorAll('.sub-categories-option').forEach(option => {
-                        option.classList.remove('active');
-                    });
-                } else if (targetSubmenuId === "brandsSubmenu") {
-                    brandsSubmenu.style.display = brandsSubmenu.style.display === "flex" ? "none" : "flex";
-                    productsSubmenu.style.display = "none";
-                }
+            if (targetSubmenuId === "productsSubmenu") {
+                productsSubmenu.style.display = productsSubmenu.style.display === "flex" ? "none" : "flex";
+                brandsSubmenu.style.display = "none";
+                document.querySelectorAll('.category-submenu').forEach(submenu => {
+                    submenu.style.display = 'none';
+                });
+                document.querySelectorAll('.sub-categories-option').forEach(option => {
+                    option.classList.remove('active');
+                });
+            } else if (targetSubmenuId === "brandsSubmenu") {
+                brandsSubmenu.style.display = brandsSubmenu.style.display === "flex" ? "none" : "flex";
+                productsSubmenu.style.display = "none";
             }
         }
 
         function toggleCategorySubmenu(submenuClass) {
             event.stopPropagation();
             const submenu = document.querySelector(`.${submenuClass}`);
-            const productsSubmenu = document.getElementById("productsSubmenu");
-            if (submenu && productsSubmenu) {
-                const isVisible = submenu.style.display === 'block';
-                document.querySelectorAll('.category-submenu').forEach(otherSubmenu => {
-                    otherSubmenu.style.display = 'none';
-                });
-                document.querySelectorAll('.sub-categories-option').forEach(option => {
-                    option.classList.remove('active');
-                });
-                submenu.style.display = isVisible ? 'none' : 'block';
-                document.querySelector(`[onclick="toggleCategorySubmenu('${submenuClass}')"]`).classList.toggle('active', !isVisible);
-                productsSubmenu.style.display = 'flex';
-            }
+            const isVisible = submenu.style.display === 'block';
+            document.querySelectorAll('.category-submenu').forEach(otherSubmenu => {
+                otherSubmenu.style.display = 'none';
+            });
+            document.querySelectorAll('.sub-categories-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            submenu.style.display = isVisible ? 'none' : 'block';
+            document.querySelector(`[onclick="toggleCategorySubmenu('${submenuClass}')"]`).classList.toggle('active', !isVisible);
+            document.getElementById("productsSubmenu").style.display = 'flex';
         }
 
         function toggleSearchBar() {
             const searchbar = document.getElementById("searchbarUI");
-            if (searchbar) {
-                const isVisible = searchbar.style.display === "block";
-                searchbar.style.display = isVisible ? "none" : "block";
-            }
+            const isVisible = searchbar.style.display === "block";
+            searchbar.style.display = isVisible ? "none" : "block";
         }
 
         document.addEventListener("click", function (event) {
@@ -1459,7 +1381,7 @@
                     isClickInsideSubmenu = true;
                 }
             });
-            if (nav && productsSubmenu && brandsSubmenu && !nav.contains(event.target) && !productsSubmenu.contains(event.target) && !isClickInsideSubmenu && !brandsSubmenu.contains(event.target)) {
+            if (!nav.contains(event.target) && !productsSubmenu.contains(event.target) && !isClickInsideSubmenu) {
                 productsSubmenu.style.display = "none";
                 brandsSubmenu.style.display = "none";
                 categorySubmenus.forEach(submenu => {
@@ -1470,47 +1392,4 @@
                 });
             }
         });
-
-        let productsHoverTimeout;
-        let brandsHoverTimeout;
-
-        function showProductsSubmenu() {
-            clearTimeout(productsHoverTimeout);
-            const productsSubmenu = document.getElementById("productsSubmenu");
-            const brandsSubmenu = document.getElementById("brandsSubmenu");
-            if (productsSubmenu && brandsSubmenu) {
-                brandsSubmenu.style.display = "none";
-                productsSubmenu.style.display = "flex";
-            }
-        }
-
-        function scheduleHideProductsSubmenu() {
-            productsHoverTimeout = setTimeout(() => {
-                const productsSubmenu = document.getElementById("productsSubmenu");
-                if (productsSubmenu) {
-                    productsSubmenu.style.display = "none";
-                    document.querySelectorAll('.category-submenu').forEach(el => el.style.display = 'none');
-                    document.querySelectorAll('.sub-categories-option').forEach(el => el.classList.remove('active'));
-                }
-            }, 200);
-        }
-
-        function showBrandsSubmenu() {
-            clearTimeout(brandsHoverTimeout);
-            const brandsSubmenu = document.getElementById("brandsSubmenu");
-            const productsSubmenu = document.getElementById("productsSubmenu");
-            if (brandsSubmenu && productsSubmenu) {
-                productsSubmenu.style.display = "none";
-                brandsSubmenu.style.display = "flex";
-            }
-        }
-
-        function scheduleHideBrandsSubmenu() {
-            brandsHoverTimeout = setTimeout(() => {
-                const brandsSubmenu = document.getElementById("brandsSubmenu");
-                if (brandsSubmenu) {
-                    brandsSubmenu.style.display = "none";
-                }
-            }, 200);
-        }
     </script>
