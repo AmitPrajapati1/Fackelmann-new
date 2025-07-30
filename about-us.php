@@ -264,61 +264,17 @@
             font-size: 12px;
         }
 
-    .about-us-images,
-    .the-world-images {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .image-container img,
-    .the-world-container img {
-        width: 90%;
-        max-width: 350px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-
-    /* Tablet and Desktop */
-    @media (min-width: 768px) {
-        .about-us-images {
-            flex-direction: row;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .image-container img {
+        .img-custom {
             width: 100%;
-            max-width: 268px;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .the-world-images {
-            flex-direction: row;
-            justify-content: center;
-            gap: 30px;
+            height: auto;
         }
 
-        .the-world-container img {
-            width: 100%;
-            max-width: 400px;
+        .img-fluid-custom {
+            display: block;
         }
-    }
-
-    .about-brands-section img {
-        width: 100% !important;
-        height: auto !important;
-    }
-
-    .img-fluid-custom {
-        display: block;
-    }
 </style>
 
-<!--  -->
+
 <main class="about">
     <div class="slider-area-about-us" id="home-slider">
         <div class="swiper">
@@ -390,15 +346,19 @@
             </p>
         </div>
 
-        <div class="about-us-images">
-            <div class="image-container">
-                <img src="assets/images/about_us_page/about-intro-01.jpg" alt="Fackelmann Logistic">
-            </div>
-            <div class="image-container">
-                <img src="assets/images/about_us_page/about-intro-02.jpg" alt="Fackelmann Production">
-            </div>
-            <div class="image-container">
-                <img src="assets/images/about_us_page/about-intro-03.jpg" alt="Fackelmann HQ">
+        <div class="container-fluid p-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <img style="width: 100%" src="assets/images/about_us_page/about-intro-01.jpg"
+                        alt="Fackelmann Logistic">
+                </div>
+                <div class="col-md-4">
+                    <img style="width: 100%" src="assets/images/about_us_page/about-intro-02.jpg"
+                        alt="Fackelmann Production">
+                </div>
+                <div class="col-md-4">
+                    <img style="width: 100%" src="assets/images/about_us_page/about-intro-03.jpg" alt="Fackelmann HQ">
+                </div>
             </div>
         </div>
 
@@ -410,12 +370,15 @@
         </div>
         <div class="container">
             <p class="about-us-detail">
-                In total, we currently have more than 40 business units in various regions such as Western and Eastern
+                In total, we currently have more than 40 business units in various regions such as Western and
+                Eastern
                 Europe, Australia, New Zealand, South Africa, Russia, China, India, Southeast Asia and Brazil. With
                 several
-                production sites in Germany, one in France, one in Poland, four in China and one in India, our company
+                production sites in Germany, one in France, one in Poland, four in China and one in India, our
+                company
                 is able to
-                supply its customers along the entire supply chain. Be it with our own brand universe or with private
+                supply its customers along the entire supply chain. Be it with our own brand universe or with
+                private
                 label
                 solutions that are specially tailored to the individual requirements of our customers. With a brand
                 awareness of
@@ -423,20 +386,22 @@
             </p>
         </div>
 
-        <div class="container the-world-images">
-            <div class="the-world-container">
-                <img src="assets/images/about_us_page/about-intro-04.jpg" alt="Fackelmann Production">
-            </div>
-            <div class="the-world-container">
-                <img src="assets/images/about_us_page/about-intro-05.jpg" alt="Fackelmann HQ">
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-md-6"><img style="width: 100%" src="assets/images/about_us_page/about-intro-04.jpg"
+                        alt=""></div>
+                <div class="col-md-6"><img style="width: 100%" src="assets/images/about_us_page/about-intro-05.jpg"
+                        alt=""></div>
+
             </div>
         </div>
+
         <div class="container text-center">
             <h2 class="deko-headline">
                 A Big Family
             </h2>
         </div>
-        <div class="container pb-5 about-us-detail">
+        <div class="container pb-2 about-us-detail">
             <p>
                 We are a traditional, third-generation German company that is 100% owned by the Fackelmann family.
                 Alexander Fackelmann has been managing the company since 1992, succeeding his father Sebastian
@@ -444,78 +409,83 @@
             </p>
             <p>
                 We attach great importance to a decentralized group structure that grants our subsidiaries maximum
-                autonomy. This approach ensures that we can adapt quickly to local requirements and market conditions
+                autonomy. This approach ensures that we can adapt quickly to local requirements and market
+                conditions
                 and at the same time benefit from our global network. Our management team has extensive operational
                 experience with an understanding and connections to the international housewares industry. Thanks to
-                our M&A experience, we have successfully carried out 18 acquisitions in the last ten years, including,
+                our M&A experience, we have successfully carried out 18 acquisitions in the last ten years,
+                including,
                 for example, Fackelmann Housewares Australia & NZ, Prestige South Africa and Tomkin Australia. We
                 believe that it is this experience and this knowledge that make Fackelmann unique.
             </p>
             <p>
-                We always have our finger on the pulse and are highly innovative. What holds us together as a family of
+                We always have our finger on the pulse and are highly innovative. What holds us together as a family
+                of
                 companies is our view of the future and trust in our collective creativity.
             </p>
         </div>
     </section>
 
-    <section class="container mb-5 about-brands-section">
+
+
+    <section class="container mb-5">
         <h2 class="deko-headline">
             Our Brands
         </h2>
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-3 justify-content-center">
-            <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="assets/images/logos/about-us/logo-1.webp" alt="FACKELMANN" />
-                <img class="markenteaser__logo" src="assets/images/logos/about-us/brands-fackelmann-logo.svg"
+            <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="assets/images/logos/about-us/logo-1.webp" alt="FACKELMANN" />
+                <img class="about-us-brands_logo" src="assets/images/logos/about-us/brands-fackelmann-logo.svg"
                     alt="FACKELMANN" />
             </a>
-            <!-- <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="{{ asset('images/other_images/brands/logo-2.webp') }}"
+            <!-- <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="{{ asset('images/other_images/brands/logo-2.webp') }}"
                     alt="FACKELMANN Badmöbel" />
-                <img class="markenteaser__logo"
+                <img class="about-us-brands_logo"
                     src="{{ asset('images/other_images/about_us_page/brand/brands-badmoebel-logo.svg') }}"
                     alt="FACKELMANN Badmöbel" />
             </a> -->
-            <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="assets/images/logos/about-us/logo-3.webp" alt="NIROSTA" />
-                <img class="markenteaser__logo" src="assets/images/logos/about-us/brands-nirosta-logo.png"
+            <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="assets/images/logos/about-us/logo-3.webp" alt="NIROSTA" />
+                <img class="about-us-brands_logo" src="assets/images/logos/about-us/brands-nirosta-logo.png"
                     alt="NIROSTA" />
             </a>
-            <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="assets/images/logos/about-us/logo-4.webp" alt="Zenker" />
-                <img class="markenteaser__logo" src="assets/images/logos/about-us/brands-zenker-logo.svg"
+            <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="assets/images/logos/about-us/logo-4.webp" alt="Zenker" />
+                <img class="about-us-brands_logo" src="assets/images/logos/about-us/brands-zenker-logo.svg"
                     alt="Zenker" />
             </a>
-            <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="assets/images/logos/about-us/logo-5.webp" alt="Stanley Rogers" />
-                <img class="markenteaser__logo" src="assets/images/logos/about-us/brands-stanley-logo.svg"
+            <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="assets/images/logos/about-us/logo-5.webp" alt="Stanley Rogers" />
+                <img class="about-us-brands_logo" src="assets/images/logos/about-us/brands-stanley-logo.svg"
                     alt="Stanley Rogers" />
             </a>
-            <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="assets/images/logos/about-us/logo-6.webp" alt="Füri" />
-                <img class="markenteaser__logo" src="assets/images/logos/about-us/brands-fueri-logo.svg" alt="Füri" />
+            <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="assets/images/logos/about-us/logo-6.webp" alt="Füri" />
+                <img class="about-us-brands_logo" src="assets/images/logos/about-us/brands-fueri-logo.svg" alt="Füri" />
             </a>
-            <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="assets/images/logos/about-us/logo-7.webp" alt="FMprofessional" />
-                <img class="markenteaser__logo" src="assets/images/logos/about-us/brands-fmpro-logo.png"
+            <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="assets/images/logos/about-us/logo-7.webp" alt="FMprofessional" />
+                <img class="about-us-brands_logo" src="assets/images/logos/about-us/brands-fmpro-logo.png"
                     alt="FMprofessional" />
             </a>
-            <!-- <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="{{ asset('images/other_images/brands/logo-8.webp') }}"
+            <!-- <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="{{ asset('images/other_images/brands/logo-8.webp') }}"
                     alt="wiltshire" />
-                <img class="markenteaser__logo"
+                <img class="about-us-brands_logo"
                     src="{{ asset('images/other_images/about_us_page/brand/brands-wiltshire-logo.svg') }}"
                     alt="wiltshire" />
             </a>
-            <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="{{ asset('images/other_images/brands/logo-9.webp') }}"
+            <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="{{ asset('images/other_images/brands/logo-9.webp') }}"
                     alt="Lanzet" />
-                <img class="markenteaser__logo"
+                <img class="about-us-brands_logo"
                     src="{{ asset('images/other_images/about_us_page/brand/brands-lanzet-logo.svg') }}" alt="Lanzet" />
             </a>
-            <a class="col markenteaser mb-2" target="_blank" href="javascript:void(0)">
-                <img class="markenteaser__img" src="{{ asset('images/other_images/brands/logo-9.webp') }}"
+            <a class="col about-us-brands mb-2" target="_blank" href="javascript:void(0)">
+                <img class="about-us-brands_img" src="{{ asset('images/other_images/brands/logo-9.webp') }}"
                     alt="BADmobil" />
-                <img class="markenteaser__logo"
+                <img class="about-us-brands_logo"
                     src="{{ asset('images/other_images/about_us_page/brand/brands-badmobil-logo.svg') }}"
                     alt="BADmobil" />
             </a> -->
@@ -523,24 +493,24 @@
     </section>
 
 
-    <section class="mb-4 histories-section px-5 about-brands-section">
+    <section class="histories-section px-md-5">
         <div class="row g-0">
             <div class="col-md-6">
                 <div class="row g-0">
                     <div class="col-6">
-                        <img class="img-fluid-custom" src="assets/images/logos/about-us/historie-01.jpg"
+                        <img class="img-fluid-custom w-100" src="assets/images/logos/about-us/historie-01.jpg"
                             alt="Historie 1" />
                     </div>
                     <div class="col-6">
-                        <img class="img-fluid-custom" src="assets/images/logos/about-us/historie-02.jpg"
+                        <img class="img-fluid-custom w-100" src="assets/images/logos/about-us/historie-02.jpg"
                             alt="Historie 2" />
                     </div>
                     <div class="col-6">
-                        <img class="img-fluid-custom" src="assets/images/logos/about-us/historie-03.jpg"
+                        <img class="img-fluid-custom w-100" src="assets/images/logos/about-us/historie-03.jpg"
                             alt="Historie 3" />
                     </div>
                     <div class="col-6">
-                        <img class="img-fluid-custom" src="assets/images/logos/about-us/historie-04.png"
+                        <img class="img-fluid-custom w-100" src="assets/images/logos/about-us/historie-04.png"
                             alt="Historie 4" />
                     </div>
                 </div>
@@ -578,7 +548,7 @@
                 </nav>
             </div>
         </div>
-        <div class='wrapper about-brands-section' style="margin-top: 32px; padding-bottom: 32px">
+        <div class='wrapper' style="margin-top: 32px; padding-bottom: 32px">
             <div class='grd historie__item' id='h1-1919'>
                 <div class='historie__bar'>
                 </div>
@@ -589,7 +559,7 @@
                         <h4 class='historie__jahr'>
                             1919
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-1-1.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-1-1.jpeg"
                             alt='Founding by the Fackelmann brothers' />
                     </div>
                 </div>
@@ -619,7 +589,7 @@
                         <h4 class='historie__jahr'>
                             1921
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-2-2.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-2-2.jpeg"
                             alt='Expansion of commercial agencies' />
                     </div>
                 </div>
@@ -648,7 +618,7 @@
                         <h4 class='historie__jahr'>
                             1948
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-3-3.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-3-3.jpeg"
                             alt='Sebastian Fackelmann takes over the business' />
                     </div>
                 </div>
@@ -679,7 +649,7 @@
                         <h4 class='historie__jahr'>
                             1958
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-4-4.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-4-4.jpeg"
                             alt='From wholesale to in-house production' />
                     </div>
                 </div>
@@ -710,7 +680,7 @@
                         <h4 class='historie__jahr'>
                             1981
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-5-5.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-5-5.jpeg"
                             alt='Küchenhelfer für den modernen Haushalt' />
                     </div>
                 </div>
@@ -739,7 +709,7 @@
                         <h4 class='historie__jahr'>
                             1984
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-6-6.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-6-6.jpeg"
                             alt='The 3rd generation joins the company' />
                     </div>
                 </div>
@@ -766,7 +736,7 @@
                         <h4 class='historie__jahr'>
                             1987
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-7-7.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-7-7.jpeg"
                             alt='Establishment of the first foreign branch' />
                     </div>
                 </div>
@@ -795,7 +765,7 @@
                         <h4 class='historie__jahr'>
                             1989
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-8-8.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-8-8.jpeg"
                             alt='Modular system and distinctive logo' />
                     </div>
                 </div>
@@ -826,7 +796,7 @@
                         <h4 class='historie__jahr'>
                             1993
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-9-9.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-9-9.jpeg"
                             alt='Starting shot for international expansion' />
                     </div>
                 </div>
@@ -855,7 +825,7 @@
                         <h4 class='historie__jahr'>
                             2003
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-10-10.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-10-10.jpeg"
                             alt='New on board: the baking mold expert Zenker' />
                     </div>
                 </div>
@@ -887,7 +857,7 @@
                         <h4 class='historie__jahr'>
                             2004
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-11-11.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-11-11.jpeg"
                             alt='Europe and the whole world' />
                     </div>
                 </div>
@@ -917,7 +887,7 @@
                         <h4 class='historie__jahr'>
                             2011
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-12-12.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-12-12.jpeg"
                             alt='Opening of the new logistics center in Hersbruck' />
                     </div>
                 </div>
@@ -944,7 +914,7 @@
                         <h4 class='historie__jahr'>
                             2013
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-13-13.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-13-13.jpeg"
                             alt='Backen auf höchstem Niveau: Dr. Oetker Küchenhelfer' />
                     </div>
                 </div>
@@ -972,18 +942,18 @@
                 <div class='historie__dot'></div>
                 <div class='col -t6 historie__figure'>
                     <div class='inside'>
-                        <h4 class='historie__jahr'>2013</h4><img class='historie__bild'
+                        <h4 class='historie__jahr'>2013</h4><img class='historie__bild w-100'
                             src='assets/images/about_us_page/timeline/historie-2013-2.jpg'
-                            alt='Die 4. Generation tritt operativ ins Unternehmen ein' />
+                            alt='The 4th generation joins the company operationally' />
                     </div>
                 </div>
                 <div class='col -t6 historie__text _tfirst _lfirst _dfirst'>
                     <div class='inside'>
-                        <h5 class='historie__headline c-rot'>Die 4. Generation tritt operativ ins Unternehmen ein
+                        <h5 class='historie__headline c-rot'>The 4th generation joins the company operationally
                         </h5>
-                        <p>Saskia Fackelmann verantwortet zunächst den Bereich Dr. Oetker Küchenhelfer und ist heute
-                            neben ihren Aufgaben im Management Board mit ihrem Koch- und Lifestyle Account „Homemade
-                            by Saskia“ als Unternehmens-Influencerin auf Social Media aktiv.</p>
+                        <p>Saskia Fackelmann was initially responsible for the Dr. Oetker Kitchen Aid division and, in
+                            addition to her duties on the Management Board, is now active as a corporate influencer on
+                            social media with her cooking and lifestyle account “Homemade by Saskia.”</p>
                     </div>
                 </div>
             </div>
@@ -997,7 +967,7 @@
                         <h4 class='historie__jahr'>
                             2015
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-15-14.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-15-14.jpeg"
                             alt="Let's go down under!" />
                     </div>
                 </div>
@@ -1029,7 +999,7 @@
                         <h4 class='historie__jahr'>
                             2018
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-18-15.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-18-15.jpeg"
                             alt='Two new additions for Fackelmann Brands' />
                     </div>
                 </div>
@@ -1062,7 +1032,7 @@
                         <h4 class='historie__jahr'>
                             2019
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/h-19-16.jpeg"
+                        <img class='historie__bild w-100' src="assets/images/about_us_page/timeline/h-19-16.jpeg"
                             alt='Happy Birthday Torchman!' />
                     </div>
                 </div>
@@ -1095,7 +1065,8 @@
                         <h4 class='historie__jahr'>
                             2019
                         </h4>
-                        <img class='historie__bild' src="assets/images/about_us_page/timeline/historie-2019_02.jpg"
+                        <img class='historie__bild w-100'
+                            src="assets/images/about_us_page/timeline/historie-2019_02.jpg"
                             alt='Happy Birthday Fackelmann!' />
                     </div>
                 </div>
@@ -1117,7 +1088,7 @@
         </div>
     </section>
 
-    <section class="b-c-rot pt-5 about-brands-section">
+    <section class="b-c-rot pt-5">
         <div class="wrapper text-center pt-3">
             <p class="c-weiss text-uppercase fw-bold" style="font-size: 28px">
                 "Enthusiastic Customers and Committed Employees Are the Guarantee for Lasting Success!"
@@ -1128,12 +1099,12 @@
                 Alexander Fackelmann, CEO
             </p>
         </div>
-        <img class="mt-5 mb-0" src="assets/images/about_us_page/statement-trenner.webp" alt="" />
+        <img class="mt-5 mb-0 w-100" src="assets/images/about_us_page/statement-trenner.webp" alt="" />
     </section>
-    <section class="p-0 about-brands-section">
+    <section class="p-0">
         <picture class='mb-0 block'>
             <source media='(max-width:640px)' srcset="assets/images/banners/about_us_bottom_banner.jpg">
-            <img class="mb-0" src="assets/images/banners/about_us_bottom_banner.jpg" alt='Fackelmann Welt' />
+            <img class="mb-0 w-100" src="assets/images/banners/about_us_bottom_banner.jpg" alt='Fackelmann Welt' />
         </picture>
     </section>
 </main>
@@ -1195,39 +1166,3 @@
         }
     });
 </script>
-
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const tabLinks = document.querySelectorAll(".tabs a");
-        const sections = document.querySelectorAll(".historie__item[id]");
-        const tabsContainer = document.querySelector(".tabs-container");
-
-        // Sticky logic
-        const stickyOffset = tabsContainer.offsetTop;
-        window.addEventListener("scroll", () => {
-            if (window.scrollY >= stickyOffset) {
-                tabsContainer.classList.add("sticky-tabs");
-            } else {
-                tabsContainer.classList.remove("sticky-tabs");
-            }
-        });
-
-        // Active tab logic using IntersectionObserver
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.id;
-                    tabLinks.forEach(link => {
-                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                    });
-                }
-            });
-        }, {
-            root: null,
-            rootMargin: "-200px 0px -70% 0px", // tweak to trigger earlier/later
-            threshold: 0
-        });
-
-        sections.forEach(section => observer.observe(section));
-    });
-</script> -->
