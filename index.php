@@ -2,7 +2,8 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
 <style>
     body {
@@ -644,7 +645,7 @@
     </div>
 
     <div class="content-flex">
-        <a href="category-listing.php" class="new-category-card cookware">
+        <a href="product-listing.php" class="new-category-card cookware">
             <picture>
                 <source media="(max-width: 768px)"
                     srcset="assets/images/home_page/our_categories/new/c1_mobile_400x720.jpg">
@@ -678,7 +679,8 @@
                 <picture>
                     <source media="(max-width: 768px)"
                         srcset="assets/images/home_page/our_categories/new/c4_mobile_400x720.jpg">
-                    <img src="assets/images/home_page/our_categories/new/kitchen_desktop_720x400.jpg" alt="Kitchen Tools">
+                    <img src="assets/images/home_page/our_categories/new/kitchen_desktop_720x400.jpg"
+                        alt="Kitchen Tools">
                 </picture>
                 <div class="category-label">Kitchen Tools</div>
             </a>
@@ -848,7 +850,8 @@
     </div>
 </div>
 
-<div style="background-color: #DFE9E8; padding-top: clamp(0.5rem, 2vw, 0.625rem); padding-bottom: clamp(0.5rem, 2vw, 0.625rem);">
+<div
+    style="background-color: #DFE9E8; padding-top: clamp(0.5rem, 2vw, 0.625rem); padding-bottom: clamp(0.5rem, 2vw, 0.625rem);">
     <div class="container py-5">
         <div class="row align-items-start">
             <div class="col-md-6 mb-4 mb-lg-0" style="margin-top: clamp(0.5rem, 2vw, 0.75rem)">
@@ -864,7 +867,8 @@
                     development.
                 </p>
                 <p class="text-muted small">Come with us on a journey into a greener future.</p>
-                <a href="javascript:void(0)" class="btn btn-sm fw-semibold text-uppercase newsletter-button">MORE INFORMATION</a>
+                <a href="javascript:void(0)" class="btn btn-sm fw-semibold text-uppercase newsletter-button">MORE
+                    INFORMATION</a>
             </div>
             <div class="col-md-6">
                 <div class="video-wrapper" id="youtubeWrapper">

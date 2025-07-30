@@ -167,9 +167,9 @@
     text-align: center;
   }
 
-  .copyright {
+  .copyright-footer {
     display: inline-block;
-    font-size: 10.5px;
+    font-size: 12px;
     letter-spacing: -0.1px;
     text-align: center;
     text-transform: uppercase;
@@ -223,7 +223,7 @@
 
         <div class="collapse d-md-block" id="footerCollapse3">
           <ul class="list-unstyled mb-0">
-            <li><a href="javascript:void(0)" class="footer-detail text-decoration-none d-block mb-1">Our History</a>
+            <li><a href="about-us.php" class="footer-detail text-decoration-none d-block mb-1">Our History</a>
             </li>
             <li><a href="sustainability.php" class="footer-detail text-decoration-none d-block mb-1">Sustainability</a>
             </li>
@@ -252,9 +252,9 @@
 
     <div class="small mt-2">
       <div class="copyright-info">
-        <span class="copyright">© 2025 Copyright <strong><span>Fackelmann Inda Kitchenware
-              Pvt. Ltd.</span></strong>.</span>
-        <span class="copyright">• All Rights Reserved.</span>
+        <span class="copyright-footer">© 2025 Copyright Fackelmann Inda Kitchenware
+          Pvt. Ltd.</span>
+        <span class="copyright-footer">• All Rights Reserved.</span>
       </div>
     </div>
   </div>
