@@ -134,7 +134,8 @@
         (function ($) {
             $(document).ready(function () {
                 $('.xzoom, .xzoom-gallery').xzoom({
-                    zoomWidth: 400,
+                    zoomWidth: 200,
+                    zoomheight: 200,
                     title: true,
                     tint: '#333',
                     Xoffset: 15
@@ -151,7 +152,8 @@
                     $('.carousel-item.active img.xzoom').each(function () {
                         if (!$(this).data('xzoom')) {
                             $(this).xzoom({
-                                zoomWidth: 400,
+                                zoomWidth: 200,
+                                zoomheight: 200,
                                 title: true,
                                 tint: '#333',
                                 Xoffset: 15
