@@ -2,7 +2,7 @@
 <?php include('includes/nav.php'); ?>
 
 <link rel="stylesheet" type="text/css" href="assets/css/about-us.css">
-
+<!-- 
 <style>
     :root {
         --primary-color: #80001d;
@@ -20,117 +20,6 @@
         color: var(--white) !important;
     }
 
-    .condensed {
-        color: var(--white) !important;
-    }
-
-    .megamenu-link,
-    .megamenu-link:visited {
-        color: var(--white);
-        text-decoration: none;
-    }
-
-    .header-action-col {
-        height: 40px;
-    }
-
-    .fackelmann-action-container,
-    .searchbutton-display,
-    .action-account,
-    .header-nav-main-toggle {
-        height: 100%;
-    }
-
-    .navigation-offcanvas-list-item a,
-    .navigation-offcanvas-list-item a:visited {
-        color: var(--text-gray);
-        ;
-        text-decoration: none;
-    }
-
-    .header-search-input {
-        border: none !important;
-        margin-top: 0px !important;
-        height: 20px !important;
-    }
-
-    .fam-offcanvas .btn.offcanvas-close {
-        margin-bottom: 0px;
-    }
-
-    .navigation-offcanvas-list {
-        margin: 0 0 1.625em;
-    }
-
-    .icon-arrow-up {
-        width: 22px !important;
-        height: 22px !important;
-        overflow: unset !important;
-    }
-
-    .icon-arrow-up svg {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    .is-main-link a,
-    .is-main-link a:visited {
-        color: var(--white);
-        text-decoration: none;
-    }
-
-    .contact-us a {
-        text-decoration: none;
-    }
-
-    .contact-us a:hover {
-        color: #57aea4;
-        text-decoration: none;
-    }
-
-    .categories-list {
-        margin-bottom: 0px;
-    }
-
-    .modal-main {
-        text-align: center !important;
-        margin: 20px auto !important;
-    }
-
-    .modal-main a {
-        display: inline-block !important;
-        padding: 10px 20px !important;
-        background: var(--secondary-color) !important;
-        color: var(--white) !important;
-        border-radius: 5px !important;
-        text-decoration: none !important;
-        font-weight: bold !important;
-    }
-
-    /* .tabs-container.sticky-tabs {
-        position: fixed;
-        top: var(--navbar-height, 60px);
-        width: 100%;
-        z-index: 998;
-        background: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    } */
-
-    .js-close-megamenu.megamenu-close {
-        color: #54565a;
-        top: 0px;
-    }
-
-    .megamenu-sub-item a,
-    .megamenu-sub-item a:visited,
-    .megamenu-sub-2-link,
-    .megamenu-sub-2-link:visited,
-    .fam-subcat-link,
-    .fam-subcat-link:visited {
-        text-decoration: none;
-        color: var(--text-gray)
-    }
-
     .slider-area-about-us {
         position: relative;
         width: 100%;
@@ -144,15 +33,7 @@
         object-fit: cover;
     }
 
-    .swiper-pagination-bullet {
-        background-color: #c51a30 !important;
-    }
 
-    .swiper-pagination-bullet-active {
-        background-color: #7a001c !important;
-    }
-
-    /* Nav Arrows */
     .banner-nav {
         position: absolute;
         top: 50%;
@@ -204,7 +85,7 @@
         color: white;
     }
 
-    /* Tablet styles */
+
     @media only screen and (min-width: 640px) {
         .tabs.grd.no-gap {
             padding-left: 20px;
@@ -212,9 +93,7 @@
 
         }
     }
-</style>
 
-<style>
     .stats-section {
         background-color: #bf0019;
         color: #fff;
@@ -244,7 +123,7 @@
 
     @media (max-width: 575.98px) {
         .stats-section {
-            padding: 25px 0;
+            padding: 13px 0;
         }
 
         .stat-box {
@@ -272,7 +151,8 @@
         .img-fluid-custom {
             display: block;
         }
-</style>
+    }
+</style> -->
 
 
 <main class="about">
@@ -292,7 +172,6 @@
     <section class="stats-section">
         <div class="container">
             <div class="row g-4 justify-content-center">
-
                 <div class="col-6 col-md-3">
                     <div class="stat-box">
                         <i class='bx bx-purchase-tag-alt stat-icon'></i>

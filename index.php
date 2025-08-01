@@ -986,7 +986,7 @@
         },
     });
 
-    // Custom navigation for Owl Carousel
+   
     $('.custom-prev').click(function () {
         $(this).closest('.position-relative').find('.owl-carousel').trigger('prev.owl.carousel');
     });
@@ -995,9 +995,9 @@
         $(this).closest('.position-relative').find('.owl-carousel').trigger('next.owl.carousel');
     });
 
-    // YouTube video play button functionality
+    
     $('#youtubePlayBtn').click(function () {
-        const videoId = 'YOUR_YOUTUBE_VIDEO_ID'; // Replace with actual YouTube video ID
+        const videoId = 'YOUR_YOUTUBE_VIDEO_ID'; 
         const iframe = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
         $('#youtubeWrapper').html(iframe);
     });
