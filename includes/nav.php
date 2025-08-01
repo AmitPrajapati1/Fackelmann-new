@@ -9,6 +9,18 @@
         /* disable scrolling when sidenav is open */
     }
 
+
+    .noscroll {
+        padding-right: 15px;
+    }
+
+
+    html.noscroll,
+    body.noscroll {
+        overflow: hidden;
+        padding-right: var(--scrollbar-width);
+    }
+
     body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
@@ -17,11 +29,14 @@
     }
 
     .topbar {
+        display: block;
+        position: relative;
         background-color: var(--primary-color);
         color: var(--white);
         text-align: center;
         padding: 6px 0;
         font-size: 14px;
+        z-index: 999;
     }
 
     .header {
@@ -60,6 +75,7 @@
         padding: 10px 12px;
         outline: none;
         text-decoration: none;
+        cursor: pointer;
     }
 
     .header-right {
@@ -118,6 +134,17 @@
         overflow-x: hidden;
     }
 
+    .search-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 998;
+    }
+
     .sidenav {
         position: fixed;
         top: 0;
@@ -126,7 +153,7 @@
         height: 100%;
         background-color: #fff;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+        z-index: 1050;
         transform: translateX(-100%);
         transition: transform 0.5s ease;
         overflow: hidden;
@@ -511,7 +538,7 @@
         justify-content: space-around;
         align-items: center;
         background-color: #f5f5f5;
-        padding: 2px 0 10px 0;
+        padding: 2px 0px;
         position: absolute;
         top: 61px;
         left: 0;
@@ -557,6 +584,7 @@
 
     .brand-item img {
         max-width: 150px;
+        width: 100%;
         height: auto;
         object-fit: contain;
         display: block;
@@ -564,9 +592,16 @@
 
     .brand-item p {
         margin: 5px 0 0;
-        font-size: 13px;
+        font-size: 12px;
         color: #333;
     }
+
+    .brand-desc {
+        max-width: 150px;
+        width: 100%;
+    }
+
+
 
     .show-more {
         display: flex;
@@ -662,11 +697,6 @@
             margin-right: 30px;
         }
 
-        /* .logo-img {
-            height: 45px;
-            object-fit: contain;
-        } */
-
         .logo-img {
             height: 52px;
             position: absolute;
@@ -744,6 +774,14 @@
         }
     }
 
+    /* Tablet view (768px–991px) */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .searchbar-ui {
+            top: 59px;
+
+        }
+    }
+
     @media (max-width: 768px) {
         .sidenav {
             width: 100%;
@@ -806,15 +844,15 @@
 
     .searchbar-ui {
         background: #f9f9f9;
-        /* padding-left: 270px; */
-        /* padding-left: 270px; */
         margin: 0px auto;
         width: 100%;
-        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-        z-index: 998;
+        /* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); */
+        z-index: 1000;
         position: absolute;
         left: 0;
         display: none;
+        max-height: 100vh;
+        overflow-y: auto;
 
     }
 
@@ -879,6 +917,7 @@
         text-decoration: none;
         padding-bottom: 10px;
         display: inline-block;
+        cursor: pointer;
     }
 
     .nav-link::after {
@@ -896,6 +935,272 @@
     .nav-link:hover::after {
         width: 70%;
     }
+
+    #popularSearches {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    #popularSearches.show {
+        opacity: 1;
+    }
+
+    #popularSearches {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        z-index: 10;
+        display: none;
+        padding: 1rem;
+    }
+
+    /* Desktop (≥ 992px) */
+    @media (min-width: 992px) {
+        #popularSearches {
+            top: 131px;
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .search-results {
+            top: 131px;
+            padding: 1.5rem 2rem 2rem;
+        }
+    }
+
+    /* Tablet */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        #popularSearches {
+            top: 129px;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .search-results {
+            top: 129px;
+            padding: 1.25rem 1.5rem;
+        }
+    }
+
+    /* Mobile (≤ 767px) */
+    @media (max-width: 767.98px) {
+        #popularSearches {
+            top: 118px;
+            padding: 1rem 1rem;
+        }
+
+        #popularSearches .row>.col-6 {
+            width: 100%;
+        }
+
+        #popularSearches .btn {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 0.5rem;
+        }
+
+        .search-results {
+            top: 118px;
+            padding: 1rem 1rem;
+        }
+    }
+
+    .search-results {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        z-index: 15;
+        padding: 1rem 2rem;
+        max-height: 80vh;
+        overflow-y: auto;
+        display: none;
+    }
+
+    .search-results-container {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .search-left {
+        flex: 2;
+        min-width: 180px;
+        border-right: 1px solid #eee;
+        padding-right: 1rem;
+    }
+
+    .search-left,
+    .search-right {
+        box-sizing: border-box;
+        padding-left: 1rem;
+    }
+
+    .search-left h6 {
+        text-transform: uppercase;
+        color: #79b0a6;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .left-item {
+        padding: 0.4rem 0;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .left-item:hover {
+        color: #7a001c;
+        font-weight: 500;
+    }
+
+    .search-right {
+        flex: 2.5;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .product-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1rem;
+    }
+
+    .product-item img {
+        width: 60px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .product-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.95rem;
+    }
+
+    .product-info strong {
+        color: #7a001c;
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .discounted {
+        color: #e60000;
+        font-weight: bold;
+        margin-bottom: 0.2rem;
+    }
+
+    .original-price {
+        color: #888;
+        font-size: 0.85rem;
+        text-decoration: line-through;
+    }
+
+    .left-link,
+    .product-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .left-link:hover .left-item {
+        color: #7a001c;
+        font-weight: 500;
+    }
+
+    .product-link:hover {
+        background-color: #f8f8f8;
+        border-radius: 4px;
+    }
+
+    .left-section-title {
+        text-transform: uppercase;
+        color: #79b0a6;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .left-section-title::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+    }
+
+    @media (max-width: 991.98px) {
+        .search-results-container {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .search-left,
+        .search-right {
+            padding: 0;
+            border: none;
+            width: 100%;
+        }
+
+        .search-left {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .search-right {
+            gap: 1rem;
+        }
+
+        .left-section-title::after {
+            left: 0;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .search-results {
+            padding: 1rem;
+            max-height: 75vh;
+        }
+
+        .product-item {
+            gap: 0.8rem;
+            padding-bottom: 0.8rem;
+        }
+
+        .product-item img {
+            width: 50px;
+        }
+
+        .discounted,
+        .left-item,
+        .product-info strong {
+            font-size: 0.9rem;
+        }
+
+        .original-price {
+            font-size: 0.8rem;
+        }
+
+        .left-section-title {
+            font-size: 0.85rem;
+        }
+    }
+
+    .no-results {
+        text-align: center;
+        color: #999;
+        font-size: 1rem;
+        padding: 2rem 1rem;
+    }
 </style>
 
 <div class="topbar">Life Made Easier, Since 1919!</div>
@@ -909,10 +1214,10 @@
         </div>
         <nav class="nav">
             <a href="index.php" class="nav-link">HOME</a>
-            <a href="#" class="nav-link" data-submenu="productsSubmenu" onmouseenter="showProductsSubmenu()"
-                onmouseleave="scheduleHideProductsSubmenu()">Products</a>
+            <a href="product-listing.php" class="nav-link" data-submenu="productsSubmenu"
+                onmouseenter="showProductsSubmenu()" onmouseleave="scheduleHideProductsSubmenu()">Products</a>
             <a href="sustainability.php" class="nav-link">SUSTAINABILITY</a>
-            <a class="nav-link" data-submenu="brandsSubmenu" onmouseenter="showBrandsSubmenu()"
+            <a href="global-brands.php" class="nav-link" data-submenu="brandsSubmenu" onmouseenter="showBrandsSubmenu()"
                 onmouseleave="scheduleHideBrandsSubmenu()">Global Brands</a>
         </nav>
 
@@ -1260,46 +1565,53 @@
 
         <div class="brands-container">
             <div class="brand-item">
-                <a href="https://www.fackelmann.de/marken/fackelmann"><img src="assets/images/brands/fm_200x125.jpg"
-                        alt="Fackelmann"></a>
+                <a href="https://www.fackelmann.de/marken/fackelmann" target="_blank"><img
+                        src="assets/images/brands/fm_200x125.jpg" alt="Fackelmann"></a>
                 <div class="brand-desc">
                     <p>Popular kitchen helpers & diverse household items</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="https://www.fackelmann.de/marken/paris-hilton"><img
+                <a href="https://www.fackelmann.de/marken/paris-hilton" target="_blank"><img
                         src="assets/images/brands/paris-hilton_200x125.jpg" alt="Paris Hilton"></a>
                 <div class="brand-desc">
                     <p>Glamour for the kitchen with Paris Hilton Cookware.</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="https://www.fackelmann.de/marken/stanley-rogers"><img
+                <a href="https://www.fackelmann.de/marken/stanley-rogers" target="_blank"><img
                         src="assets/images/brands/zenker_200x125.jpg" alt="Stanley Rogers"></a>
                 <div class="brand-desc">
                     <p>Zenker baking tins – great baking results for every occasion</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="https://www.fackelmann.de/marken/tasty?m=c6,t16"><img
+                <a href="https://www.fackelmann.de/marken/tasty?m=c6,t16" target="_blank"><img
                         src="assets/images/brands/tasty_200x125.jpg" alt="Tasty"></a>
 
                 <div class="brand-desc">
-                    <p>Creative & versatile – colorful kitchen tools from Tasty.</p>
+                    <p>Creative & versatile colorful kitchen tools from Tasty.</p>
                 </div>
             </div>
             <div class="brand-item">
-                <a href="https://www.fackelmann.de/marken/chefkoch-trifft-fackelmann?m=c6,t7"><img
+                <a href="https://www.fackelmann.de/marken/chefkoch-trifft-fackelmann?m=c6,t7" target="_blank"><img
                         src="assets/images/brands/cktfm_200x125.jpg" alt="Chefkoch Fackelmann"></a>
                 <div class="brand-desc">
-                    <p>Chef meets Fackelmann – You can cook anything with this.</p>
+                    <p>Chef meets Fackelmann You can cook anything with this.</p>
                 </div>
             </div>
-            <a class="brand-item show-more" href="global-brands.php" style="text-decoration: none;">
+            <div class="brand-item">
+                <a href="https://www.fackelmann.de/marken/chefkoch-trifft-fackelmann?m=c6,t7" target="_blank"><img
+                        src="assets/images/brands/oetker_200x125.jpg" alt="Chefkoch Fackelmann"></a>
+                <div class="brand-desc">
+                    <p>Chef meets Fackelmann You can cook anything with this.</p>
+                </div>
+            </div>
+            <!-- <a class="brand-item show-more" href="global-brands.php" style="text-decoration: none;">
                 <div class="brand-desc">
                     <p>Show More</p>
                 </div>
-            </a>
+            </a> -->
         </div>
         <div class="close-btn-brands" onclick="hideSubmenu()">
             <i class='bx bx-x'></i>
@@ -1313,7 +1625,105 @@
             <i class="material-icons close-icon" onclick="toggleSearchBar()">close</i>
         </div>
     </div>
+    <div id="popularSearches" style="display: none;">
+        <h6 class="mb-3 text-uppercase text-muted">Popular Searches</h6>
+        <div class="row gx-2 gy-2 mb-3">
+            <div class="col-auto">
+                <button class="btn btn-outline-secondary btn-sm">Nonstick Cookware</button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-secondary btn-sm">Cake Moulds</button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-secondary btn-sm">Chef Knife</button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-secondary btn-sm">Baking Set</button>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-outline-secondary btn-sm">Kitchen Tools</button>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-6 col-md-3">
+                <div class="card border-0">
+                    <img src="assets/images/search/popular_1.jpg" class="img-top-search " alt="Cookware">
+                    <!-- <div class="card-body text-center p-1">
+                        <p class="card-text mb-0 small">Cookware</p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card border-0">
+                    <img src="assets/images/search/popular_1.jpg" class="img-top-search" alt="Bakeware">
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card border-0">
+                    <img src="assets/images/search/popular_1.jpg" class="img-top-search" alt="Knives">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="searchResults" class="search-results" style="display: none;">
+        <div class="no-results" id="noResults">No search results found.</div>
+        <div class="search-results-container" id="searchResultsContainer">
+            <!-- Left Column -->
+            <div class="search-left">
+                <h6 class="left-section-title">Series</h6>
+                <a href="/series/chelsea" class="left-link">
+                    <div class="left-item">Chelsea</div>
+                </a>
+
+                <h6 class="left-section-title">Search Suggestions</h6>
+                <a href="/search?q=Stanley+Rogers+Chelsea" class="left-link">
+                    <div class="left-item">Stanley Rogers Chelsea</div>
+                </a>
+            </div>
+
+            <!-- Right Column -->
+            <div class="search-right">
+                <a href="javascript:void(0)" class="product-link">
+                    <div class="product-item">
+                        <img src="assets/images/home_page/our_highlights/highlight_2.jpeg" alt="Set">
+                        <div class="product-info">
+                            <strong>Cutlery set "Chelsea", stainless steel, 24 pieces</strong>
+                            <span class="discounted">-30% 90,99 €</span>
+                            <span class="original-price">129,99 €</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="javascript:void(0)" class="product-link">
+                    <div class="product-item">
+                        <img src="assets/images/home_page/our_highlights/highlight_2.jpeg" alt="Set">
+                        <div class="product-info">
+                            <strong>Cutlery set "Chelsea", stainless steel, 56 pieces</strong>
+                            <span class="discounted">-24% 189,99 €</span>
+                            <span class="original-price">249,99 €</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="javascript:void(0)" class=" product-link">
+                    <div class="product-item">
+                        <img src="assets/images/home_page/our_highlights/highlight_2.jpeg" alt="Set">
+                        <div class="product-info">
+                            <strong>Steak knife set "Chelsea", stainless steel, 4 pieces</strong>
+                            <span class="discounted">-20% 30,39 €</span>
+                            <span class="original-price">37,99 €</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 </header>
+
+<div class="search-overlay" id="searchOverlay"></div>
 
 <div class="sidenav-overlay" onclick="toggleNav(false)"></div>
 
@@ -1490,11 +1900,135 @@
         document.getElementById("productsSubmenu").style.display = 'flex';
     }
 
+    // search: input + popular
+
+    // function toggleSearchBar() {
+    //     const searchbar = document.getElementById("searchbarUI");
+    //     const isVisible = searchbar.style.display === "block";
+    //     searchbar.style.display = isVisible ? "none" : "block";
+    // }
+
+    // function toggleSearchBar() {
+    //     const searchbar = document.getElementById("searchbarUI");
+    //     const popularSearches = document.getElementById("popularSearches");
+    //     const isVisible = searchbar.style.display === "block";
+
+    //     if (isVisible) {
+    //         searchbar.style.display = "none";
+    //         if (popularSearches) popularSearches.style.display = "none";
+    //     } else {
+    //         searchbar.style.display = "block";
+    //         if (popularSearches) {
+    //             popularSearches.style.display = "none";
+    //             setTimeout(() => {
+    //                 popularSearches.classList.add("show");
+    //                 popularSearches.style.display = "block";
+    //             }, 1000);
+
+    //         }
+    //     }
+    // }
+
+
+    // function toggleSearchBar() {
+    //     const searchbar = document.getElementById("searchbarUI");
+    //     const popularSearches = document.getElementById("popularSearches");
+    //     const overlay = document.getElementById("searchOverlay");
+    //     const isVisible = searchbar.style.display === "block";
+
+    //     if (isVisible) {
+    //         searchbar.style.display = "none";
+    //         document.body.classList.remove("noscroll");
+    //         if (popularSearches) popularSearches.style.display = "none";
+    //         if (overlay) overlay.style.display = "none";
+    //     } else {
+    //         searchbar.style.display = "block";
+    //         document.body.classList.add("noscroll");
+    //         if (overlay) overlay.style.display = "block";
+
+    //         if (popularSearches) {
+    //             popularSearches.style.display = "none";
+    //             setTimeout(() => {
+    //                 popularSearches.classList.add("show");
+    //                 popularSearches.style.display = "block";
+    //             }, 500);
+    //         }
+    //     }
+    // }
+
+    // function toggleSearchBar() {
+    //     const searchbar = document.getElementById("searchbarUI");
+    //     const popularSearches = document.getElementById("popularSearches");
+    //     const overlay = document.getElementById("searchOverlay");
+    //     const isVisible = searchbar.style.display === "block";
+
+    //     const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+
+    //     if (isVisible) {
+    //         searchbar.style.display = "none";
+    //         document.body.classList.remove("noscroll");
+    //         document.body.style.paddingRight = "";
+    //         if (popularSearches) {
+    //             popularSearches.classList.remove("show");
+    //             popularSearches.style.display = "none";
+    //         }
+    //         if (overlay) overlay.style.display = "none";
+    //     } else {
+    //         const scrollbarWidth = getScrollbarWidth();
+    //         document.body.style.paddingRight = `${scrollbarWidth}px`;
+    //         document.body.classList.add("noscroll");
+
+    //         searchbar.style.display = "block";
+    //         if (overlay) overlay.style.display = "block";
+
+    //         if (popularSearches) {
+    //             popularSearches.style.display = "none";
+    //             setTimeout(() => {
+    //                 popularSearches.classList.add("show");
+    //                 popularSearches.style.display = "block";
+    //             }, 500);
+    //         }
+    //     }
+    // }
+
     function toggleSearchBar() {
         const searchbar = document.getElementById("searchbarUI");
+        const popularSearches = document.getElementById("popularSearches");
+        const searchResults = document.getElementById("searchResults");
+        const overlay = document.getElementById("searchOverlay");
         const isVisible = searchbar.style.display === "block";
-        searchbar.style.display = isVisible ? "none" : "block";
+
+        const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+
+        if (isVisible) {
+            searchbar.style.display = "none";
+            document.body.classList.remove("noscroll");
+            document.body.style.paddingRight = "";
+            if (popularSearches) {
+                popularSearches.classList.remove("show");
+                popularSearches.style.display = "none";
+            }
+            if (searchResults) searchResults.style.display = "none";
+            if (overlay) overlay.style.display = "none";
+        } else {
+            const scrollbarWidth = getScrollbarWidth();
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+            document.body.classList.add("noscroll");
+
+            searchbar.style.display = "block";
+            if (overlay) overlay.style.display = "block";
+
+            if (popularSearches) {
+                popularSearches.style.display = "block";
+                setTimeout(() => {
+                    popularSearches.classList.add("show");
+                }, 500);
+            }
+        }
     }
+
+
+
 
     document.addEventListener("click", function (event) {
         const productsSubmenu = document.getElementById("productsSubmenu");
@@ -1556,4 +2090,130 @@
             document.getElementById("brandsSubmenu").style.display = "none";
         }, 200);
     }
+
+    // search result
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     const searchInput = document.querySelector('#searchbarUI input');
+    //     const popularSearches = document.getElementById("popularSearches");
+    //     const searchResults = document.getElementById("searchResults");
+
+    //     if (!searchInput) return;
+
+    //     searchInput.addEventListener('input', function (e) {
+    //         const query = e.target.value.trim();
+
+    //         if (query.length > 0) {
+    //             if (popularSearches) {
+    //                 popularSearches.classList.remove("show");
+    //                 popularSearches.style.display = "none";
+    //             }
+    //             if (searchResults) {
+    //                 searchResults.style.display = "block";
+    //             }
+    //         } else {
+    //             if (popularSearches) {
+    //                 popularSearches.style.display = "block";
+    //                 setTimeout(() => {
+    //                     popularSearches.classList.add("show");
+    //                 }, 500);
+    //             }
+    //             if (searchResults) {
+    //                 searchResults.style.display = "none";
+    //             }
+    //         }
+    //     });
+    // }); 
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.querySelector('#searchbarUI input');
+        const popularSearches = document.getElementById("popularSearches");
+        const searchResults = document.getElementById("searchResults");
+        const noResults = document.getElementById("noResults");
+        const searchResultsContainer = document.getElementById("searchResultsContainer");
+
+        if (!searchInput) return;
+
+        searchInput.addEventListener('input', function (e) {
+            const query = e.target.value.trim().toLowerCase();
+
+            if (query.length > 0) {
+                if (popularSearches) {
+                    popularSearches.classList.remove("show");
+                    popularSearches.style.display = "none";
+                }
+                if (searchResults) {
+                    searchResults.style.display = "block";
+
+
+                    const leftItems = document.querySelectorAll('.left-item');
+                    const productItems = document.querySelectorAll('.product-info strong');
+                    let hasResults = false;
+
+
+                    const leftLinks = document.querySelectorAll('.left-link');
+                    const productLinks = document.querySelectorAll('.product-link');
+                    leftLinks.forEach(link => link.style.display = 'block');
+                    productLinks.forEach(link => link.style.display = 'block');
+
+
+                    leftItems.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        const parentLink = item.closest('.left-link');
+                        if (text.includes(query)) {
+                            parentLink.style.display = 'block';
+                            hasResults = true;
+                        } else {
+                            parentLink.style.display = 'none';
+                        }
+                    });
+
+
+                    productItems.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        const parentLink = item.closest('.product-link');
+                        if (text.includes(query)) {
+                            parentLink.style.display = 'block';
+                            hasResults = true;
+                        } else {
+                            parentLink.style.display = 'none';
+                        }
+                    });
+
+
+                    const seriesTitle = document.querySelector('.search-left .left-section-title:nth-of-type(1)');
+                    const suggestionsTitle = document.querySelector('.search-left .left-section-title:nth-of-type(2)');
+                    const seriesItems = document.querySelectorAll('.search-left .left-link:nth-of-type(1)');
+                    const suggestionItems = document.querySelectorAll('.search-left .left-link:nth-of-type(2)');
+
+                    seriesTitle.style.display = Array.from(seriesItems).some(item => item.style.display === 'block') ? 'block' : 'none';
+                    suggestionsTitle.style.display = Array.from(suggestionItems).some(item => item.style.display === 'block') ? 'block' : 'none';
+
+
+                    if (hasResults) {
+                        noResults.style.display = "none";
+                        searchResultsContainer.style.display = "flex";
+                    } else {
+                        noResults.style.display = "block";
+                        searchResultsContainer.style.display = "none";
+                    }
+                }
+            } else {
+                if (popularSearches) {
+                    popularSearches.style.display = "block";
+                    setTimeout(() => {
+                        popularSearches.classList.add("show");
+                    }, 500);
+                }
+                if (searchResults) {
+                    searchResults.style.display = "none";
+                    noResults.style.display = "none";
+                    searchResultsContainer.style.display = "flex";
+                    document.querySelectorAll('.left-link, .product-link, .left-section-title').forEach(item => {
+                        item.style.display = 'block';
+                    });
+                }
+            }
+        });
+    });
 </script>

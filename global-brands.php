@@ -605,8 +605,8 @@
                     <p style="padding-left: 20px; padding-right: 20px;" class="ft-16"><span style="color: #ffffff;">We
                             support your everyday life with sustainable cookware, well-thought-out kitchen and household
                             helpers, tried-and-tested products & smart ideas.</span><br><br></p>
-                    <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/fackelmann"><span class="btn btn-outline-white">to
+                    <p style="padding-left: 20px;" class="ft-16"><a href="https://www.fackelmann.de/marken/fackelmann"
+                            target="_blank"><span class="btn btn-outline-white">to
                                 the brand world</span></a></p>
 
                 </div>
@@ -619,8 +619,8 @@
                     <p style="padding-left: 20px; padding-right: 20px;" class="ft-16"><span style="color: #ffffff;">
                             A dream in pink: Paris Hilton's cookware collection is a real eye-catcher in your kitchen.
                             That's hot - discover glamorous cookware, mugs, & drinking bottles.</span><br><br></p>
-                    <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/paris-hilton"><span class="btn btn-outline-white">to
+                    <p style="padding-left: 20px;" class="ft-16"><a href="https://www.fackelmann.de/marken/paris-hilton"
+                            target="_blank"><span class="btn btn-outline-white">to
                                 the brand world</span></a></p>
 
                 </div>
@@ -635,7 +635,7 @@
                             Australian premium brand stands for quality & craftsmanship in cutlery, first-class food
                             culture & kitchen products, timeless style & elegant design.</span><br><br></p>
                     <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/stanley-rogers"><span
+                            href="https://www.fackelmann.de/marken/stanley-rogers" target="_blank"><span
                                 class="btn btn-outline-white">to the brand world</span></a></p>
 
                 </div>
@@ -650,7 +650,7 @@
                             style="color: #ffffff;">Clever features, appealing color combinations, and truly excellent
                             quality. Great prices ensure lots of fun while cooking.</span><br><br></p>
                     <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/tasty?m=c6,t16"><span
+                            href="https://www.fackelmann.de/marken/tasty?m=c6,t16" target="_blank"><span
                                 class="btn btn-outline-white">to the brand world</span></a></p>
 
                 </div>
@@ -664,8 +664,8 @@
                             support your everyday life with sustainable cookware, well-thought-out kitchen and household
                             helpers, tried-and-tested products and smart ideas.</span><br><br></p>
                     <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/chefkoch-trifft-fackelmann?m=c6,t7"><span
-                                class="btn btn-outline-white">to the brand world</span></a></p>
+                            href="https://www.fackelmann.de/marken/chefkoch-trifft-fackelmann?m=c6,t7"
+                            target="_blank"><span class="btn btn-outline-white">to the brand world</span></a></p>
 
                 </div>
             </div>
@@ -679,7 +679,8 @@
                             embrace innovation. It's part of our DNA and at the heart of everything we do. It's time to
                             cut differently.</span><br><br></p>
                     <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/fueri?m=c6,t4"><span class="btn btn-outline-white">to
+                            href="https://www.fackelmann.de/marken/fueri?m=c6,t4" target="_blank"><span
+                                class="btn btn-outline-white">to
                                 the brand world</span></a></p>
 
                 </div>
@@ -695,8 +696,8 @@
                             product range impresses with expertise, experience, and outstanding quality. Innovation
                             tradition are perfectly combined.</span><br><br></p>
                     <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/dr.oetker-kuechenhelfer?m=c6,t11"><span
-                                class="btn btn-outline-white">to the brand world</span></a></p>
+                            href="https://www.fackelmann.de/marken/dr.oetker-kuechenhelfer?m=c6,t11"
+                            target="_blank"><span class="btn btn-outline-white">to the brand world</span></a></p>
 
                 </div>
             </div>
@@ -711,7 +712,7 @@
                             Discover FMprofessional's high-end quality for your kitchen. Built to last
                             forever!</span><br><br></p>
                     <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/fmprofessional?m=c6,t5"><span
+                            href="https://www.fackelmann.de/marken/fmprofessional?m=c6,t5" target="_blank"><span
                                 class="btn btn-outline-white">to the brand world</span></a></p>
 
                 </div>
@@ -726,7 +727,7 @@
                             style="color: #ffffff;">Zenker combines quality, tradition, and innovation with ever-new
                             ideas. Zenker baking pans – great baking results for every occasion.</span><br><br></p>
                     <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/zenker?m=c6,t3">
+                            href="https://www.fackelmann.de/marken/zenker?m=c6,t3" target="_blank">
                             <span class="btn btn-outline-white">to the brand world</span></a>
                     </p>
 
@@ -743,7 +744,7 @@
                             durability, functionality, and reliability.</span><br><br>
                     </p>
                     <p style="padding-left: 20px;" class="ft-16"><a
-                            href="https://www.fackelmann.de/marken/nirosta?m=c6,t2">
+                            href="https://www.fackelmann.de/marken/nirosta?m=c6,t2" target="_blank">
                             <span class="btn btn-outline-white">to the brand world</span></a>
                     </p>
                 </div>
