@@ -1,3 +1,14 @@
+:root {
+        --primary-color: #80001d;
+        --secondary-color: #8bc7c0;
+        --white: #fff;
+        --black: #000;
+        --btn-hover-gray: #c4c4c4;
+        --text-gray: #737373;
+        --bg-gray: #f5f5f5;
+        --silver: #c0c0c0;
+        --text-red: #bf0019;
+    }
 
 html {
     height: 100%;
@@ -343,33 +354,6 @@ a.button, .button, .button:visited {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
-/* a.button:hover, .button:hover, .button:visited:hover {
-    color: #54565a
-}
-
-
-a.button.button--rund, .button.button--rund, .button:visited.button--rund {
-    padding: 0;
-    border-radius: 9em;
-    border: none;
-    box-shadow: inset 0 0 0 1px var(--white);
-    fill: currentColor;
-    position: relative
-}
-
-a.button.button--rund, a.button.button--rund svg, .button.button--rund, .button.button--rund svg, .button:visited.button--rund, .button:visited.button--rund svg {
-    width: 2em;
-    height: 2em
-}
-
-a.button.button--rund svg, .button.button--rund svg, .button:visited.button--rund svg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0
-} */
-
 .wrapper, .wrapper--full-l {
     margin-left: auto;
     margin-right: auto;
@@ -637,4 +621,154 @@ a.button.button--rund svg, .button.button--rund svg, .button:visited.button--run
 .b-c-rot {
     background-color: var(--text-red)
 }
+
+
+/* :root {
+        --primary-color: #80001d;
+        --secondary-color: #8bc7c0;
+        --white: #fff;
+        --black: #000;
+        --btn-hover-gray: #c4c4c4;
+        --text-gray: #737373;
+        --bg-gray: #f5f5f5;
+        --silver: #c0c0c0;
+        --text-red: #bf0019;
+    } */
+
+    .c-weiss {
+        color: var(--white) !important;
+    }
+
+    .slider-area-about-us {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    /* Nav Arrows */
+    .banner-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        background-color: #bf0019;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 38px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .banner-prev {
+        left: 15px;
+    }
+
+    .banner-next {
+        right: 15px;
+    }
+
+    @media (min-width: 768px) {
+        .banner-prev {
+            left: 50px;
+        }
+
+        .banner-next {
+            right: 50px;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .fackelmann-brands-logo {
+            width: 80%;
+            height: auto;
+        }
+    }
+
+    .about-us-detail {
+        font-weight: 400 !important;
+    }
+
+    .tabs.grd.no-gap a.active {
+        background-color: var(--text-red);
+        color: white;
+    }
+
+    /* Tablet styles */
+    @media only screen and (min-width: 640px) {
+        .tabs.grd.no-gap {
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+    }
+
+    .stats-section {
+        background-color: #bf0019;
+        color: #fff;
+        padding: 40px 0;
+    }
+
+    .stat-box {
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .stat-icon {
+        font-size: 65px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .stat-number {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .stat-label {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    @media (max-width: 575.98px) {
+        .stats-section {
+            padding: 13px 0;
+        }
+
+        .stat-box {
+            padding: 15px 5px;
+        }
+
+        .stat-icon {
+            font-size: 36px;
+            margin-bottom: 6px;
+        }
+
+        .stat-number {
+            font-size: 16px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+        }
+
+        .img-custom {
+            width: 100%;
+            height: auto;
+        }
+
+        .img-fluid-custom {
+            display: block;
+        }
+    }
 
