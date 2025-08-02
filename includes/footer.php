@@ -267,6 +267,86 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
 
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+
+<script>
+    const swiper = new Swiper('#home-slider .swiper', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.custom-next',
+            prevEl: '.custom-prev',
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+        },
+    });
+
+    $('.discover-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 2,
+            },
+            1000: {
+                items: 4,
+            },
+        },
+    });
+
+    $('.highlight-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 2,
+            },
+            1000: {
+                items: 4,
+            },
+        },
+    });
+
+   
+    $('.custom-prev').click(function () {
+        $(this).closest('.position-relative').find('.owl-carousel').trigger('prev.owl.carousel');
+    });
+
+    $('.custom-next').click(function () {
+        $(this).closest('.position-relative').find('.owl-carousel').trigger('next.owl.carousel');
+    });
+
+    
+    $('#youtubePlayBtn').click(function () {
+        const videoId = 'YOUR_YOUTUBE_VIDEO_ID'; 
+        const iframe = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        $('#youtubeWrapper').html(iframe);
+    });
+</script>
+
 <script>
   const swiper = new Swiper('.swiper', {
     loop: true,
