@@ -1,219 +1,12 @@
+
 <?php include('includes/header.php'); ?>
 <?php include('includes/nav.php'); ?>
 
+<link rel="stylesheet" href="assets/css/style.css">
+
 
 <style>
-body {
-    background-color: #f5f5f5;
-}
 
-.filter-title {
-    font-size: 16px;
-    padding: 10px 0;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 0;
-    color: #737373;
-    cursor: pointer;
-}
-
-.product-category {
-    color: #bf0019;
-    font-size: 12px;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: 700;
-    height: auto;
-    letter-spacing: 1.19px;
-    line-height: 16px;
-    margin-bottom: 3px;
-    margin-top: 10px;
-    font-style: normal
-}
-
-.product-description {
-    padding-left: 0px;
-    font-size: 12px;
-    padding-top: 9px;
-    margin-bottom: 10px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 16px;
-    color: #444
-}
-
-.product-price {
-    font-size: 21px;
-    margin-top: 3px;
-    font-weight: 600;
-    color: #bf0019 !important;
-}
-
-.product-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.product-card img {
-    width: 100%;
-    display: block;
-    transition: opacity 2s ease, transform 2s ease;
-}
-
-.product-card img.main-img {
-    opacity: 1;
-    position: relative;
-    z-index: 1;
-    transform: scale(1);
-}
-
-.product-card img.hover-img {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    transform: scale(1.05);
-}
-
-.product-card:hover img.main-img {
-    opacity: 0;
-    transform: scale(1.05);
-}
-
-.product-card:hover img.hover-img {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.product-card a,
-.product-card a:hover,
-.product-card a:focus {
-    text-decoration: none;
-    color: inherit;
-}
-
-.custom-sort-btn {
-    background-color: #fff;
-    border: none;
-    color: #737373;
-    font-weight: 600;
-    font-size: 12px;
-    letter-spacing: 1px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6px 12px;
-    width: 200px;
-    text-transform: uppercase;
-    box-shadow: none;
-    border-radius: 0;
-}
-
-.custom-sort-btn:focus,
-.custom-sort-btn:hover {
-    background-color: #fff;
-    color: #737373;
-    box-shadow: none;
-}
-
-.dropdown-menu.match-button-width {
-    min-width: unset;
-    width: 200px;
-    line-height: 30px;
-    font-size: 13px;
-}
-
-.custom-sort-btn i {
-    font-size: 0.85rem;
-    color: #7fb1ae;
-    margin-left: 8px;
-}
-
-.btn-white {
-    background-color: #fff;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.dropdown-menu {
-    --bs-dropdown-padding-y: 0rem !important;
-    --bs-dropdown-link-active-bg: #fff;
-    border-radius: 0rem;
-    color: #444;
-    z-index: 4;
-}
-
-.dropdown-item:active {
-    color: #000 !important;
-}
-
-.form-check-label {
-    display: block;
-    padding: 5px 0;
-    color: #444;
-    padding-left: 0;
-    text-transform: capitalize;
-    font-size: 14px;
-    font-weight: unset !important;
-}
-
-.form-check-label:hover {
-    color: #8bc7c0
-}
-
-.form-check-input{
-    color: #444;
-}
-
-.form-check-input[type=checkbox] {
-    border-radius: 0rem !important;
-    opacity: 0.8;
-}
-
-.form-check-input:checked,
-.form-check-input:focus,
-.form-check-input:focus:checked {
-  box-shadow: none !important;
-  outline: none !important; 
-}
-
-.form-check-input {
-    width: 13px;
-    height: 13px;
-    margin-top: 8px;
-}
-
-.dropdown-item.active{
-    color: #444;
-    background-color: #f5f5f5;
-}
-
-/* check icon */
-.dropdown-item .check-icon {
-    float: right;
-    font-size: 0.85rem;
-    color: #444;
-    background-color: #f5f5f5;
-    visibility: hidden;
-}
-.dropdown-item.active .check-icon {
-    visibility: visible;
-}
-@media (max-width: 767.98px) {
-    .product-price {
-        font-size: 16px;
-    }
-}
 </style>
 
 <!-- Hero Section -->
@@ -257,7 +50,7 @@ body {
         </div>
 
         <!-- Desktop Sort Button -->
-        <div class="col-12 text-end d-none d-lg-block">
+        <div class="col-12 justify-content-end d-none d-lg-flex">
             <div class="dropdown">
                 <button class="custom-sort-btn" type="button" id="sortDropdown" data-bs-toggle="dropdown"
                     aria-expanded="false">
@@ -585,7 +378,6 @@ function closeDropdown(event) {
 }
 
 // Toggle icons for collapse
-// (unchanged)
 document.querySelectorAll('.collapse').forEach(collapse => {
     collapse.addEventListener('show.bs.collapse', function() {
         const icon = this.previousElementSibling.querySelector('i');
