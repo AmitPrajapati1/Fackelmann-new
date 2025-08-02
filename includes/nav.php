@@ -156,7 +156,7 @@
         z-index: 1050;
         transform: translateX(-100%);
         transition: transform 0.5s ease;
-        overflow: hidden;
+        overflow: auto;
     }
 
     .sidenav.active {
@@ -189,14 +189,14 @@
 
     .search-box i {
         font-size: 18px;
-        color: #555;
+        color: #989898;
         flex-shrink: 0;
     }
 
     .search-box input {
         border: none;
         background: transparent;
-        font-size: 14px;
+        font-size: 16px;
         width: 100%;
         outline: none;
     }
@@ -205,11 +205,24 @@
         position: relative;
         width: 100%;
         height: calc(100% - 100px);
-        overflow-y: scroll;
+        overflow-y: auto;
+    }
+
+    .sidenav-search {
+        /* scrollbar-width: auto; */
+        scrollbar-color: #bf0019 transparent;
+        overflow-x: hidden
+    }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+        /* Very thin scrollbar */
+        height: 4px;
+        /* For horizontal scroll */
     }
 
     .panel-wrapper {
-        scrollbar-width: thin;
+        /* scrollbar-width: thin; */
         scrollbar-color: #bf0019 transparent;
         overflow-x: hidden
     }
@@ -259,7 +272,9 @@
 
     .sidenav-section-title {
         background: #bf0019;
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         color: white;
         padding: 10px 16px;
         font-size: 13px;
@@ -267,6 +282,10 @@
         text-transform: uppercase;
         border-bottom: 1px solid white;
         text-decoration: none;
+    }
+
+    .sidenav-section-title .chevron-icon {
+        font-size: 18px;
     }
 
     .sidenav-links {
@@ -280,9 +299,13 @@
         justify-content: space-between;
         align-items: center;
         padding: 12px 16px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #c4c4c4;
         cursor: pointer;
         font-size: 14px;
+    }
+
+    .sidenav-links>li:last-of-type {
+        border-bottom: none;
     }
 
     .sidenav-links li:hover {
@@ -334,15 +357,18 @@
     .submenu-items {
         display: none;
         padding-left: 40px;
-        background: #fafafa;
-        border-left: 2px solid #ddd;
+        background: #fff;
+        /* border-left: 2px solid #ddd; */
+        border-bottom: 1px solid #c4c4c4;
     }
 
     .submenu-items li {
-        padding: 8px 0;
+        padding: 5px 1rem 10px;
+        font-weight: 400;
+        /* padding: 8px 0; */
         border-bottom: none;
-        font-size: 13px;
-        color: #333;
+        font-size: 14px;
+        color: #737373;
     }
 
     .sidenav-links li.active .material-icons.expand-icon {
@@ -362,7 +388,7 @@
         z-index: 998;
     }
 
-    .mega-menu-inner {
+    /* .mega-menu-inner {
         display: flex;
         justify-content: flex-start;
         gap: 40px;
@@ -387,7 +413,7 @@
 
     .mega-menu-item:hover {
         color: var(--primary-color);
-    }
+    } */
 
     .header-left {
         position: relative;
@@ -503,7 +529,7 @@
 
     .category-heading .material-icons {
         font-size: 18px;
-        color: #555;
+        color: #737373;
     }
 
     .category-sub-items {
@@ -534,7 +560,7 @@
     }
 
     .sub-cat-brands {
-        display: flex;
+        /* display: flex; */
         justify-content: space-around;
         align-items: center;
         background-color: #f5f5f5;
@@ -936,6 +962,8 @@
         width: 70%;
     }
 
+
+
     #popularSearches {
         opacity: 0;
         transition: opacity 0.4s ease;
@@ -954,8 +982,36 @@
         background-color: #fff;
         border: 1px solid #ddd;
         z-index: 10;
+        /* display: none; */
+        padding: 1rem;
+    }
+
+    /* #popularSearches .img-top-search,
+    #sidenavPopularSearches .img-top-search {
+        width: 100%;
+        height: 120px;
+        object-fit: contain;
+        border-radius: 4px;
+    } */
+
+
+
+    .sidenav-search-results {
         display: none;
         padding: 1rem;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .sidenav-search-results .no-results {
+        text-align: center;
+        color: #999;
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .sidenav-search-results .search-results-container {
+        display: block;
     }
 
     /* Desktop (≥ 992px) */
@@ -991,12 +1047,15 @@
             padding: 1rem 1rem;
         }
 
-        #popularSearches .row>.col-6 {
+        #popularSearches .row>. col-6,
+        #sidenavPopularSearches .row>.col-auto {
             width: 100%;
         }
 
-        #popularSearches .btn {
+        #popularSearches .btn,
+        #sidenavPopularSearches .btn {
             width: 100%;
+
             text-align: left;
             margin-bottom: 0.5rem;
         }
@@ -1005,6 +1064,19 @@
             top: 118px;
             padding: 1rem 1rem;
         }
+
+        .sidenav-search-results {
+            top: 118px;
+            padding: 1rem 1rem;
+        }
+
+        #sidenavPopularSearches {
+            padding: 1rem 1rem;
+        }
+    }
+
+    #sidenavPopularSearches {
+        padding: 1rem 1rem;
     }
 
     .search-results {
@@ -1028,7 +1100,7 @@
     .search-left {
         flex: 2;
         min-width: 180px;
-        border-right: 1px solid #eee;
+        /* border-right: 1px solid #eee; */
         padding-right: 1rem;
     }
 
@@ -1621,7 +1693,7 @@
     <div class="searchbar-ui" id="searchbarUI" style="display: none;">
         <div class="searchbar-inner">
             <i class="material-icons search-icon">search</i>
-            <input type="text" placeholder="Search Term ..." />
+            <input type="text" id="navbarSearchInput" placeholder="Search Term ..." />
             <i class="material-icons close-icon" onclick="toggleSearchBar()">close</i>
         </div>
     </div>
@@ -1646,7 +1718,7 @@
         </div>
 
         <div class="row g-3">
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-md-3">
                 <div class="card border-0">
                     <img src="assets/images/search/popular_1.jpg" class="img-top-search " alt="Cookware">
                     <!-- <div class="card-body text-center p-1">
@@ -1654,12 +1726,12 @@
                     </div> -->
                 </div>
             </div>
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-md-3">
                 <div class="card border-0">
                     <img src="assets/images/search/popular_1.jpg" class="img-top-search" alt="Bakeware">
                 </div>
             </div>
-            <div class="col-6 col-md-3">
+            <div class="col-12 col-md-3">
                 <div class="card border-0">
                     <img src="assets/images/search/popular_1.jpg" class="img-top-search" alt="Knives">
                 </div>
@@ -1670,7 +1742,6 @@
     <div id="searchResults" class="search-results" style="display: none;">
         <div class="no-results" id="noResults">No search results found.</div>
         <div class="search-results-container" id="searchResultsContainer">
-            <!-- Left Column -->
             <div class="search-left">
                 <h6 class="left-section-title">Series</h6>
                 <a href="/series/chelsea" class="left-link">
@@ -1683,7 +1754,6 @@
                 </a>
             </div>
 
-            <!-- Right Column -->
             <div class="search-right">
                 <a href="javascript:void(0)" class="product-link">
                     <div class="product-item">
@@ -1735,24 +1805,114 @@
     <div class="sidenav-search">
         <div class="search-box">
             <i class='bx bx-search'></i>
-            <input type="text" placeholder="Search term..." />
+            <input type="text" placeholder="Search term..." id="sidenavSearchInput" />
+            <i class="material-icons close-icon" onclick="clearSidenavSearch()">close</i>
+        </div>
+        <div id="sidenavPopularSearches" style="display: none;">
+            <h6 class="mb-3 text-uppercase text-muted">Popular Searches</h6>
+            <div class="row gx-2 gy-2 mb-3">
+                <div class="col-auto">
+                    <button class="btn btn-outline-secondary btn-sm w-100 text-start">Nonstick Cookware</button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-outline-secondary btn-sm w-100 text-start">Cake Moulds</button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-outline-secondary btn-sm w-100 text-start">Chef Knife</button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-outline-secondary btn-sm w-100 text-start">Baking Set</button>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-outline-secondary btn-sm w-100 text-start">Kitchen Tools</button>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-12">
+                    <div class="card border-0">
+                        <img src="assets/images/search/popular_1.jpg" class="img-top-search w-100" alt="Cookware">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card border-0">
+                        <img src="assets/images/search/popular_1.jpg" class="img-top-search w-100" alt="Bakeware">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card border-0">
+                        <img src="assets/images/search/popular_1.jpg" class="img-top-search w-100" alt="Knives">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sidenavSearchResults" class="sidenav-search-results" style="display: none;">
+            <div class="no-results" id="sidenavNoResults">No search results found.</div>
+            <div class="search-results-container" id="sidenavSearchResultsContainer">
+                <div class="search-left">
+                    <h6 class="left-section-title">Series</h6>
+                    <a href="series/chelsea" class="left-link">
+                        <div class="left-item">Chelsea</div>
+                    </a>
+                    <h6 class="left-section-title">Search Suggestions</h6>
+                    <a href="/search?q=Stanley+Rogers+Chelsea" class="left-link">
+                        <div class="left-item">Stanley Rogers Chelsea</div>
+                    </a>
+                </div>
+                <div class="search-right">
+                    <a href="javascript:void(0)" class="product-link">
+                        <div class="product-item">
+                            <img src="assets/images/home_page/our_highlights/highlight_2.jpeg" alt="Set">
+                            <div class="product-info">
+                                <strong>Cutlery set "Chelsea", stainless steel, 24 pieces</strong>
+                                <span class="discounted">-30% 90,99 €</span>
+                                <span class="original-price">129,99 €</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="product-link">
+                        <div class="product-item">
+                            <img src="assets/images/home_page/our_highlights/highlight_2.jpeg" alt="Set">
+                            <div class="product-info">
+                                <strong>Cutlery set "Chelsea", stainless steel, 56 pieces</strong>
+                                <span class="discounted">-24% 189,99 €</span>
+                                <span class="original-price">249,99 €</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0)" class="product-link">
+                        <div class="product-item">
+                            <img src="assets/images/home_page/our_highlights/highlight_2.jpeg" alt="Set">
+                            <div class="product-info">
+                                <strong>Steak knife set "Chelsea", stainless steel, 4 pieces</strong>
+                                <span class="discounted">-20% 30,39 €</span>
+                                <span class="original-price">37,99 €</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="panel-wrapper">
         <div class="panel" id="mainMenu">
             <div class="sidenav-section-title">Products</div>
             <ul class="sidenav-links">
-                <li onclick="showSubmenu()"><span><i class="material-icons"
-                            style="margin-right:10px;">restaurant_menu</i>Cookware</span><i
-                        class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">cake</i>Bakeware</span><i
-                        class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">kitchen</i>Kitchen Tools &
-                        Gadgets</span><i class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">home</i>Bundles & Sets</span><i
-                        class="material-icons">chevron_right</i></li>
-                <li><span><i class="material-icons" style="margin-right:10px;">home</i>New & Exclusives</span><i
-                        class="material-icons">chevron_right</i></li>
+                <li class="sub-categories-option" onclick="showSubmenu()"><span><img
+                            src="assets/images/icon/cookware_1.png" class="sub-category-icon"
+                            alt="cookware">Cookware</span>
+                    <i class='bx bx-chevron-right dropdown-icon-sub-categories'></i>
+                <li class="sub-categories-option"><span><i class="material-icons"
+                            style="margin-right:10px;">cake</i>Bakeware</span><i
+                        class='bx bx-chevron-right dropdown-icon-sub-categories'></i>
+                <li class="sub-categories-option"><span><i class="material-icons"
+                            style="margin-right:10px;">kitchen</i>Kitchen Tools &
+                        Gadgets</span><i class='bx bx-chevron-right dropdown-icon-sub-categories'></i>
+                <li class="sub-categories-option"><span><i class="material-icons"
+                            style="margin-right:10px;">home</i>Bundles & Sets</span><i
+                        class='bx bx-chevron-right dropdown-icon-sub-categories'></i>
+                <li class="sub-categories-option"><span><img src="assets/images/icon/new_and_exclusives.png"
+                            class="sub-category-icon" alt="Category Icon"></i>New & Exclusives</span>
+                    <i class='bx bx-chevron-right dropdown-icon-sub-categories'></i>
             </ul>
             <a href="index.php" class="sidenav-section-title">Home</a>
             <a href="about-us.php" class="sidenav-section-title">About Us</a>
@@ -1766,11 +1926,15 @@
             <div class="submenu-back" onclick="hideSidenavSubmenu()">
                 <i class="material-icons">arrow_back</i> BACK
             </div>
-            <div class="sidenav-section-title">Cookware</div>
+            <a href="product-listing.php" class="sidenav-section-title">
+                Show all in Cookware
+                <i class="bx bx-chevron-right chevron-icon"></i>
+            </a>
+            <!-- <div class="sidenav-section-title">Cookware</div> -->
             <ul class="sidenav-links">
-                <li onclick="toggleAccordion(this)">
-                    <span><i class="material-icons">kitchen</i> Fry Pan</span>
-                    <i class="material-icons expand-icon">expand_more</i>
+                <li onclick="toggleAccordion(this)" class="sub-categories-option">
+                    <span><i class="bx bx-bowl-hot" style="margin-right:10px;"></i> Fry Pan</span>
+                    <i class=" bx bx-chevron-down expand-icon"></i>
                 </li>
                 <ul class="submenu-items">
                     <li>Show all in sets</li>
@@ -1779,28 +1943,32 @@
                     <li>Kadai</li>
                     <li>Wok</li>
                 </ul>
-                <li onclick="toggleAccordion(this)">
-                    <span><i class="material-icons">restaurant</i> Kadai</span>
-                    <i class="material-icons expand-icon">expand_more</i>
+
+                <li onclick="toggleAccordion(this)" class="sub-categories-option">
+                    <span><i class="bx bx-restaurant" style="margin-right:10px;"></i> Kadai</span>
+                    <i class="bx bx-chevron-down expand-icon"></i>
                 </li>
                 <ul class="submenu-items">
                     <li>Frying Pan</li>
                     <li>Grill Pan</li>
                     <li>Crepe Pan</li>
                 </ul>
-                <li onclick="toggleAccordion(this)">
-                    <span><i class="material-icons">local_cafe</i> Tawa</span>
-                    <i class="material-icons expand-icon">expand_more</i>
+
+                <li onclick="toggleAccordion(this)" class="sub-categories-option">
+                    <span><i class="bx bx-coffee" style="margin-right:10px;"></i> Tawa</span>
+                    <i class="bx bx-chevron-down expand-icon"></i>
                 </li>
                 <ul class="submenu-items">
                     <li>Cast Iron Series</li>
                     <li>Induction Friendly</li>
                 </ul>
-                <li onclick="toggleAccordion(this)">
-                    <span><i class="material-icons">local_cafe</i> Pressure Cooker</span>
-                    <i class="material-icons expand-icon">expand_more</i>
+
+                <li onclick="toggleAccordion(this)" class="sub-categories-option">
+                    <span><i class="bx bx-food-menu" style="margin-right:10px;"></i> Pressure Cooker</span>
+                    <i class="bx bx-chevron-down expand-icon"></i>
                 </li>
             </ul>
+
         </div>
     </div>
 </div>
@@ -1820,6 +1988,7 @@
             overlay.style.display = "none";
             body.classList.remove("no-scroll");
             hideSidenavSubmenu();
+            resetSearch('sidenav');
         }
     }
 
@@ -1902,95 +2071,6 @@
 
     // search: input + popular
 
-    // function toggleSearchBar() {
-    //     const searchbar = document.getElementById("searchbarUI");
-    //     const isVisible = searchbar.style.display === "block";
-    //     searchbar.style.display = isVisible ? "none" : "block";
-    // }
-
-    // function toggleSearchBar() {
-    //     const searchbar = document.getElementById("searchbarUI");
-    //     const popularSearches = document.getElementById("popularSearches");
-    //     const isVisible = searchbar.style.display === "block";
-
-    //     if (isVisible) {
-    //         searchbar.style.display = "none";
-    //         if (popularSearches) popularSearches.style.display = "none";
-    //     } else {
-    //         searchbar.style.display = "block";
-    //         if (popularSearches) {
-    //             popularSearches.style.display = "none";
-    //             setTimeout(() => {
-    //                 popularSearches.classList.add("show");
-    //                 popularSearches.style.display = "block";
-    //             }, 1000);
-
-    //         }
-    //     }
-    // }
-
-
-    // function toggleSearchBar() {
-    //     const searchbar = document.getElementById("searchbarUI");
-    //     const popularSearches = document.getElementById("popularSearches");
-    //     const overlay = document.getElementById("searchOverlay");
-    //     const isVisible = searchbar.style.display === "block";
-
-    //     if (isVisible) {
-    //         searchbar.style.display = "none";
-    //         document.body.classList.remove("noscroll");
-    //         if (popularSearches) popularSearches.style.display = "none";
-    //         if (overlay) overlay.style.display = "none";
-    //     } else {
-    //         searchbar.style.display = "block";
-    //         document.body.classList.add("noscroll");
-    //         if (overlay) overlay.style.display = "block";
-
-    //         if (popularSearches) {
-    //             popularSearches.style.display = "none";
-    //             setTimeout(() => {
-    //                 popularSearches.classList.add("show");
-    //                 popularSearches.style.display = "block";
-    //             }, 500);
-    //         }
-    //     }
-    // }
-
-    // function toggleSearchBar() {
-    //     const searchbar = document.getElementById("searchbarUI");
-    //     const popularSearches = document.getElementById("popularSearches");
-    //     const overlay = document.getElementById("searchOverlay");
-    //     const isVisible = searchbar.style.display === "block";
-
-    //     const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
-
-    //     if (isVisible) {
-    //         searchbar.style.display = "none";
-    //         document.body.classList.remove("noscroll");
-    //         document.body.style.paddingRight = "";
-    //         if (popularSearches) {
-    //             popularSearches.classList.remove("show");
-    //             popularSearches.style.display = "none";
-    //         }
-    //         if (overlay) overlay.style.display = "none";
-    //     } else {
-    //         const scrollbarWidth = getScrollbarWidth();
-    //         document.body.style.paddingRight = `${scrollbarWidth}px`;
-    //         document.body.classList.add("noscroll");
-
-    //         searchbar.style.display = "block";
-    //         if (overlay) overlay.style.display = "block";
-
-    //         if (popularSearches) {
-    //             popularSearches.style.display = "none";
-    //             setTimeout(() => {
-    //                 popularSearches.classList.add("show");
-    //                 popularSearches.style.display = "block";
-    //             }, 500);
-    //         }
-    //     }
-    // }
-
     function toggleSearchBar() {
         const searchbar = document.getElementById("searchbarUI");
         const popularSearches = document.getElementById("popularSearches");
@@ -2010,6 +2090,8 @@
             }
             if (searchResults) searchResults.style.display = "none";
             if (overlay) overlay.style.display = "none";
+            // 
+            resetSearch('navbar');
         } else {
             const scrollbarWidth = getScrollbarWidth();
             document.body.style.paddingRight = `${scrollbarWidth}px`;
@@ -2028,7 +2110,128 @@
     }
 
 
+    function showPopularSearches(context) {
+        const popularSearchesId = context === 'navbar' ? 'popularSearches' : `${context}PopularSearches`;
+        const searchResultsId = context === 'navbar' ? 'searchResults' : `${context}SearchResults`;
+        const noResultsId = context === 'navbar' ? 'noResults' : `${context}NoResults`;
+        const searchResultsContainerId = context === 'navbar' ? 'searchResultsContainer' : `${context}SearchResultsContainer`;
 
+
+        const popularSearches = document.getElementById(popularSearchesId);
+        const searchResults = document.getElementById(searchResultsId);
+        const noResults = document.getElementById(noResultsId);
+        const searchResultsContainer = document.getElementById(searchResultsContainerId);
+
+        if (popularSearches) {
+            popularSearches.style.display = 'block';
+            setTimeout(() => {
+                popularSearches.classList.add('show');
+            }, 50);
+        }
+        if (searchResults) {
+            searchResults.style.display = 'none';
+            noResults.style.display = 'none';
+            searchResultsContainer.style.display = context === 'navbar' ? 'flex' : 'block';
+            document.querySelectorAll(`#${searchResultsId} .left-link, #${searchResultsId} .product-link, #${searchResultsId} .left-section-title`).forEach(item => {
+                item.style.display = 'block';
+            });
+        }
+    }
+
+    function handleSearch(query, context) {
+        const popularSearchesId = context === 'navbar' ? 'popularSearches' : `${context}PopularSearches`;
+        const searchResultsId = context === 'navbar' ? 'searchResults' : `${context}SearchResults`;
+        const noResultsId = context === 'navbar' ? 'noResults' : `${context}NoResults`;
+        const searchResultsContainerId = context === 'navbar' ? 'searchResultsContainer' : `${context}SearchResultsContainer`;
+
+        const popularSearches = document.getElementById(popularSearchesId);
+        const searchResults = document.getElementById(searchResultsId);
+        const noResults = document.getElementById(noResultsId);
+        const searchResultsContainer = document.getElementById(searchResultsContainerId);
+
+        if (!popularSearches || !searchResults || !noResults || !searchResultsContainer) {
+            console.error(`Elements not found for context: ${context}`);
+            return;
+        }
+
+        if (query.length > 0) {
+            popularSearches.classList.remove('show');
+            popularSearches.style.display = 'none';
+            searchResults.style.display = 'block';
+
+            const leftItems = document.querySelectorAll(`#${searchResultsId} .left-item`);
+            const productItems = document.querySelectorAll(`#${searchResultsId} .product-info strong`);
+            let hasResults = false;
+
+            const leftLinks = document.querySelectorAll(`#${searchResultsId} .left-link`);
+            const productLinks = document.querySelectorAll(`#${searchResultsId} .product-link`);
+            leftLinks.forEach(link => link.style.display = 'block');
+            productLinks.forEach(link => link.style.display = 'block');
+
+            leftItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                const parentLink = item.closest('.left-link');
+                if (text.includes(query)) {
+                    parentLink.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    parentLink.style.display = 'none';
+                }
+            });
+
+            productItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                const parentLink = item.closest('.product-link');
+                if (text.includes(query)) {
+                    parentLink.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    parentLink.style.display = 'none';
+                }
+            });
+
+            const seriesTitle = document.querySelector(`#${searchResultsId} .search-left .left-section-title:nth-of-type(1)`);
+            const suggestionsTitle = document.querySelector(`#${searchResultsId} .search-left .left-section-title:nth-of-type(2)`);
+            const seriesItems = document.querySelectorAll(`#${searchResultsId} .search-left .left-link:nth-of-type(1)`);
+            const suggestionItems = document.querySelectorAll(`#${searchResultsId} .search-left .left-link:nth-of-type(2)`);
+
+            seriesTitle.style.display = Array.from(seriesItems).some(item => item.style.display === 'block') ? 'block' : 'none';
+            suggestionsTitle.style.display = Array.from(suggestionItems).some(item => item.style.display === 'block') ? 'block' : 'none';
+
+            if (hasResults) {
+                noResults.style.display = 'none';
+                searchResultsContainer.style.display = context === 'navbar' ? 'flex' : 'block';
+            } else {
+                noResults.style.display = 'block';
+                searchResultsContainer.style.display = 'none';
+            }
+        } else {
+            showPopularSearches(context);
+        }
+    }
+
+    function resetSearch(context) {
+        const searchInput = document.getElementById(`${context}SearchInput`);
+        const popularSearchesId = context === 'navbar' ? 'popularSearches' : `${context}PopularSearches`;
+        const searchResultsId = context === 'navbar' ? 'searchResults' : `${context}SearchResults`;
+        const popularSearches = document.getElementById(popularSearchesId);
+        const searchResults = document.getElementById(searchResultsId);
+        if (searchInput) searchInput.value = '';
+        if (popularSearches) {
+            popularSearches.classList.remove('show');
+            popularSearches.style.display = 'none';
+        }
+        if (searchResults) searchResults.style.display = 'none';
+    }
+
+    function clearSidenavSearch() {
+        const searchInput = document.getElementById('sidenavSearchInput');
+        if (searchInput) {
+            searchInput.value = '';
+            resetSearch('sidenav');
+            showPopularSearches('sidenav');
+        }
+    }
 
     document.addEventListener("click", function (event) {
         const productsSubmenu = document.getElementById("productsSubmenu");
@@ -2091,129 +2294,43 @@
         }, 200);
     }
 
-    // search result
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     const searchInput = document.querySelector('#searchbarUI input');
-    //     const popularSearches = document.getElementById("popularSearches");
-    //     const searchResults = document.getElementById("searchResults");
-
-    //     if (!searchInput) return;
-
-    //     searchInput.addEventListener('input', function (e) {
-    //         const query = e.target.value.trim();
-
-    //         if (query.length > 0) {
-    //             if (popularSearches) {
-    //                 popularSearches.classList.remove("show");
-    //                 popularSearches.style.display = "none";
-    //             }
-    //             if (searchResults) {
-    //                 searchResults.style.display = "block";
-    //             }
-    //         } else {
-    //             if (popularSearches) {
-    //                 popularSearches.style.display = "block";
-    //                 setTimeout(() => {
-    //                     popularSearches.classList.add("show");
-    //                 }, 500);
-    //             }
-    //             if (searchResults) {
-    //                 searchResults.style.display = "none";
-    //             }
-    //         }
-    //     });
-    // }); 
-
-
     document.addEventListener('DOMContentLoaded', function () {
-        const searchInput = document.querySelector('#searchbarUI input');
-        const popularSearches = document.getElementById("popularSearches");
-        const searchResults = document.getElementById("searchResults");
-        const noResults = document.getElementById("noResults");
-        const searchResultsContainer = document.getElementById("searchResultsContainer");
-
-        if (!searchInput) return;
-
-        searchInput.addEventListener('input', function (e) {
-            const query = e.target.value.trim().toLowerCase();
-
-            if (query.length > 0) {
-                if (popularSearches) {
-                    popularSearches.classList.remove("show");
-                    popularSearches.style.display = "none";
+        const navbarSearchInput = document.getElementById('navbarSearchInput');
+        if (navbarSearchInput) {
+            navbarSearchInput.addEventListener('focus', function () {
+                if (!this.value.trim()) {
+                    showPopularSearches('navbar');
                 }
-                if (searchResults) {
-                    searchResults.style.display = "block";
+            });
+            navbarSearchInput.addEventListener('input', function (e) {
+                handleSearch(e.target.value.trim().toLowerCase(), 'navbar');
+            });
+        }
 
-
-                    const leftItems = document.querySelectorAll('.left-item');
-                    const productItems = document.querySelectorAll('.product-info strong');
-                    let hasResults = false;
-
-
-                    const leftLinks = document.querySelectorAll('.left-link');
-                    const productLinks = document.querySelectorAll('.product-link');
-                    leftLinks.forEach(link => link.style.display = 'block');
-                    productLinks.forEach(link => link.style.display = 'block');
-
-
-                    leftItems.forEach(item => {
-                        const text = item.textContent.toLowerCase();
-                        const parentLink = item.closest('.left-link');
-                        if (text.includes(query)) {
-                            parentLink.style.display = 'block';
-                            hasResults = true;
-                        } else {
-                            parentLink.style.display = 'none';
-                        }
-                    });
-
-
-                    productItems.forEach(item => {
-                        const text = item.textContent.toLowerCase();
-                        const parentLink = item.closest('.product-link');
-                        if (text.includes(query)) {
-                            parentLink.style.display = 'block';
-                            hasResults = true;
-                        } else {
-                            parentLink.style.display = 'none';
-                        }
-                    });
-
-
-                    const seriesTitle = document.querySelector('.search-left .left-section-title:nth-of-type(1)');
-                    const suggestionsTitle = document.querySelector('.search-left .left-section-title:nth-of-type(2)');
-                    const seriesItems = document.querySelectorAll('.search-left .left-link:nth-of-type(1)');
-                    const suggestionItems = document.querySelectorAll('.search-left .left-link:nth-of-type(2)');
-
-                    seriesTitle.style.display = Array.from(seriesItems).some(item => item.style.display === 'block') ? 'block' : 'none';
-                    suggestionsTitle.style.display = Array.from(suggestionItems).some(item => item.style.display === 'block') ? 'block' : 'none';
-
-
-                    if (hasResults) {
-                        noResults.style.display = "none";
-                        searchResultsContainer.style.display = "flex";
-                    } else {
-                        noResults.style.display = "block";
-                        searchResultsContainer.style.display = "none";
-                    }
+        const sidenavSearchInput = document.getElementById('sidenavSearchInput');
+        if (sidenavSearchInput) {
+            sidenavSearchInput.addEventListener('focus', function () {
+                if (!this.value.trim()) {
+                    showPopularSearches('sidenav');
                 }
-            } else {
-                if (popularSearches) {
-                    popularSearches.style.display = "block";
-                    setTimeout(() => {
-                        popularSearches.classList.add("show");
-                    }, 500);
-                }
-                if (searchResults) {
-                    searchResults.style.display = "none";
-                    noResults.style.display = "none";
-                    searchResultsContainer.style.display = "flex";
-                    document.querySelectorAll('.left-link, .product-link, .left-section-title').forEach(item => {
-                        item.style.display = 'block';
-                    });
-                }
-            }
-        });
+            });
+            sidenavSearchInput.addEventListener('input', function (e) {
+                handleSearch(e.target.value.trim().toLowerCase(), 'sidenav');
+            });
+        }
+
+        const sidenavOverlay = document.querySelector('.sidenav-overlay');
+        if (sidenavOverlay) {
+            sidenavOverlay.addEventListener('click', function () {
+                resetSearch('sidenav');
+            });
+        }
+
+        const closeBtnSidenav = document.querySelector('.close-btn-sidenav');
+        if (closeBtnSidenav) {
+            closeBtnSidenav.addEventListener('click', function () {
+                resetSearch('sidenav');
+            });
+        }
     });
 </script>
