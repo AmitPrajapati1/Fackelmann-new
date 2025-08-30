@@ -2,6 +2,34 @@
 <?php include('includes/nav.php'); ?>
 <link rel="stylesheet" href="assets/css/style.css">
 
+<style>
+    .size-option {
+        background: #fff;
+        border: 1px solid #888c8c;
+        border-radius: 5px;
+        padding: 6px 10px;
+        text-align: center;
+        min-width: 90px;
+        max-width: 90px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        font-weight: 600;
+    }
+
+    .size-option:hover {
+        border-color: #007bff;
+    }
+
+    .size-option.active {
+        border: 2px solid #007bff;
+        background: #fff;
+    }
+</style>
 
 <div class="px-4 py-4">
     <nav aria-label="breadcrumb">
@@ -50,11 +78,30 @@
                 <h1 class="pi-title">Fackelmann Triply Stainless Steel Kadhai with Designer Lid- 20 cm, 1.5 litres</h1>
                 <div class="pi-content">
                     <div class="pi-sku">SKU ID: 5568481</div>
+                    
                     <div class="pi-mrp">MRP ₹ 2,749.00</div>
                     <span class="pi-availability-label">Available At</span>
                     <a href="https://www.amazon.in/dp/B07X24NQTX?th=1" target="_blank" title="Order Now" class="pi-availability-logo" aria-label="Amazon">
                         <img src="assets/images/icons/amazon.svg" alt="Amazon">
                     </a>
+                    <div class="py-2">
+                        <p class="mb-2"><span style="color: #565959">Size:</span> <span class="fw-bold" style="font-size: 14px">20cm</span></p>
+                        <div class="d-flex flex-wrap gap-2 overflow-auto flex-nowrap">                            
+                            <div class="size-option active">
+                                <div>20cm</div>
+                            </div>                          
+                            <div class="size-option">
+                                <div>24cm</div>
+                            </div>                            
+                            <div class="size-option">
+                                <div>26cm</div>
+                            </div>                           
+                            <div class="size-option">
+                                <div>28cm</div>
+                            </div>
+                           
+                        </div>
+                    </div>
                     <ul class="pi-feature-list">
                         <li>Material: 18/10 Stainless Steel Base | Color: Silver</li>
                         <li>The inside layer (the one that touches your food) is premium 18/10 stainless steel base, giving durability &amp; high stain / non-stick resistance.</li>
@@ -204,5 +251,77 @@ accordionButtons.forEach(button => {
     });
 });
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sizeOptions = document.querySelectorAll(".size-option");
+        const selectedSize = document.getElementById("selected-size");
+
+        sizeOptions.forEach(option => {
+            option.addEventListener("click", function () {
+                // Remove active class from all
+                sizeOptions.forEach(opt => opt.classList.remove("active"));
+                
+                // Add active to clicked one
+                this.classList.add("active");
+                
+                // Update size text
+                selectedSize.textContent = this.textContent.trim();
+            });
+        });
+    });
+</script>
+<script>
+    const slider = document.querySelector('.d-flex.overflow-auto');
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    // Mouse Events
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+        slider.classList.add('active');
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch Events
+    slider.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('touchend', () => {
+        isDown = false;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+</script>
+
 
 <?php include('includes/footer.php'); ?>
