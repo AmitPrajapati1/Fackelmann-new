@@ -267,13 +267,15 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.13/dist/flatpickr.min.js"></script>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+
 
 <script>
     const swiper = new Swiper('#home-slider .swiper', {
         loop: true,
+         autoplay: {
+            delay: 3000;
+            disableOnInteraction: false;
+        },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
