@@ -2,6 +2,123 @@
 
 <link rel="stylesheet" href="assets/css/style.css">  
 
+   <style>
+
+        .media-wrapper {
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 5px 5px 0 white, 13px 13px 0 #bf0019;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            /* keeps consistent shape */
+            max-width: 600px;
+            display: flex;
+        }
+
+        .media-content {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex: 1;
+            display: block;
+        }
+
+        /* Swiper styles */
+        .swiper-slide .manufacturing-slide {
+            min-height: 250px !important;
+        }
+
+        .swiper-manuf-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            position: relative;
+            width: 30%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .swiper-manuf-pagination .swiper-pagination-bullet {
+            flex: 1;
+            height: 3px;
+            background-color: #ccc;
+            border-radius: 0;
+            margin: 0 4px !important;
+            opacity: 1;
+            transition: all 0.3s ease;
+            background-color: #d76868;
+            border: 1px solid #d76868;
+        }
+
+        .swiper-manuf-pagination .swiper-pagination-bullet-active {
+            background-color: #D62828;
+            height: 3px;
+            border: 1px solid #D62828;
+            border-width: 50% !important;
+        }
+
+        @media(max-width: 768px) {
+            .media-wrapper {
+                max-width: 100%;
+                aspect-ratio: 16/9;
+                box-shadow: 3px 3px 0 white, 6px 6px 0 #bf0019 !important;
+            }
+
+            .sustain-home-wrap {
+                padding: 26px;
+            }
+
+            .manu-img {
+                padding: 0px 26px 26px 26px;
+            }
+
+            .sustain-container {
+                padding-bottom: 1rem !important;
+            }
+
+            .manu-container {
+                padding-top: 1rem !important;
+            }
+
+            .manufacturing-swiper-wrapper {
+                padding-bottom: 0px !important;
+            }
+        }
+
+        .sustain-container {
+            padding-bottom: 3rem;
+        }
+
+        .manu-container {
+            padding-top: 3rem;
+        }
+
+        .manufacturing-swiper-wrapper {
+            padding-bottom: 40px;
+        }
+
+
+        .swiper-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+            width: 18% !important;
+
+        }
+
+        @media (max-width: 767.98px) {
+            .flex-mobile-reverse {
+                display: flex;
+                flex-direction: column-reverse !important;
+            }
+
+            .sustain-detail-section {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    </style>
+
 
 <?php include('includes/nav.php'); ?>
 
@@ -248,7 +365,7 @@
     </div>
 </div>
 
-<div
+<!-- <div
     style="background-color: #DFE9E8; padding-top: clamp(0.5rem, 2vw, 0.625rem); padding-bottom: clamp(0.5rem, 2vw, 0.625rem);">
     <div class="container py-5">
         <div class="row align-items-start">
@@ -275,6 +392,121 @@
                     <div class="play-button" id="youtubePlayBtn"></div>
                 </div>
             </div>
+        </div>
+    </div>
+</div> -->
+
+ <!-- {{-- sustainability --}} -->
+<div style="background-color: #DFE9E8; padding-top: clamp(0.5rem, 2vw, 0.625rem);">
+    <div class="container sustain-container pt-5">
+        <div class="row align-items-center flex-mobile-reverse">
+            <div class="col-md-6 mb-4 mb-lg-0 sustain-detail-section"
+                style="margin-top: clamp(0.5rem, 2vw, 0.75rem)">
+                <img src="assets/images/logos/sustainability_img.webp"
+                    alt="50 Sustainability & Climate Leaders" class="mb-3 img-fluid" style="max-width: 200px;">
+                <div class="fw-semibold mb-2" style="font-size: clamp(0.8rem, 2vw, 1rem);">
+                    Fackelmann Brands: One of 50 climate leader companies worldwide
+                </div>
+                <p class="text-muted small">
+                    The 50 Climate Leaders initiative has set itself the task of highlighting companies that are
+                    committed to sustainable business and climate protection. Fackelmann Brands is part of the
+                    initiative and is helping to gradually get closer to the 17 UN climate goals for sustainable
+                    development.
+                </p>
+                <p class="text-muted small">Come with us on a journey into a greener future.</p>
+                <a href="sustainability.php"
+                    class="btn btn-sm fw-semibold text-uppercase newsletter-button">
+                    MORE INFORMATION
+                </a>
+            </div>
+
+            <div class="col-md-6 d-flex align-items-center justify-content-center sustain-home-wrap video-wrap">
+                <div class="media-wrapper video-wrapper" onclick="playVideo(this)">
+                    <img class="media-content video-thumbnail"
+                        src="assets/images/logos/sustainability_poster.png" alt="electric bikes in India"
+                        title="electric bikes in India" />
+                    <div class="play-button"></div>
+                    <video class="media-content video-element" style="display: none;" controls autoplay muted
+                        playsinline>
+                        <source src="https://www.fackelmann.co.in/assets/img/SUSTAINABILITY.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Manufacturing -->
+<div style="background-color: #DFE9E8;">
+    <div class="container manu-container pb-5">
+        <div class="swiper myManufacturingSwiper">
+            <div class="swiper-wrapper manufacturing-swiper-wrapper">
+                <div class="swiper-slide manufacturing-slide">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-lg-0 manu-img">
+                            <div class="media-wrapper">
+                                <img src="assets/images/banners/hero_banner_desktop_3.jpg"
+                                    alt="Material Procurement" class="media-content">
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-left: 30px">
+                            <div class="fw-bold text-uppercase mb-3" style="color: #bf0019;">
+                                MATERIAL PROCUREMENT
+                            </div>
+                            <p class="text-muted small" style="max-width: 500px;">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                                Ipsum is simply text of the dummy text of the printing and typesetting industry
+                                printing and typesetting industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-lg-0 manu-img">
+                            <div class="media-wrapper">
+                                <img src="assets/images/banners/hero_banner_desktop_1.jpg"
+                                    alt="Another Slide" class="media-content">
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-left: 30px">
+                            <div class="fw-bold text-uppercase mb-3" style="color: #bf0019;">
+                                ANOTHER HEADING
+                            </div>
+                            <p class="text-muted small" style="max-width: 500px;">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem
+                                Ipsum is simply dummy text of the printing and typesetting industry text of the
+                                printing and typesetting industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-lg-0 manu-img">
+                            <div class="media-wrapper">
+                                <img src="assets/images/banners/hero_banner_desktop_2.jpg"
+                                    alt="Sample Slide" class="media-content">
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-left: 30px">
+                            <div class="fw-bold text-uppercase mb-3" style="color: #bf0019;">
+                                SAMPLE TITLE
+                            </div>
+                            <p class="text-muted small" style="max-width: 500px;">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                                Ipsum is simply text of the dummy text of the printing and typesetting industry
+                                printing and typesetting industry.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-manuf-pagination"></div>
         </div>
     </div>
 </div>
@@ -325,3 +557,27 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+
+
+    <script>
+        var manufacturingSwiper = new Swiper(".myManufacturingSwiper", {
+            loop: true,
+            spaceBetween: 20,
+            slidesPerView: 1,
+            pagination: {
+                el: ".swiper-manuf-pagination",
+                clickable: true
+            }
+        });
+
+        function playVideo(wrapper) {
+            const thumbnail = wrapper.querySelector('.video-thumbnail');
+            const playBtn = wrapper.querySelector('.play-button');
+            const video = wrapper.querySelector('.video-element');
+
+            thumbnail.style.display = 'none';
+            playBtn.style.display = 'none';
+            video.style.display = 'block';
+            video.play();
+        }
+    </script>
