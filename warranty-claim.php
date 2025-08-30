@@ -14,6 +14,8 @@
         --text-red: #c51a30;
     }
 
+    
+
     .slider-area-warranty-claim {
         position: relative;
         width: 100%;
@@ -78,6 +80,7 @@
     .warranty-form h2 {
         color: var(--text-red);
         font-weight: 500 !important;
+        text-align: center; 
     }
 
     .form-control-warranty {
@@ -140,10 +143,6 @@
     }
 
     @media (max-width: 576px) {
-        .container {
-            padding: 10px !important;
-        }
-
         .warranty-form {
             padding: 15px !important;
         }
@@ -388,7 +387,7 @@
 </div>
 
 <main id="main">
-    <div class="container" style="padding: 70px 0 !important;">
+    <div class="container py-4 sm:py-5">
         <div class="row dflex justify-content-center">
             <div class="col-md-8" id="complaint-msg-box">
                 <form id="complaint-frm">
